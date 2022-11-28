@@ -1,6 +1,6 @@
 #pragma once
 
-class SG_Classic
+ref class SG_Classic
 {
 };
 

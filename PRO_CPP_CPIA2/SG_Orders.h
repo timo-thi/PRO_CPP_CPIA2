@@ -1,7 +1,7 @@
 #pragma once
 #include "SG_Stock.h"
 
-class SG_Orders :
+ref class SG_Orders :
     public SG_Stock
 {
 };
