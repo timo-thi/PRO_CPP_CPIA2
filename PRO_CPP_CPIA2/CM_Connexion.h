@@ -1,5 +1,5 @@
 #pragma once
-class CM_Connexion
+ref class CM_Connexion
 {
 };
 

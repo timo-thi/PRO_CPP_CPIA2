@@ -1,5 +1,6 @@
 #pragma once
-class CM_Classic
+using namespace System;
+
+ref class CM_Classic
 {
 };
-
