@@ -8,7 +8,7 @@ String^ CM_Classic::Insert_Date(void){
 
 }
 
-String^ CM_Classic::Dlete_Date(void){
+String^ CM_Classic::Delete_Date(void){
 
 }
 
