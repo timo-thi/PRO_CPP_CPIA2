@@ -111,6 +111,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="CM_Classic.h" />
+    <ClInclude Include="CM_Client.h" />
+    <ClInclude Include="CM_Connexion.h" />
+    <ClInclude Include="CM_Personne.h" />
+    <ClInclude Include="CM_Staff.h" />
+    <ClInclude Include="CM_Stat.h" />
+    <ClInclude Include="CM_Stock.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CM_Classic.cpp" />
+    <ClCompile Include="CM_Client.cpp" />
+    <ClCompile Include="CM_Connexion.cpp" />
+    <ClCompile Include="CM_Personne.cpp" />
+    <ClCompile Include="CM_Staff.cpp" />
+    <ClCompile Include="CM_Stat.cpp" />
+    <ClCompile Include="CM_Stock.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
