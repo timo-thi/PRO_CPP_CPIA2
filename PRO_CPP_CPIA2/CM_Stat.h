@@ -11,7 +11,7 @@ public:
     String^ Calcul_Montant_Total_client(int ID);
     String^ Articles_Plus_Vendus(void);
     String^ Articles_Moins_Vendus(void);
-    float Valeur_Commerciale_Stock(void);
+    String^ Valeur_Commerciale_Stock(void);
     String^ Valeur_Achat_Stock(void);
 };
 

@@ -46,17 +46,17 @@ void CM_Stock::Set_Seuil_restock(int New_SeRe){
 
 
 String^ CM_Stock::Insert_Stock(void){
-
+	return "NULL";
 }
 
 String^ CM_Stock::Delete_Stock(void){
-
+	return "NULL";
 }
 
 String^ CM_Stock::Update_Stock(void){
-
+	return "NULL";
 }
 
 String^ CM_Stock::Select_Stock(void){
-
+	return "NULL";
 }

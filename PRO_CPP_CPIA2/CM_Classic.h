@@ -8,7 +8,7 @@ protected:
 public:
 	CM_Classic();
 	String^ Insert_Date(void);
-	String^ Dlete_Date(void);
+	String^ Delete_Date(void);
 	String^ Update_Date(void);
 	String^ Select_Date(void);
 	String^ Get_Date(void);

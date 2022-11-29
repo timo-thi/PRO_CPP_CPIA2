@@ -1,4 +1,7 @@
 #include "CM_Personne.h"
+
+CM_Personne::CM_Personne(){}
+
 void CM_Personne::Set_ID(int ID) {
 	this->ID = ID;
 }
@@ -20,4 +23,33 @@ void CM_Personne::Set_Prenom(String^ prenom) {
 
 String^ CM_Personne::Get_Prenom(void) {
 	return this->Prenom;
+}
+
+String^ CM_Personne::Insert_Personne(void) {
+	return "NULL";
+}
+String^ CM_Personne::Delete_Personne(void) {
+	return "NULL";
+}
+String^ CM_Personne::Select_Personne(void) {
+	return "NULL";
+}
+String^ CM_Personne::Update_Personne(void) {
+	return "NULL";
+}
+
+String^ CM_Personne::Insert_Adress(void) {
+	return "NULL";
+}
+
+String^ CM_Personne::Select_Adress(void) {
+	return "NULL";
+}
+
+String^ CM_Personne::Update_Adress(void) {
+	return "NULL";
+}
+
+String^ CM_Personne::Delete_Adress(void) {
+	return "NULL";
 }
