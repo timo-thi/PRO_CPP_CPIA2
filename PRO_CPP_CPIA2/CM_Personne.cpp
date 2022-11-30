@@ -1,5 +1,7 @@
 #include "CM_Personne.h"
 
+using namespace System;
+
 CM_Personne::CM_Personne(){}
 
 void CM_Personne::Set_ID(int ID) {
@@ -25,14 +27,28 @@ String^ CM_Personne::Get_Prenom(void) {
 	return this->Prenom;
 }
 
-String^ CM_Personne::Insert_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Insert_Personne(void) {
+
+	Person_Command->Parameters->Clear();
+
+	String^ procedure = "Insert_person";
+	Person_Command = gcnew SqlCommand(procedure);
+
+	Person_Command->Parameters->AddWithValue("@Prenom", this->Get_Prenom());
+	Person_Command->Parameters->AddWithValue("@Nom", this->Get_Nom());
+
+	return this->Person_Command;
 }
+
 String^ CM_Personne::Delete_Personne(void) {
 	return "NULL";
 }
-String^ CM_Personne::Select_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Select_Personne(void) {
+
+	String^ procedure = "Select_person";
+	Person_Command = gcnew SqlCommand(procedure);
+	
+	return this->Person_Command;
 }
 String^ CM_Personne::Update_Personne(void) {
 	return "NULL";

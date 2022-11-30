@@ -10,15 +10,14 @@ private:
 	String^ connexion;
 	String^ requete;
 	SqlConnection^ connecteur;
-	SqlCommand^ commande;
+	//SqlCommand^ commande;
 	SqlDataAdapter^ adapteur;
 	DataSet^ DS;
-	void setSQL(String^);
 public:
 	CM_Connexion();
-	int actionRowID(String^);
-	void actionRows(String^);
-	DataSet^ getRows(String^, String^);
+	int actionRowID(SqlCommand^);
+	void actionRows(SqlCommand^);
+	DataSet^ getRows(SqlCommand^);
 
 };
 

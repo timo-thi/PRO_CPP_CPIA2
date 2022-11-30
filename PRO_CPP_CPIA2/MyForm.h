@@ -1,5 +1,8 @@
 #pragma once
 
+#include "CM_Connexion.h"
+#include"CM_Personne.h"
+
 namespace ProjetPOO {
 
 	using namespace System;
@@ -7,7 +10,8 @@ namespace ProjetPOO {
 	using namespace System::Collections;
 	using namespace System::Windows::Forms;
 	using namespace System::Data;
-	using namespace System::Drawing;
+	using namespace System::Drawing;	
+
 
 	/// <summary>
 	/// Description résumée de MyForm
@@ -21,6 +25,7 @@ namespace ProjetPOO {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+
 		}
 
 	protected:
@@ -34,6 +39,12 @@ namespace ProjetPOO {
 				delete components;
 			}
 		}
+	private: System::Windows::Forms::DataGridView^ dataGridView1;
+	private: System::Windows::Forms::Button^ button1;
+	private: System::Data::DataSet^ DS;
+	protected:
+
+	protected:
 
 	private:
 		/// <summary>
@@ -48,12 +59,63 @@ namespace ProjetPOO {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->components = gcnew System::ComponentModel::Container();
-			this->Size = System::Drawing::Size(300,300);
-			this->Text = L"MyForm";
-			this->Padding = System::Windows::Forms::Padding(0);
+			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
+			this->button1 = (gcnew System::Windows::Forms::Button());
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			this->SuspendLayout();
+			// 
+			// dataGridView1
+			// 
+			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->Location = System::Drawing::Point(45, 67);
+			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->RowHeadersWidth = 51;
+			this->dataGridView1->RowTemplate->Height = 24;
+			this->dataGridView1->Size = System::Drawing::Size(693, 437);
+			this->dataGridView1->TabIndex = 0;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(45, 530);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(131, 56);
+			this->button1->TabIndex = 1;
+			this->button1->Text = L"Load";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &MyForm::button1_Click);
+			// 
+			// MyForm
+			// 
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-		}
+			this->ClientSize = System::Drawing::Size(1052, 612);
+			this->Controls->Add(this->button1);
+			this->Controls->Add(this->dataGridView1);
+			this->Name = L"MyForm";
+			this->Text = L"MyForm";
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			this->ResumeLayout(false);
+
+		
+		} 
 #pragma endregion
+
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+
+		this->dataGridView1->ColumnCount = 3;
+		this->dataGridView1->Columns[0]->Name = "TEST";
+	}
+	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+
+		this->dataGridView1->Refresh();
+		CM_Personne personne;
+		CM_Connexion co;
+
+		this->DS = co.getRows(personne.Select_Personne());
+		this->dataGridView1->DataSource = this->DS;
+		this->dataGridView1->DataMember = "Person";
+	}
+
 	};
 }
+

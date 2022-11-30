@@ -1,48 +1,35 @@
 #include "CM_Connexion.h"
+
 CM_Connexion::CM_Connexion() {
 	this->requete = "RIEN";
-	this->connexion = "Data Source=34.163.225.147;Initial Catalog=leandroBDD;Persist Security Info=True;User ID=sqlserver;Password=Prosit6";
+	this->connexion = "Data Source=35.240.30.222;Initial Catalog=ProjetPOO;Persist Security Info=True;User ID=sqlserver;Password=ProjetPOO";
 	this->connecteur = gcnew SqlConnection(this->connexion);
-	this->commande = gcnew SqlCommand(this->requete, this->connecteur);
-	this->commande->CommandType = CommandType::Text;
 }
 
 
-int CM_Connexion::actionRowID(String^ requete) {
+int CM_Connexion::actionRowID(SqlCommand^ commande) {
 	int id;
-	this->setSQL(requete);
-	this->commande->CommandText = this->requete;
+	commande->Connection = connecteur;
+
 	this->connecteur->Open();
-	id = Convert::ToInt32(this->commande->ExecuteScalar());
+	id = Convert::ToInt32(commande->ExecuteScalar());
 	this->connecteur->Close();
 	return id;
 }
-void  CM_Connexion::actionRows(String^ requete)
+void  CM_Connexion::actionRows(SqlCommand^ commande)
 {
-	this->setSQL(requete);
-	this->commande->CommandText = this->requete;
-	this->connecteur->Open();
-	this->commande->ExecuteNonQuery();
-	this->connecteur->Close();
+	commande->CommandText = this->requete;
+	connecteur->Open();
+	commande->ExecuteNonQuery();
+	connecteur->Close();
 }
-DataSet^ CM_Connexion::getRows(String^ requete, String^ Table)
+DataSet^ CM_Connexion::getRows(SqlCommand^ commande)
 {
-	this->setSQL(requete);
-	this->adapteur = gcnew SqlDataAdapter(this->commande);
-	this->commande->CommandText = this->requete;
+
+	this->adapteur = gcnew SqlDataAdapter(commande);
+	commande->Connection = this->connecteur;
 	this->DS = gcnew DataSet();
-	this->adapteur->Fill(this->DS, Table);
+	this->adapteur->Fill(this->DS, "Person");
 	return this->DS;
-}
-void CM_Connexion::setSQL(String^ requete)
-{
-	if (requete == "" || requete == "RIEN")
-	{
-		this->requete = "RIEN";
-	}
-	else
-	{
-		this->requete = requete;
-	}
 }
 
