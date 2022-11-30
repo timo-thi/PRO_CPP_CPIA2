@@ -14,9 +14,9 @@ protected:
 public:
 	CM_Personne();
 	SqlCommand^ Insert_Personne(void);
-	String^ Delete_Personne(void);
+	SqlCommand^ Delete_Personne(void);
 	SqlCommand^ Select_Personne(void);
-	String^ Update_Personne(void);
+	SqlCommand^ Update_Personne(void);
 
 	void Set_ID(int);
 	int Get_ID(void);

@@ -40,8 +40,13 @@ SqlCommand^ CM_Personne::Insert_Personne(void) {
 	return this->Person_Command;
 }
 
-String^ CM_Personne::Delete_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Delete_Personne(void) {
+	String^ procedure = "Delete_person";
+	Person_Command = gcnew SqlCommand(procedure);
+
+	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Person_Command;
 }
 SqlCommand^ CM_Personne::Select_Personne(void) {
 
@@ -50,8 +55,15 @@ SqlCommand^ CM_Personne::Select_Personne(void) {
 	
 	return this->Person_Command;
 }
-String^ CM_Personne::Update_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Update_Personne(void) {
+	String^ procedure = "Update_person";
+	Person_Command = gcnew SqlCommand(procedure);
+
+	Person_Command->Parameters->AddWithValue("@Prenom", this->Get_Prenom());
+	Person_Command->Parameters->AddWithValue("@Nom", this->Get_Nom());
+	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Person_Command;
 }
 
 String^ CM_Personne::Insert_Adress(void) {
