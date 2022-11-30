@@ -2,10 +2,21 @@
 
     CM_Client::CM_Client() {}
 
-        //String^ Insert_Client();
-        //String^ Delete_Client();
-        //String^ Select_Client();
-        //String^ UpdateClient();
+    String^ CM_Client::Insert_Client() {
+        return "NULL";
+    }
+
+    String^ CM_Client::Delete_Client() {
+        return "NULL";
+    }
+
+    String^ CM_Client::Select_Client() {
+        return "NULL";
+    }
+
+    String^ CM_Client::UpdateClient() {
+        return "NULL";
+    }
 
     String^ CM_Client::Get_Mail() { return this->Mail; }
     void CM_Client::Set_Mail(String^ tMail) { this->Mail = tMail; }
@@ -17,5 +28,5 @@
     void CM_Client::Set_Adresse_Livraison(int* tAdresse) { this->Adresse_Livraison = tAdresse; }
 
     int* CM_Client::Get_Adresse_Facturation() { return this->Adresse_Facturation; }
-    void CM_Client::Set_Adresse_Livraison(int* tAdresse) { this->Adresse_Facturation = tAdresse; }
+    void CM_Client::Set_Adresse_Facturation(int* tAdresse) { this->Adresse_Facturation = tAdresse; }
 

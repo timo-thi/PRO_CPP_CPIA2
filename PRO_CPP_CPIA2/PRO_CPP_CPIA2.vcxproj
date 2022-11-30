@@ -121,6 +121,9 @@
     <ClInclude Include="CM_Staff.h" />
     <ClInclude Include="CM_Stat.h" />
     <ClInclude Include="CM_Stock.h" />
+    <ClInclude Include="MyForm.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SG_Classic.h" />
     <ClInclude Include="SG_Client.h" />
     <ClInclude Include="SG_Orders.h" />
@@ -138,6 +141,7 @@
     <ClCompile Include="CM_Staff.cpp" />
     <ClCompile Include="CM_Stat.cpp" />
     <ClCompile Include="CM_Stock.cpp" />
+    <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
     <ClCompile Include="SG_Orders.cpp" />
@@ -149,6 +153,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

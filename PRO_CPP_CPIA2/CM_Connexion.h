@@ -3,6 +3,7 @@ using namespace System::Data;
 using namespace System::Data::SqlClient;
 using namespace System::Xml;
 using namespace System;
+
 ref class CM_Connexion
 {
 private:
