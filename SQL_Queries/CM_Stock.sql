@@ -1,3 +1,6 @@
+Use ProjetPOO;
+GO
+
 DROP PROCEDURE IF EXISTS Select_Product;
 GO
 
@@ -73,7 +76,6 @@ AS
 BEGIN
 	SELECT [CAT_ID]
 		,[CAT_Name]
-		,[CAT_TVA]
 	FROM [dbo].[Categories];
 END
 GO
@@ -82,16 +84,13 @@ DROP PROCEDURE IF EXISTS Insert_Categories;
 GO
 
 CREATE PROCEDURE Insert_Categories
-	@Name VARCHAR(50),
-	@TVA decimal(5, 5)
+	@Name VARCHAR(50)
 AS
 BEGIN
 INSERT INTO [dbo].[Categories]
-           ([CAT_Name]
-           ,[CAT_TVA])
+           ([CAT_Name])
      VALUES
-           (@Name
-           ,@TVA);
+           (@Name);
 END
 GO
 
@@ -100,13 +99,11 @@ GO
 
 CREATE PROCEDURE Update_Categories
 	@ID int = NULL,
-	@Name VARCHAR(50) = NULL,
-	@TVA decimal(5, 5) = NULL
+	@Name VARCHAR(50) = NULL
 AS
 BEGIN
 	UPDATE [dbo].[Categories]
 	SET [CAT_Name] = ISNULL(@Name, Categories.CAT_Name)
-		,[CAT_TVA] = ISNULL(@TVA, Categories.CAT_TVA)
 	WHERE CAT_ID = @ID;
 END
 GO
@@ -122,7 +119,6 @@ BEGIN
 		WHERE CAT_ID = @ID;
 END
 GO
-
 
 DROP PROCEDURE IF EXISTS Select_Ls;
 GO
@@ -152,7 +148,6 @@ BEGIN
 			   ,@cat_id)
 END
 GO
-
 
 DROP PROCEDURE IF EXISTS Delete_Ls;
 GO
