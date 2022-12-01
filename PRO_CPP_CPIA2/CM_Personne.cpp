@@ -1,6 +1,13 @@
 #include "CM_Personne.h"
 
-CM_Personne::CM_Personne(){}
+using namespace System;
+using namespace NS_Composants;
+
+
+CM_Personne::CM_Personne():CM_Classic::CM_Classic(){
+	this->Prenom = "Vraiment";
+	this->Nom = "Nul";
+}
 
 void CM_Personne::Set_ID(int ID) {
 	this->ID = ID;
@@ -25,17 +32,38 @@ String^ CM_Personne::Get_Prenom(void) {
 	return this->Prenom;
 }
 
-String^ CM_Personne::Insert_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Insert_Personne(void) {
+	
+	Start_Procedure("Insert_person");
+
+	Procedure->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Procedure->Parameters->AddWithValue("@nom", this->Get_Nom());
+
+	return this->Procedure;
 }
-String^ CM_Personne::Delete_Personne(void) {
-	return "NULL";
+
+SqlCommand^ CM_Personne::Delete_Personne(void) {
+	
+	Start_Procedure("Delete_person");
+
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Procedure;
 }
-String^ CM_Personne::Select_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Select_Personne(void) {
+
+	Start_Procedure("Select_person");
+	return this->Procedure;
 }
-String^ CM_Personne::Update_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Update_Personne(void) {
+	
+	Start_Procedure("Update_person");
+
+	Procedure->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Procedure->Parameters->AddWithValue("@nom", this->Get_Nom());
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Procedure;
 }
 
 String^ CM_Personne::Insert_Adress(void) {

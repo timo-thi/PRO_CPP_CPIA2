@@ -1,6 +1,7 @@
 #include "SG_Staff.h"
 #include"CM_Staff.h"
 
+using namespace NS_Services;
 
 SG_Staff::SG_Staff() {}
 

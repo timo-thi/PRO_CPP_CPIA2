@@ -1,6 +1,8 @@
 #include "SG_Orders.h"
 #include "CM_Orders.h"
 
+using namespace NS_Services;
+
 SG_Orders::SG_Orders(void){
 }
 

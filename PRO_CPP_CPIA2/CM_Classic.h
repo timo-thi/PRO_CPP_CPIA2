@@ -1,7 +1,18 @@
 #pragma once
-using namespace System;
 
-ref class CM_Classic
+using namespace System;
+using namespace System::Data::SqlClient;
+using namespace System::Data;
+
+
+namespace NS_Composants
 {
-public: CM_Classic();
+	ref class CM_Classic
+	{
+	public: CM_Classic();
+
+	protected:
+		SqlCommand^ Procedure;
+		void Start_Procedure(String^);
+	};
 };

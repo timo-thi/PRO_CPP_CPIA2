@@ -1,6 +1,8 @@
 #include "SG_Stat.h"
 #include "CM_Stat.h"
 
+using namespace NS_Services;
+
 SG_Stat::SG_Stat(void){
 }
 

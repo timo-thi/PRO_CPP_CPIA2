@@ -1,5 +1,7 @@
 #include "CM_Stock.h"
 
+using namespace NS_Composants;
+
 CM_Stock::CM_Stock() {
 
 }
@@ -45,18 +47,41 @@ void CM_Stock::Set_Seuil_restock(int New_SeRe){
 }
 
 
-String^ CM_Stock::Insert_Stock(void){
-	return "NULL";
+SqlCommand^ CM_Stock::Insert_Stock(void){
+	
+	Start_Procedure("Insert_Product");
+
+	Procedure->Parameters->AddWithValue("@Name", this->Get_Nom());
+	Procedure->Parameters->AddWithValue("@Price", this->Get_Prix());
+	Procedure->Parameters->AddWithValue("@Stock", this->Get_Stock());
+	Procedure->Parameters->AddWithValue("@Restock_Threshold", this->Get_Seuil_restock());
+
+	return Procedure;
 }
 
-String^ CM_Stock::Delete_Stock(void){
-	return "NULL";
+SqlCommand^ CM_Stock::Delete_Stock(void){
+
+	Start_Procedure("Delete_Product");
+
+	return Procedure;
 }
 
-String^ CM_Stock::Update_Stock(void){
-	return "NULL";
+SqlCommand^ CM_Stock::Update_Stock(void){
+
+	Start_Procedure("Insert_Product");
+
+	Procedure->Parameters->AddWithValue("@Product_ID", this->Get_Reference());
+	Procedure->Parameters->AddWithValue("@Name", this->Get_Nom());
+	Procedure->Parameters->AddWithValue("@Price", this->Get_Prix());
+	Procedure->Parameters->AddWithValue("@Stock", this->Get_Stock());
+	Procedure->Parameters->AddWithValue("@Restock_Threshold", this->Get_Seuil_restock());
+
+	return Procedure;
 }
 
-String^ CM_Stock::Select_Stock(void){
-	return "NULL";
+SqlCommand^ CM_Stock::Select_Stock(void){
+
+	Start_Procedure("Select_Product");
+
+	return Procedure;
 }
