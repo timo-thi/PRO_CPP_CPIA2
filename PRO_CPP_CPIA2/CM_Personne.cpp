@@ -2,7 +2,7 @@
 
 using namespace System;
 
-CM_Personne::CM_Personne(){
+CM_Personne::CM_Personne():CM_Classic::CM_Classic(){
 	this->Prenom = "Vraiment";
 	this->Nom = "Nul";
 }
@@ -31,46 +31,37 @@ String^ CM_Personne::Get_Prenom(void) {
 }
 
 SqlCommand^ CM_Personne::Insert_Personne(void) {
+	
+	Start_Procedure("Insert_person");
 
-	String^ procedure = "Insert_person";
-	Person_Command = gcnew SqlCommand(procedure);
-	Person_Command->CommandType = CommandType::StoredProcedure;
-	Person_Command->Parameters->Clear();
+	Procedure->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Procedure->Parameters->AddWithValue("@nom", this->Get_Nom());
 
-	Person_Command->Parameters->AddWithValue("@prenom", this->Get_Prenom());
-	Person_Command->Parameters->AddWithValue("@nom", this->Get_Nom());
-
-	return this->Person_Command;
+	return this->Procedure;
 }
 
 SqlCommand^ CM_Personne::Delete_Personne(void) {
-	String^ procedure = "Delete_person";
-	Person_Command = gcnew SqlCommand(procedure);
-	Person_Command->CommandType = CommandType::StoredProcedure;
-	Person_Command->Parameters->Clear();
+	
+	Start_Procedure("Delete_person");
 
-	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
 
-	return this->Person_Command;
+	return this->Procedure;
 }
 SqlCommand^ CM_Personne::Select_Personne(void) {
 
-	String^ procedure = "Select_person";
-	Person_Command = gcnew SqlCommand(procedure);
-	
-	return this->Person_Command;
+	Start_Procedure("Select_person");
+	return this->Procedure;
 }
 SqlCommand^ CM_Personne::Update_Personne(void) {
-	String^ procedure = "Update_person";
-	Person_Command = gcnew SqlCommand(procedure);
-	Person_Command->CommandType = CommandType::StoredProcedure;
-	Person_Command->Parameters->Clear();
+	
+	Start_Procedure("Update_person");
 
-	Person_Command->Parameters->AddWithValue("@prenom", this->Get_Prenom());
-	Person_Command->Parameters->AddWithValue("@nom", this->Get_Nom());
-	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+	Procedure->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Procedure->Parameters->AddWithValue("@nom", this->Get_Nom());
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
 
-	return this->Person_Command;
+	return this->Procedure;
 }
 
 String^ CM_Personne::Insert_Adress(void) {

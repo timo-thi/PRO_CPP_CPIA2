@@ -2,8 +2,6 @@
 #include "CM_Classic.h"
 
 
-using namespace System::Data::SqlClient;
-using namespace System::Data;
 
 ref class CM_Personne : public CM_Classic
 {
@@ -11,7 +9,7 @@ protected:
 	int ID;
 	String^ Nom;
 	String^ Prenom;
-	SqlCommand^ Person_Command;
+
 
 public:
 	CM_Personne();

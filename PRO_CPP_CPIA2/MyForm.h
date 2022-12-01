@@ -210,49 +210,45 @@ namespace ProjetPOO {
 		}
 #pragma endregion
 
-	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {}
 
-		this->dataGridView1->ColumnCount = 3;
-		this->dataGridView1->Columns[0]->Name = "TEST";
-	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		this->dataGridView1->Refresh();
-		this->DS = co.getRows(personne.Select_Personne(),"Person");
+		this->DS = co.getRows(personne.Select_Personne(),"Result");
 		this->dataGridView1->DataSource = this->DS;
-		this->dataGridView1->DataMember = "Person";
+		this->dataGridView1->DataMember = "Result";
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		this->personne.Set_Prenom(textBox1->Text);
 		this->personne.Set_Nom(textBox2->Text);
-		this->DS = co.getRows(personne.Insert_Personne(),"Person");
+		this->DS = co.getRows(personne.Insert_Personne(),"Result");
 		button1->PerformClick();
 	}
 
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		this->dataGridView1->Refresh();
-		this->personne.Set_Prenom(textBox1->Text);
-		this->personne.Set_Nom(textBox2->Text);
-		this->DS = co.getRows(personne.Update_Personne(), "Person");
+		if (textBox1->Text !="") this->personne.Set_Prenom(textBox1->Text);
+		if (textBox2->Text != "") this->personne.Set_Nom(textBox2->Text);
+		this->DS = co.getRows(personne.Update_Personne(), "Result");
 		button1->PerformClick();
 	}
 
 	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		this->dataGridView1->Refresh();
-
-		this->DS = co.getRows(personne.Delete_Personne(), "Person");
+		this->DS = co.getRows(personne.Delete_Personne(), "Result");
 		button1->PerformClick();
 	}
 
 	private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		this->label1->Text = this->dataGridView1->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
 		if (this->dataGridView1->Rows[e->RowIndex]->Cells["ID"]->Value->ToString() != "") this->personne.Set_ID(Convert::ToDouble(this->dataGridView1->Rows[e->RowIndex]->Cells["ID"]->Value));
+		
 		this->label2->Text = this->dataGridView1->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString();
 		this->personne.Set_Prenom(this->dataGridView1->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString());
+		
 		this->label3->Text = this->dataGridView1->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString();
 		this->personne.Set_Prenom(this->dataGridView1->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString());
 	}
