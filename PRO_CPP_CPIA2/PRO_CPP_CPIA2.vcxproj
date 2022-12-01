@@ -121,6 +121,12 @@
     <ClInclude Include="CM_Staff.h" />
     <ClInclude Include="CM_Stat.h" />
     <ClInclude Include="CM_Stock.h" />
+    <ClInclude Include="InterfaceEmploye.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InterfaceManager.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -141,6 +147,8 @@
     <ClCompile Include="CM_Staff.cpp" />
     <ClCompile Include="CM_Stat.cpp" />
     <ClCompile Include="CM_Stock.cpp" />
+    <ClCompile Include="InterfaceEmploye.cpp" />
+    <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
@@ -158,6 +166,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InterfaceEmploye.resx">
+      <DependentUpon>InterfaceEmploye.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceManager.resx">
+      <DependentUpon>InterfaceManager.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

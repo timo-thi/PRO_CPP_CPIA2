@@ -9,6 +9,11 @@ namespace NS_Composants
 		int ID;
 		String^ Nom;
 		String^ Prenom;
+		String^ Street_Name;
+		String^ Details;
+		int ID_Adress;
+		int Num;
+		int ID_City;
 
 
 	public:
@@ -27,9 +32,25 @@ namespace NS_Composants
 		void Set_Prenom(String^);
 		String^ Get_Prenom(void);
 
-		String^ Insert_Adress(void);
-		String^ Select_Adress(void);
-		String^ Update_Adress(void);
-		String^ Delete_Adress(void);
+		void Set_ID_Adress(int);
+		int Get_ID_Adress(void);
+
+		void Set_Details(String^);
+		String^ Get_Details(void);
+
+		void Set_Street_Name(String^);
+		String^ Get_Street_Name(void);
+
+		void Set_Num(int);
+		int Get_Num(void);
+
+		void Set_ID_City(int);
+		int Get_ID_City(void);
+
+
+		SqlCommand^ Insert_Adress(void);
+		SqlCommand^ Select_Adress(void);
+		SqlCommand^ Update_Adress(void);
+		SqlCommand^ Delete_Adress(void);
 	};
 };
