@@ -1,5 +1,7 @@
 #include "CM_Connexion.h"
 
+using namespace NS_Composants;
+
 CM_Connexion::CM_Connexion() {
 	this->requete = "RIEN";
 	this->connexion = "Data Source=35.240.30.222;Initial Catalog=ProjetPOO;Persist Security Info=True;User ID=sqlserver;Password=ProjetPOO";

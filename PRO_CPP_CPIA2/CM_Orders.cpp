@@ -1,5 +1,7 @@
 #include "CM_Orders.h"
 
+using namespace NS_Composants;
+
 CM_Orders::CM_Orders(void){
 
 }

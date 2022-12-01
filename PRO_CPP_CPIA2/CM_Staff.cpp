@@ -1,5 +1,7 @@
 #include "CM_Staff.h"
 
+using namespace NS_Composants;
+
 CM_Staff::CM_Staff() {}
 
 String ^ CM_Staff::Insert_Staff() {

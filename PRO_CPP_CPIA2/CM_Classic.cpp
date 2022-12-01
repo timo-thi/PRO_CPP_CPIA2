@@ -2,6 +2,9 @@
 
 using namespace System::Data::SqlClient;
 using namespace System::Data;
+
+using namespace NS_Composants;
+
 CM_Classic::CM_Classic() {
 }
 

@@ -1,16 +1,18 @@
 #pragma once
 #include "SG_Personne.h"
 
-ref class SG_Staff :
-    public SG_Personne {
+namespace NS_Services
+{
+    ref class SG_Staff :
+        public SG_Personne {
 
-public:
+    public:
 
-    SG_Staff();
+        SG_Staff();
 
-    void Add_Staff();
-    void Remove_Staff();
-    void Update_Staff();
-    void Fetch_Staff();
+        void Add_Staff();
+        void Remove_Staff();
+        void Update_Staff();
+        void Fetch_Staff();
+    };
 };
-

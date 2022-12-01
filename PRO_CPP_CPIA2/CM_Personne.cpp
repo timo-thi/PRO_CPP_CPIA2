@@ -1,6 +1,8 @@
 #include "CM_Personne.h"
 
 using namespace System;
+using namespace NS_Composants;
+
 
 CM_Personne::CM_Personne():CM_Classic::CM_Classic(){
 	this->Prenom = "Vraiment";

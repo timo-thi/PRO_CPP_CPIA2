@@ -1,5 +1,7 @@
 #include "CM_Stat.h"
 
+using namespace NS_Composants;
+
 String^ CM_Stat::Calcul_Panier(void) {
 	return "NULL";
 }

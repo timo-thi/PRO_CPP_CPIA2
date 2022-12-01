@@ -1,16 +1,18 @@
 #pragma once
 #include "SG_Personne.h"
 
-ref class SG_Client :
-    public SG_Personne {
+namespace NS_Services
+{
+    ref class SG_Client :
+        public SG_Personne {
 
-public:
+    public:
 
-    SG_Client();
+        SG_Client();
 
-    void Add_Client();
-    void Remove_Client();
-    void Update_Client();
-    void Fetch_Client();
+        void Add_Client();
+        void Remove_Client();
+        void Update_Client();
+        void Fetch_Client();
+    };
 };
-

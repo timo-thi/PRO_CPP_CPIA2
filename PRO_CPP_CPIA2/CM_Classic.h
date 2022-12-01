@@ -5,11 +5,14 @@ using namespace System::Data::SqlClient;
 using namespace System::Data;
 
 
-ref class CM_Classic
+namespace NS_Composants
 {
-public: CM_Classic();
+	ref class CM_Classic
+	{
+	public: CM_Classic();
 
-protected:
-	SqlCommand^ Procedure;
-	void Start_Procedure(String^);
+	protected:
+		SqlCommand^ Procedure;
+		void Start_Procedure(String^);
+	};
 };
