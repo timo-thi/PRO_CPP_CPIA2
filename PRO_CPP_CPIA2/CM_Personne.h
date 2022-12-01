@@ -1,7 +1,9 @@
 #pragma once
 #include "CM_Classic.h"
 
+
 using namespace System::Data::SqlClient;
+using namespace System::Data;
 
 ref class CM_Personne : public CM_Classic
 {

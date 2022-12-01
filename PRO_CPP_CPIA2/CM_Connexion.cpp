@@ -25,7 +25,6 @@ void  CM_Connexion::actionRows(SqlCommand^ commande)
 }
 DataSet^ CM_Connexion::getRows(SqlCommand^ commande, String^ nom)
 {
-
 	this->adapteur = gcnew SqlDataAdapter(commande);
 	commande->Connection = this->connecteur;
 	this->DS = gcnew DataSet();
