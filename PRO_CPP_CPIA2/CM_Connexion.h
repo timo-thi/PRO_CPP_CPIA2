@@ -17,7 +17,7 @@ public:
 	CM_Connexion();
 	int actionRowID(SqlCommand^);
 	void actionRows(SqlCommand^);
-	DataSet^ getRows(SqlCommand^);
+	DataSet^ getRows(SqlCommand^, String^);
 
 };
 

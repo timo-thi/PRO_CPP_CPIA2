@@ -2,7 +2,10 @@
 
 using namespace System;
 
-CM_Personne::CM_Personne(){}
+CM_Personne::CM_Personne(){
+	this->Prenom = "Vraiment";
+	this->Nom = "Nul";
+}
 
 void CM_Personne::Set_ID(int ID) {
 	this->ID = ID;
@@ -29,19 +32,26 @@ String^ CM_Personne::Get_Prenom(void) {
 
 SqlCommand^ CM_Personne::Insert_Personne(void) {
 
-	Person_Command->Parameters->Clear();
-
 	String^ procedure = "Insert_person";
 	Person_Command = gcnew SqlCommand(procedure);
+	Person_Command->CommandType = CommandType::StoredProcedure;
+	Person_Command->Parameters->Clear();
 
-	Person_Command->Parameters->AddWithValue("@Prenom", this->Get_Prenom());
-	Person_Command->Parameters->AddWithValue("@Nom", this->Get_Nom());
+	Person_Command->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Person_Command->Parameters->AddWithValue("@nom", this->Get_Nom());
 
 	return this->Person_Command;
 }
 
-String^ CM_Personne::Delete_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Delete_Personne(void) {
+	String^ procedure = "Delete_person";
+	Person_Command = gcnew SqlCommand(procedure);
+	Person_Command->CommandType = CommandType::StoredProcedure;
+	Person_Command->Parameters->Clear();
+
+	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Person_Command;
 }
 SqlCommand^ CM_Personne::Select_Personne(void) {
 
@@ -50,8 +60,17 @@ SqlCommand^ CM_Personne::Select_Personne(void) {
 	
 	return this->Person_Command;
 }
-String^ CM_Personne::Update_Personne(void) {
-	return "NULL";
+SqlCommand^ CM_Personne::Update_Personne(void) {
+	String^ procedure = "Update_person";
+	Person_Command = gcnew SqlCommand(procedure);
+	Person_Command->CommandType = CommandType::StoredProcedure;
+	Person_Command->Parameters->Clear();
+
+	Person_Command->Parameters->AddWithValue("@prenom", this->Get_Prenom());
+	Person_Command->Parameters->AddWithValue("@nom", this->Get_Nom());
+	Person_Command->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return this->Person_Command;
 }
 
 String^ CM_Personne::Insert_Adress(void) {

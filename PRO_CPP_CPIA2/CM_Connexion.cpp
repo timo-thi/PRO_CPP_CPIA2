@@ -23,13 +23,12 @@ void  CM_Connexion::actionRows(SqlCommand^ commande)
 	commande->ExecuteNonQuery();
 	connecteur->Close();
 }
-DataSet^ CM_Connexion::getRows(SqlCommand^ commande)
+DataSet^ CM_Connexion::getRows(SqlCommand^ commande, String^ nom)
 {
-
 	this->adapteur = gcnew SqlDataAdapter(commande);
 	commande->Connection = this->connecteur;
 	this->DS = gcnew DataSet();
-	this->adapteur->Fill(this->DS, "Person");
+	this->adapteur->Fill(this->DS, nom);
 	return this->DS;
 }
 
