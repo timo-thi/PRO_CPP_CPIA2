@@ -10,8 +10,16 @@ CM_Identification::CM_Identification() : CM_Classic::CM_Classic() {
 SqlCommand^ CM_Identification::Identify() {
 	Start_Procedure("Check_Identification");
 
-	this->Procedure->Parameters->AddWithValue("@mail", this->Mail);
-	this->Procedure->Parameters->AddWithValue("@psw", this->Password);
+	this->Procedure->Parameters->AddWithValue("@mail", this->Get_Mail());
+	this->Procedure->Parameters->AddWithValue("@psw", this->Get_Password());
+
+	return this->Procedure;
+}
+
+SqlCommand^ CM_Identification::Fetch_Role() {
+	Start_Procedure("Fetch_Role");
+
+	this->Procedure->Parameters->AddWithValue("@mail", this->Get_Mail());
 
 	return this->Procedure;
 }

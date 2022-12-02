@@ -14,7 +14,9 @@ namespace NS_Composants
 		String^ Password;
 	public:
 		CM_Identification();
+
 		SqlCommand^ Identify();
+		SqlCommand^ Fetch_Role();
 
 		String^ Get_Mail(void);
 		void Set_Mail(String^);

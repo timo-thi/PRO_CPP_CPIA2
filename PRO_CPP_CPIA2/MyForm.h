@@ -136,8 +136,14 @@ namespace ProjetPOO {
 			return;
 		}
 		this->Hide();
-		InterfaceManager^ f2 = gcnew InterfaceManager();
-		f2->Show();
+		if (this->SG_Id->Fetch_Role() == "Ingenieur") {
+			InterfaceEmploye^ f1 = gcnew InterfaceEmploye();
+			f1->Show();
+		}
+		else if (this->SG_Id->Fetch_Role() == "Manager") {
+			InterfaceManager^ f2 = gcnew InterfaceManager();
+			f2->Show();
+		}
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

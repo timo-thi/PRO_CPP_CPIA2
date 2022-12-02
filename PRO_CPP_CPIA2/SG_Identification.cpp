@@ -17,6 +17,11 @@ bool SG_Identification::Check_Identity(String^ mail, String^ pwd) {
 
 	this->data = this->CConnexion->getRows(this->IDF->Identify(), "IDF");
 
-	if (this->data->Tables["IDF"]->Rows[0]->ItemArray[0] == 1) return true;
-	return false;
+	return this->data->Tables[0]->Rows[0]->ItemArray[0]->Equals(true);
+}
+
+String^ SG_Identification::Fetch_Role() {
+	this->data = this->CConnexion->getRows(this->IDF->Fetch_Role(), "Role");
+
+	return (String^)this->data->Tables[0]->Rows[0]->ItemArray[0]; // Casting to string because compiler can't guess how to convert System::Object ^ Object
 }

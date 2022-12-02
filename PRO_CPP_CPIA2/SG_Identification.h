@@ -12,5 +12,6 @@ namespace NS_Services
     public:
         SG_Identification();
         bool Check_Identity(String^, String^);
+        String^ Fetch_Role(); // No argument because the idetificaiton mail should be stored in IDF->Mail
     };
 }
