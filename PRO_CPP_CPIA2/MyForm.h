@@ -137,10 +137,10 @@ namespace ProjetPOO {
 		}
 		this->Hide();
 		if (this->SG_Id->Fetch_Role() == "Ingenieur") {
-			InterfaceEmploye^ f1 = gcnew InterfaceEmploye();
+			InterfaceEmploye^ f1 = gcnew InterfaceEmploye(); // InterfaceEmployee
 			f1->Show();
 		}
-		else if (this->SG_Id->Fetch_Role() == "Manager") {
+		else if (this->SG_Id->Fetch_Role() == "Manager") { // Not using else alone to prevent unwanted consequences if roles are added to the database
 			InterfaceManager^ f2 = gcnew InterfaceManager();
 			f2->Show();
 		}
