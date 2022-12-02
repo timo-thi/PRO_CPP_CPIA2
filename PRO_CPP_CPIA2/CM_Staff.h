@@ -7,27 +7,31 @@ namespace NS_Composants
         public CM_Personne {
 
     private:
-        int* Role;
-        int* Adresse;
-
+        String^ Role;
+        int Adresse_ID;
+        int Person_ID;
+        int Sup_ID;
     public:
 
         CM_Staff();
 
-        String^ Insert_Staff();
-        String^ Delete_Staff();
-        String^ Select_Staff();
-        String^ Update_Staff();
+        SqlCommand^ Insert_Staff();
+        SqlCommand^ Delete_Staff();
+        SqlCommand^ Select_Staff();
+        SqlCommand^ Update_Staff();
 
-        String^ Insert_Role();
-        String^ Delete_Role();
-        String^ Select_Role();
-        String^ Update_Role();
+        
 
-        int* Get_Role();
-        void Set_Role(int*);
+        String^ Get_Role();
+        void Set_Role(String^);
 
-        int* Get_Adresse();
-        void Set_Adresse(int*);
+        int Get_Adresse();
+        void Set_Adresse(int);
+
+        int Get_Person();
+        void Set_Person(int);
+
+        int Get_Sup();
+        void Set_Sup(int);
     };
 };
