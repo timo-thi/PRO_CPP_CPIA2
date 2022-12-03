@@ -200,6 +200,8 @@ private: String^ mode = "RIEN";
 private: Data::DataSet^ dsPersonne = gcnew Data::DataSet();
 private: SG_Personne^ processusPersonnes = gcnew SG_Personne();
 private: System::Windows::Forms::Button^ button44;
+private: System::Windows::Forms::Label^ label54;
+private: System::Windows::Forms::Label^ textAffichage;
 
 
 
@@ -367,6 +369,8 @@ private: System::Windows::Forms::Button^ button44;
 			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
 			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
+			this->textAffichage = (gcnew System::Windows::Forms::Label());
+			this->label54 = (gcnew System::Windows::Forms::Label());
 			this->button44 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView5 = (gcnew System::Windows::Forms::DataGridView());
 			this->button38 = (gcnew System::Windows::Forms::Button());
@@ -1786,6 +1790,8 @@ private: System::Windows::Forms::Button^ button44;
 			// 
 			// tabPage8
 			// 
+			this->tabPage8->Controls->Add(this->textAffichage);
+			this->tabPage8->Controls->Add(this->label54);
 			this->tabPage8->Controls->Add(this->button44);
 			this->tabPage8->Controls->Add(this->dataGridView5);
 			this->tabPage8->Controls->Add(this->button38);
@@ -1808,6 +1814,24 @@ private: System::Windows::Forms::Button^ button44;
 			this->tabPage8->Text = L"Gestion personne";
 			this->tabPage8->UseVisualStyleBackColor = true;
 			this->tabPage8->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage8_Click);
+			// 
+			// textAffichage
+			// 
+			this->textAffichage->AutoSize = true;
+			this->textAffichage->Location = System::Drawing::Point(116, 356);
+			this->textAffichage->Name = L"textAffichage";
+			this->textAffichage->Size = System::Drawing::Size(66, 13);
+			this->textAffichage->TabIndex = 77;
+			this->textAffichage->Text = L"ID Personne";
+			this->textAffichage->Click += gcnew System::EventHandler(this, &InterfaceManager::textAffichage_Click);
+			// 
+			// label54
+			// 
+			this->label54->AutoSize = true;
+			this->label54->Location = System::Drawing::Point(142, 356);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(0, 13);
+			this->label54->TabIndex = 76;
 			// 
 			// button44
 			// 
@@ -1838,6 +1862,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button38->TabIndex = 73;
 			this->button38->Text = L"<";
 			this->button38->UseVisualStyleBackColor = true;
+			this->button38->Click += gcnew System::EventHandler(this, &InterfaceManager::button38_Click);
 			// 
 			// button39
 			// 
@@ -1847,6 +1872,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button39->TabIndex = 72;
 			this->button39->Text = L">";
 			this->button39->UseVisualStyleBackColor = true;
+			this->button39->Click += gcnew System::EventHandler(this, &InterfaceManager::button39_Click);
 			// 
 			// button40
 			// 
@@ -1856,6 +1882,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button40->TabIndex = 70;
 			this->button40->Text = L"Enregistrer";
 			this->button40->UseVisualStyleBackColor = true;
+			this->button40->Click += gcnew System::EventHandler(this, &InterfaceManager::button40_Click);
 			// 
 			// button41
 			// 
@@ -1865,6 +1892,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button41->TabIndex = 71;
 			this->button41->Text = L"Modifier";
 			this->button41->UseVisualStyleBackColor = true;
+			this->button41->Click += gcnew System::EventHandler(this, &InterfaceManager::button41_Click);
 			// 
 			// button42
 			// 
@@ -1874,6 +1902,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button42->TabIndex = 69;
 			this->button42->Text = L"Supprimer";
 			this->button42->UseVisualStyleBackColor = true;
+			this->button42->Click += gcnew System::EventHandler(this, &InterfaceManager::button42_Click);
 			// 
 			// button43
 			// 
@@ -1883,6 +1912,7 @@ private: System::Windows::Forms::Button^ button44;
 			this->button43->TabIndex = 68;
 			this->button43->Text = L"Ajouter";
 			this->button43->UseVisualStyleBackColor = true;
+			this->button43->Click += gcnew System::EventHandler(this, &InterfaceManager::button43_Click);
 			// 
 			// textPersonnePrenom
 			// 
@@ -1976,9 +2006,10 @@ private: void loadDataPersonne(int index)
 {
 	this->dsPersonne->Clear();
 	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->textPersonneID->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+	this->textPersonneID->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[this->index]->ItemArray[0]);
 	this->textPersonneNom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[1]);
 	this->textPersonnePrenom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+
 }
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -2015,6 +2046,57 @@ private: System::Void textBox42_TextChanged(System::Object^ sender, System::Even
 
 private: System::Void button44_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->loadDataPersonne(0);
+}
+private: System::Void button39_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->dsPersonne->Tables["liste"]->Rows->Count - 1)
+	{
+		this->index++;
+		this->loadDataPersonne(this->index);
+	}
+}
+private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0)
+	{
+		this->index--;
+		this->loadDataPersonne(this->index);
+		
+	}
+}
+private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->textPersonneID->Clear();
+	this->textPersonneNom->Clear();
+	this->textPersonnePrenom->Clear();
+	this->mode = "nouv";
+	this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
+}
+private: System::Void textAffichage_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button41_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "maj";
+	this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
+}
+private: System::Void button42_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "sup";
+	this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+}
+private: System::Void button40_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->mode == "nouv")
+	{
+		int Id;
+		Id = this->processusPersonnes->Add_Personne(this->textPersonnePrenom->Text, this->textPersonneNom->Text);
+		this->textAffichage->Text = "L'ID généré est le : " + Id + ". ";
+	}
+	else if (this->mode == "maj")
+	{
+		this->processusPersonnes->Update_Personne(Convert::ToInt32(this->textPersonneID->Text), this->textPersonnePrenom->Text, this->textPersonneNom->Text);
+	}
+	else if (this->mode == "sup")
+	{
+		this->processusPersonnes->Remove_Personne(Convert::ToInt32(this->textPersonneID->Text));
+	}
+	this->index = 0;
+	this->loadDataPersonne(this->index);
+	this->textAffichage->Text += "Traitement terminé.";
 }
 };
 }

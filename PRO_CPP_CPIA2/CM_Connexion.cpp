@@ -20,10 +20,10 @@ int CM_Connexion::actionRowID(SqlCommand^ commande) {
 }
 void  CM_Connexion::actionRows(SqlCommand^ commande)
 {
-	commande->CommandText = this->requete;
-	connecteur->Open();
+	commande->Connection = connecteur;
+	this->connecteur->Open();
 	commande->ExecuteNonQuery();
-	connecteur->Close();
+	this->connecteur->Close();
 }
 DataSet^ CM_Connexion::getRows(SqlCommand^ commande, String^ nom)
 {

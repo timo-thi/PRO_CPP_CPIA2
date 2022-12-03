@@ -13,7 +13,7 @@ DataSet^ SG_Personne::ListePersonne(String^ Table)
 {
 	this->dataPersonne->Clear();
 	this->dataPersonne = this->AccesPersonne->getRows(this->MapPersonne->Select_Personne(), Table);
-	return this->data;
+	return this->dataPersonne;
 }
 
 int SG_Personne::Add_Personne(String^ nom , String^ prenom) {
