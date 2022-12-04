@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "SG_Personne.h"
+#include "SG_Client.h"
 using namespace  NS_Services;
 namespace ProjetPOO {
 
@@ -47,21 +48,21 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button3;
 	private: System::Windows::Forms::Button^ button2;
 	private: System::Windows::Forms::Button^ button1;
-	private: System::Windows::Forms::TextBox^ textBox8;
+	private: System::Windows::Forms::TextBox^ textFacturation;
 	private: System::Windows::Forms::Label^ label8;
-	private: System::Windows::Forms::TextBox^ textBox7;
+	private: System::Windows::Forms::TextBox^ textLivraison;
 	private: System::Windows::Forms::Label^ label7;
-	private: System::Windows::Forms::TextBox^ textBox6;
+	private: System::Windows::Forms::TextBox^ textAniiv;
 	private: System::Windows::Forms::Label^ label6;
-	private: System::Windows::Forms::TextBox^ textBox5;
+	private: System::Windows::Forms::TextBox^ textPremiereCommande;
 	private: System::Windows::Forms::Label^ label5;
-	private: System::Windows::Forms::TextBox^ textBox4;
+	private: System::Windows::Forms::TextBox^ textMail;
 	private: System::Windows::Forms::Label^ label4;
-	private: System::Windows::Forms::TextBox^ textBox3;
-	private: System::Windows::Forms::Label^ label3;
-	private: System::Windows::Forms::TextBox^ textBox2;
-	private: System::Windows::Forms::Label^ label2;
-	private: System::Windows::Forms::TextBox^ textBox1;
+
+
+
+
+	private: System::Windows::Forms::TextBox^ textClientID;
 	private: System::Windows::Forms::Button^ button11;
 	private: System::Windows::Forms::Button^ button12;
 	private: System::Windows::Forms::Button^ button10;
@@ -199,9 +200,19 @@ private: int index = 0;
 private: String^ mode = "RIEN";
 private: Data::DataSet^ dsPersonne = gcnew Data::DataSet();
 private: SG_Personne^ processusPersonnes = gcnew SG_Personne();
+private: Data::DataSet^ dsClient = gcnew Data::DataSet();
+private: Data::DataSet^ dsLivraison = gcnew Data::DataSet();
+ private: Data::DataSet^ dsFacturation = gcnew Data::DataSet();
+private: SG_Client^ processusClient = gcnew SG_Client();
 private: System::Windows::Forms::Button^ button44;
 private: System::Windows::Forms::Label^ label54;
 private: System::Windows::Forms::Label^ textAffichage;
+private: System::Windows::Forms::Label^ affichageClient;
+private: System::Windows::Forms::Button^ button45;
+private: System::Windows::Forms::TextBox^ textNomClient;
+private: System::Windows::Forms::Label^ label2;
+private: System::Windows::Forms::TextBox^ textPrenomClient;
+private: System::Windows::Forms::Label^ label3;
 
 
 
@@ -228,6 +239,12 @@ private: System::Windows::Forms::Label^ textAffichage;
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->textNomClient = (gcnew System::Windows::Forms::TextBox());
+			this->label2 = (gcnew System::Windows::Forms::Label());
+			this->textPrenomClient = (gcnew System::Windows::Forms::TextBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
+			this->affichageClient = (gcnew System::Windows::Forms::Label());
+			this->button45 = (gcnew System::Windows::Forms::Button());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -235,21 +252,17 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->button3 = (gcnew System::Windows::Forms::Button());
 			this->button2 = (gcnew System::Windows::Forms::Button());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->textBox8 = (gcnew System::Windows::Forms::TextBox());
+			this->textFacturation = (gcnew System::Windows::Forms::TextBox());
 			this->label8 = (gcnew System::Windows::Forms::Label());
-			this->textBox7 = (gcnew System::Windows::Forms::TextBox());
+			this->textLivraison = (gcnew System::Windows::Forms::TextBox());
 			this->label7 = (gcnew System::Windows::Forms::Label());
-			this->textBox6 = (gcnew System::Windows::Forms::TextBox());
+			this->textAniiv = (gcnew System::Windows::Forms::TextBox());
 			this->label6 = (gcnew System::Windows::Forms::Label());
-			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
+			this->textPremiereCommande = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->textMail = (gcnew System::Windows::Forms::TextBox());
 			this->label4 = (gcnew System::Windows::Forms::Label());
-			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
-			this->label3 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label2 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
@@ -421,6 +434,12 @@ private: System::Windows::Forms::Label^ textAffichage;
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->textNomClient);
+			this->tabPage1->Controls->Add(this->label2);
+			this->tabPage1->Controls->Add(this->textPrenomClient);
+			this->tabPage1->Controls->Add(this->label3);
+			this->tabPage1->Controls->Add(this->affichageClient);
+			this->tabPage1->Controls->Add(this->button45);
 			this->tabPage1->Controls->Add(this->button11);
 			this->tabPage1->Controls->Add(this->button12);
 			this->tabPage1->Controls->Add(this->dataGridView1);
@@ -428,21 +447,17 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->tabPage1->Controls->Add(this->button3);
 			this->tabPage1->Controls->Add(this->button2);
 			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->textBox8);
+			this->tabPage1->Controls->Add(this->textFacturation);
 			this->tabPage1->Controls->Add(this->label8);
-			this->tabPage1->Controls->Add(this->textBox7);
+			this->tabPage1->Controls->Add(this->textLivraison);
 			this->tabPage1->Controls->Add(this->label7);
-			this->tabPage1->Controls->Add(this->textBox6);
+			this->tabPage1->Controls->Add(this->textAniiv);
 			this->tabPage1->Controls->Add(this->label6);
-			this->tabPage1->Controls->Add(this->textBox5);
+			this->tabPage1->Controls->Add(this->textPremiereCommande);
 			this->tabPage1->Controls->Add(this->label5);
-			this->tabPage1->Controls->Add(this->textBox4);
+			this->tabPage1->Controls->Add(this->textMail);
 			this->tabPage1->Controls->Add(this->label4);
-			this->tabPage1->Controls->Add(this->textBox3);
-			this->tabPage1->Controls->Add(this->label3);
-			this->tabPage1->Controls->Add(this->textBox2);
-			this->tabPage1->Controls->Add(this->label2);
-			this->tabPage1->Controls->Add(this->textBox1);
+			this->tabPage1->Controls->Add(this->textClientID);
 			this->tabPage1->Controls->Add(this->label1);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
@@ -453,23 +468,79 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->tabPage1->UseVisualStyleBackColor = true;
 			this->tabPage1->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage1_Click);
 			// 
+			// textNomClient
+			// 
+			this->textNomClient->Location = System::Drawing::Point(26, 227);
+			this->textNomClient->Name = L"textNomClient";
+			this->textNomClient->Size = System::Drawing::Size(115, 20);
+			this->textNomClient->TabIndex = 50;
+			this->textNomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textNomClient_TextChanged);
+			// 
+			// label2
+			// 
+			this->label2->AutoSize = true;
+			this->label2->Location = System::Drawing::Point(23, 199);
+			this->label2->Name = L"label2";
+			this->label2->Size = System::Drawing::Size(29, 13);
+			this->label2->TabIndex = 49;
+			this->label2->Text = L"Nom";
+			// 
+			// textPrenomClient
+			// 
+			this->textPrenomClient->Location = System::Drawing::Point(179, 227);
+			this->textPrenomClient->Name = L"textPrenomClient";
+			this->textPrenomClient->Size = System::Drawing::Size(115, 20);
+			this->textPrenomClient->TabIndex = 48;
+			this->textPrenomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPrenomClient_TextChanged);
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(176, 199);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(43, 13);
+			this->label3->TabIndex = 47;
+			this->label3->Text = L"Prenom";
+			// 
+			// affichageClient
+			// 
+			this->affichageClient->AutoSize = true;
+			this->affichageClient->Location = System::Drawing::Point(436, 363);
+			this->affichageClient->Name = L"affichageClient";
+			this->affichageClient->Size = System::Drawing::Size(56, 13);
+			this->affichageClient->TabIndex = 46;
+			this->affichageClient->Text = L"En attente";
+			this->affichageClient->Click += gcnew System::EventHandler(this, &InterfaceManager::affichageClient_Click);
+			// 
+			// button45
+			// 
+			this->button45->Location = System::Drawing::Point(355, 358);
+			this->button45->Name = L"button45";
+			this->button45->Size = System::Drawing::Size(75, 23);
+			this->button45->TabIndex = 45;
+			this->button45->Text = L"Load";
+			this->button45->UseVisualStyleBackColor = true;
+			this->button45->Click += gcnew System::EventHandler(this, &InterfaceManager::button45_Click);
+			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(24, 260);
+			this->button11->Location = System::Drawing::Point(24, 274);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(113, 23);
 			this->button11->TabIndex = 44;
 			this->button11->Text = L"<";
 			this->button11->UseVisualStyleBackColor = true;
+			this->button11->Click += gcnew System::EventHandler(this, &InterfaceManager::button11_Click);
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(177, 260);
+			this->button12->Location = System::Drawing::Point(177, 274);
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(113, 23);
 			this->button12->TabIndex = 43;
 			this->button12->Text = L">";
 			this->button12->UseVisualStyleBackColor = true;
+			this->button12->Click += gcnew System::EventHandler(this, &InterfaceManager::button12_Click);
 			// 
 			// dataGridView1
 			// 
@@ -482,62 +553,68 @@ private: System::Windows::Forms::Label^ textAffichage;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(175, 331);
+			this->button4->Location = System::Drawing::Point(175, 345);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(115, 36);
 			this->button4->TabIndex = 17;
 			this->button4->Text = L"Enregistrer";
 			this->button4->UseVisualStyleBackColor = true;
+			this->button4->Click += gcnew System::EventHandler(this, &InterfaceManager::button4_Click);
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(22, 331);
+			this->button3->Location = System::Drawing::Point(22, 345);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(115, 36);
 			this->button3->TabIndex = 18;
 			this->button3->Text = L"Modifier";
 			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &InterfaceManager::button3_Click);
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(175, 289);
+			this->button2->Location = System::Drawing::Point(175, 303);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(115, 36);
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = true;
+			this->button2->Click += gcnew System::EventHandler(this, &InterfaceManager::button2_Click_1);
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(22, 289);
+			this->button1->Location = System::Drawing::Point(22, 303);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(115, 36);
 			this->button1->TabIndex = 16;
 			this->button1->Text = L"Ajouter";
 			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &InterfaceManager::button1_Click_1);
 			// 
-			// textBox8
+			// textFacturation
 			// 
-			this->textBox8->Location = System::Drawing::Point(177, 219);
-			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(115, 20);
-			this->textBox8->TabIndex = 15;
+			this->textFacturation->Location = System::Drawing::Point(24, 159);
+			this->textFacturation->Name = L"textFacturation";
+			this->textFacturation->Size = System::Drawing::Size(115, 20);
+			this->textFacturation->TabIndex = 15;
+			this->textFacturation->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textFacturation_TextChanged);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(174, 191);
+			this->label8->Location = System::Drawing::Point(21, 131);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(116, 13);
 			this->label8->TabIndex = 14;
 			this->label8->Text = L"Adresse de facturation ";
 			// 
-			// textBox7
+			// textLivraison
 			// 
-			this->textBox7->Location = System::Drawing::Point(177, 159);
-			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(115, 20);
-			this->textBox7->TabIndex = 13;
+			this->textLivraison->Location = System::Drawing::Point(177, 159);
+			this->textLivraison->Name = L"textLivraison";
+			this->textLivraison->Size = System::Drawing::Size(115, 20);
+			this->textLivraison->TabIndex = 13;
+			this->textLivraison->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textLivraison_TextChanged);
 			// 
 			// label7
 			// 
@@ -548,12 +625,13 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->label7->TabIndex = 12;
 			this->label7->Text = L"Adresse de livraison";
 			// 
-			// textBox6
+			// textAniiv
 			// 
-			this->textBox6->Location = System::Drawing::Point(177, 101);
-			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(115, 20);
-			this->textBox6->TabIndex = 11;
+			this->textAniiv->Location = System::Drawing::Point(177, 101);
+			this->textAniiv->Name = L"textAniiv";
+			this->textAniiv->Size = System::Drawing::Size(115, 20);
+			this->textAniiv->TabIndex = 11;
+			this->textAniiv->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textAniiv_TextChanged);
 			// 
 			// label6
 			// 
@@ -564,12 +642,13 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->label6->TabIndex = 10;
 			this->label6->Text = L"Date d\'anniversaire";
 			// 
-			// textBox5
+			// textPremiereCommande
 			// 
-			this->textBox5->Location = System::Drawing::Point(177, 49);
-			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(115, 20);
-			this->textBox5->TabIndex = 9;
+			this->textPremiereCommande->Location = System::Drawing::Point(177, 49);
+			this->textPremiereCommande->Name = L"textPremiereCommande";
+			this->textPremiereCommande->Size = System::Drawing::Size(115, 20);
+			this->textPremiereCommande->TabIndex = 9;
+			this->textPremiereCommande->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPremiereCommande_TextChanged);
 			// 
 			// label5
 			// 
@@ -580,60 +659,30 @@ private: System::Windows::Forms::Label^ textAffichage;
 			this->label5->TabIndex = 8;
 			this->label5->Text = L"Date de premiere commande";
 			// 
-			// textBox4
+			// textMail
 			// 
-			this->textBox4->Location = System::Drawing::Point(22, 219);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(115, 20);
-			this->textBox4->TabIndex = 7;
+			this->textMail->Location = System::Drawing::Point(24, 101);
+			this->textMail->Name = L"textMail";
+			this->textMail->Size = System::Drawing::Size(115, 20);
+			this->textMail->TabIndex = 7;
+			this->textMail->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox4_TextChanged);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(19, 191);
+			this->label4->Location = System::Drawing::Point(21, 73);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(25, 13);
 			this->label4->TabIndex = 6;
 			this->label4->Text = L"mail";
 			// 
-			// textBox3
+			// textClientID
 			// 
-			this->textBox3->Location = System::Drawing::Point(22, 159);
-			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(115, 20);
-			this->textBox3->TabIndex = 5;
-			// 
-			// label3
-			// 
-			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(19, 131);
-			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(71, 13);
-			this->label3->TabIndex = 4;
-			this->label3->Text = L"Prenom client";
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(22, 101);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(115, 20);
-			this->textBox2->TabIndex = 3;
-			// 
-			// label2
-			// 
-			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(19, 73);
-			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(57, 13);
-			this->label2->TabIndex = 2;
-			this->label2->Text = L"Nom client";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(22, 49);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(115, 20);
-			this->textBox1->TabIndex = 1;
+			this->textClientID->Location = System::Drawing::Point(22, 49);
+			this->textClientID->Name = L"textClientID";
+			this->textClientID->Size = System::Drawing::Size(115, 20);
+			this->textClientID->TabIndex = 1;
+			this->textClientID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox1_TextChanged_1);
 			// 
 			// label1
 			// 
@@ -1818,17 +1867,17 @@ private: System::Windows::Forms::Label^ textAffichage;
 			// textAffichage
 			// 
 			this->textAffichage->AutoSize = true;
-			this->textAffichage->Location = System::Drawing::Point(116, 356);
+			this->textAffichage->Location = System::Drawing::Point(16, 357);
 			this->textAffichage->Name = L"textAffichage";
-			this->textAffichage->Size = System::Drawing::Size(66, 13);
+			this->textAffichage->Size = System::Drawing::Size(56, 13);
 			this->textAffichage->TabIndex = 77;
-			this->textAffichage->Text = L"ID Personne";
+			this->textAffichage->Text = L"En attente";
 			this->textAffichage->Click += gcnew System::EventHandler(this, &InterfaceManager::textAffichage_Click);
 			// 
 			// label54
 			// 
 			this->label54->AutoSize = true;
-			this->label54->Location = System::Drawing::Point(142, 356);
+			this->label54->Location = System::Drawing::Point(42, 357);
 			this->label54->Name = L"label54";
 			this->label54->Size = System::Drawing::Size(0, 13);
 			this->label54->TabIndex = 76;
@@ -2004,6 +2053,7 @@ private: System::Windows::Forms::Label^ textAffichage;
 #pragma endregion
 private: void loadDataPersonne(int index)
 {
+
 	this->dsPersonne->Clear();
 	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 	this->textPersonneID->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[this->index]->ItemArray[0]);
@@ -2011,11 +2061,45 @@ private: void loadDataPersonne(int index)
 	this->textPersonnePrenom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[2]);
 
 }
+
+
+
+private: void loadDataClient(int index)
+{	
+	this->dsPersonne->Clear();
+	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+	this->dsClient->Clear();
+	this->dsClient = this->processusClient->ListeClient("liste");
+	this->textClientID->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+	this->textMail->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+	this->textAniiv->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+	this->textPremiereCommande->Text=Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+	this->dsFacturation = this->processusClient->ListeFacturation("liste");
+	int compt = 0;
+	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[0])) {
+		compt++;
+	};
+	this->textFacturation->Text = Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[1]);
+	this->dsLivraison = this->processusClient->ListeLivraison("liste");
+	compt = 0;
+	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[0])) {
+		compt++;
+	};
+	this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
+	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
+		compt++;
+	};
+	this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+	this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+
+	
+
+}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void textBox1_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void textClientID_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -2047,6 +2131,22 @@ private: System::Void textBox42_TextChanged(System::Object^ sender, System::Even
 private: System::Void button44_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->loadDataPersonne(0);
 }
+private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->dsClient->Tables["liste"]->Rows->Count - 1)
+	{
+		this->index++;
+		this->loadDataClient(this->index);
+	}
+}
+private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0)
+	{
+		this->index--;
+		this->loadDataClient(this->index);
+		
+	}
+}
+
 private: System::Void button39_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->index < this->dsPersonne->Tables["liste"]->Rows->Count - 1)
 	{
@@ -2059,7 +2159,7 @@ private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ 
 	{
 		this->index--;
 		this->loadDataPersonne(this->index);
-		
+
 	}
 }
 private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2096,6 +2196,66 @@ private: System::Void button40_Click(System::Object^ sender, System::EventArgs^ 
 	}
 	this->index = 0;
 	this->loadDataPersonne(this->index);
+	this->textAffichage->Text += "Traitement terminé.";
+}
+private: System::Void button45_Click(System::Object^ sender, System::EventArgs^ e) {
+	loadDataClient(0);
+}
+private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textPremiereCommande_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textAniiv_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textLivraison_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textFacturation_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+
+private: System::Void affichageClient_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->textClientID->Clear();
+	this->textMail->Clear();
+	this->textFacturation->Clear();
+	this->textLivraison->Clear();
+	this->textAniiv->Clear();
+	this->textPremiereCommande->Clear();
+	this->textPrenomClient->Text = "Ne rien entrer.";
+	this->textNomClient->Text = "Ne rien entrer.";
+	this->mode = "nouv";
+	this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
+}
+private: System::Void textNomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textPrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "maj";
+	this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
+}
+private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "sup";
+	this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->mode == "nouv")
+	{
+		int Id;
+		Id = this->processusClient->Add_Client(Convert::ToInt32(this->textClientID->Text),this->textMail->Text, Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text),Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+	}
+	else if (this->mode == "maj")
+	{
+		this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text),this->textMail->Text, Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+	}
+	else if (this->mode == "sup")
+	{
+		this->processusClient->Remove_Client(Convert::ToInt32(this->textClientID->Text));
+	}
+	this->index = 0;
+	this->loadDataClient(this->index);
 	this->textAffichage->Text += "Traitement terminé.";
 }
 };
