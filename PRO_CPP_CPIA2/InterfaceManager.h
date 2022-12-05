@@ -36,13 +36,13 @@ namespace ProjetPOO {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::TabControl^ tabControl1;
+	private: System::Windows::Forms::TabControl^ tabControlGestionSwitch;
 	protected:
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::TabPage^ tabPageClient;
+	private: System::Windows::Forms::TabPage^ tabPageCommande;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TabPage^ tabPage3;
-	private: System::Windows::Forms::TabPage^ tabPage4;
+	private: System::Windows::Forms::TabPage^ tabPageStock;
+	private: System::Windows::Forms::TabPage^ tabPageStat;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
@@ -133,7 +133,7 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::ListBox^ listUnderThreshold;
 	private: System::Windows::Forms::TextBox^ textBoxChfAff;
 	private: System::Windows::Forms::Label^ label27;
-	private: System::Windows::Forms::TabControl^ tabControl2;
+	private: System::Windows::Forms::TabControl^ tabControlSimuModeSwitch;
 	private: System::Windows::Forms::TabPage^ tabPage5;
 	private: System::Windows::Forms::TabPage^ tabPage6;
 	private: System::Windows::Forms::Button^ button19;
@@ -155,7 +155,7 @@ namespace ProjetPOO {
 
 	private: System::Windows::Forms::Label^ label40;
 
-	private: System::Windows::Forms::TabPage^ tabPage7;
+	private: System::Windows::Forms::TabPage^ tabPageStaff;
 	private: System::Windows::Forms::Button^ button32;
 	private: System::Windows::Forms::Button^ button33;
 	private: System::Windows::Forms::DataGridView^ dataGridView4;
@@ -233,8 +233,8 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->tabControlGestionSwitch = (gcnew System::Windows::Forms::TabControl());
+			this->tabPageClient = (gcnew System::Windows::Forms::TabPage());
 			this->button11 = (gcnew System::Windows::Forms::Button());
 			this->button12 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
@@ -258,7 +258,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageCommande = (gcnew System::Windows::Forms::TabPage());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
@@ -286,7 +286,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
 			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageStock = (gcnew System::Windows::Forms::TabPage());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
 			this->button9 = (gcnew System::Windows::Forms::Button());
@@ -306,13 +306,13 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageStat = (gcnew System::Windows::Forms::TabPage());
 			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
 			this->textBoxValAch = (gcnew System::Windows::Forms::TextBox());
 			this->textBoxPanierAvg = (gcnew System::Windows::Forms::TextBox());
 			this->button38 = (gcnew System::Windows::Forms::Button());
-			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->tabControlSimuModeSwitch = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
 			this->buttonDemarque2 = (gcnew System::Windows::Forms::Button());
 			this->buttonDemarque3 = (gcnew System::Windows::Forms::Button());
@@ -356,7 +356,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->textBoxChfAff = (gcnew System::Windows::Forms::TextBox());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageStaff = (gcnew System::Windows::Forms::TabPage());
 			this->button32 = (gcnew System::Windows::Forms::Button());
 			this->button33 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
@@ -380,71 +380,72 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
-			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
+			this->tabControlGestionSwitch->SuspendLayout();
+			this->tabPageClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			this->tabPage2->SuspendLayout();
+			this->tabPageCommande->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
-			this->tabPage3->SuspendLayout();
+			this->tabPageStock->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
-			this->tabPage4->SuspendLayout();
+			this->tabPageStat->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
-			this->tabControl2->SuspendLayout();
+			this->tabControlSimuModeSwitch->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->tabPage6->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownDemarque))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownMarge))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRemise))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTVA))->BeginInit();
-			this->tabPage7->SuspendLayout();
+			this->tabPageStaff->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
 			this->SuspendLayout();
 			// 
-			// tabControl1
+			// tabControlGestionSwitch
 			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Controls->Add(this->tabPage4);
-			this->tabControl1->Controls->Add(this->tabPage7);
-			this->tabControl1->Location = System::Drawing::Point(12, 13);
-			this->tabControl1->Name = L"tabControl1";
-			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(952, 426);
-			this->tabControl1->TabIndex = 6;
+			this->tabControlGestionSwitch->Controls->Add(this->tabPageClient);
+			this->tabControlGestionSwitch->Controls->Add(this->tabPageCommande);
+			this->tabControlGestionSwitch->Controls->Add(this->tabPageStock);
+			this->tabControlGestionSwitch->Controls->Add(this->tabPageStat);
+			this->tabControlGestionSwitch->Controls->Add(this->tabPageStaff);
+			this->tabControlGestionSwitch->Location = System::Drawing::Point(12, 13);
+			this->tabControlGestionSwitch->Name = L"tabControlGestionSwitch";
+			this->tabControlGestionSwitch->SelectedIndex = 0;
+			this->tabControlGestionSwitch->Size = System::Drawing::Size(952, 426);
+			this->tabControlGestionSwitch->TabIndex = 6;
+			this->tabControlGestionSwitch->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControlGestionSwitch_SelectedIndexChanged);
 			// 
-			// tabPage1
+			// tabPageClient
 			// 
-			this->tabPage1->Controls->Add(this->button11);
-			this->tabPage1->Controls->Add(this->button12);
-			this->tabPage1->Controls->Add(this->dataGridView1);
-			this->tabPage1->Controls->Add(this->button4);
-			this->tabPage1->Controls->Add(this->button3);
-			this->tabPage1->Controls->Add(this->button2);
-			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->textBox8);
-			this->tabPage1->Controls->Add(this->label8);
-			this->tabPage1->Controls->Add(this->textBox7);
-			this->tabPage1->Controls->Add(this->label7);
-			this->tabPage1->Controls->Add(this->textBox6);
-			this->tabPage1->Controls->Add(this->label6);
-			this->tabPage1->Controls->Add(this->textBox5);
-			this->tabPage1->Controls->Add(this->label5);
-			this->tabPage1->Controls->Add(this->textBox4);
-			this->tabPage1->Controls->Add(this->label4);
-			this->tabPage1->Controls->Add(this->textBox3);
-			this->tabPage1->Controls->Add(this->label3);
-			this->tabPage1->Controls->Add(this->textBox2);
-			this->tabPage1->Controls->Add(this->label2);
-			this->tabPage1->Controls->Add(this->textBox1);
-			this->tabPage1->Controls->Add(this->label1);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(944, 400);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"Gestion client";
-			this->tabPage1->UseVisualStyleBackColor = true;
+			this->tabPageClient->Controls->Add(this->button11);
+			this->tabPageClient->Controls->Add(this->button12);
+			this->tabPageClient->Controls->Add(this->dataGridView1);
+			this->tabPageClient->Controls->Add(this->button4);
+			this->tabPageClient->Controls->Add(this->button3);
+			this->tabPageClient->Controls->Add(this->button2);
+			this->tabPageClient->Controls->Add(this->button1);
+			this->tabPageClient->Controls->Add(this->textBox8);
+			this->tabPageClient->Controls->Add(this->label8);
+			this->tabPageClient->Controls->Add(this->textBox7);
+			this->tabPageClient->Controls->Add(this->label7);
+			this->tabPageClient->Controls->Add(this->textBox6);
+			this->tabPageClient->Controls->Add(this->label6);
+			this->tabPageClient->Controls->Add(this->textBox5);
+			this->tabPageClient->Controls->Add(this->label5);
+			this->tabPageClient->Controls->Add(this->textBox4);
+			this->tabPageClient->Controls->Add(this->label4);
+			this->tabPageClient->Controls->Add(this->textBox3);
+			this->tabPageClient->Controls->Add(this->label3);
+			this->tabPageClient->Controls->Add(this->textBox2);
+			this->tabPageClient->Controls->Add(this->label2);
+			this->tabPageClient->Controls->Add(this->textBox1);
+			this->tabPageClient->Controls->Add(this->label1);
+			this->tabPageClient->Location = System::Drawing::Point(4, 22);
+			this->tabPageClient->Name = L"tabPageClient";
+			this->tabPageClient->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageClient->Size = System::Drawing::Size(944, 400);
+			this->tabPageClient->TabIndex = 0;
+			this->tabPageClient->Text = L"Gestion client";
+			this->tabPageClient->UseVisualStyleBackColor = true;
 			// 
 			// button11
 			// 
@@ -637,42 +638,42 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label1->Text = L"ID Client";
 			this->label1->Click += gcnew System::EventHandler(this, &InterfaceManager::label1_Click_1);
 			// 
-			// tabPage2
+			// tabPageCommande
 			// 
-			this->tabPage2->Controls->Add(this->textBox22);
-			this->tabPage2->Controls->Add(this->label24);
-			this->tabPage2->Controls->Add(this->textBox23);
-			this->tabPage2->Controls->Add(this->label25);
-			this->tabPage2->Controls->Add(this->button13);
-			this->tabPage2->Controls->Add(this->button14);
-			this->tabPage2->Controls->Add(this->dataGridView3);
-			this->tabPage2->Controls->Add(this->button15);
-			this->tabPage2->Controls->Add(this->button16);
-			this->tabPage2->Controls->Add(this->button17);
-			this->tabPage2->Controls->Add(this->button18);
-			this->tabPage2->Controls->Add(this->textBox9);
-			this->tabPage2->Controls->Add(this->label13);
-			this->tabPage2->Controls->Add(this->textBox10);
-			this->tabPage2->Controls->Add(this->label17);
-			this->tabPage2->Controls->Add(this->textBox14);
-			this->tabPage2->Controls->Add(this->label18);
-			this->tabPage2->Controls->Add(this->textBox17);
-			this->tabPage2->Controls->Add(this->label19);
-			this->tabPage2->Controls->Add(this->textBox18);
-			this->tabPage2->Controls->Add(this->label20);
-			this->tabPage2->Controls->Add(this->textBox19);
-			this->tabPage2->Controls->Add(this->label21);
-			this->tabPage2->Controls->Add(this->textBox20);
-			this->tabPage2->Controls->Add(this->label22);
-			this->tabPage2->Controls->Add(this->textBox21);
-			this->tabPage2->Controls->Add(this->label23);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(944, 400);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Gestion commande";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPageCommande->Controls->Add(this->textBox22);
+			this->tabPageCommande->Controls->Add(this->label24);
+			this->tabPageCommande->Controls->Add(this->textBox23);
+			this->tabPageCommande->Controls->Add(this->label25);
+			this->tabPageCommande->Controls->Add(this->button13);
+			this->tabPageCommande->Controls->Add(this->button14);
+			this->tabPageCommande->Controls->Add(this->dataGridView3);
+			this->tabPageCommande->Controls->Add(this->button15);
+			this->tabPageCommande->Controls->Add(this->button16);
+			this->tabPageCommande->Controls->Add(this->button17);
+			this->tabPageCommande->Controls->Add(this->button18);
+			this->tabPageCommande->Controls->Add(this->textBox9);
+			this->tabPageCommande->Controls->Add(this->label13);
+			this->tabPageCommande->Controls->Add(this->textBox10);
+			this->tabPageCommande->Controls->Add(this->label17);
+			this->tabPageCommande->Controls->Add(this->textBox14);
+			this->tabPageCommande->Controls->Add(this->label18);
+			this->tabPageCommande->Controls->Add(this->textBox17);
+			this->tabPageCommande->Controls->Add(this->label19);
+			this->tabPageCommande->Controls->Add(this->textBox18);
+			this->tabPageCommande->Controls->Add(this->label20);
+			this->tabPageCommande->Controls->Add(this->textBox19);
+			this->tabPageCommande->Controls->Add(this->label21);
+			this->tabPageCommande->Controls->Add(this->textBox20);
+			this->tabPageCommande->Controls->Add(this->label22);
+			this->tabPageCommande->Controls->Add(this->textBox21);
+			this->tabPageCommande->Controls->Add(this->label23);
+			this->tabPageCommande->Location = System::Drawing::Point(4, 22);
+			this->tabPageCommande->Name = L"tabPageCommande";
+			this->tabPageCommande->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageCommande->Size = System::Drawing::Size(944, 400);
+			this->tabPageCommande->TabIndex = 1;
+			this->tabPageCommande->Text = L"Gestion commande";
+			this->tabPageCommande->UseVisualStyleBackColor = true;
 			// 
 			// textBox22
 			// 
@@ -896,35 +897,34 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label23->TabIndex = 45;
 			this->label23->Text = L"ID Commande";
 			// 
-			// tabPage3
+			// tabPageStock
 			// 
-			this->tabPage3->Controls->Add(this->label10);
-			this->tabPage3->Controls->Add(this->button10);
-			this->tabPage3->Controls->Add(this->button9);
-			this->tabPage3->Controls->Add(this->dataGridView2);
-			this->tabPage3->Controls->Add(this->button5);
-			this->tabPage3->Controls->Add(this->button6);
-			this->tabPage3->Controls->Add(this->button7);
-			this->tabPage3->Controls->Add(this->button8);
-			this->tabPage3->Controls->Add(this->label9);
-			this->tabPage3->Controls->Add(this->textBox11);
-			this->tabPage3->Controls->Add(this->label11);
-			this->tabPage3->Controls->Add(this->textBox12);
-			this->tabPage3->Controls->Add(this->label12);
-			this->tabPage3->Controls->Add(this->textBox13);
-			this->tabPage3->Controls->Add(this->label14);
-			this->tabPage3->Controls->Add(this->textBox15);
-			this->tabPage3->Controls->Add(this->label15);
-			this->tabPage3->Controls->Add(this->textBox16);
-			this->tabPage3->Controls->Add(this->label16);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
-			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(944, 400);
-			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Gestion stock";
-			this->tabPage3->UseVisualStyleBackColor = true;
-			this->tabPage3->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage3_Click);
+			this->tabPageStock->Controls->Add(this->label10);
+			this->tabPageStock->Controls->Add(this->button10);
+			this->tabPageStock->Controls->Add(this->button9);
+			this->tabPageStock->Controls->Add(this->dataGridView2);
+			this->tabPageStock->Controls->Add(this->button5);
+			this->tabPageStock->Controls->Add(this->button6);
+			this->tabPageStock->Controls->Add(this->button7);
+			this->tabPageStock->Controls->Add(this->button8);
+			this->tabPageStock->Controls->Add(this->label9);
+			this->tabPageStock->Controls->Add(this->textBox11);
+			this->tabPageStock->Controls->Add(this->label11);
+			this->tabPageStock->Controls->Add(this->textBox12);
+			this->tabPageStock->Controls->Add(this->label12);
+			this->tabPageStock->Controls->Add(this->textBox13);
+			this->tabPageStock->Controls->Add(this->label14);
+			this->tabPageStock->Controls->Add(this->textBox15);
+			this->tabPageStock->Controls->Add(this->label15);
+			this->tabPageStock->Controls->Add(this->textBox16);
+			this->tabPageStock->Controls->Add(this->label16);
+			this->tabPageStock->Location = System::Drawing::Point(4, 22);
+			this->tabPageStock->Name = L"tabPageStock";
+			this->tabPageStock->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageStock->Size = System::Drawing::Size(944, 400);
+			this->tabPageStock->TabIndex = 2;
+			this->tabPageStock->Text = L"Gestion stock";
+			this->tabPageStock->UseVisualStyleBackColor = true;
 			// 
 			// label10
 			// 
@@ -1084,34 +1084,33 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label16->TabIndex = 20;
 			this->label16->Text = L"ID Produit";
 			// 
-			// tabPage4
+			// tabPageStat
 			// 
-			this->tabPage4->Controls->Add(this->numericUpDown1);
-			this->tabPage4->Controls->Add(this->comboBox1);
-			this->tabPage4->Controls->Add(this->textBoxValAch);
-			this->tabPage4->Controls->Add(this->textBoxPanierAvg);
-			this->tabPage4->Controls->Add(this->button38);
-			this->tabPage4->Controls->Add(this->tabControl2);
-			this->tabPage4->Controls->Add(this->label32);
-			this->tabPage4->Controls->Add(this->textBoxTotCli);
-			this->tabPage4->Controls->Add(this->label31);
-			this->tabPage4->Controls->Add(this->label30);
-			this->tabPage4->Controls->Add(this->listBoxLessPurchased);
-			this->tabPage4->Controls->Add(this->label29);
-			this->tabPage4->Controls->Add(this->listBoxMorePurchased);
-			this->tabPage4->Controls->Add(this->label28);
-			this->tabPage4->Controls->Add(this->listUnderThreshold);
-			this->tabPage4->Controls->Add(this->textBoxChfAff);
-			this->tabPage4->Controls->Add(this->label27);
-			this->tabPage4->Controls->Add(this->label26);
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(944, 400);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"Gestion stat";
-			this->tabPage4->UseVisualStyleBackColor = true;
-			this->tabPage4->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage4_Click);
+			this->tabPageStat->Controls->Add(this->numericUpDown1);
+			this->tabPageStat->Controls->Add(this->comboBox1);
+			this->tabPageStat->Controls->Add(this->textBoxValAch);
+			this->tabPageStat->Controls->Add(this->textBoxPanierAvg);
+			this->tabPageStat->Controls->Add(this->button38);
+			this->tabPageStat->Controls->Add(this->tabControlSimuModeSwitch);
+			this->tabPageStat->Controls->Add(this->label32);
+			this->tabPageStat->Controls->Add(this->textBoxTotCli);
+			this->tabPageStat->Controls->Add(this->label31);
+			this->tabPageStat->Controls->Add(this->label30);
+			this->tabPageStat->Controls->Add(this->listBoxLessPurchased);
+			this->tabPageStat->Controls->Add(this->label29);
+			this->tabPageStat->Controls->Add(this->listBoxMorePurchased);
+			this->tabPageStat->Controls->Add(this->label28);
+			this->tabPageStat->Controls->Add(this->listUnderThreshold);
+			this->tabPageStat->Controls->Add(this->textBoxChfAff);
+			this->tabPageStat->Controls->Add(this->label27);
+			this->tabPageStat->Controls->Add(this->label26);
+			this->tabPageStat->Location = System::Drawing::Point(4, 22);
+			this->tabPageStat->Name = L"tabPageStat";
+			this->tabPageStat->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageStat->Size = System::Drawing::Size(944, 400);
+			this->tabPageStat->TabIndex = 3;
+			this->tabPageStat->Text = L"Gestion stat";
+			this->tabPageStat->UseVisualStyleBackColor = true;
 			// 
 			// numericUpDown1
 			// 
@@ -1161,15 +1160,15 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->button38->UseVisualStyleBackColor = true;
 			this->button38->Click += gcnew System::EventHandler(this, &InterfaceManager::button38_Click);
 			// 
-			// tabControl2
+			// tabControlSimuModeSwitch
 			// 
-			this->tabControl2->Controls->Add(this->tabPage5);
-			this->tabControl2->Controls->Add(this->tabPage6);
-			this->tabControl2->Location = System::Drawing::Point(556, 23);
-			this->tabControl2->Name = L"tabControl2";
-			this->tabControl2->SelectedIndex = 0;
-			this->tabControl2->Size = System::Drawing::Size(372, 349);
-			this->tabControl2->TabIndex = 49;
+			this->tabControlSimuModeSwitch->Controls->Add(this->tabPage5);
+			this->tabControlSimuModeSwitch->Controls->Add(this->tabPage6);
+			this->tabControlSimuModeSwitch->Location = System::Drawing::Point(556, 23);
+			this->tabControlSimuModeSwitch->Name = L"tabControlSimuModeSwitch";
+			this->tabControlSimuModeSwitch->SelectedIndex = 0;
+			this->tabControlSimuModeSwitch->Size = System::Drawing::Size(372, 349);
+			this->tabControlSimuModeSwitch->TabIndex = 49;
 			// 
 			// tabPage5
 			// 
@@ -1619,37 +1618,37 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label26->Text = L"Panier moyen : ";
 			this->label26->Click += gcnew System::EventHandler(this, &InterfaceManager::label26_Click);
 			// 
-			// tabPage7
+			// tabPageStaff
 			// 
-			this->tabPage7->Controls->Add(this->button32);
-			this->tabPage7->Controls->Add(this->button33);
-			this->tabPage7->Controls->Add(this->dataGridView4);
-			this->tabPage7->Controls->Add(this->button34);
-			this->tabPage7->Controls->Add(this->button35);
-			this->tabPage7->Controls->Add(this->button36);
-			this->tabPage7->Controls->Add(this->button37);
-			this->tabPage7->Controls->Add(this->textBox32);
-			this->tabPage7->Controls->Add(this->label43);
-			this->tabPage7->Controls->Add(this->textBox33);
-			this->tabPage7->Controls->Add(this->label44);
-			this->tabPage7->Controls->Add(this->textBox34);
-			this->tabPage7->Controls->Add(this->label45);
-			this->tabPage7->Controls->Add(this->textBox35);
-			this->tabPage7->Controls->Add(this->label46);
-			this->tabPage7->Controls->Add(this->textBox36);
-			this->tabPage7->Controls->Add(this->label47);
-			this->tabPage7->Controls->Add(this->textBox37);
-			this->tabPage7->Controls->Add(this->label48);
-			this->tabPage7->Controls->Add(this->textBox38);
-			this->tabPage7->Controls->Add(this->label49);
-			this->tabPage7->Controls->Add(this->textBox39);
-			this->tabPage7->Controls->Add(this->label50);
-			this->tabPage7->Location = System::Drawing::Point(4, 22);
-			this->tabPage7->Name = L"tabPage7";
-			this->tabPage7->Size = System::Drawing::Size(944, 400);
-			this->tabPage7->TabIndex = 4;
-			this->tabPage7->Text = L"Gestion personnel";
-			this->tabPage7->UseVisualStyleBackColor = true;
+			this->tabPageStaff->Controls->Add(this->button32);
+			this->tabPageStaff->Controls->Add(this->button33);
+			this->tabPageStaff->Controls->Add(this->dataGridView4);
+			this->tabPageStaff->Controls->Add(this->button34);
+			this->tabPageStaff->Controls->Add(this->button35);
+			this->tabPageStaff->Controls->Add(this->button36);
+			this->tabPageStaff->Controls->Add(this->button37);
+			this->tabPageStaff->Controls->Add(this->textBox32);
+			this->tabPageStaff->Controls->Add(this->label43);
+			this->tabPageStaff->Controls->Add(this->textBox33);
+			this->tabPageStaff->Controls->Add(this->label44);
+			this->tabPageStaff->Controls->Add(this->textBox34);
+			this->tabPageStaff->Controls->Add(this->label45);
+			this->tabPageStaff->Controls->Add(this->textBox35);
+			this->tabPageStaff->Controls->Add(this->label46);
+			this->tabPageStaff->Controls->Add(this->textBox36);
+			this->tabPageStaff->Controls->Add(this->label47);
+			this->tabPageStaff->Controls->Add(this->textBox37);
+			this->tabPageStaff->Controls->Add(this->label48);
+			this->tabPageStaff->Controls->Add(this->textBox38);
+			this->tabPageStaff->Controls->Add(this->label49);
+			this->tabPageStaff->Controls->Add(this->textBox39);
+			this->tabPageStaff->Controls->Add(this->label50);
+			this->tabPageStaff->Location = System::Drawing::Point(4, 22);
+			this->tabPageStaff->Name = L"tabPageStaff";
+			this->tabPageStaff->Size = System::Drawing::Size(944, 400);
+			this->tabPageStaff->TabIndex = 4;
+			this->tabPageStaff->Text = L"Gestion personnel";
+			this->tabPageStaff->UseVisualStyleBackColor = true;
 			// 
 			// button32
 			// 
@@ -1846,24 +1845,24 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(976, 451);
-			this->Controls->Add(this->tabControl1);
+			this->Controls->Add(this->tabControlGestionSwitch);
 			this->Name = L"InterfaceManager";
 			this->Text = L"Interface Manager";
 			this->Load += gcnew System::EventHandler(this, &InterfaceManager::MyForm1_Load);
-			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
+			this->tabControlGestionSwitch->ResumeLayout(false);
+			this->tabPageClient->ResumeLayout(false);
+			this->tabPageClient->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			this->tabPage2->ResumeLayout(false);
-			this->tabPage2->PerformLayout();
+			this->tabPageCommande->ResumeLayout(false);
+			this->tabPageCommande->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
-			this->tabPage3->ResumeLayout(false);
-			this->tabPage3->PerformLayout();
+			this->tabPageStock->ResumeLayout(false);
+			this->tabPageStock->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
-			this->tabPage4->ResumeLayout(false);
-			this->tabPage4->PerformLayout();
+			this->tabPageStat->ResumeLayout(false);
+			this->tabPageStat->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
-			this->tabControl2->ResumeLayout(false);
+			this->tabControlSimuModeSwitch->ResumeLayout(false);
 			this->tabPage5->ResumeLayout(false);
 			this->tabPage5->PerformLayout();
 			this->tabPage6->ResumeLayout(false);
@@ -1872,8 +1871,8 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownMarge))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRemise))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTVA))->EndInit();
-			this->tabPage7->ResumeLayout(false);
-			this->tabPage7->PerformLayout();
+			this->tabPageStaff->ResumeLayout(false);
+			this->tabPageStaff->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
 			this->ResumeLayout(false);
 
@@ -1891,12 +1890,6 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 	}
 
 	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void tabPage3_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void tabPage4_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->Stat_Service = gcnew SG_Stat;
-		MessageBox::Show("gcnew passed");
 	}
 	private: System::Void textBoxChfAff_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -2096,6 +2089,11 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 		}
 		else {
 			MessageBox::Show("Error, client id can't be 0.");
+		}
+	}
+	private: System::Void tabControlGestionSwitch_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (this->tabControlGestionSwitch->SelectedTab->Name == tabPageStat->Name) {
+			this->Stat_Service = gcnew SG_Stat;
 		}
 	}
 };
