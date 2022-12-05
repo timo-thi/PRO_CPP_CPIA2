@@ -9,7 +9,7 @@ SqlCommand^ CM_Staff::Insert_Staff() {
     Procedure->Parameters->AddWithValue("@PER", this->Get_ID());
     Procedure->Parameters->AddWithValue("@superieur", this->Get_Sup());
     Procedure->Parameters->AddWithValue("@role", this->Get_Role());
-    Procedure->Parameters->AddWithValue("@adresse", this->Get_ID_Adress());
+    Procedure->Parameters->AddWithValue("@adresse", this->Get_Adresse());
     Procedure->Parameters->AddWithValue("@date", this->Get_DateStaff());
     Procedure->Parameters->AddWithValue("@mail", this->Get_MailStaff());
 
@@ -33,7 +33,7 @@ SqlCommand^ CM_Staff::Update_Staff() {
     Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
     Procedure->Parameters->AddWithValue("@superieur", this->Get_Sup());
     Procedure->Parameters->AddWithValue("@role", this->Get_Role());
-    Procedure->Parameters->AddWithValue("@adresse", this->Get_ID_Adress());
+    Procedure->Parameters->AddWithValue("@adresse", this->Get_Adresse());
     Procedure->Parameters->AddWithValue("@date", this->Get_DateStaff());
     Procedure->Parameters->AddWithValue("@mail", this->Get_MailStaff());
 

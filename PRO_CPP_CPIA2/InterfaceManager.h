@@ -3,6 +3,7 @@
 #include "SG_Client.h"
 #include "SG_Stock.h"
 #include "SG_Staff.h"
+#include "SG_Identification.h"
 using namespace  NS_Services;
 namespace ProjetPOO {
 
@@ -223,7 +224,7 @@ private: SG_Staff^ processusStaff = gcnew SG_Staff();
 private: System::Windows::Forms::Label^ textStaffAffiche;
 private: System::Windows::Forms::Button^ button46;
 
-
+private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 
 
 
@@ -2444,6 +2445,8 @@ private: System::Void button37_Click(System::Object^ sender, System::EventArgs^ 
 	this->textStaffRole->Clear();
 	this->textStaffAdresse->Clear();
 	this->textStaffMail->Clear();
+	this->textStaffNom->Text = "Ne rien entrer.";
+	this->textStaffPrenom->Text = "Ne rien entrer.";
 	this->mode = "nouv";
 	this->textStaffAffiche->Text = Convert::ToString("Veillez entrer les informations");
 }
@@ -2451,29 +2454,31 @@ private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void button35_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->mode = "maj";
-	this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
+	this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
 }
 private: System::Void button36_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->mode = "sup";
-	this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+	this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
 }
 private: System::Void button34_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->mode == "nouv")
 	{
 		int Id;
+		this->processusIdentification->Add_Identification(this->textStaffMail->Text, "1234");
 		Id = this->processusStaff->Add_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
 	}
 	else if (this->mode == "maj")
 	{
-		this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text), Convert::ToString(this->textMail->Text), Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+		this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
 	}
 	else if (this->mode == "sup")
 	{
-		this->processusClient->Remove_Client(Convert::ToInt32(this->textClientID->Text));
+		this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
+		this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
 	}
 	this->index = 0;
-	this->loadDataClient(this->index);
-	this->affichageClient->Text += "Traitement terminé.";
+	this->loadDataStaff(this->index);
+	this->textStaffAffiche->Text += "Traitement terminé.";
 }
 };
 }

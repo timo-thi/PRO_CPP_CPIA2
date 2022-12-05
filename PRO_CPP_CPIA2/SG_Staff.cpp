@@ -32,6 +32,7 @@ void SG_Staff::Update_Staff(int IdStaff, int IdSup, String^ role, int adresseID,
 	this->MapStaff->Set_DateStaff(date);
 	this->MapStaff->Set_Adresse(adresseID);
 	this->MapStaff->Set_MailStaff(mail);
+	this->MapStaff->Set_Role(role);
 	this->AccesStaff->actionRows(this->MapStaff->Update_Staff());
 }
 
