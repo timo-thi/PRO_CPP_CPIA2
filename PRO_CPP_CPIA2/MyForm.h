@@ -131,6 +131,9 @@ namespace ProjetPOO {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		InterfaceManager^ f2 = gcnew InterfaceManager(); //DEBUG
+		f2->Show();                                     //DEBUG
+		return;                                        //DEBUG
 		if (!this->SG_Id->Check_Identity(this->textBox1->Text, this->textBox2->Text)) {
 			MessageBox::Show("Wrong email or password");
 			return;

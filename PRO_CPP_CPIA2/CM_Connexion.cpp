@@ -29,7 +29,7 @@ DataSet^ CM_Connexion::getRows(SqlCommand^ commande, String^ nom)
 {
 	this->adapteur = gcnew SqlDataAdapter(commande);
 	commande->Connection = this->connecteur;
-	this->DS = gcnew DataSet();
+	this->DS = gcnew DataSet;
 	this->adapteur->Fill(this->DS, nom);
 	return this->DS;
 }
