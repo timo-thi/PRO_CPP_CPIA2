@@ -7,6 +7,10 @@ using namespace NS_Services;
 SG_Stat::SG_Stat(void){
 	this->CMappage = gcnew CM_Stat;
 	this->CConnexion = gcnew CM_Connexion;
+	this->Set_Simu_TVA(20);
+	this->Set_Simu_Marge(15);
+	this->Set_Simu_Remise(6);
+	this->Set_Simu_Demarque(5);
 }
 
 double SG_Stat::Calcul_Panier(void) {
@@ -79,14 +83,56 @@ double SG_Stat::Valeur_Achat_Stock(void) {
 	DataSet^ dt;
 	dt = this->CConnexion->getRows(this->CMappage->Valeur_Achat_Stock(), "VAS");
 
-	return Convert::ToDouble(dt->Tables[0]->Rows[0]->ItemArray[0]);
+	this->Set_Val_Achat(Convert::ToDouble(dt->Tables[0]->Rows[0]->ItemArray[0]));
+
+	return this->Get_Val_Achat();
 }
 
 double SG_Stat::Valeur_Commerciale_Stock(void){
-	DataSet^ dt;
-	dt = this->CConnexion->getRows(this->CMappage->Valeur_Achat_Stock(), "VCS");
 
-	double val_achat = (double)dt->Tables[0]->Rows[0]->ItemArray[0];
-	val_achat += 0.2 * val_achat;
+	double val_achat = this->Get_Val_Achat() * (this->Get_Simu_Marge()/100.0 + 1) * (this->Get_Simu_Demarque()/100.0 + 1) * (this->Get_Simu_Remise()/100.0 + 1) * (this->Get_Simu_TVA()/100.0 + 1);
+
 	return val_achat;
+}
+
+
+
+double SG_Stat::Get_Val_Achat() {
+	return this->Val_Achat;
+}
+void SG_Stat::Set_Val_Achat(double Valeur){
+	this->Val_Achat = Valeur;
+}
+
+
+float SG_Stat::Get_Simu_TVA() {
+	return this->Simu_TVA;
+}
+
+void SG_Stat::Set_Simu_TVA(float TVA){
+	this->Simu_TVA = TVA;
+}
+
+int SG_Stat::Get_Simu_Marge(){
+	return this->Simu_Marge;
+}
+
+void SG_Stat::Set_Simu_Marge(int Marge){
+	this->Simu_Marge= Marge;
+}
+
+int SG_Stat::Get_Simu_Remise(){
+	return this->Simu_Remise;
+}
+
+void SG_Stat::Set_Simu_Remise(int Remise){
+	this->Simu_Remise = Remise;
+}
+
+int SG_Stat::Get_Simu_Demarque(){
+	return this->Simu_Demarque;
+}
+
+void SG_Stat::Set_Simu_Demarque(int Demarque){
+	this->Simu_Demarque = Demarque;
 }
