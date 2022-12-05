@@ -46,11 +46,5 @@ namespace NS_Composants
 
 		void Set_ID_City(int);
 		int Get_ID_City(void);
-
-
-		SqlCommand^ Insert_Adress(void);
-		SqlCommand^ Select_Adress(void);
-		SqlCommand^ Update_Adress(void);
-		SqlCommand^ Delete_Adress(void);
 	};
 };

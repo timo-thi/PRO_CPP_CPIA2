@@ -103,34 +103,3 @@ SqlCommand^ CM_Personne::Update_Personne(void) {
 
 	return this->Procedure;
 }
-
-SqlCommand^ CM_Personne::Insert_Adress(void) {
-	Start_Procedure("Insert_Adress");
-	Procedure->Parameters->AddWithValue("@Street_Name", this->Get_Street_Name());
-	Procedure->Parameters->AddWithValue("@Street_Num", this->Get_Num());
-	Procedure->Parameters->AddWithValue("@Details", this->Get_Details());
-	Procedure->Parameters->AddWithValue("@CIT", this->Get_ID_City());
-
-	return this->Procedure;
-}
-
-SqlCommand^ CM_Personne::Select_Adress(void) {
-	Start_Procedure("Select_Adress");
-	return this->Procedure;
-}
-
-SqlCommand^ CM_Personne::Update_Adress(void) {
-	Start_Procedure("Update_Adress");
-	Procedure->Parameters->AddWithValue("Adress_Id", this->Get_ID_Adress());
-	Procedure->Parameters->AddWithValue("@Street_Name", this->Get_Street_Name());
-	Procedure->Parameters->AddWithValue("@Street_Num", this->Get_Num());
-	Procedure->Parameters->AddWithValue("@Details", this->Get_Details());
-	Procedure->Parameters->AddWithValue("@CIT", this->Get_ID_City());
-	return this->Procedure;
-}
-
-SqlCommand^ CM_Personne::Delete_Adress(void) {
-	Start_Procedure("Delete_Adress");
-	Procedure->Parameters->AddWithValue("@Adress_Id", this->Get_ID_Adress());
-	return this->Procedure;
-}
