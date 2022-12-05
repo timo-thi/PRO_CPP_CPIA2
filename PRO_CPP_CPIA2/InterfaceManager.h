@@ -2,6 +2,8 @@
 #include "SG_Personne.h"
 #include "SG_Client.h"
 #include "SG_Stock.h"
+#include "SG_Staff.h"
+#include "SG_Identification.h"
 #include "SG_Orders.h"
 
 using namespace  NS_Services;
@@ -166,21 +168,21 @@ private: System::Windows::Forms::Button^ button34;
 private: System::Windows::Forms::Button^ button35;
 private: System::Windows::Forms::Button^ button36;
 private: System::Windows::Forms::Button^ button37;
-private: System::Windows::Forms::TextBox^ textBox32;
+private: System::Windows::Forms::TextBox^ textStaffRole;
 private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::TextBox^ textBox33;
+private: System::Windows::Forms::TextBox^ textStaffAdresse;
 private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::TextBox^ textBox34;
+private: System::Windows::Forms::TextBox^ textStaffDate;
 private: System::Windows::Forms::Label^ label45;
-private: System::Windows::Forms::TextBox^ textBox35;
+private: System::Windows::Forms::TextBox^ textStaffSup;
 private: System::Windows::Forms::Label^ label46;
-private: System::Windows::Forms::TextBox^ textBox36;
+private: System::Windows::Forms::TextBox^ textStaffMail;
 private: System::Windows::Forms::Label^ label47;
-private: System::Windows::Forms::TextBox^ textBox37;
+private: System::Windows::Forms::TextBox^ textStaffPrenom;
 private: System::Windows::Forms::Label^ label48;
-private: System::Windows::Forms::TextBox^ textBox38;
+private: System::Windows::Forms::TextBox^ textStaffNom;
 private: System::Windows::Forms::Label^ label49;
-private: System::Windows::Forms::TextBox^ textBox39;
+private: System::Windows::Forms::TextBox^ textStaffID;
 private: System::Windows::Forms::Label^ label50;
 private: System::Windows::Forms::TabPage^ tabPage8;
 private: System::Windows::Forms::TextBox^ textPersonnePrenom;
@@ -219,12 +221,12 @@ private: Data::DataSet^ dsLivraison = gcnew Data::DataSet();
 private: Data::DataSet^ dsFacturation = gcnew Data::DataSet();
 private: SG_Client^ processusClient = gcnew SG_Client();
 private: SG_Stock^ processusStock = gcnew SG_Stock();
-private: SG_Orders^ processusOrders = gcnew SG_Orders();
+private: Data::DataSet^ dsStaff = gcnew Data::DataSet();
+private: SG_Staff^ processusStaff = gcnew SG_Staff();
+private: System::Windows::Forms::Label^ textStaffAffiche;
 private: System::Windows::Forms::Button^ button46;
 
-
-
-
+private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 
 
 
@@ -366,6 +368,8 @@ private: System::Windows::Forms::Button^ button46;
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->textStaffAffiche = (gcnew System::Windows::Forms::Label());
+			this->button46 = (gcnew System::Windows::Forms::Button());
 			this->button32 = (gcnew System::Windows::Forms::Button());
 			this->button33 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
@@ -373,21 +377,22 @@ private: System::Windows::Forms::Button^ button46;
 			this->button35 = (gcnew System::Windows::Forms::Button());
 			this->button36 = (gcnew System::Windows::Forms::Button());
 			this->button37 = (gcnew System::Windows::Forms::Button());
-			this->textBox32 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffRole = (gcnew System::Windows::Forms::TextBox());
 			this->label43 = (gcnew System::Windows::Forms::Label());
-			this->textBox33 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffAdresse = (gcnew System::Windows::Forms::TextBox());
 			this->label44 = (gcnew System::Windows::Forms::Label());
-			this->textBox34 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffDate = (gcnew System::Windows::Forms::TextBox());
 			this->label45 = (gcnew System::Windows::Forms::Label());
-			this->textBox35 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffSup = (gcnew System::Windows::Forms::TextBox());
 			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->textStaffMail = (gcnew System::Windows::Forms::TextBox());
 			this->textBox36 = (gcnew System::Windows::Forms::TextBox());
 			this->label47 = (gcnew System::Windows::Forms::Label());
-			this->textBox37 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffPrenom = (gcnew System::Windows::Forms::TextBox());
 			this->label48 = (gcnew System::Windows::Forms::Label());
-			this->textBox38 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffNom = (gcnew System::Windows::Forms::TextBox());
 			this->label49 = (gcnew System::Windows::Forms::Label());
-			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
+			this->textStaffID = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
 			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
 			this->textAffichage = (gcnew System::Windows::Forms::Label());
@@ -434,11 +439,10 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabControl1->Controls->Add(this->tabPage4);
 			this->tabControl1->Controls->Add(this->tabPage7);
 			this->tabControl1->Controls->Add(this->tabPage8);
-			this->tabControl1->Location = System::Drawing::Point(16, 16);
-			this->tabControl1->Margin = System::Windows::Forms::Padding(4);
+			this->tabControl1->Location = System::Drawing::Point(12, 13);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
-			this->tabControl1->Size = System::Drawing::Size(1269, 524);
+			this->tabControl1->Size = System::Drawing::Size(952, 426);
 			this->tabControl1->TabIndex = 8;
 			// 
 			// tabPage1
@@ -480,59 +484,53 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textNomClient
 			// 
-			this->textNomClient->Location = System::Drawing::Point(35, 279);
-			this->textNomClient->Margin = System::Windows::Forms::Padding(4);
+			this->textNomClient->Location = System::Drawing::Point(26, 227);
 			this->textNomClient->Name = L"textNomClient";
-			this->textNomClient->Size = System::Drawing::Size(152, 22);
+			this->textNomClient->Size = System::Drawing::Size(115, 20);
 			this->textNomClient->TabIndex = 50;
 			this->textNomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textNomClient_TextChanged);
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(31, 245);
-			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label2->Location = System::Drawing::Point(23, 199);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(36, 16);
+			this->label2->Size = System::Drawing::Size(29, 13);
 			this->label2->TabIndex = 49;
 			this->label2->Text = L"Nom";
 			// 
 			// textPrenomClient
 			// 
-			this->textPrenomClient->Location = System::Drawing::Point(239, 279);
-			this->textPrenomClient->Margin = System::Windows::Forms::Padding(4);
+			this->textPrenomClient->Location = System::Drawing::Point(179, 227);
 			this->textPrenomClient->Name = L"textPrenomClient";
-			this->textPrenomClient->Size = System::Drawing::Size(152, 22);
+			this->textPrenomClient->Size = System::Drawing::Size(115, 20);
 			this->textPrenomClient->TabIndex = 48;
 			this->textPrenomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPrenomClient_TextChanged);
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(235, 245);
-			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label3->Location = System::Drawing::Point(176, 199);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(54, 16);
+			this->label3->Size = System::Drawing::Size(43, 13);
 			this->label3->TabIndex = 47;
 			this->label3->Text = L"Prenom";
 			// 
 			// affichageClient
 			// 
 			this->affichageClient->AutoSize = true;
-			this->affichageClient->Location = System::Drawing::Point(581, 447);
-			this->affichageClient->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->affichageClient->Location = System::Drawing::Point(436, 363);
 			this->affichageClient->Name = L"affichageClient";
-			this->affichageClient->Size = System::Drawing::Size(66, 16);
+			this->affichageClient->Size = System::Drawing::Size(56, 13);
 			this->affichageClient->TabIndex = 46;
 			this->affichageClient->Text = L"En attente";
 			this->affichageClient->Click += gcnew System::EventHandler(this, &InterfaceManager::affichageClient_Click);
 			// 
 			// button45
 			// 
-			this->button45->Location = System::Drawing::Point(473, 441);
-			this->button45->Margin = System::Windows::Forms::Padding(4);
+			this->button45->Location = System::Drawing::Point(355, 358);
 			this->button45->Name = L"button45";
-			this->button45->Size = System::Drawing::Size(100, 28);
+			this->button45->Size = System::Drawing::Size(75, 23);
 			this->button45->TabIndex = 45;
 			this->button45->Text = L"Load";
 			this->button45->UseVisualStyleBackColor = true;
@@ -540,8 +538,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button11
 			// 
-			this->button11->Location = System::Drawing::Point(32, 337);
-			this->button11->Margin = System::Windows::Forms::Padding(4);
+			this->button11->Location = System::Drawing::Point(24, 274);
 			this->button11->Name = L"button11";
 			this->button11->Size = System::Drawing::Size(151, 28);
 			this->button11->TabIndex = 44;
@@ -551,8 +548,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button12
 			// 
-			this->button12->Location = System::Drawing::Point(236, 337);
-			this->button12->Margin = System::Windows::Forms::Padding(4);
+			this->button12->Location = System::Drawing::Point(177, 274);
 			this->button12->Name = L"button12";
 			this->button12->Size = System::Drawing::Size(151, 28);
 			this->button12->TabIndex = 43;
@@ -567,13 +563,12 @@ private: System::Windows::Forms::Button^ button46;
 			this->dataGridView1->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersWidth = 62;
-			this->dataGridView1->Size = System::Drawing::Size(759, 382);
+			this->dataGridView1->Size = System::Drawing::Size(569, 310);
 			this->dataGridView1->TabIndex = 19;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(233, 425);
-			this->button4->Margin = System::Windows::Forms::Padding(4);
+			this->button4->Location = System::Drawing::Point(175, 345);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(153, 44);
 			this->button4->TabIndex = 17;
@@ -583,8 +578,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(29, 425);
-			this->button3->Margin = System::Windows::Forms::Padding(4);
+			this->button3->Location = System::Drawing::Point(22, 345);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(153, 44);
 			this->button3->TabIndex = 18;
@@ -594,8 +588,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(233, 373);
-			this->button2->Margin = System::Windows::Forms::Padding(4);
+			this->button2->Location = System::Drawing::Point(175, 303);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(153, 44);
 			this->button2->TabIndex = 17;
@@ -605,8 +598,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(29, 373);
-			this->button1->Margin = System::Windows::Forms::Padding(4);
+			this->button1->Location = System::Drawing::Point(22, 303);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(153, 44);
 			this->button1->TabIndex = 16;
@@ -616,18 +608,16 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textFacturation
 			// 
-			this->textFacturation->Location = System::Drawing::Point(32, 196);
-			this->textFacturation->Margin = System::Windows::Forms::Padding(4);
+			this->textFacturation->Location = System::Drawing::Point(24, 159);
 			this->textFacturation->Name = L"textFacturation";
-			this->textFacturation->Size = System::Drawing::Size(152, 22);
+			this->textFacturation->Size = System::Drawing::Size(115, 20);
 			this->textFacturation->TabIndex = 15;
 			this->textFacturation->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textFacturation_TextChanged);
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(28, 161);
-			this->label8->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label8->Location = System::Drawing::Point(21, 131);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(144, 16);
 			this->label8->TabIndex = 14;
@@ -635,10 +625,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textLivraison
 			// 
-			this->textLivraison->Location = System::Drawing::Point(236, 196);
-			this->textLivraison->Margin = System::Windows::Forms::Padding(4);
+			this->textLivraison->Location = System::Drawing::Point(177, 159);
 			this->textLivraison->Name = L"textLivraison";
-			this->textLivraison->Size = System::Drawing::Size(152, 22);
+			this->textLivraison->Size = System::Drawing::Size(115, 20);
 			this->textLivraison->TabIndex = 13;
 			this->textLivraison->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textLivraison_TextChanged);
 			// 
@@ -654,10 +643,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textAniiv
 			// 
-			this->textAniiv->Location = System::Drawing::Point(236, 124);
-			this->textAniiv->Margin = System::Windows::Forms::Padding(4);
+			this->textAniiv->Location = System::Drawing::Point(177, 101);
 			this->textAniiv->Name = L"textAniiv";
-			this->textAniiv->Size = System::Drawing::Size(152, 22);
+			this->textAniiv->Size = System::Drawing::Size(115, 20);
 			this->textAniiv->TabIndex = 11;
 			this->textAniiv->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textAniiv_TextChanged);
 			// 
@@ -673,10 +661,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textPremiereCommande
 			// 
-			this->textPremiereCommande->Location = System::Drawing::Point(236, 60);
-			this->textPremiereCommande->Margin = System::Windows::Forms::Padding(4);
+			this->textPremiereCommande->Location = System::Drawing::Point(177, 49);
 			this->textPremiereCommande->Name = L"textPremiereCommande";
-			this->textPremiereCommande->Size = System::Drawing::Size(152, 22);
+			this->textPremiereCommande->Size = System::Drawing::Size(115, 20);
 			this->textPremiereCommande->TabIndex = 9;
 			this->textPremiereCommande->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPremiereCommande_TextChanged);
 			// 
@@ -692,18 +679,16 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textMail
 			// 
-			this->textMail->Location = System::Drawing::Point(32, 124);
-			this->textMail->Margin = System::Windows::Forms::Padding(4);
+			this->textMail->Location = System::Drawing::Point(24, 101);
 			this->textMail->Name = L"textMail";
-			this->textMail->Size = System::Drawing::Size(152, 22);
+			this->textMail->Size = System::Drawing::Size(115, 20);
 			this->textMail->TabIndex = 7;
 			this->textMail->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox4_TextChanged);
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(28, 90);
-			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label4->Location = System::Drawing::Point(21, 73);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(32, 16);
 			this->label4->TabIndex = 6;
@@ -711,10 +696,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textClientID
 			// 
-			this->textClientID->Location = System::Drawing::Point(29, 60);
-			this->textClientID->Margin = System::Windows::Forms::Padding(4);
+			this->textClientID->Location = System::Drawing::Point(22, 49);
 			this->textClientID->Name = L"textClientID";
-			this->textClientID->Size = System::Drawing::Size(152, 22);
+			this->textClientID->Size = System::Drawing::Size(115, 20);
 			this->textClientID->TabIndex = 1;
 			this->textClientID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox1_TextChanged_1);
 			// 
@@ -724,7 +708,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->label1->Location = System::Drawing::Point(25, 26);
 			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(81, 16);
+			this->label1->Size = System::Drawing::Size(66, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"ID Personne";
 			this->label1->Click += gcnew System::EventHandler(this, &InterfaceManager::label1_Click_1);
@@ -821,7 +805,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->dataGridView3->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 62;
-			this->dataGridView3->Size = System::Drawing::Size(759, 382);
+			this->dataGridView3->Size = System::Drawing::Size(569, 310);
 			this->dataGridView3->TabIndex = 65;
 			this->dataGridView3->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView3_CellClick);
 			// 
@@ -972,7 +956,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->label22->Location = System::Drawing::Point(27, 68);
 			this->label22->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label22->Name = L"label22";
-			this->label22->Size = System::Drawing::Size(52, 16);
+			this->label22->Size = System::Drawing::Size(44, 13);
 			this->label22->TabIndex = 47;
 			this->label22->Text = L"Id client";
 			this->label22->Click += gcnew System::EventHandler(this, &InterfaceManager::label22_Click);
@@ -1030,10 +1014,9 @@ private: System::Windows::Forms::Button^ button46;
 			// Load_Stock
 			// 
 			this->Load_Stock->AccessibleName = L"";
-			this->Load_Stock->Location = System::Drawing::Point(475, 446);
-			this->Load_Stock->Margin = System::Windows::Forms::Padding(4);
+			this->Load_Stock->Location = System::Drawing::Point(356, 362);
 			this->Load_Stock->Name = L"Load_Stock";
-			this->Load_Stock->Size = System::Drawing::Size(100, 28);
+			this->Load_Stock->Size = System::Drawing::Size(75, 23);
 			this->Load_Stock->TabIndex = 46;
 			this->Load_Stock->Text = L"Load";
 			this->Load_Stock->UseVisualStyleBackColor = true;
@@ -1076,7 +1059,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->dataGridView2->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersWidth = 62;
-			this->dataGridView2->Size = System::Drawing::Size(759, 382);
+			this->dataGridView2->Size = System::Drawing::Size(569, 310);
 			this->dataGridView2->TabIndex = 40;
 			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView2_CellClick);
 			// 
@@ -1164,7 +1147,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->label12->Location = System::Drawing::Point(233, 26);
 			this->label12->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label12->Name = L"label12";
-			this->label12->Size = System::Drawing::Size(140, 16);
+			this->label12->Size = System::Drawing::Size(110, 13);
 			this->label12->TabIndex = 28;
 			this->label12->Text = L"Reapprovisionnement";
 			// 
@@ -1248,34 +1231,34 @@ private: System::Windows::Forms::Button^ button46;
 			// dataGridView8
 			// 
 			this->dataGridView8->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView8->Location = System::Drawing::Point(236, 351);
-			this->dataGridView8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView8->Location = System::Drawing::Point(177, 285);
+			this->dataGridView8->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView8->Name = L"dataGridView8";
 			this->dataGridView8->RowHeadersWidth = 62;
 			this->dataGridView8->RowTemplate->Height = 28;
-			this->dataGridView8->Size = System::Drawing::Size(243, 106);
+			this->dataGridView8->Size = System::Drawing::Size(182, 86);
 			this->dataGridView8->TabIndex = 52;
 			// 
 			// dataGridView7
 			// 
 			this->dataGridView7->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView7->Location = System::Drawing::Point(27, 188);
-			this->dataGridView7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView7->Location = System::Drawing::Point(20, 153);
+			this->dataGridView7->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView7->Name = L"dataGridView7";
 			this->dataGridView7->RowHeadersWidth = 62;
 			this->dataGridView7->RowTemplate->Height = 28;
-			this->dataGridView7->Size = System::Drawing::Size(212, 86);
+			this->dataGridView7->Size = System::Drawing::Size(159, 70);
 			this->dataGridView7->TabIndex = 51;
 			// 
 			// dataGridView6
 			// 
 			this->dataGridView6->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView6->Location = System::Drawing::Point(387, 188);
-			this->dataGridView6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView6->Location = System::Drawing::Point(290, 153);
+			this->dataGridView6->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView6->Name = L"dataGridView6";
 			this->dataGridView6->RowHeadersWidth = 62;
 			this->dataGridView6->RowTemplate->Height = 28;
-			this->dataGridView6->Size = System::Drawing::Size(212, 86);
+			this->dataGridView6->Size = System::Drawing::Size(159, 70);
 			this->dataGridView6->TabIndex = 50;
 			// 
 			// tabControl2
@@ -1735,6 +1718,8 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// tabPage7
 			// 
+			this->tabPage7->Controls->Add(this->textStaffAffiche);
+			this->tabPage7->Controls->Add(this->button46);
 			this->tabPage7->Controls->Add(this->button32);
 			this->tabPage7->Controls->Add(this->button33);
 			this->tabPage7->Controls->Add(this->dataGridView4);
@@ -1742,21 +1727,21 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabPage7->Controls->Add(this->button35);
 			this->tabPage7->Controls->Add(this->button36);
 			this->tabPage7->Controls->Add(this->button37);
-			this->tabPage7->Controls->Add(this->textBox32);
+			this->tabPage7->Controls->Add(this->textStaffRole);
 			this->tabPage7->Controls->Add(this->label43);
-			this->tabPage7->Controls->Add(this->textBox33);
+			this->tabPage7->Controls->Add(this->textStaffAdresse);
 			this->tabPage7->Controls->Add(this->label44);
-			this->tabPage7->Controls->Add(this->textBox34);
+			this->tabPage7->Controls->Add(this->textStaffDate);
 			this->tabPage7->Controls->Add(this->label45);
-			this->tabPage7->Controls->Add(this->textBox35);
+			this->tabPage7->Controls->Add(this->textStaffSup);
 			this->tabPage7->Controls->Add(this->label46);
-			this->tabPage7->Controls->Add(this->textBox36);
+			this->tabPage7->Controls->Add(this->textStaffMail);
 			this->tabPage7->Controls->Add(this->label47);
-			this->tabPage7->Controls->Add(this->textBox37);
+			this->tabPage7->Controls->Add(this->textStaffPrenom);
 			this->tabPage7->Controls->Add(this->label48);
-			this->tabPage7->Controls->Add(this->textBox38);
+			this->tabPage7->Controls->Add(this->textStaffNom);
 			this->tabPage7->Controls->Add(this->label49);
-			this->tabPage7->Controls->Add(this->textBox39);
+			this->tabPage7->Controls->Add(this->textStaffID);
 			this->tabPage7->Controls->Add(this->label50);
 			this->tabPage7->Location = System::Drawing::Point(4, 25);
 			this->tabPage7->Margin = System::Windows::Forms::Padding(4);
@@ -1765,6 +1750,26 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabPage7->TabIndex = 4;
 			this->tabPage7->Text = L"Gestion personnel";
 			this->tabPage7->UseVisualStyleBackColor = true;
+			// 
+			// textStaffAffiche
+			// 
+			this->textStaffAffiche->AutoSize = true;
+			this->textStaffAffiche->Location = System::Drawing::Point(437, 368);
+			this->textStaffAffiche->Name = L"textStaffAffiche";
+			this->textStaffAffiche->Size = System::Drawing::Size(56, 13);
+			this->textStaffAffiche->TabIndex = 69;
+			this->textStaffAffiche->Text = L"En attente";
+			this->textStaffAffiche->Click += gcnew System::EventHandler(this, &InterfaceManager::label55_Click);
+			// 
+			// button46
+			// 
+			this->button46->Location = System::Drawing::Point(356, 363);
+			this->button46->Name = L"button46";
+			this->button46->Size = System::Drawing::Size(75, 23);
+			this->button46->TabIndex = 68;
+			this->button46->Text = L"Load";
+			this->button46->UseVisualStyleBackColor = true;
+			this->button46->Click += gcnew System::EventHandler(this, &InterfaceManager::button46_Click_1);
 			// 
 			// button32
 			// 
@@ -1775,6 +1780,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->button32->TabIndex = 67;
 			this->button32->Text = L"<";
 			this->button32->UseVisualStyleBackColor = true;
+			this->button32->Click += gcnew System::EventHandler(this, &InterfaceManager::button32_Click);
 			// 
 			// button33
 			// 
@@ -1785,6 +1791,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->button33->TabIndex = 66;
 			this->button33->Text = L">";
 			this->button33->UseVisualStyleBackColor = true;
+			this->button33->Click += gcnew System::EventHandler(this, &InterfaceManager::button33_Click);
 			// 
 			// dataGridView4
 			// 
@@ -1793,7 +1800,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->dataGridView4->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView4->Name = L"dataGridView4";
 			this->dataGridView4->RowHeadersWidth = 62;
-			this->dataGridView4->Size = System::Drawing::Size(759, 382);
+			this->dataGridView4->Size = System::Drawing::Size(569, 310);
 			this->dataGridView4->TabIndex = 65;
 			// 
 			// button34
@@ -1805,6 +1812,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->button34->TabIndex = 63;
 			this->button34->Text = L"Enregistrer";
 			this->button34->UseVisualStyleBackColor = true;
+			this->button34->Click += gcnew System::EventHandler(this, &InterfaceManager::button34_Click);
 			// 
 			// button35
 			// 
@@ -1815,6 +1823,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->button35->TabIndex = 64;
 			this->button35->Text = L"Modifier";
 			this->button35->UseVisualStyleBackColor = true;
+			this->button35->Click += gcnew System::EventHandler(this, &InterfaceManager::button35_Click);
 			// 
 			// button36
 			// 
@@ -1825,6 +1834,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->button36->TabIndex = 62;
 			this->button36->Text = L"Supprimer";
 			this->button36->UseVisualStyleBackColor = true;
+			this->button36->Click += gcnew System::EventHandler(this, &InterfaceManager::button36_Click);
 			// 
 			// button37
 			// 
@@ -1835,32 +1845,32 @@ private: System::Windows::Forms::Button^ button46;
 			this->button37->TabIndex = 61;
 			this->button37->Text = L"Ajouter";
 			this->button37->UseVisualStyleBackColor = true;
+			this->button37->Click += gcnew System::EventHandler(this, &InterfaceManager::button37_Click);
 			// 
-			// textBox32
+			// textStaffRole
 			// 
-			this->textBox32->Location = System::Drawing::Point(237, 277);
-			this->textBox32->Margin = System::Windows::Forms::Padding(4);
-			this->textBox32->Name = L"textBox32";
-			this->textBox32->Size = System::Drawing::Size(152, 22);
-			this->textBox32->TabIndex = 60;
+			this->textStaffRole->Location = System::Drawing::Point(178, 225);
+			this->textStaffRole->Name = L"textStaffRole";
+			this->textStaffRole->Size = System::Drawing::Size(115, 20);
+			this->textStaffRole->TabIndex = 60;
+			this->textStaffRole->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox32_TextChanged);
 			// 
 			// label43
 			// 
 			this->label43->AutoSize = true;
-			this->label43->Location = System::Drawing::Point(233, 242);
-			this->label43->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label43->Location = System::Drawing::Point(175, 197);
 			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(30, 16);
+			this->label43->Size = System::Drawing::Size(24, 13);
 			this->label43->TabIndex = 59;
 			this->label43->Text = L"role";
 			// 
-			// textBox33
+			// textStaffAdresse
 			// 
-			this->textBox33->Location = System::Drawing::Point(237, 203);
-			this->textBox33->Margin = System::Windows::Forms::Padding(4);
-			this->textBox33->Name = L"textBox33";
-			this->textBox33->Size = System::Drawing::Size(152, 22);
-			this->textBox33->TabIndex = 58;
+			this->textStaffAdresse->Location = System::Drawing::Point(178, 165);
+			this->textStaffAdresse->Name = L"textStaffAdresse";
+			this->textStaffAdresse->Size = System::Drawing::Size(115, 20);
+			this->textStaffAdresse->TabIndex = 58;
+			this->textStaffAdresse->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox33_TextChanged);
 			// 
 			// label44
 			// 
@@ -1872,13 +1882,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label44->TabIndex = 57;
 			this->label44->Text = L"Adresse ";
 			// 
-			// textBox34
+			// textStaffDate
 			// 
-			this->textBox34->Location = System::Drawing::Point(237, 132);
-			this->textBox34->Margin = System::Windows::Forms::Padding(4);
-			this->textBox34->Name = L"textBox34";
-			this->textBox34->Size = System::Drawing::Size(152, 22);
-			this->textBox34->TabIndex = 56;
+			this->textStaffDate->Location = System::Drawing::Point(178, 107);
+			this->textStaffDate->Name = L"textStaffDate";
+			this->textStaffDate->Size = System::Drawing::Size(115, 20);
+			this->textStaffDate->TabIndex = 56;
+			this->textStaffDate->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox34_TextChanged);
 			// 
 			// label45
 			// 
@@ -1890,13 +1900,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label45->TabIndex = 55;
 			this->label45->Text = L"Date embauchement";
 			// 
-			// textBox35
+			// textStaffSup
 			// 
-			this->textBox35->Location = System::Drawing::Point(237, 68);
-			this->textBox35->Margin = System::Windows::Forms::Padding(4);
-			this->textBox35->Name = L"textBox35";
-			this->textBox35->Size = System::Drawing::Size(152, 22);
-			this->textBox35->TabIndex = 54;
+			this->textStaffSup->Location = System::Drawing::Point(178, 55);
+			this->textStaffSup->Name = L"textStaffSup";
+			this->textStaffSup->Size = System::Drawing::Size(115, 20);
+			this->textStaffSup->TabIndex = 54;
+			this->textStaffSup->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox35_TextChanged);
 			// 
 			// label46
 			// 
@@ -1908,13 +1918,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label46->TabIndex = 53;
 			this->label46->Text = L"Nom superieur";
 			// 
-			// textBox36
+			// textStaffMail
 			// 
-			this->textBox36->Location = System::Drawing::Point(31, 277);
-			this->textBox36->Margin = System::Windows::Forms::Padding(4);
-			this->textBox36->Name = L"textBox36";
-			this->textBox36->Size = System::Drawing::Size(152, 22);
-			this->textBox36->TabIndex = 52;
+			this->textStaffMail->Location = System::Drawing::Point(23, 225);
+			this->textStaffMail->Name = L"textStaffMail";
+			this->textStaffMail->Size = System::Drawing::Size(115, 20);
+			this->textStaffMail->TabIndex = 52;
+			this->textStaffMail->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox36_TextChanged);
 			// 
 			// label47
 			// 
@@ -1926,13 +1936,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label47->TabIndex = 51;
 			this->label47->Text = L"mail";
 			// 
-			// textBox37
+			// textStaffPrenom
 			// 
-			this->textBox37->Location = System::Drawing::Point(31, 203);
-			this->textBox37->Margin = System::Windows::Forms::Padding(4);
-			this->textBox37->Name = L"textBox37";
-			this->textBox37->Size = System::Drawing::Size(152, 22);
-			this->textBox37->TabIndex = 50;
+			this->textStaffPrenom->Location = System::Drawing::Point(23, 165);
+			this->textStaffPrenom->Name = L"textStaffPrenom";
+			this->textStaffPrenom->Size = System::Drawing::Size(115, 20);
+			this->textStaffPrenom->TabIndex = 50;
+			this->textStaffPrenom->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox37_TextChanged);
 			// 
 			// label48
 			// 
@@ -1944,13 +1954,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label48->TabIndex = 49;
 			this->label48->Text = L"Prenom personnel";
 			// 
-			// textBox38
+			// textStaffNom
 			// 
-			this->textBox38->Location = System::Drawing::Point(31, 132);
-			this->textBox38->Margin = System::Windows::Forms::Padding(4);
-			this->textBox38->Name = L"textBox38";
-			this->textBox38->Size = System::Drawing::Size(152, 22);
-			this->textBox38->TabIndex = 48;
+			this->textStaffNom->Location = System::Drawing::Point(23, 107);
+			this->textStaffNom->Name = L"textStaffNom";
+			this->textStaffNom->Size = System::Drawing::Size(115, 20);
+			this->textStaffNom->TabIndex = 48;
+			this->textStaffNom->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox38_TextChanged);
 			// 
 			// label49
 			// 
@@ -1962,13 +1972,13 @@ private: System::Windows::Forms::Button^ button46;
 			this->label49->TabIndex = 47;
 			this->label49->Text = L"Nom personnel";
 			// 
-			// textBox39
+			// textStaffID
 			// 
-			this->textBox39->Location = System::Drawing::Point(31, 68);
-			this->textBox39->Margin = System::Windows::Forms::Padding(4);
-			this->textBox39->Name = L"textBox39";
-			this->textBox39->Size = System::Drawing::Size(152, 22);
-			this->textBox39->TabIndex = 46;
+			this->textStaffID->Location = System::Drawing::Point(23, 55);
+			this->textStaffID->Name = L"textStaffID";
+			this->textStaffID->Size = System::Drawing::Size(115, 20);
+			this->textStaffID->TabIndex = 46;
+			this->textStaffID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox39_TextChanged);
 			// 
 			// label50
 			// 
@@ -1976,7 +1986,7 @@ private: System::Windows::Forms::Button^ button46;
 			this->label50->Location = System::Drawing::Point(27, 33);
 			this->label50->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(81, 16);
+			this->label50->Size = System::Drawing::Size(66, 13);
 			this->label50->TabIndex = 45;
 			this->label50->Text = L"ID Personne";
 			// 
@@ -1998,10 +2008,10 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabPage8->Controls->Add(this->label52);
 			this->tabPage8->Controls->Add(this->textPersonneID);
 			this->tabPage8->Controls->Add(this->label53);
-			this->tabPage8->Location = System::Drawing::Point(4, 25);
-			this->tabPage8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->tabPage8->Location = System::Drawing::Point(4, 22);
+			this->tabPage8->Margin = System::Windows::Forms::Padding(2);
 			this->tabPage8->Name = L"tabPage8";
-			this->tabPage8->Size = System::Drawing::Size(1261, 495);
+			this->tabPage8->Size = System::Drawing::Size(944, 400);
 			this->tabPage8->TabIndex = 5;
 			this->tabPage8->Text = L"Gestion personne";
 			this->tabPage8->UseVisualStyleBackColor = true;
@@ -2010,10 +2020,9 @@ private: System::Windows::Forms::Button^ button46;
 			// textAffichage
 			// 
 			this->textAffichage->AutoSize = true;
-			this->textAffichage->Location = System::Drawing::Point(21, 439);
-			this->textAffichage->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->textAffichage->Location = System::Drawing::Point(16, 357);
 			this->textAffichage->Name = L"textAffichage";
-			this->textAffichage->Size = System::Drawing::Size(66, 16);
+			this->textAffichage->Size = System::Drawing::Size(56, 13);
 			this->textAffichage->TabIndex = 77;
 			this->textAffichage->Text = L"En attente";
 			this->textAffichage->Click += gcnew System::EventHandler(this, &InterfaceManager::textAffichage_Click);
@@ -2021,18 +2030,16 @@ private: System::Windows::Forms::Button^ button46;
 			// label54
 			// 
 			this->label54->AutoSize = true;
-			this->label54->Location = System::Drawing::Point(56, 439);
-			this->label54->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label54->Location = System::Drawing::Point(42, 357);
 			this->label54->Name = L"label54";
-			this->label54->Size = System::Drawing::Size(0, 16);
+			this->label54->Size = System::Drawing::Size(0, 13);
 			this->label54->TabIndex = 76;
 			// 
 			// button44
 			// 
-			this->button44->Location = System::Drawing::Point(159, 362);
-			this->button44->Margin = System::Windows::Forms::Padding(4);
+			this->button44->Location = System::Drawing::Point(119, 294);
 			this->button44->Name = L"button44";
-			this->button44->Size = System::Drawing::Size(153, 44);
+			this->button44->Size = System::Drawing::Size(115, 36);
 			this->button44->TabIndex = 75;
 			this->button44->Text = L"Load";
 			this->button44->UseVisualStyleBackColor = true;
@@ -2041,20 +2048,19 @@ private: System::Windows::Forms::Button^ button46;
 			// dataGridView5
 			// 
 			this->dataGridView5->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView5->Location = System::Drawing::Point(553, 32);
-			this->dataGridView5->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
+			this->dataGridView5->Location = System::Drawing::Point(415, 26);
+			this->dataGridView5->Margin = System::Windows::Forms::Padding(2);
 			this->dataGridView5->Name = L"dataGridView5";
 			this->dataGridView5->RowHeadersWidth = 62;
 			this->dataGridView5->RowTemplate->Height = 28;
-			this->dataGridView5->Size = System::Drawing::Size(688, 439);
+			this->dataGridView5->Size = System::Drawing::Size(516, 357);
 			this->dataGridView5->TabIndex = 74;
 			// 
 			// button38
 			// 
-			this->button38->Location = System::Drawing::Point(65, 167);
-			this->button38->Margin = System::Windows::Forms::Padding(4);
+			this->button38->Location = System::Drawing::Point(49, 136);
 			this->button38->Name = L"button38";
-			this->button38->Size = System::Drawing::Size(151, 28);
+			this->button38->Size = System::Drawing::Size(113, 23);
 			this->button38->TabIndex = 73;
 			this->button38->Text = L"<";
 			this->button38->UseVisualStyleBackColor = true;
@@ -2062,10 +2068,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button39
 			// 
-			this->button39->Location = System::Drawing::Point(272, 167);
-			this->button39->Margin = System::Windows::Forms::Padding(4);
+			this->button39->Location = System::Drawing::Point(204, 136);
 			this->button39->Name = L"button39";
-			this->button39->Size = System::Drawing::Size(151, 28);
+			this->button39->Size = System::Drawing::Size(113, 23);
 			this->button39->TabIndex = 72;
 			this->button39->Text = L">";
 			this->button39->UseVisualStyleBackColor = true;
@@ -2073,10 +2078,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button40
 			// 
-			this->button40->Location = System::Drawing::Point(269, 255);
-			this->button40->Margin = System::Windows::Forms::Padding(4);
+			this->button40->Location = System::Drawing::Point(202, 207);
 			this->button40->Name = L"button40";
-			this->button40->Size = System::Drawing::Size(153, 44);
+			this->button40->Size = System::Drawing::Size(115, 36);
 			this->button40->TabIndex = 70;
 			this->button40->Text = L"Enregistrer";
 			this->button40->UseVisualStyleBackColor = true;
@@ -2084,10 +2088,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button41
 			// 
-			this->button41->Location = System::Drawing::Point(65, 255);
-			this->button41->Margin = System::Windows::Forms::Padding(4);
+			this->button41->Location = System::Drawing::Point(49, 207);
 			this->button41->Name = L"button41";
-			this->button41->Size = System::Drawing::Size(153, 44);
+			this->button41->Size = System::Drawing::Size(115, 36);
 			this->button41->TabIndex = 71;
 			this->button41->Text = L"Modifier";
 			this->button41->UseVisualStyleBackColor = true;
@@ -2095,10 +2098,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button42
 			// 
-			this->button42->Location = System::Drawing::Point(269, 202);
-			this->button42->Margin = System::Windows::Forms::Padding(4);
+			this->button42->Location = System::Drawing::Point(202, 164);
 			this->button42->Name = L"button42";
-			this->button42->Size = System::Drawing::Size(153, 44);
+			this->button42->Size = System::Drawing::Size(115, 36);
 			this->button42->TabIndex = 69;
 			this->button42->Text = L"Supprimer";
 			this->button42->UseVisualStyleBackColor = true;
@@ -2106,10 +2108,9 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// button43
 			// 
-			this->button43->Location = System::Drawing::Point(65, 202);
-			this->button43->Margin = System::Windows::Forms::Padding(4);
+			this->button43->Location = System::Drawing::Point(49, 164);
 			this->button43->Name = L"button43";
-			this->button43->Size = System::Drawing::Size(153, 44);
+			this->button43->Size = System::Drawing::Size(115, 36);
 			this->button43->TabIndex = 68;
 			this->button43->Text = L"Ajouter";
 			this->button43->UseVisualStyleBackColor = true;
@@ -2117,56 +2118,50 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textPersonnePrenom
 			// 
-			this->textPersonnePrenom->Location = System::Drawing::Point(300, 118);
-			this->textPersonnePrenom->Margin = System::Windows::Forms::Padding(4);
+			this->textPersonnePrenom->Location = System::Drawing::Point(225, 96);
 			this->textPersonnePrenom->Name = L"textPersonnePrenom";
-			this->textPersonnePrenom->Size = System::Drawing::Size(152, 22);
+			this->textPersonnePrenom->Size = System::Drawing::Size(115, 20);
 			this->textPersonnePrenom->TabIndex = 11;
 			// 
 			// label51
 			// 
 			this->label51->AutoSize = true;
-			this->label51->Location = System::Drawing::Point(329, 84);
-			this->label51->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label51->Location = System::Drawing::Point(247, 68);
 			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(88, 16);
+			this->label51->Size = System::Drawing::Size(71, 13);
 			this->label51->TabIndex = 10;
 			this->label51->Text = L"Prenom client";
 			// 
 			// textPersonneNom
 			// 
-			this->textPersonneNom->Location = System::Drawing::Point(25, 118);
-			this->textPersonneNom->Margin = System::Windows::Forms::Padding(4);
+			this->textPersonneNom->Location = System::Drawing::Point(19, 96);
 			this->textPersonneNom->Name = L"textPersonneNom";
-			this->textPersonneNom->Size = System::Drawing::Size(152, 22);
+			this->textPersonneNom->Size = System::Drawing::Size(115, 20);
 			this->textPersonneNom->TabIndex = 9;
 			// 
 			// label52
 			// 
 			this->label52->AutoSize = true;
-			this->label52->Location = System::Drawing::Point(61, 84);
-			this->label52->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label52->Location = System::Drawing::Point(46, 68);
 			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(70, 16);
+			this->label52->Size = System::Drawing::Size(57, 13);
 			this->label52->TabIndex = 8;
 			this->label52->Text = L"Nom client";
 			// 
 			// textPersonneID
 			// 
-			this->textPersonneID->Location = System::Drawing::Point(159, 54);
-			this->textPersonneID->Margin = System::Windows::Forms::Padding(4);
+			this->textPersonneID->Location = System::Drawing::Point(119, 44);
 			this->textPersonneID->Name = L"textPersonneID";
-			this->textPersonneID->Size = System::Drawing::Size(152, 22);
+			this->textPersonneID->Size = System::Drawing::Size(115, 20);
 			this->textPersonneID->TabIndex = 7;
 			this->textPersonneID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox42_TextChanged);
 			// 
 			// label53
 			// 
 			this->label53->AutoSize = true;
-			this->label53->Location = System::Drawing::Point(189, 20);
-			this->label53->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
+			this->label53->Location = System::Drawing::Point(142, 16);
 			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(81, 16);
+			this->label53->Size = System::Drawing::Size(66, 13);
 			this->label53->TabIndex = 6;
 			this->label53->Text = L"ID Personne";
 			// 
@@ -2254,6 +2249,29 @@ private: void loadDataClient(int index)
 	
 
 }
+
+
+private: void loadDataStaff(int index)
+{
+	this->dsPersonne->Clear();
+	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+	this->dsStaff->Clear();
+	this->dsStaff = this->processusStaff->ListeStaff("liste");
+	this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+	this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+	this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+	this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+	this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+	this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+	
+	int compt = 0;
+	while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
+		compt++;
+	};
+	this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+	this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+
+}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2321,6 +2339,9 @@ private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ 
 
 	}
 }
+
+
+
 private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->textPersonneID->Clear();
 	this->textPersonneNom->Clear();
@@ -2365,7 +2386,7 @@ private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::Eve
 private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textPremiereCommande_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
+
 private: System::Void textAniiv_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void textLivraison_TextChanged(System::Object^ sender, System::EventArgs^ e) {
@@ -2407,7 +2428,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	else if (this->mode == "maj")
 	{
-		this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text),this->textMail->Text, Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+		this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text),Convert::ToString(this->textMail->Text), Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
 	}
 	else if (this->mode == "sup")
 	{
@@ -2415,10 +2436,10 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	}
 	this->index = 0;
 	this->loadDataClient(this->index);
-	this->textAffichage->Text += "Traitement terminé.";
+	this->affichageClient ->Text += "Traitement terminé.";
 }
 private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
-	this->dataGridView1->Refresh();
+	this->dataGridView2->Refresh();
 
 	this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
 	this->dataGridView2->DataMember = "Stock";
@@ -2438,6 +2459,7 @@ private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e
 private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {			//Delete from stock
 
 	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+
 
 	this->processusStock->Remove_Products();
 
@@ -2466,50 +2488,85 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 	this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
 }
 
-private: System::Void dataGridView3_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	this->textBox21->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
-	this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Client_ID"]->Value->ToString();
-	this->textBox19->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString() + " " + this->dataGridView3->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString();
-	this->textBox18->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Nb_paiements"]->Value->ToString();
-	this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reception"]->Value->ToString();
-	this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_expedition"]->Value->ToString();
-	this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
-	//this->textBox23->Text
+private: System::Void textBox39_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-
+private: System::Void textBox35_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox34_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox32_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox33_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox36_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox37_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void textBox38_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
 private: System::Void button46_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView3->Refresh();
-
-	this->dataGridView3->DataSource = this->processusOrders->Fetch_Order("Orders");
-	this->dataGridView3->DataMember = "Orders";
+	loadDataStaff(0);
 }
-private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {	//Add order
-	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
-	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
-	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
 
-	this->processusOrders->Add_Order();
 
-	Load_Stock->PerformClick(); //refresh Grid
+private: System::Void button33_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->dsStaff->Tables["liste"]->Rows->Count - 1)
+	{
+		this->index++;
+		this->loadDataStaff(this->index);
+	}
+
 }
-private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {	//Delete Order
+private: System::Void button32_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0)
+	{
+		this->index--;
+		this->loadDataStaff(this->index);
 
-	processusOrders->Set_ID(textBox21->Text);
+	}
 
-	this->processusOrders->Remove_Order();
-
-	Load_Stock->PerformClick(); //refresh Grid
 }
-private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {	//Update Order
-
-	processusOrders->Set_ID(textBox21->Text);
-	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
-	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
-	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
-
-	this->processusOrders->Update_Order();
-
-	Load_Stock->PerformClick(); //refresh Grid
+private: System::Void button37_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->textStaffID->Clear();
+	this->textStaffSup->Clear();
+	this->textStaffDate->Clear();
+	this->textStaffRole->Clear();
+	this->textStaffAdresse->Clear();
+	this->textStaffMail->Clear();
+	this->textStaffNom->Text = "Ne rien entrer.";
+	this->textStaffPrenom->Text = "Ne rien entrer.";
+	this->mode = "nouv";
+	this->textStaffAffiche->Text = Convert::ToString("Veillez entrer les informations");
+}
+private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button35_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "maj";
+	this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
+}
+private: System::Void button36_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "sup";
+	this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+}
+private: System::Void button34_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->mode == "nouv")
+	{
+		int Id;
+		this->processusIdentification->Add_Identification(this->textStaffMail->Text, "1234");
+		Id = this->processusStaff->Add_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+	}
+	else if (this->mode == "maj")
+	{
+		this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+	}
+	else if (this->mode == "sup")
+	{
+		this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
+		this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
+	}
+	this->index = 0;
+	this->loadDataStaff(this->index);
+	this->textStaffAffiche->Text += "Traitement terminé.";
 }
 };
 }

@@ -53,14 +53,14 @@ void SG_Client::Remove_Client(int id_Client) {
 }
 
 
-void SG_Client::Update_Client(int id_Client, String^ mail, DateTime^ dateCommand,DateTime^ dateAnniv,int adresseFacturation, int adresseLivraison) {
+void SG_Client::Update_Client(int id_Client, String^ mailStp, DateTime^ dateCommand,DateTime^ dateAnniv,int adresseFacturation, int adresseLivraison) {
 	this->MapClient->Set_Personne(id_Client);
+	this->MapClient->Set_Mail(mailStp);
 	this->MapClient->Set_Date_Premiere_Commande(dateCommand);
 	this->MapClient->Set_Date_Anniv(dateAnniv);
 	this->MapClient->Set_Facturation(adresseFacturation);
 	this->MapClient->Set_Livraison(adresseLivraison);
 	this->AccesClient->actionRows(this->MapClient->Update_Client());
 	this->AccesClient->actionRows(this->MapClient->Update_Facturation());
-	this->AccesClient->actionRows(this->MapClient->Update_Facturation());
-	
+	this->AccesClient->actionRows(this->MapClient->Update_Livraison());
 }

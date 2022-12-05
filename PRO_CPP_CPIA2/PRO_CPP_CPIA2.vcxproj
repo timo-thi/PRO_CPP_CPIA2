@@ -116,6 +116,7 @@
     <ClInclude Include="CM_Classic.h" />
     <ClInclude Include="CM_Client.h" />
     <ClInclude Include="CM_Connexion.h" />
+    <ClInclude Include="CM_Identification.h" />
     <ClInclude Include="CM_Orders.h" />
     <ClInclude Include="CM_Personne.h" />
     <ClInclude Include="CM_Staff.h" />
@@ -132,6 +133,7 @@
     </ClInclude>
     <ClInclude Include="SG_Classic.h" />
     <ClInclude Include="SG_Client.h" />
+    <ClInclude Include="SG_Identification.h" />
     <ClInclude Include="SG_Orders.h" />
     <ClInclude Include="SG_Personne.h" />
     <ClInclude Include="SG_Staff.h" />
@@ -142,6 +144,7 @@
     <ClCompile Include="CM_Classic.cpp" />
     <ClCompile Include="CM_Client.cpp" />
     <ClCompile Include="CM_Connexion.cpp" />
+    <ClCompile Include="CM_Identification.cpp" />
     <ClCompile Include="CM_Orders.cpp" />
     <ClCompile Include="CM_Personne.cpp" />
     <ClCompile Include="CM_Staff.cpp" />
@@ -152,6 +155,7 @@
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
+    <ClCompile Include="SG_Identification.cpp" />
     <ClCompile Include="SG_Orders.cpp" />
     <ClCompile Include="SG_Personne.cpp" />
     <ClCompile Include="SG_Staff.cpp" />

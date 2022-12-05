@@ -9,8 +9,6 @@ namespace NS_Services
         DataSet^ dataPersonne;
         CM_Personne^ MapPersonne;
         CM_Connexion^ AccesPersonne;
-        DataSet^ dataFacturation;
-        DataSet^ dataLivraison;
     public:
 
         SG_Personne();
