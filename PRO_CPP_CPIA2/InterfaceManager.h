@@ -180,43 +180,70 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::TextBox^ textBox39;
 	private: System::Windows::Forms::Label^ label50;
 	private: System::Windows::Forms::Button^ button38;
+	private: System::Windows::Forms::TextBox^ textBoxValAch;
+	private: System::Windows::Forms::TextBox^ textBoxPanierAvg;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+
+
+
+
+
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::Button^ buttonDemarque2;
+	private: System::Windows::Forms::Button^ buttonDemarque3;
+	private: System::Windows::Forms::Button^ buttonDemarque5;
+	private: System::Windows::Forms::Button^ buttonRemise3;
+	private: System::Windows::Forms::Button^ buttonRemise5;
+	private: System::Windows::Forms::Button^ buttonRemise6;
+	private: System::Windows::Forms::Button^ buttonMarge5;
+	private: System::Windows::Forms::Button^ buttonMarge10;
+	private: System::Windows::Forms::Button^ buttonMarge15;
+	private: System::Windows::Forms::Button^ buttonTVA5;
+	private: System::Windows::Forms::Button^ buttonTVA10;
+	private: System::Windows::Forms::Button^ buttonTVA20;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownRemise;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownTVA;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
+	private: System::Windows::Forms::TabPage^ tabPage1;
+	private: System::Windows::Forms::Button^ button20;
+	private: System::Windows::Forms::Button^ button21;
+	private: System::Windows::Forms::DataGridView^ dataGridView5;
+	private: System::Windows::Forms::Button^ buttonRegisterAdr;
+	private: System::Windows::Forms::Button^ buttonEditAdr;
+	private: System::Windows::Forms::Button^ buttonDelAdr;
+	private: System::Windows::Forms::Button^ buttonAddAdr;
+
+
+	private: System::Windows::Forms::TextBox^ textBox25;
+	private: System::Windows::Forms::Label^ label52;
+	private: System::Windows::Forms::TextBox^ textBox26;
+	private: System::Windows::Forms::Label^ label53;
+	private: System::Windows::Forms::TextBox^ textBox27;
+	private: System::Windows::Forms::Label^ label54;
+
+
+	private: System::Windows::Forms::TextBox^ textBox29;
+	private: System::Windows::Forms::Label^ label56;
+	private: System::Windows::Forms::TextBox^ textBox30;
+	private: System::Windows::Forms::Label^ label57;
+	private: System::Windows::Forms::TextBox^ textBox31;
+	private: System::Windows::Forms::Label^ label58;
+	private: System::Windows::Forms::RichTextBox^ richTextBoxAdrDetails1;
+	private: System::Windows::Forms::Label^ label55;
+
+
+
+
+
+
+
+
 
 	// Services
 	private:
 		SG_Stat^ Stat_Service;
-private: System::Windows::Forms::TextBox^ textBoxValAch;
-private: System::Windows::Forms::TextBox^ textBoxPanierAvg;
-private: System::Windows::Forms::ComboBox^ comboBox1;
-
-
-
-
-
-private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-private: System::Windows::Forms::Button^ buttonDemarque2;
-private: System::Windows::Forms::Button^ buttonDemarque3;
-private: System::Windows::Forms::Button^ buttonDemarque5;
-private: System::Windows::Forms::Button^ buttonRemise3;
-private: System::Windows::Forms::Button^ buttonRemise5;
-private: System::Windows::Forms::Button^ buttonRemise6;
-private: System::Windows::Forms::Button^ buttonMarge5;
-private: System::Windows::Forms::Button^ buttonMarge10;
-private: System::Windows::Forms::Button^ buttonMarge15;
-private: System::Windows::Forms::Button^ buttonTVA5;
-private: System::Windows::Forms::Button^ buttonTVA10;
-private: System::Windows::Forms::Button^ buttonTVA20;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownRemise;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownTVA;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
-
-
-
-
-
-
-
-
+		String^ mode;
 
 	protected:
 
@@ -380,6 +407,28 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->richTextBoxAdrDetails1 = (gcnew System::Windows::Forms::RichTextBox());
+			this->button20 = (gcnew System::Windows::Forms::Button());
+			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->dataGridView5 = (gcnew System::Windows::Forms::DataGridView());
+			this->buttonRegisterAdr = (gcnew System::Windows::Forms::Button());
+			this->buttonEditAdr = (gcnew System::Windows::Forms::Button());
+			this->buttonDelAdr = (gcnew System::Windows::Forms::Button());
+			this->buttonAddAdr = (gcnew System::Windows::Forms::Button());
+			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
+			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
+			this->label54 = (gcnew System::Windows::Forms::Label());
+			this->label55 = (gcnew System::Windows::Forms::Label());
+			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
+			this->label56 = (gcnew System::Windows::Forms::Label());
+			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
+			this->label57 = (gcnew System::Windows::Forms::Label());
+			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
+			this->label58 = (gcnew System::Windows::Forms::Label());
 			this->tabControlGestionSwitch->SuspendLayout();
 			this->tabPageClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -398,6 +447,8 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTVA))->BeginInit();
 			this->tabPageStaff->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
+			this->tabPage1->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControlGestionSwitch
@@ -407,6 +458,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->tabControlGestionSwitch->Controls->Add(this->tabPageStock);
 			this->tabControlGestionSwitch->Controls->Add(this->tabPageStat);
 			this->tabControlGestionSwitch->Controls->Add(this->tabPageStaff);
+			this->tabControlGestionSwitch->Controls->Add(this->tabPage1);
 			this->tabControlGestionSwitch->Location = System::Drawing::Point(12, 13);
 			this->tabControlGestionSwitch->Name = L"tabControlGestionSwitch";
 			this->tabControlGestionSwitch->SelectedIndex = 0;
@@ -1840,6 +1892,216 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->label50->TabIndex = 45;
 			this->label50->Text = L"ID Personnel";
 			// 
+			// tabPage1
+			// 
+			this->tabPage1->Controls->Add(this->richTextBoxAdrDetails1);
+			this->tabPage1->Controls->Add(this->button20);
+			this->tabPage1->Controls->Add(this->button21);
+			this->tabPage1->Controls->Add(this->dataGridView5);
+			this->tabPage1->Controls->Add(this->buttonRegisterAdr);
+			this->tabPage1->Controls->Add(this->buttonEditAdr);
+			this->tabPage1->Controls->Add(this->buttonDelAdr);
+			this->tabPage1->Controls->Add(this->buttonAddAdr);
+			this->tabPage1->Controls->Add(this->textBox25);
+			this->tabPage1->Controls->Add(this->label52);
+			this->tabPage1->Controls->Add(this->textBox26);
+			this->tabPage1->Controls->Add(this->label53);
+			this->tabPage1->Controls->Add(this->textBox27);
+			this->tabPage1->Controls->Add(this->label54);
+			this->tabPage1->Controls->Add(this->label55);
+			this->tabPage1->Controls->Add(this->textBox29);
+			this->tabPage1->Controls->Add(this->label56);
+			this->tabPage1->Controls->Add(this->textBox30);
+			this->tabPage1->Controls->Add(this->label57);
+			this->tabPage1->Controls->Add(this->textBox31);
+			this->tabPage1->Controls->Add(this->label58);
+			this->tabPage1->Location = System::Drawing::Point(4, 22);
+			this->tabPage1->Name = L"tabPage1";
+			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
+			this->tabPage1->Size = System::Drawing::Size(944, 400);
+			this->tabPage1->TabIndex = 5;
+			this->tabPage1->Text = L"Gestion adresses";
+			this->tabPage1->UseVisualStyleBackColor = true;
+			// 
+			// richTextBoxAdrDetails1
+			// 
+			this->richTextBoxAdrDetails1->Location = System::Drawing::Point(23, 218);
+			this->richTextBoxAdrDetails1->Name = L"richTextBoxAdrDetails1";
+			this->richTextBoxAdrDetails1->Size = System::Drawing::Size(268, 42);
+			this->richTextBoxAdrDetails1->TabIndex = 91;
+			this->richTextBoxAdrDetails1->Text = L"";
+			// 
+			// button20
+			// 
+			this->button20->Location = System::Drawing::Point(25, 266);
+			this->button20->Name = L"button20";
+			this->button20->Size = System::Drawing::Size(113, 23);
+			this->button20->TabIndex = 90;
+			this->button20->Text = L"<";
+			this->button20->UseVisualStyleBackColor = true;
+			// 
+			// button21
+			// 
+			this->button21->Location = System::Drawing::Point(178, 266);
+			this->button21->Name = L"button21";
+			this->button21->Size = System::Drawing::Size(113, 23);
+			this->button21->TabIndex = 89;
+			this->button21->Text = L">";
+			this->button21->UseVisualStyleBackColor = true;
+			// 
+			// dataGridView5
+			// 
+			this->dataGridView5->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView5->Location = System::Drawing::Point(356, 36);
+			this->dataGridView5->Name = L"dataGridView5";
+			this->dataGridView5->Size = System::Drawing::Size(569, 310);
+			this->dataGridView5->TabIndex = 88;
+			// 
+			// buttonRegisterAdr
+			// 
+			this->buttonRegisterAdr->Location = System::Drawing::Point(176, 337);
+			this->buttonRegisterAdr->Name = L"buttonRegisterAdr";
+			this->buttonRegisterAdr->Size = System::Drawing::Size(115, 36);
+			this->buttonRegisterAdr->TabIndex = 86;
+			this->buttonRegisterAdr->Text = L"Enregistrer";
+			this->buttonRegisterAdr->UseVisualStyleBackColor = true;
+			this->buttonRegisterAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRegisterAdr_Click);
+			// 
+			// buttonEditAdr
+			// 
+			this->buttonEditAdr->Location = System::Drawing::Point(23, 337);
+			this->buttonEditAdr->Name = L"buttonEditAdr";
+			this->buttonEditAdr->Size = System::Drawing::Size(115, 36);
+			this->buttonEditAdr->TabIndex = 87;
+			this->buttonEditAdr->Text = L"Modifier";
+			this->buttonEditAdr->UseVisualStyleBackColor = true;
+			this->buttonEditAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonEditAdr_Click);
+			// 
+			// buttonDelAdr
+			// 
+			this->buttonDelAdr->Location = System::Drawing::Point(176, 295);
+			this->buttonDelAdr->Name = L"buttonDelAdr";
+			this->buttonDelAdr->Size = System::Drawing::Size(115, 36);
+			this->buttonDelAdr->TabIndex = 85;
+			this->buttonDelAdr->Text = L"Supprimer";
+			this->buttonDelAdr->UseVisualStyleBackColor = true;
+			this->buttonDelAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDelAdr_Click);
+			// 
+			// buttonAddAdr
+			// 
+			this->buttonAddAdr->Location = System::Drawing::Point(23, 295);
+			this->buttonAddAdr->Name = L"buttonAddAdr";
+			this->buttonAddAdr->Size = System::Drawing::Size(115, 36);
+			this->buttonAddAdr->TabIndex = 84;
+			this->buttonAddAdr->Text = L"Ajouter";
+			this->buttonAddAdr->UseVisualStyleBackColor = true;
+			this->buttonAddAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAddAdr_Click);
+			// 
+			// textBox25
+			// 
+			this->textBox25->Location = System::Drawing::Point(178, 165);
+			this->textBox25->Name = L"textBox25";
+			this->textBox25->Size = System::Drawing::Size(115, 20);
+			this->textBox25->TabIndex = 81;
+			// 
+			// label52
+			// 
+			this->label52->AutoSize = true;
+			this->label52->Location = System::Drawing::Point(175, 149);
+			this->label52->Name = L"label52";
+			this->label52->Size = System::Drawing::Size(63, 13);
+			this->label52->TabIndex = 80;
+			this->label52->Text = L"Code postal";
+			// 
+			// textBox26
+			// 
+			this->textBox26->Location = System::Drawing::Point(178, 107);
+			this->textBox26->Name = L"textBox26";
+			this->textBox26->Size = System::Drawing::Size(115, 20);
+			this->textBox26->TabIndex = 79;
+			// 
+			// label53
+			// 
+			this->label53->AutoSize = true;
+			this->label53->Location = System::Drawing::Point(175, 91);
+			this->label53->Name = L"label53";
+			this->label53->Size = System::Drawing::Size(26, 13);
+			this->label53->TabIndex = 78;
+			this->label53->Text = L"Ville";
+			// 
+			// textBox27
+			// 
+			this->textBox27->Location = System::Drawing::Point(178, 55);
+			this->textBox27->Name = L"textBox27";
+			this->textBox27->Size = System::Drawing::Size(115, 20);
+			this->textBox27->TabIndex = 77;
+			// 
+			// label54
+			// 
+			this->label54->AutoSize = true;
+			this->label54->Location = System::Drawing::Point(175, 36);
+			this->label54->Name = L"label54";
+			this->label54->Size = System::Drawing::Size(54, 13);
+			this->label54->TabIndex = 76;
+			this->label54->Text = L"ID de ville";
+			// 
+			// label55
+			// 
+			this->label55->AutoSize = true;
+			this->label55->Location = System::Drawing::Point(20, 202);
+			this->label55->Name = L"label55";
+			this->label55->Size = System::Drawing::Size(39, 13);
+			this->label55->TabIndex = 74;
+			this->label55->Text = L"Details";
+			// 
+			// textBox29
+			// 
+			this->textBox29->Location = System::Drawing::Point(23, 165);
+			this->textBox29->Name = L"textBox29";
+			this->textBox29->Size = System::Drawing::Size(115, 20);
+			this->textBox29->TabIndex = 73;
+			// 
+			// label56
+			// 
+			this->label56->AutoSize = true;
+			this->label56->Location = System::Drawing::Point(20, 149);
+			this->label56->Name = L"label56";
+			this->label56->Size = System::Drawing::Size(62, 13);
+			this->label56->TabIndex = 72;
+			this->label56->Text = L"Nom de rue";
+			// 
+			// textBox30
+			// 
+			this->textBox30->Location = System::Drawing::Point(23, 107);
+			this->textBox30->Name = L"textBox30";
+			this->textBox30->Size = System::Drawing::Size(115, 20);
+			this->textBox30->TabIndex = 71;
+			// 
+			// label57
+			// 
+			this->label57->AutoSize = true;
+			this->label57->Location = System::Drawing::Point(20, 91);
+			this->label57->Name = L"label57";
+			this->label57->Size = System::Drawing::Size(77, 13);
+			this->label57->TabIndex = 70;
+			this->label57->Text = L"Numéro de rue";
+			// 
+			// textBox31
+			// 
+			this->textBox31->Location = System::Drawing::Point(23, 55);
+			this->textBox31->Name = L"textBox31";
+			this->textBox31->Size = System::Drawing::Size(115, 20);
+			this->textBox31->TabIndex = 69;
+			// 
+			// label58
+			// 
+			this->label58->AutoSize = true;
+			this->label58->Location = System::Drawing::Point(20, 36);
+			this->label58->Name = L"label58";
+			this->label58->Size = System::Drawing::Size(74, 13);
+			this->label58->TabIndex = 68;
+			this->label58->Text = L"ID de Adresse";
+			// 
 			// InterfaceManager
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -1874,6 +2136,9 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->tabPageStaff->ResumeLayout(false);
 			this->tabPageStaff->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
+			this->tabPage1->ResumeLayout(false);
+			this->tabPage1->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->EndInit();
 			this->ResumeLayout(false);
 
 		}
@@ -2095,6 +2360,17 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 		if (this->tabControlGestionSwitch->SelectedTab->Name == tabPageStat->Name) {
 			this->Stat_Service = gcnew SG_Stat;
 		}
+	}
+	private: System::Void buttonAddAdr_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "nouv";
+	}
+	private: System::Void buttonDelAdr_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "sup";
+	}
+	private: System::Void buttonEditAdr_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "maj";
+	}
+	private: System::Void buttonRegisterAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
