@@ -7,15 +7,14 @@ GO
 CREATE PROCEDURE Select_Adress
 as
 begin 
-SELECT [ADR_ID]
-      ,[ADR_Street_name]
-      ,[ADR_Street_Num]
-      ,[ADR_Details]
-      ,[CIT_Name]
-	  
-
-  FROM [dbo].[Adress] INNER JOIN  [dbo].[Cities] ON (Adress.CIT_ID = Cities.CIT_ID);
-  end
+      SELECT [ADR_ID]
+            ,[ADR_Street_name]
+            ,[ADR_Street_Num]
+            ,[ADR_Details]
+            ,[CIT_Name]
+      FROM [dbo].[Adress] INNER JOIN  [dbo].[Cities] ON (Adress.CIT_ID = Cities.CIT_ID);
+END
+GO
 
 DROP PROCEDURE IF EXISTS Insert_Adress;
 GO

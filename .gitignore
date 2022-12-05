@@ -362,3 +362,4 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 PRO_CPP_CPIA2/TempMain.cpp
+SQL_Queries/Testing.sql

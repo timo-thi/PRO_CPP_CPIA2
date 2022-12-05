@@ -1,3 +1,6 @@
+use ProjetPOO;
+GO
+
 Select DISTINCT * FROM Products
 	JOIN contain ON Products.PRO_ID = contain.PRO_ID
 		LEFT JOIN Proposes ON Products.PRO_ID = Proposes.PRO_ID

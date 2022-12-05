@@ -17,7 +17,7 @@ BEGIN
 		Customer.Date_First_Order AS Date_premiere_commande
 	FROM
 		Customer
-			INNER JOIN Person ON Customer.PER_ID = Person.PER_ID AND Customer.PER_ID = @ID;
+			INNER JOIN Person ON Customer.CLI_ID = Person.PER_ID AND Customer.CLI_ID = @ID;
 END
 GO
 
@@ -32,10 +32,10 @@ CREATE PROCEDURE Update_Customer
 AS
 BEGIN 
 	UPDATE Customer
-		SET  mail= ISNULL (@mail, mail),
+		SET  mail = ISNULL (@mail, mail),
 			Date_Birthday = ISNULL (@date_naissance, Date_Birthday),
 			Date_First_Order = ISNULL (@date_commande, Date_First_Order)
-	WHERE Customer.PER_ID = @ID;
+	WHERE Customer.CLI_ID = @ID;
 END
 GO
 
@@ -43,12 +43,13 @@ DROP PROCEDURE IF EXISTS Insert_Customer;
 GO
 
 CREATE PROCEDURE Insert_Customer
+	@Person_ID int,
 	@mail varchar(50),
 	@date_naissance date = NULL,
 	@date_commande date = NULL
 AS
 BEGIN
-	INSERT INTO Customer (mail, Date_Birthday, Date_First_Order) VALUES ( @mail, @date_naissance, @date_commande);
+	INSERT INTO Customer (CLI_ID, mail, Date_Birthday, Date_First_Order) VALUES (@Person_ID, @mail, @date_naissance, @date_commande);
 END;
 GO
 
@@ -59,9 +60,30 @@ CREATE PROCEDURE Delete_Customer
 	@ID int
 AS
 BEGIN
-	DELETE FROM Customer WHERE PER_ID = @ID;
-	
-	IF  NOT EXISTS (SELECT 1 FROM Staff WHERE PER_ID = @ID)
-		DELETE FROM Person WHERE PER_ID=@ID;
+	DELETE FROM Customer WHERE CLI_ID = @ID;
 END
 GO
+
+DROP PROCEDURE IF EXISTS Delete_delivery_Adress;
+GO
+
+CREATE PROCEDURE Delete_delivery_Adress
+	@PER int
+AS
+BEGIN
+	DELETE FROM Deliver WHERE PER_ID = @PER;
+END
+GO
+
+
+DROP PROCEDURE IF EXISTS Delete_Billing;
+GO
+
+CREATE PROCEDURE Delete_Billing
+	@PER int
+AS
+BEGIN
+	DELETE FROM Billing WHERE PER_ID = @PER;
+END
+GO
+
