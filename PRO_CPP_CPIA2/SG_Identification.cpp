@@ -25,3 +25,20 @@ String^ SG_Identification::Fetch_Role() {
 
 	return (String^)this->data->Tables[0]->Rows[0]->ItemArray[0]; // Casting to string because compiler can't guess how to convert System::Object ^ Object
 }
+
+void SG_Identification::Add_Identification(String^ mail, String^ password) {
+	this->IDF->Set_Mail(mail);
+	this->IDF->Set_Password(password);
+	this->CConnexion->actionRows(this->IDF->Insert_Identification());
+}
+
+void SG_Identification::Update_Identification(String^ mail, String^ password) {
+	this->IDF->Set_Mail(mail);
+	this->IDF->Set_Password(password);
+	this->CConnexion->actionRows(this->IDF->Update_Identification());
+}
+
+void SG_Identification::Remove_Identification(String^ mail) {
+	this->IDF->Set_Mail(mail);
+	this->CConnexion->actionRows(this->IDF->Delete_Identification());
+}
