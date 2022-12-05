@@ -1,5 +1,6 @@
 ﻿#pragma once
 #include "SG_Stat.h"
+#include "SG_Address.h"
 
 namespace ProjetPOO {
 
@@ -215,19 +216,19 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ buttonAddAdr;
 
 
-	private: System::Windows::Forms::TextBox^ textBox25;
+	private: System::Windows::Forms::TextBox^ textBoxAdrCitZip;
 	private: System::Windows::Forms::Label^ label52;
-	private: System::Windows::Forms::TextBox^ textBox26;
+	private: System::Windows::Forms::TextBox^ textBoxAdrCitName;
 	private: System::Windows::Forms::Label^ label53;
-	private: System::Windows::Forms::TextBox^ textBox27;
+	private: System::Windows::Forms::TextBox^ textBoxAdrCitID;
 	private: System::Windows::Forms::Label^ label54;
 
 
-	private: System::Windows::Forms::TextBox^ textBox29;
+	private: System::Windows::Forms::TextBox^ textBoxAdrName;
 	private: System::Windows::Forms::Label^ label56;
-	private: System::Windows::Forms::TextBox^ textBox30;
+	private: System::Windows::Forms::TextBox^ textBoxAdrNum;
 	private: System::Windows::Forms::Label^ label57;
-	private: System::Windows::Forms::TextBox^ textBox31;
+	private: System::Windows::Forms::TextBox^ textBoxAdrID;
 	private: System::Windows::Forms::Label^ label58;
 	private: System::Windows::Forms::RichTextBox^ richTextBoxAdrDetails1;
 	private: System::Windows::Forms::Label^ label55;
@@ -243,7 +244,10 @@ namespace ProjetPOO {
 	// Services
 	private:
 		SG_Stat^ Stat_Service;
+		SG_Address^ Adr_Service;
 		String^ mode;
+private: System::Windows::Forms::Label^ labelAdrStatus;
+private: System::Windows::Forms::Button^ buttonLoadAdr;
 
 	protected:
 
@@ -416,19 +420,21 @@ namespace ProjetPOO {
 			this->buttonEditAdr = (gcnew System::Windows::Forms::Button());
 			this->buttonDelAdr = (gcnew System::Windows::Forms::Button());
 			this->buttonAddAdr = (gcnew System::Windows::Forms::Button());
-			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrCitZip = (gcnew System::Windows::Forms::TextBox());
 			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrCitName = (gcnew System::Windows::Forms::TextBox());
 			this->label53 = (gcnew System::Windows::Forms::Label());
-			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrCitID = (gcnew System::Windows::Forms::TextBox());
 			this->label54 = (gcnew System::Windows::Forms::Label());
 			this->label55 = (gcnew System::Windows::Forms::Label());
-			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrName = (gcnew System::Windows::Forms::TextBox());
 			this->label56 = (gcnew System::Windows::Forms::Label());
-			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrNum = (gcnew System::Windows::Forms::TextBox());
 			this->label57 = (gcnew System::Windows::Forms::Label());
-			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxAdrID = (gcnew System::Windows::Forms::TextBox());
 			this->label58 = (gcnew System::Windows::Forms::Label());
+			this->buttonLoadAdr = (gcnew System::Windows::Forms::Button());
+			this->labelAdrStatus = (gcnew System::Windows::Forms::Label());
 			this->tabControlGestionSwitch->SuspendLayout();
 			this->tabPageClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -1894,6 +1900,8 @@ namespace ProjetPOO {
 			// 
 			// tabPage1
 			// 
+			this->tabPage1->Controls->Add(this->labelAdrStatus);
+			this->tabPage1->Controls->Add(this->buttonLoadAdr);
 			this->tabPage1->Controls->Add(this->richTextBoxAdrDetails1);
 			this->tabPage1->Controls->Add(this->button20);
 			this->tabPage1->Controls->Add(this->button21);
@@ -1902,18 +1910,18 @@ namespace ProjetPOO {
 			this->tabPage1->Controls->Add(this->buttonEditAdr);
 			this->tabPage1->Controls->Add(this->buttonDelAdr);
 			this->tabPage1->Controls->Add(this->buttonAddAdr);
-			this->tabPage1->Controls->Add(this->textBox25);
+			this->tabPage1->Controls->Add(this->textBoxAdrCitZip);
 			this->tabPage1->Controls->Add(this->label52);
-			this->tabPage1->Controls->Add(this->textBox26);
+			this->tabPage1->Controls->Add(this->textBoxAdrCitName);
 			this->tabPage1->Controls->Add(this->label53);
-			this->tabPage1->Controls->Add(this->textBox27);
+			this->tabPage1->Controls->Add(this->textBoxAdrCitID);
 			this->tabPage1->Controls->Add(this->label54);
 			this->tabPage1->Controls->Add(this->label55);
-			this->tabPage1->Controls->Add(this->textBox29);
+			this->tabPage1->Controls->Add(this->textBoxAdrName);
 			this->tabPage1->Controls->Add(this->label56);
-			this->tabPage1->Controls->Add(this->textBox30);
+			this->tabPage1->Controls->Add(this->textBoxAdrNum);
 			this->tabPage1->Controls->Add(this->label57);
-			this->tabPage1->Controls->Add(this->textBox31);
+			this->tabPage1->Controls->Add(this->textBoxAdrID);
 			this->tabPage1->Controls->Add(this->label58);
 			this->tabPage1->Location = System::Drawing::Point(4, 22);
 			this->tabPage1->Name = L"tabPage1";
@@ -1997,12 +2005,12 @@ namespace ProjetPOO {
 			this->buttonAddAdr->UseVisualStyleBackColor = true;
 			this->buttonAddAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAddAdr_Click);
 			// 
-			// textBox25
+			// textBoxAdrCitZip
 			// 
-			this->textBox25->Location = System::Drawing::Point(178, 165);
-			this->textBox25->Name = L"textBox25";
-			this->textBox25->Size = System::Drawing::Size(115, 20);
-			this->textBox25->TabIndex = 81;
+			this->textBoxAdrCitZip->Location = System::Drawing::Point(178, 165);
+			this->textBoxAdrCitZip->Name = L"textBoxAdrCitZip";
+			this->textBoxAdrCitZip->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrCitZip->TabIndex = 81;
 			// 
 			// label52
 			// 
@@ -2013,12 +2021,12 @@ namespace ProjetPOO {
 			this->label52->TabIndex = 80;
 			this->label52->Text = L"Code postal";
 			// 
-			// textBox26
+			// textBoxAdrCitName
 			// 
-			this->textBox26->Location = System::Drawing::Point(178, 107);
-			this->textBox26->Name = L"textBox26";
-			this->textBox26->Size = System::Drawing::Size(115, 20);
-			this->textBox26->TabIndex = 79;
+			this->textBoxAdrCitName->Location = System::Drawing::Point(178, 107);
+			this->textBoxAdrCitName->Name = L"textBoxAdrCitName";
+			this->textBoxAdrCitName->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrCitName->TabIndex = 79;
 			// 
 			// label53
 			// 
@@ -2029,12 +2037,12 @@ namespace ProjetPOO {
 			this->label53->TabIndex = 78;
 			this->label53->Text = L"Ville";
 			// 
-			// textBox27
+			// textBoxAdrCitID
 			// 
-			this->textBox27->Location = System::Drawing::Point(178, 55);
-			this->textBox27->Name = L"textBox27";
-			this->textBox27->Size = System::Drawing::Size(115, 20);
-			this->textBox27->TabIndex = 77;
+			this->textBoxAdrCitID->Location = System::Drawing::Point(178, 55);
+			this->textBoxAdrCitID->Name = L"textBoxAdrCitID";
+			this->textBoxAdrCitID->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrCitID->TabIndex = 77;
 			// 
 			// label54
 			// 
@@ -2054,12 +2062,12 @@ namespace ProjetPOO {
 			this->label55->TabIndex = 74;
 			this->label55->Text = L"Details";
 			// 
-			// textBox29
+			// textBoxAdrName
 			// 
-			this->textBox29->Location = System::Drawing::Point(23, 165);
-			this->textBox29->Name = L"textBox29";
-			this->textBox29->Size = System::Drawing::Size(115, 20);
-			this->textBox29->TabIndex = 73;
+			this->textBoxAdrName->Location = System::Drawing::Point(23, 165);
+			this->textBoxAdrName->Name = L"textBoxAdrName";
+			this->textBoxAdrName->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrName->TabIndex = 73;
 			// 
 			// label56
 			// 
@@ -2070,12 +2078,12 @@ namespace ProjetPOO {
 			this->label56->TabIndex = 72;
 			this->label56->Text = L"Nom de rue";
 			// 
-			// textBox30
+			// textBoxAdrNum
 			// 
-			this->textBox30->Location = System::Drawing::Point(23, 107);
-			this->textBox30->Name = L"textBox30";
-			this->textBox30->Size = System::Drawing::Size(115, 20);
-			this->textBox30->TabIndex = 71;
+			this->textBoxAdrNum->Location = System::Drawing::Point(23, 107);
+			this->textBoxAdrNum->Name = L"textBoxAdrNum";
+			this->textBoxAdrNum->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrNum->TabIndex = 71;
 			// 
 			// label57
 			// 
@@ -2086,12 +2094,12 @@ namespace ProjetPOO {
 			this->label57->TabIndex = 70;
 			this->label57->Text = L"Numéro de rue";
 			// 
-			// textBox31
+			// textBoxAdrID
 			// 
-			this->textBox31->Location = System::Drawing::Point(23, 55);
-			this->textBox31->Name = L"textBox31";
-			this->textBox31->Size = System::Drawing::Size(115, 20);
-			this->textBox31->TabIndex = 69;
+			this->textBoxAdrID->Location = System::Drawing::Point(23, 55);
+			this->textBoxAdrID->Name = L"textBoxAdrID";
+			this->textBoxAdrID->Size = System::Drawing::Size(115, 20);
+			this->textBoxAdrID->TabIndex = 69;
 			// 
 			// label58
 			// 
@@ -2101,6 +2109,25 @@ namespace ProjetPOO {
 			this->label58->Size = System::Drawing::Size(74, 13);
 			this->label58->TabIndex = 68;
 			this->label58->Text = L"ID de Adresse";
+			// 
+			// buttonLoadAdr
+			// 
+			this->buttonLoadAdr->Location = System::Drawing::Point(356, 352);
+			this->buttonLoadAdr->Name = L"buttonLoadAdr";
+			this->buttonLoadAdr->Size = System::Drawing::Size(60, 21);
+			this->buttonLoadAdr->TabIndex = 92;
+			this->buttonLoadAdr->Text = L"Load";
+			this->buttonLoadAdr->UseVisualStyleBackColor = true;
+			this->buttonLoadAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonLoadAdr_Click);
+			// 
+			// labelAdrStatus
+			// 
+			this->labelAdrStatus->AutoSize = true;
+			this->labelAdrStatus->Location = System::Drawing::Point(422, 356);
+			this->labelAdrStatus->Name = L"labelAdrStatus";
+			this->labelAdrStatus->Size = System::Drawing::Size(65, 13);
+			this->labelAdrStatus->TabIndex = 93;
+			this->labelAdrStatus->Text = L"En attente...";
 			// 
 			// InterfaceManager
 			// 
@@ -2359,18 +2386,50 @@ namespace ProjetPOO {
 	private: System::Void tabControlGestionSwitch_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (this->tabControlGestionSwitch->SelectedTab->Name == tabPageStat->Name) {
 			this->Stat_Service = gcnew SG_Stat;
+		} else if (this->tabControlGestionSwitch->SelectedTab->Name == tabPage1->Name) {
+			this->Adr_Service = gcnew SG_Address;
 		}
 	}
+
+	// Address management
 	private: System::Void buttonAddAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->mode = "nouv";
+		this->labelAdrStatus->Text = "Veuillez entrer les informations";
+		this->textBoxAdrCitID->Text = "";
+		this->textBoxAdrID->Text = "";
+		this->textBoxAdrCitName->Text = "";
+		this->textBoxAdrCitZip->Text = "";
+		this->textBoxAdrName->Text = "";
+		this->textBoxAdrNum->Text = "";
+		this->richTextBoxAdrDetails1->Text = "";
 	}
 	private: System::Void buttonDelAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->mode = "sup";
+		this->labelAdrStatus->Text = "Enregistrer pour confirmer la suppression.";
 	}
 	private: System::Void buttonEditAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->mode = "maj";
+		this->labelAdrStatus->Text = "Modifiez et enregistrez.";
 	}
 	private: System::Void buttonRegisterAdr_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->mode == "nouv") {
+			if (!(this->textBoxAdrNum->Text != "" || this->textBoxAdrName->Text != "" || this->textBoxAdrCitID->Text != "")) {
+				this->Adr_Service->Add_Adress(this->textBoxAdrName->Text, this->textBoxAdrNum->Text, this->richTextBoxAdrDetails1->Text, Convert::ToInt32(this->textBoxAdrCitID->Text));
+			}
+			else {
+				MessageBox::Show("Please enter valid entry");
+			}
+		}else
+			if (this->mode == "sup") {
+				this->Adr_Service->Remove_Adress(Convert::ToInt32(this->textBoxAdrID->Text));
+		}else
+			if (this->mode == "maj") {
+				this->Adr_Service->Edit_Adress(Convert::ToInt32(this->textBoxAdrID->Text), this->textBoxAdrName->Text, this->textBoxAdrNum->Text, this->richTextBoxAdrDetails1->Text, Convert::ToInt32(this->textBoxAdrCitID->Text));
+			}
+		this->mode = "";
+		this->labelAdrStatus->Text = "En attente...";
+	}
+	private: System::Void buttonLoadAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }
