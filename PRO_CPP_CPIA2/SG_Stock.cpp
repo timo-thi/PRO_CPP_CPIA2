@@ -50,3 +50,18 @@ void SG_Stock::Update_Products() {
 	this->Connect->actionRows(this->Map_Stock->Update_Stock());
 }
 
+	int SG_Stock::Get_Reference() { return this->Reference; }
+	void SG_Stock::Set_Reference(int tRef) { this->Reference = tRef; }
+
+	String^ SG_Stock::Get_Nom() { return this->Nom; }
+	void SG_Stock::Set_Nom(String^ tNom) { this->Nom = tNom; }
+
+	int SG_Stock::Get_Prix(){ return this->Prix; }
+	void SG_Stock::Set_Prix(int tPrix) { this->Prix = tPrix; }
+
+	int SG_Stock::Get_Stock() { return this->Stock; }
+	void SG_Stock::Set_Stock(int tStock) { this->Stock = tStock; }
+
+	int SG_Stock::Get_Seuil_Stock() { return this->Seuil_Stock; }
+	void SG_Stock::Set_Seuil_Stock(int tSeuil) { this->Seuil_Stock = tSeuil; }
+

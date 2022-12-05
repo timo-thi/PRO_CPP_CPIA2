@@ -217,7 +217,7 @@ private: Data::DataSet^ dsClient = gcnew Data::DataSet();
 private: Data::DataSet^ dsLivraison = gcnew Data::DataSet();
 private: Data::DataSet^ dsFacturation = gcnew Data::DataSet();
 private: SG_Client^ processusClient = gcnew SG_Client();
-private: SG_Personne^ processusStock = gcnew SG_Personne();
+private: SG_Stock^ processusStock = gcnew SG_Stock();
 
 
 
@@ -1100,6 +1100,7 @@ private: SG_Personne^ processusStock = gcnew SG_Personne();
 			this->dataGridView2->RowHeadersWidth = 62;
 			this->dataGridView2->Size = System::Drawing::Size(759, 382);
 			this->dataGridView2->TabIndex = 40;
+			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView2_CellClick);
 			// 
 			// button5
 			// 
@@ -1120,6 +1121,7 @@ private: SG_Personne^ processusStock = gcnew SG_Personne();
 			this->button6->TabIndex = 39;
 			this->button6->Text = L"Modifier";
 			this->button6->UseVisualStyleBackColor = true;
+			this->button6->Click += gcnew System::EventHandler(this, &InterfaceManager::button6_Click);
 			// 
 			// button7
 			// 
@@ -1130,6 +1132,7 @@ private: SG_Personne^ processusStock = gcnew SG_Personne();
 			this->button7->TabIndex = 37;
 			this->button7->Text = L"Supprimer";
 			this->button7->UseVisualStyleBackColor = true;
+			this->button7->Click += gcnew System::EventHandler(this, &InterfaceManager::button7_Click);
 			// 
 			// button8
 			// 
@@ -1140,6 +1143,7 @@ private: SG_Personne^ processusStock = gcnew SG_Personne();
 			this->button8->TabIndex = 36;
 			this->button8->Text = L"Ajouter";
 			this->button8->UseVisualStyleBackColor = true;
+			this->button8->Click += gcnew System::EventHandler(this, &InterfaceManager::button8_Click);
 			// 
 			// label9
 			// 
@@ -2435,8 +2439,55 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->loadDataClient(this->index);
 	this->textAffichage->Text += "Traitement terminé.";
 }
-private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
+	this->dataGridView1->Refresh();
+
+	this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
+	this->dataGridView2->DataMember = "Stock";
+}
+
+private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {			//Insert in Stock
+
+	processusStock->Set_Nom(textBox15->Text);
+	processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
+	processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
+	processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
+
+	this->processusStock->Add_Products();
+
+	Load_Stock->PerformClick(); //refresh Grid
+}
+private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {			//Delete from stock
+
+	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+
+
+	this->processusStock->Remove_Products();
+
+	Load_Stock->PerformClick(); //refresh Grid
+}
+
+
+private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {		//Update from stock
+
+	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+	processusStock->Set_Nom(textBox15->Text);
+	processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
+	processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
+	processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
+
+	this->processusStock->Update_Products();
+
+	Load_Stock->PerformClick(); //refresh Grid
+
+}
+private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+
+	this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
+	this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
+	this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
+	this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
+	this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
 }
 };
 }
-

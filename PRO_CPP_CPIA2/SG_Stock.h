@@ -29,5 +29,20 @@ namespace NS_Services
         void Add_Products();
         void Remove_Products();
         void Update_Products();
+
+        int Get_Reference();
+        void Set_Reference(int);
+
+        String^ Get_Nom();
+        void Set_Nom(String^);
+
+        int Get_Prix();
+        void Set_Prix(int);
+
+        int Get_Stock();
+        void Set_Stock(int);
+
+        int Get_Seuil_Stock();
+        void Set_Seuil_Stock(int);
     };
 };
