@@ -11,8 +11,10 @@ begin
             ,[ADR_Street_name]
             ,[ADR_Street_Num]
             ,[ADR_Details]
+            ,[Cities].[CIT_ID]
             ,[CIT_Name]
-      FROM [dbo].[Adress] INNER JOIN  [dbo].[Cities] ON (Adress.CIT_ID = Cities.CIT_ID);
+            ,[CIT_ZIP_Code]
+      FROM [dbo].[Adress] INNER JOIN [dbo].[Cities] ON Adress.CIT_ID = Cities.CIT_ID;
 END
 GO
 
@@ -26,7 +28,7 @@ CREATE PROCEDURE Insert_Adress
       @CIT int 
 as
 begin
-INSERT INTO [dbo].[Adress]
+      INSERT INTO [dbo].[Adress]
            ([ADR_Street_name]
            ,[ADR_Street_Num]
            ,[ADR_Details]
