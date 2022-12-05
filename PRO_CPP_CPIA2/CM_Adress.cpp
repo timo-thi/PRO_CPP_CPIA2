@@ -2,6 +2,9 @@
 
 using namespace NS_Composants;
 
+CM_Adress::CM_Adress() : CM_Classic::CM_Classic() {
+}
+
 int CM_Adress::Get_ID() {
 	return this->ID;
 }

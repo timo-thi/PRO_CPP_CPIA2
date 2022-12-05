@@ -16,6 +16,8 @@ namespace NS_Composants
         String^ City_Name;
         String^ City_Zip_Code;
     public:
+        CM_Adress();
+
         int Get_ID();
         void Set_ID(int);
         String^ Get_Street_Name();

@@ -207,8 +207,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
 	private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::Button^ button20;
-	private: System::Windows::Forms::Button^ button21;
+	private: System::Windows::Forms::Button^ buttonAdrPrevious;
+	private: System::Windows::Forms::Button^ buttonAdrNext;
 	private: System::Windows::Forms::DataGridView^ dataGridView5;
 	private: System::Windows::Forms::Button^ buttonRegisterAdr;
 	private: System::Windows::Forms::Button^ buttonEditAdr;
@@ -412,9 +412,11 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->textBox39 = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
 			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->labelAdrStatus = (gcnew System::Windows::Forms::Label());
+			this->buttonLoadAdr = (gcnew System::Windows::Forms::Button());
 			this->richTextBoxAdrDetails1 = (gcnew System::Windows::Forms::RichTextBox());
-			this->button20 = (gcnew System::Windows::Forms::Button());
-			this->button21 = (gcnew System::Windows::Forms::Button());
+			this->buttonAdrPrevious = (gcnew System::Windows::Forms::Button());
+			this->buttonAdrNext = (gcnew System::Windows::Forms::Button());
 			this->dataGridView5 = (gcnew System::Windows::Forms::DataGridView());
 			this->buttonRegisterAdr = (gcnew System::Windows::Forms::Button());
 			this->buttonEditAdr = (gcnew System::Windows::Forms::Button());
@@ -433,8 +435,6 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrID = (gcnew System::Windows::Forms::TextBox());
 			this->label58 = (gcnew System::Windows::Forms::Label());
-			this->buttonLoadAdr = (gcnew System::Windows::Forms::Button());
-			this->labelAdrStatus = (gcnew System::Windows::Forms::Label());
 			this->tabControlGestionSwitch->SuspendLayout();
 			this->tabPageClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -1903,8 +1903,8 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->tabPage1->Controls->Add(this->labelAdrStatus);
 			this->tabPage1->Controls->Add(this->buttonLoadAdr);
 			this->tabPage1->Controls->Add(this->richTextBoxAdrDetails1);
-			this->tabPage1->Controls->Add(this->button20);
-			this->tabPage1->Controls->Add(this->button21);
+			this->tabPage1->Controls->Add(this->buttonAdrPrevious);
+			this->tabPage1->Controls->Add(this->buttonAdrNext);
 			this->tabPage1->Controls->Add(this->dataGridView5);
 			this->tabPage1->Controls->Add(this->buttonRegisterAdr);
 			this->tabPage1->Controls->Add(this->buttonEditAdr);
@@ -1931,6 +1931,25 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->tabPage1->Text = L"Gestion adresses";
 			this->tabPage1->UseVisualStyleBackColor = true;
 			// 
+			// labelAdrStatus
+			// 
+			this->labelAdrStatus->AutoSize = true;
+			this->labelAdrStatus->Location = System::Drawing::Point(422, 356);
+			this->labelAdrStatus->Name = L"labelAdrStatus";
+			this->labelAdrStatus->Size = System::Drawing::Size(65, 13);
+			this->labelAdrStatus->TabIndex = 93;
+			this->labelAdrStatus->Text = L"En attente...";
+			// 
+			// buttonLoadAdr
+			// 
+			this->buttonLoadAdr->Location = System::Drawing::Point(356, 352);
+			this->buttonLoadAdr->Name = L"buttonLoadAdr";
+			this->buttonLoadAdr->Size = System::Drawing::Size(60, 21);
+			this->buttonLoadAdr->TabIndex = 92;
+			this->buttonLoadAdr->Text = L"Load";
+			this->buttonLoadAdr->UseVisualStyleBackColor = true;
+			this->buttonLoadAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonLoadAdr_Click);
+			// 
 			// richTextBoxAdrDetails1
 			// 
 			this->richTextBoxAdrDetails1->Location = System::Drawing::Point(23, 218);
@@ -1939,23 +1958,25 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->richTextBoxAdrDetails1->TabIndex = 91;
 			this->richTextBoxAdrDetails1->Text = L"";
 			// 
-			// button20
+			// buttonAdrPrevious
 			// 
-			this->button20->Location = System::Drawing::Point(25, 266);
-			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(113, 23);
-			this->button20->TabIndex = 90;
-			this->button20->Text = L"<";
-			this->button20->UseVisualStyleBackColor = true;
+			this->buttonAdrPrevious->Location = System::Drawing::Point(25, 266);
+			this->buttonAdrPrevious->Name = L"buttonAdrPrevious";
+			this->buttonAdrPrevious->Size = System::Drawing::Size(113, 23);
+			this->buttonAdrPrevious->TabIndex = 90;
+			this->buttonAdrPrevious->Text = L"<";
+			this->buttonAdrPrevious->UseVisualStyleBackColor = true;
+			this->buttonAdrPrevious->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAdrPrevious_Click);
 			// 
-			// button21
+			// buttonAdrNext
 			// 
-			this->button21->Location = System::Drawing::Point(178, 266);
-			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(113, 23);
-			this->button21->TabIndex = 89;
-			this->button21->Text = L">";
-			this->button21->UseVisualStyleBackColor = true;
+			this->buttonAdrNext->Location = System::Drawing::Point(178, 266);
+			this->buttonAdrNext->Name = L"buttonAdrNext";
+			this->buttonAdrNext->Size = System::Drawing::Size(113, 23);
+			this->buttonAdrNext->TabIndex = 89;
+			this->buttonAdrNext->Text = L">";
+			this->buttonAdrNext->UseVisualStyleBackColor = true;
+			this->buttonAdrNext->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAdrNext_Click);
 			// 
 			// dataGridView5
 			// 
@@ -1964,6 +1985,7 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->dataGridView5->Name = L"dataGridView5";
 			this->dataGridView5->Size = System::Drawing::Size(569, 310);
 			this->dataGridView5->TabIndex = 88;
+			this->dataGridView5->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView5_CellClick);
 			// 
 			// buttonRegisterAdr
 			// 
@@ -2109,25 +2131,6 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			this->label58->Size = System::Drawing::Size(74, 13);
 			this->label58->TabIndex = 68;
 			this->label58->Text = L"ID de Adresse";
-			// 
-			// buttonLoadAdr
-			// 
-			this->buttonLoadAdr->Location = System::Drawing::Point(356, 352);
-			this->buttonLoadAdr->Name = L"buttonLoadAdr";
-			this->buttonLoadAdr->Size = System::Drawing::Size(60, 21);
-			this->buttonLoadAdr->TabIndex = 92;
-			this->buttonLoadAdr->Text = L"Load";
-			this->buttonLoadAdr->UseVisualStyleBackColor = true;
-			this->buttonLoadAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonLoadAdr_Click);
-			// 
-			// labelAdrStatus
-			// 
-			this->labelAdrStatus->AutoSize = true;
-			this->labelAdrStatus->Location = System::Drawing::Point(422, 356);
-			this->labelAdrStatus->Name = L"labelAdrStatus";
-			this->labelAdrStatus->Size = System::Drawing::Size(65, 13);
-			this->labelAdrStatus->TabIndex = 93;
-			this->labelAdrStatus->Text = L"En attente...";
 			// 
 			// InterfaceManager
 			// 
@@ -2413,7 +2416,7 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 	}
 	private: System::Void buttonRegisterAdr_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->mode == "nouv") {
-			if (!(this->textBoxAdrNum->Text != "" || this->textBoxAdrName->Text != "" || this->textBoxAdrCitID->Text != "")) {
+			if (!(this->textBoxAdrNum->Text == "" || this->textBoxAdrName->Text == "" || this->textBoxAdrCitID->Text == "")) {
 				this->Adr_Service->Add_Adress(this->textBoxAdrName->Text, this->textBoxAdrNum->Text, this->richTextBoxAdrDetails1->Text, Convert::ToInt32(this->textBoxAdrCitID->Text));
 			}
 			else {
@@ -2428,8 +2431,31 @@ private: System::Windows::Forms::Button^ buttonLoadAdr;
 			}
 		this->mode = "";
 		this->labelAdrStatus->Text = "En attente...";
+		this->Refresh_Adr();
+	}
+	private: System::Void Refresh_Adr() {
+		this->Adr_Service->Select_Adress();
+		this->dataGridView5->Refresh();
+
+		this->dataGridView5->DataSource = this->Adr_Service->DS;
+		this->dataGridView5->DataMember= "Adr";
 	}
 	private: System::Void buttonLoadAdr_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Refresh_Adr();
+	}
+	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		this->textBoxAdrID->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["ADR_ID"]->Value->ToString();
+		this->textBoxAdrName->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["ADR_Street_Name"]->Value->ToString();
+		this->textBoxAdrNum->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["ADR_Street_Num"]->Value->ToString();
+		this->richTextBoxAdrDetails1->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["ADR_Details"]->Value->ToString();
+		this->textBoxAdrCitID->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["CIT_ID"]->Value->ToString();
+		this->textBoxAdrCitName->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["CIT_Name"]->Value->ToString();
+		this->textBoxAdrCitZip->Text = this->dataGridView5->Rows[e->RowIndex]->Cells["CIT_ZIP_Code"]->Value->ToString();
+		//this->textBox23->Text
+	}
+	private: System::Void buttonAdrPrevious_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void buttonAdrNext_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 };
 }

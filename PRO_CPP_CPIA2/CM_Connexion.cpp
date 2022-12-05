@@ -20,7 +20,7 @@ int CM_Connexion::actionRowID(SqlCommand^ commande) {
 }
 void  CM_Connexion::actionRows(SqlCommand^ commande)
 {
-	commande->CommandText = this->requete;
+	commande->Connection = this->connecteur;
 	connecteur->Open();
 	commande->ExecuteNonQuery();
 	connecteur->Close();

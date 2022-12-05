@@ -3,6 +3,8 @@
 using namespace NS_Services;
 
 SG_Address::SG_Address() : SG_Classic::SG_Classic() {
+	this->CMappage = gcnew CM_Adress;
+	this->CConnexion = gcnew CM_Connexion;
 }
 
 void SG_Address::Add_Adress(String^ Name, String^ Num, String^ Details, int City_Id) {
