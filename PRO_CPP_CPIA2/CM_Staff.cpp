@@ -6,6 +6,7 @@ CM_Staff::CM_Staff() {}
 
 SqlCommand^ CM_Staff::Insert_Staff() {
     Start_Procedure("Insert_Staff");
+    
     Procedure->Parameters->AddWithValue("@PER", this->Get_ID());
     Procedure->Parameters->AddWithValue("@superieur", this->Get_Sup());
     Procedure->Parameters->AddWithValue("@role", this->Get_Role());
@@ -25,11 +26,13 @@ SqlCommand^ CM_Staff::Delete_Staff() {
 
 SqlCommand^ CM_Staff::Select_Staff() {
     Start_Procedure("Select_Staff");
+    
     return this->Procedure;
 }
 
 SqlCommand^ CM_Staff::Update_Staff() {
     Start_Procedure("Update_Staff");
+    
     Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
     Procedure->Parameters->AddWithValue("@superieur", this->Get_Sup());
     Procedure->Parameters->AddWithValue("@role", this->Get_Role());
@@ -39,9 +42,6 @@ SqlCommand^ CM_Staff::Update_Staff() {
 
     return this->Procedure;
 }
-
-
-
 
 
 String^ CM_Staff::Get_MailStaff() { return this->mail; }
