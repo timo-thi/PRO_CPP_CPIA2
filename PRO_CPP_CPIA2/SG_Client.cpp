@@ -63,4 +63,5 @@ void SG_Client::Update_Client(int id_Client, String^ mailStp, DateTime^ dateComm
 	this->AccesClient->actionRows(this->MapClient->Update_Client());
 	this->AccesClient->actionRows(this->MapClient->Update_Facturation());
 	this->AccesClient->actionRows(this->MapClient->Update_Livraison());
+	
 }

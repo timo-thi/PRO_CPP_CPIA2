@@ -7,50 +7,38 @@ namespace NS_Composants
         public CM_Stock
     {
     private:
-
-
-        String^ Identifiant;
-        DateTime^ Date_Livraison;
-        DateTime^ Date_Expedition;
-        DateTime^ Date_Bill;
+        String^ Date_Livraison;
         int Client_id;
         int Bill_ID;
-        String^ Mean_Of_Payment;
+        int Mean_Of_Payement;
         int Balance;
 
     public:
         CM_Orders(void);
-        String^ Get_ID(void);
-        void Set_ID(String^);
-        DateTime^ Get_Date_Liv(void);
-        void Set_Date_Liv(DateTime^);
-        DateTime^ Get_Date_Exp(void);
-        void Set_Date_Exp(DateTime^);
+        String^ Get_Date_Liv(void);
+        void Set_Date_Liv(String^);
         int Get_Client_ID(void);
         void Set_Client_ID(int);
-
-        String^ Get_Mean_Of_Payment(void);
-        void Set_Mean_Of_Payment(String^);
+        int Get_Mean_Of_Payment(void);
+        void Set_Mean_Of_Payment(int);
         int Get_Bill(void);
         void Set_Bill(int);
         int Get_Balance(void);
         void Set_Balance(int);
-        DateTime^ Get_Date_Bill(void);
-        void Set_Date_Bill(DateTime^);
 
-        SqlCommand^ Insert_Order(void);
-        SqlCommand^ Delete_Order(void);
-        SqlCommand^ Update_Order(void);
-        SqlCommand^ Select_Order(void);
+        String^ Insert_Order(void);
+        String^ Delete_Order(void);
+        String^ Update_Order(void);
+        String^ Select_Order(void);
 
-        SqlCommand^ Insert_Bill(void);
-        SqlCommand^ Delete_Bill(void);
-        SqlCommand^ Update_Bill(void);
-        SqlCommand^ Fetch_Order_Bill(void);
+        String^ Insert_Bill(void);
+        String^ Delete_Bill(void);
+        String^ Update_Bill(void);
+        String^ Select_Bill(void);
 
-        SqlCommand^ Insert_Mean_Of_Payment(void);
-        SqlCommand^ Delete_Mean_Of_Payment(void);
-        SqlCommand^ Update_Mean_Of_Payment(void);
-        SqlCommand^ Select_Mean_Of_Payment(void);
+        String^ Insert_Mean_Of_Payment(void);
+        String^ Delete_Mean_Of_Payment(void);
+        String^ Update_Mean_Of_Payment(void);
+        String^ Select_Mean_Of_Payment(void);
     };
 };

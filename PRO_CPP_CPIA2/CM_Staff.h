@@ -9,6 +9,7 @@ namespace NS_Composants
     private:
         String^ Role;
         int Adresse_ID;
+       
         int Sup_ID;
         DateTime^ DateStaff;
         String^ mail;
