@@ -116,16 +116,24 @@
     <ClInclude Include="CM_Classic.h" />
     <ClInclude Include="CM_Client.h" />
     <ClInclude Include="CM_Connexion.h" />
+    <ClInclude Include="CM_Identification.h" />
     <ClInclude Include="CM_Orders.h" />
     <ClInclude Include="CM_Personne.h" />
     <ClInclude Include="CM_Staff.h" />
     <ClInclude Include="CM_Stat.h" />
     <ClInclude Include="CM_Stock.h" />
+    <ClInclude Include="InterfaceEmploye.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
+    <ClInclude Include="InterfaceManager.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
     <ClInclude Include="SG_Classic.h" />
     <ClInclude Include="SG_Client.h" />
+    <ClInclude Include="SG_Identification.h" />
     <ClInclude Include="SG_Orders.h" />
     <ClInclude Include="SG_Personne.h" />
     <ClInclude Include="SG_Staff.h" />
@@ -136,14 +144,18 @@
     <ClCompile Include="CM_Classic.cpp" />
     <ClCompile Include="CM_Client.cpp" />
     <ClCompile Include="CM_Connexion.cpp" />
+    <ClCompile Include="CM_Identification.cpp" />
     <ClCompile Include="CM_Orders.cpp" />
     <ClCompile Include="CM_Personne.cpp" />
     <ClCompile Include="CM_Staff.cpp" />
     <ClCompile Include="CM_Stat.cpp" />
     <ClCompile Include="CM_Stock.cpp" />
+    <ClCompile Include="InterfaceEmploye.cpp" />
+    <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
+    <ClCompile Include="SG_Identification.cpp" />
     <ClCompile Include="SG_Orders.cpp" />
     <ClCompile Include="SG_Personne.cpp" />
     <ClCompile Include="SG_Staff.cpp" />
@@ -158,6 +170,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="InterfaceEmploye.resx">
+      <DependentUpon>InterfaceEmploye.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InterfaceManager.resx">
+      <DependentUpon>InterfaceManager.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MyForm.resx">
       <DependentUpon>MyForm.h</DependentUpon>
     </EmbeddedResource>

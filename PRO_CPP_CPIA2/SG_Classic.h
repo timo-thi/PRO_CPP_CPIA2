@@ -6,6 +6,7 @@ using namespace System::Data;
 using namespace System::Data::SqlClient;
 using namespace System::Xml;
 using namespace System;
+using namespace NS_Composants;
 
 namespace NS_Services
 {
@@ -16,8 +17,8 @@ namespace NS_Services
 		DataSet^ data;
 	protected:
 
-		CM_Classic CMappage;
-		CM_Connexion CConnexion;
+		//CM_Classic^ CMappage;
+		CM_Connexion^ CConnexion;
 
 	};
 };

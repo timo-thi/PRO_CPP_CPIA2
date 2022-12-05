@@ -63,6 +63,18 @@
     <ClInclude Include="MyForm.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="InterfaceEmploye.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InterfaceManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="CM_Identification.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SG_Identification.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CM_Connexion.cpp">
@@ -111,6 +123,18 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="MyForm.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceEmploye.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InterfaceManager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CM_Identification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SG_Identification.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
