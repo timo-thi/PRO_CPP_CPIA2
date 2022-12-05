@@ -113,7 +113,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="CM_Adress.h" />
     <ClInclude Include="CM_Classic.h" />
     <ClInclude Include="CM_Client.h" />
     <ClInclude Include="CM_Connexion.h" />
@@ -132,7 +131,6 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
-    <ClInclude Include="SG_Address.h" />
     <ClInclude Include="SG_Classic.h" />
     <ClInclude Include="SG_Client.h" />
     <ClInclude Include="SG_Identification.h" />
@@ -143,7 +141,6 @@
     <ClInclude Include="SG_Stock.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CM_Adress.cpp" />
     <ClCompile Include="CM_Classic.cpp" />
     <ClCompile Include="CM_Client.cpp" />
     <ClCompile Include="CM_Connexion.cpp" />
@@ -156,7 +153,6 @@
     <ClCompile Include="InterfaceEmploye.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="MyForm.cpp" />
-    <ClCompile Include="SG_Address.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
     <ClCompile Include="SG_Identification.cpp" />
