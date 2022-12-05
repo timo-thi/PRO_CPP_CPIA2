@@ -1122,6 +1122,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->numericUpDown1->Size = System::Drawing::Size(37, 20);
 			this->numericUpDown1->TabIndex = 54;
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDown1_ValueChanged);
 			// 
 			// comboBox1
 			// 
@@ -1134,6 +1135,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(38, 21);
 			this->comboBox1->TabIndex = 53;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::comboBox1_SelectedIndexChanged);
 			// 
 			// textBoxValAch
 			// 
@@ -1219,6 +1221,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			// 
 			// buttonDemarque5
 			// 
+			this->buttonDemarque5->Enabled = false;
 			this->buttonDemarque5->Location = System::Drawing::Point(42, 260);
 			this->buttonDemarque5->Name = L"buttonDemarque5";
 			this->buttonDemarque5->Size = System::Drawing::Size(60, 23);
@@ -1249,6 +1252,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			// 
 			// buttonRemise6
 			// 
+			this->buttonRemise6->Enabled = false;
 			this->buttonRemise6->Location = System::Drawing::Point(42, 214);
 			this->buttonRemise6->Name = L"buttonRemise6";
 			this->buttonRemise6->Size = System::Drawing::Size(60, 23);
@@ -1279,6 +1283,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			// 
 			// buttonMarge15
 			// 
+			this->buttonMarge15->Enabled = false;
 			this->buttonMarge15->Location = System::Drawing::Point(42, 166);
 			this->buttonMarge15->Name = L"buttonMarge15";
 			this->buttonMarge15->Size = System::Drawing::Size(60, 23);
@@ -1309,6 +1314,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 			// 
 			// buttonTVA20
 			// 
+			this->buttonTVA20->Enabled = false;
 			this->buttonTVA20->Location = System::Drawing::Point(42, 120);
 			this->buttonTVA20->Name = L"buttonTVA20";
 			this->buttonTVA20->Size = System::Drawing::Size(60, 23);
@@ -1903,20 +1909,20 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 	private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ e) {
 		
 		// Panier moyen
-		this->textBoxPanierAvg->Text = Convert::ToString(this->Stat_Service->Calcul_Panier());
+		this->textBoxPanierAvg->Text = Convert::ToString(this->Stat_Service->Calcul_Panier()) + " €";
 
 		// Chiffre d'affaire
 		int iind = this->comboBox1->Items->IndexOf(this->comboBox1->Text) + 1;
 		if (iind >= 10) {
-			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire(Convert::ToString(iind)));
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire(Convert::ToString(iind))) + " €";
 		}
 		else {
-			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire("0" + Convert::ToString(iind)));
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire("0" + Convert::ToString(iind))) + " €";
 		}
 
 		// Montant total client
 		if (this->numericUpDown1->Value != 0) {
-			this->textBoxTotCli->Text = Convert::ToString(this->Stat_Service->Calcul_Montant_Total_client((int)this->numericUpDown1->Value));
+			this->textBoxTotCli->Text = Convert::ToString(this->Stat_Service->Calcul_Montant_Total_client((int)this->numericUpDown1->Value)) + " €";
 		}
 		else {
 			MessageBox::Show("Error, client id can't be 0.");
@@ -1939,7 +1945,7 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 		}
 
 		// Calcul valeur d'achat
-		this->textBoxValAch->Text = Convert::ToString(this->Stat_Service->Valeur_Achat_Stock());
+		this->textBoxValAch->Text = Convert::ToString(this->Stat_Service->Valeur_Achat_Stock()) + " €";
 
 		// Produit sous le seuil
 		this->listUnderThreshold->Items->Clear();
@@ -1952,72 +1958,145 @@ private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
 		this->Refresh_Simulation();
 	}
 	private: System::Void Refresh_Simulation() {
-		this->textBoxValComAuto->Text = Convert::ToString(this->Stat_Service->Valeur_Commerciale_Stock());
+		this->textBoxValComAuto->Text = Convert::ToString(this->Stat_Service->Valeur_Commerciale_Stock()) + " €";
 		this->textBoxValComPers->Text = this->textBoxValComAuto->Text;
 	}
 	private: System::Void buttonTVA20_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_TVA(20);
 		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = false;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = true;
 	}
 	private: System::Void buttonTVA10_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_TVA(10);
 		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = false;
+		this->buttonTVA5->Enabled = true;
 	}
 	private: System::Void buttonTVA5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_TVA(5.5);
 		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = false;
 	}
 	private: System::Void buttonMarge5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Marge(5);
 		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = false;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = true;
 	}
 	private: System::Void buttonMarge10_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Marge(10);
 		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = false;
+		this->buttonMarge15->Enabled = true;
 	}
 	private: System::Void buttonMarge15_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Marge(15);
 		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = false;
 	}
 	private: System::Void buttonRemise6_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Remise(6);
 		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = false;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = true;
 	}
 	private: System::Void buttonRemise5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Remise(5);
 		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = false;
+		this->buttonRemise3->Enabled = true;
 	}
 	private: System::Void buttonRemise3_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Remise(3);
 		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = false;
 	}
 	private: System::Void buttonDemarque2_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Demarque(2);
 		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = false;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = true;
 	}
 	private: System::Void buttonDemarque3_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Demarque(3);
 		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = false;
+		this->buttonDemarque5->Enabled = true;
 	}
 	private: System::Void buttonDemarque5_Click(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Demarque(5);
 		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = false;
+	}
+	// Reset simulation buttons to enabled
+	private: System::Void Reset_Simu_Auto_Buttons() {
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = true;
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = true;
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = true;
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = true;
 	}
 	private: System::Void numericUpDownTVA_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_TVA(Convert::ToDouble(this->numericUpDownTVA->Value));
 		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
 	}
 	private: System::Void numericUpDownRemise_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Remise(Convert::ToDouble(this->numericUpDownRemise->Value));
 		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
 	}
 	private: System::Void numericUpDownDemarque_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Demarque(Convert::ToDouble(this->numericUpDownDemarque->Value));
 		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
 	}
 	private: System::Void numericUpDownMarge_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_Marge(Convert::ToDouble(this->numericUpDownMarge->Value));
 		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
+	}
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		// Chiffre d'affaire
+		int iind = this->comboBox1->Items->IndexOf(this->comboBox1->Text) + 1;
+		if (iind >= 10) {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire(Convert::ToString(iind))) + " €";
+		}
+		else {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire("0" + Convert::ToString(iind))) + " €";
+		}
+	}
+	private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (this->numericUpDown1->Value != 0) {
+			this->textBoxTotCli->Text = Convert::ToString(this->Stat_Service->Calcul_Montant_Total_client((int)this->numericUpDown1->Value)) + " €";
+		}
+		else {
+			MessageBox::Show("Error, client id can't be 0.");
+		}
 	}
 };
 }
