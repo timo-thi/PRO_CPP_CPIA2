@@ -2350,7 +2350,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->affichageClient ->Text += "Traitement terminé.";
 }
 private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
-	this->dataGridView1->Refresh();
+	this->dataGridView2->Refresh();
 
 	this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
 	this->dataGridView2->DataMember = "Stock";
