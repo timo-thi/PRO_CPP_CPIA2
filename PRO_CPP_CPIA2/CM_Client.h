@@ -11,12 +11,9 @@ namespace NS_Composants
     private:
 
         String^ Mail;
-        DateTime^ Date_Anniv;
-        DateTime^ Date_Premiere_Commande;
-        int Personne_ID;
-        int adresseLivraison;
-        int adresseFacturation;
-        
+        String^ Date_Anniv;
+        int Adresse_Livraison;
+        int Adresse_Facturation;
 
     public:
 
@@ -30,31 +27,13 @@ namespace NS_Composants
         String^ Get_Mail();
         void Set_Mail(String^);
 
-        DateTime^ Get_Date_Anniv();
-        void Set_Date_Anniv(DateTime^);
+        String^ Get_Date_Anniv();
+        void Set_Date_Anniv(String^);
 
-        DateTime^ Get_Date_Premiere_Commande();
-        void Set_Date_Premiere_Commande(DateTime^);
-        
-        int Get_Personne();
-        void Set_Personne(int);
+        int Get_Adresse_Livraison();
+        void Set_Adresse_Livraison(int);
 
-        int Get_Facturation();
-        void Set_Facturation(int);
-
-        int Get_Livraison();
-        void Set_Livraison(int);
-
-        SqlCommand^ Insert_Facturation();
-        SqlCommand^ Delete_Facturation();
-        SqlCommand^ Select_Facturation();
-        SqlCommand^ Update_Facturation();
-
-        SqlCommand^ Insert_Livraison();
-        SqlCommand^ Delete_Livraison();
-        SqlCommand^ Select_Livraison();
-        SqlCommand^ Update_Livraison();
-
-
+        int Get_Adresse_Facturation();
+        void Set_Adresse_Facturation(int);
     };
 };

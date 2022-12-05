@@ -82,7 +82,7 @@ SqlCommand^ CM_Personne::Insert_Personne(void) {
 
 SqlCommand^ CM_Personne::Delete_Personne(void) {
 	
-	Start_Procedure("Delete_Person");
+	Start_Procedure("Delete_person");
 
 	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
 
@@ -90,12 +90,12 @@ SqlCommand^ CM_Personne::Delete_Personne(void) {
 }
 SqlCommand^ CM_Personne::Select_Personne(void) {
 
-	Start_Procedure("Select_Person");
+	Start_Procedure("Select_person");
 	return this->Procedure;
 }
 SqlCommand^ CM_Personne::Update_Personne(void) {
 	
-	Start_Procedure("Update_Person");
+	Start_Procedure("Update_person");
 
 	Procedure->Parameters->AddWithValue("@prenom", this->Get_Prenom());
 	Procedure->Parameters->AddWithValue("@nom", this->Get_Nom());

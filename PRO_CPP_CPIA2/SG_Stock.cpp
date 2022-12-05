@@ -3,65 +3,9 @@
 
 using namespace NS_Services;
 
-SG_Stock::SG_Stock() {
+SG_Stock::SG_Stock() {}
 
-	DS = gcnew Data::DataSet;
-	Map_Stock = gcnew CM_Stock;
-	Connect = gcnew CM_Connexion;
-}
-
-DataSet^ SG_Stock::Fetch_Products(String^ nom) {
-
-	this->DS->Clear();
-
-	this->DS = this->Connect->getRows(this->Map_Stock->Select_Stock(), nom);
-
-	return this->DS;
-}
-
-void SG_Stock::Add_Products() {
-
-	this->Map_Stock->Set_Reference(this->Reference);
-	this->Map_Stock->Set_Nom(Nom);
-	this->Map_Stock->Set_Prix(Prix);
-	this->Map_Stock->Set_Stock(Stock);
-	this->Map_Stock->Set_Seuil_restock(Seuil_Stock);
-
-	this->Connect->actionRows(this->Map_Stock->Insert_Stock());
-
-}
-
-void SG_Stock::Remove_Products() {
-
-	this->Map_Stock->Set_Reference(this->Reference);
-
-	this->Connect->actionRows(this->Map_Stock->Delete_Stock());
-
-}
-
-void SG_Stock::Update_Products() {
-
-	this->Map_Stock->Set_Reference(this->Reference);
-	this->Map_Stock->Set_Nom(Nom);
-	this->Map_Stock->Set_Prix(Prix);
-	this->Map_Stock->Set_Stock(Stock);
-	this->Map_Stock->Set_Seuil_restock(Seuil_Stock);
-
-	this->Connect->actionRows(this->Map_Stock->Update_Stock());
-}
-
-	int SG_Stock::Get_Reference() { return this->Reference; }
-	void SG_Stock::Set_Reference(int tRef) { this->Reference = tRef; }
-
-	String^ SG_Stock::Get_Nom() { return this->Nom; }
-	void SG_Stock::Set_Nom(String^ tNom) { this->Nom = tNom; }
-
-	int SG_Stock::Get_Prix(){ return this->Prix; }
-	void SG_Stock::Set_Prix(int tPrix) { this->Prix = tPrix; }
-
-	int SG_Stock::Get_Stock() { return this->Stock; }
-	void SG_Stock::Set_Stock(int tStock) { this->Stock = tStock; }
-
-	int SG_Stock::Get_Seuil_Stock() { return this->Seuil_Stock; }
-	void SG_Stock::Set_Seuil_Stock(int tSeuil) { this->Seuil_Stock = tSeuil; }
-
+void SG_Stock::Add_Products() {}
+void SG_Stock::Remove_Products() {}
+void SG_Stock::Update_Products() {}
+void SG_Stock::Fetch_Products() {}

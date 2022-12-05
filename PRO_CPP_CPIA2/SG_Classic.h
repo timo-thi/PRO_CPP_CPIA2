@@ -17,8 +17,8 @@ namespace NS_Services
 		DataSet^ data;
 	protected:
 
-		CM_Classic CMappage;
-		CM_Connexion CConnexion;
+		//CM_Classic^ CMappage;
+		CM_Connexion^ CConnexion;
 
 	};
 };

@@ -18,15 +18,9 @@ namespace NS_Composants
 		SqlCommand^ Identify();
 		SqlCommand^ Fetch_Role();
 
-		SqlCommand^ Insert_Identification();
-		SqlCommand^ Update_Identification();
-		SqlCommand^ Delete_Identification();
-
-
 		String^ Get_Mail(void);
 		void Set_Mail(String^);
 		String^ Get_Password(void);
 		void Set_Password(String^);
 	};
 }
-
