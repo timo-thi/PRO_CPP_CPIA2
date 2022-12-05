@@ -51,7 +51,6 @@ SqlCommand^ CM_Stock::Insert_Stock(void){
 	
 	Start_Procedure("Insert_Product");
 
-
 	Procedure->Parameters->AddWithValue("@Name", this->Get_Nom());
 	Procedure->Parameters->AddWithValue("@Price", this->Get_Prix());
 	Procedure->Parameters->AddWithValue("@Stock", this->Get_Stock());
@@ -61,17 +60,15 @@ SqlCommand^ CM_Stock::Insert_Stock(void){
 }
 
 SqlCommand^ CM_Stock::Delete_Stock(void){
-	
-	Start_Procedure("Delete_Product");
 
-	Procedure->Parameters->AddWithValue("@ID", this->Get_Reference());
+	Start_Procedure("Delete_Product");
 
 	return Procedure;
 }
 
 SqlCommand^ CM_Stock::Update_Stock(void){
 
-	Start_Procedure("Update_Product");
+	Start_Procedure("Insert_Product");
 
 	Procedure->Parameters->AddWithValue("@Product_ID", this->Get_Reference());
 	Procedure->Parameters->AddWithValue("@Name", this->Get_Nom());

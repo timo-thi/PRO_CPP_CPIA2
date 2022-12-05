@@ -9,10 +9,10 @@ namespace NS_Composants
 {
 	ref class CM_Classic
 	{
-	public: CM_Classic();
-
+	public: 
+		CM_Classic();
 	protected:
-		SqlCommand^ Procedure;
 		void Start_Procedure(String^);
+		SqlCommand^ Procedure;
 	};
 };

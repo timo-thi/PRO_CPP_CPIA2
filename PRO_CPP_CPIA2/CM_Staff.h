@@ -1,5 +1,5 @@
 #pragma once
-#include "CM_Personne.h"
+#include "CM_Personne.h"*
 
 namespace NS_Composants
 {
@@ -8,11 +8,8 @@ namespace NS_Composants
 
     private:
         String^ Role;
-        int Adresse_ID;
-       
-        int Sup_ID;
-        DateTime^ DateStaff;
-        String^ mail;
+        int Superieur;
+
     public:
 
         CM_Staff();
@@ -22,21 +19,15 @@ namespace NS_Composants
         SqlCommand^ Select_Staff();
         SqlCommand^ Update_Staff();
 
-        
+        SqlCommand^ Insert_Role();
+        SqlCommand^ Delete_Role();
+        SqlCommand^ Select_Role();
+        SqlCommand^ Update_Role();
 
         String^ Get_Role();
         void Set_Role(String^);
 
-        String^ Get_MailStaff();
-        void Set_MailStaff(String^);
-
-        int Get_Adresse();
-        void Set_Adresse(int);
-
-        int Get_Sup();
-        void Set_Sup(int);
-
-        DateTime^ Get_DateStaff();
-        void Set_DateStaff(DateTime^);
+        int Get_Superieur();
+        void Set_Superieur(int);
     };
 };
