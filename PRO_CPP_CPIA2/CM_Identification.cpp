@@ -24,33 +24,6 @@ SqlCommand^ CM_Identification::Fetch_Role() {
 	return this->Procedure;
 }
 
-SqlCommand^ CM_Identification::Insert_Identification() {
-	Start_Procedure("Insert_Identification");
-
-	this->Procedure->Parameters->AddWithValue("@mail", this->Get_Mail());
-	this->Procedure->Parameters->AddWithValue("@Psw", this->Get_Password());
-	return this->Procedure;
-
-}
-
-SqlCommand^ CM_Identification::Delete_Identification() {
-	Start_Procedure("Delete_Identification");
-
-	this->Procedure->Parameters->AddWithValue("@mail", this->Get_Mail());
-	return this->Procedure;
-
-}
-
-SqlCommand^ CM_Identification::Update_Identification() {
-	Start_Procedure("Update_Identification");
-
-	this->Procedure->Parameters->AddWithValue("@mail", this->Get_Mail());
-	this->Procedure->Parameters->AddWithValue("@Psw", this->Get_Password());
-	return this->Procedure;
-
-}
-
-
 String^ CM_Identification::Get_Mail(void) {
 	return this->Mail;
 }

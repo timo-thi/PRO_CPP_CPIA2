@@ -1,6 +1,8 @@
 ﻿#pragma once
 #include "InterfaceEmploye.h"
 #include "InterfaceManager.h"
+#include "SG_Identification.h"
+
 namespace ProjetPOO {
 
 	using namespace System;
@@ -22,6 +24,7 @@ namespace ProjetPOO {
 			//
 			//TODO: ajoutez ici le code du constructeur
 			//
+			this->SG_Id = gcnew NS_Services::SG_Identification;
 		}
 
 	protected:
@@ -40,6 +43,7 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::TextBox^ textBox2;
 	private: System::Windows::Forms::Label^ label2;
+	private: NS_Services::SG_Identification^ SG_Id;
 	protected:
 
 	private:
@@ -127,10 +131,22 @@ namespace ProjetPOO {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		InterfaceManager^ f2 = gcnew InterfaceManager(); //DEBUG
+		f2->Show();                                     //DEBUG
+		return;                                        //DEBUG
+		if (!this->SG_Id->Check_Identity(this->textBox1->Text, this->textBox2->Text)) {
+			MessageBox::Show("Wrong email or password");
+			return;
+		}
 		this->Hide();
-		InterfaceManager^ f2 = gcnew InterfaceManager();
-		f2->Show();
-
+		if (this->SG_Id->Fetch_Role() == "Ingenieur") {
+			InterfaceEmploye^ f1 = gcnew InterfaceEmploye(); // InterfaceEmployee
+			f1->Show();
+		}
+		else if (this->SG_Id->Fetch_Role() == "Manager") { // Not using else alone to prevent unwanted consequences if roles are added to the database
+			InterfaceManager^ f2 = gcnew InterfaceManager();
+			f2->Show();
+		}
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
