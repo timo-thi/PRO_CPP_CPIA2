@@ -92,7 +92,7 @@ SqlCommand^ CM_Orders::Delete_Order(void){
 }
 
 SqlCommand^ CM_Orders::Update_Order(void){
-	Start_Procedure("Insert_Order");
+	Start_Procedure("Update_Order");
 
 	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
 	Procedure->Parameters->AddWithValue("@date_expedition", this->Get_Date_Exp());

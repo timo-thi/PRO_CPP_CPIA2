@@ -2494,7 +2494,7 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {	//Delete Order
 
-	processusOrders->Set_ID(textBox16->Text);
+	processusOrders->Set_ID(textBox21->Text);
 
 	this->processusOrders->Remove_Order();
 
@@ -2502,7 +2502,7 @@ private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {	//Update Order
 
-	processusOrders->Set_ID(textBox16->Text);
+	processusOrders->Set_ID(textBox21->Text);
 	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
 	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
 	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
