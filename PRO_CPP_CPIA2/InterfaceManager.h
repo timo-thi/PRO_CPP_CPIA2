@@ -2,6 +2,7 @@
 #include "SG_Personne.h"
 #include "SG_Client.h"
 #include "SG_Stock.h"
+#include "SG_Orders.h"
 
 using namespace  NS_Services;
 namespace ProjetPOO {
@@ -85,8 +86,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ label15;
 	private: System::Windows::Forms::TextBox^ textBox16;
 	private: System::Windows::Forms::Label^ label16;
-	private: System::Windows::Forms::TextBox^ textBox22;
-	private: System::Windows::Forms::Label^ label24;
+
+
 	private: System::Windows::Forms::TextBox^ textBox23;
 	private: System::Windows::Forms::Label^ label25;
 	private: System::Windows::Forms::Button^ button13;
@@ -96,8 +97,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button16;
 	private: System::Windows::Forms::Button^ button17;
 	private: System::Windows::Forms::Button^ button18;
-	private: System::Windows::Forms::TextBox^ textBox9;
-	private: System::Windows::Forms::Label^ label13;
+
+
 	private: System::Windows::Forms::TextBox^ textBox10;
 	private: System::Windows::Forms::Label^ label17;
 	private: System::Windows::Forms::TextBox^ textBox14;
@@ -218,6 +219,9 @@ private: Data::DataSet^ dsLivraison = gcnew Data::DataSet();
 private: Data::DataSet^ dsFacturation = gcnew Data::DataSet();
 private: SG_Client^ processusClient = gcnew SG_Client();
 private: SG_Stock^ processusStock = gcnew SG_Stock();
+private: SG_Orders^ processusOrders = gcnew SG_Orders();
+private: System::Windows::Forms::Button^ button46;
+
 
 
 
@@ -271,8 +275,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
-			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
-			this->label24 = (gcnew System::Windows::Forms::Label());
+			this->button46 = (gcnew System::Windows::Forms::Button());
 			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
 			this->label25 = (gcnew System::Windows::Forms::Label());
 			this->button13 = (gcnew System::Windows::Forms::Button());
@@ -282,8 +285,6 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->button16 = (gcnew System::Windows::Forms::Button());
 			this->button17 = (gcnew System::Windows::Forms::Button());
 			this->button18 = (gcnew System::Windows::Forms::Button());
-			this->textBox9 = (gcnew System::Windows::Forms::TextBox());
-			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->textBox10 = (gcnew System::Windows::Forms::TextBox());
 			this->label17 = (gcnew System::Windows::Forms::Label());
 			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
@@ -730,8 +731,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			// 
 			// tabPage2
 			// 
-			this->tabPage2->Controls->Add(this->textBox22);
-			this->tabPage2->Controls->Add(this->label24);
+			this->tabPage2->Controls->Add(this->button46);
 			this->tabPage2->Controls->Add(this->textBox23);
 			this->tabPage2->Controls->Add(this->label25);
 			this->tabPage2->Controls->Add(this->button13);
@@ -741,8 +741,6 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->tabPage2->Controls->Add(this->button16);
 			this->tabPage2->Controls->Add(this->button17);
 			this->tabPage2->Controls->Add(this->button18);
-			this->tabPage2->Controls->Add(this->textBox9);
-			this->tabPage2->Controls->Add(this->label13);
 			this->tabPage2->Controls->Add(this->textBox10);
 			this->tabPage2->Controls->Add(this->label17);
 			this->tabPage2->Controls->Add(this->textBox14);
@@ -766,27 +764,21 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->tabPage2->Text = L"Gestion commande";
 			this->tabPage2->UseVisualStyleBackColor = true;
 			// 
-			// textBox22
+			// button46
 			// 
-			this->textBox22->Location = System::Drawing::Point(237, 326);
-			this->textBox22->Margin = System::Windows::Forms::Padding(4);
-			this->textBox22->Name = L"textBox22";
-			this->textBox22->Size = System::Drawing::Size(152, 22);
-			this->textBox22->TabIndex = 71;
-			// 
-			// label24
-			// 
-			this->label24->AutoSize = true;
-			this->label24->Location = System::Drawing::Point(233, 292);
-			this->label24->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(111, 16);
-			this->label24->TabIndex = 70;
-			this->label24->Text = L"Prix par paiement";
+			this->button46->AccessibleName = L"";
+			this->button46->Location = System::Drawing::Point(154, 301);
+			this->button46->Margin = System::Windows::Forms::Padding(4);
+			this->button46->Name = L"button46";
+			this->button46->Size = System::Drawing::Size(100, 28);
+			this->button46->TabIndex = 70;
+			this->button46->Text = L"Load";
+			this->button46->UseVisualStyleBackColor = true;
+			this->button46->Click += gcnew System::EventHandler(this, &InterfaceManager::button46_Click_1);
 			// 
 			// textBox23
 			// 
-			this->textBox23->Location = System::Drawing::Point(31, 326);
+			this->textBox23->Location = System::Drawing::Point(238, 247);
 			this->textBox23->Margin = System::Windows::Forms::Padding(4);
 			this->textBox23->Name = L"textBox23";
 			this->textBox23->Size = System::Drawing::Size(152, 22);
@@ -795,7 +787,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			// label25
 			// 
 			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(27, 292);
+			this->label25->Location = System::Drawing::Point(234, 213);
 			this->label25->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(60, 16);
@@ -831,6 +823,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->dataGridView3->RowHeadersWidth = 62;
 			this->dataGridView3->Size = System::Drawing::Size(759, 382);
 			this->dataGridView3->TabIndex = 65;
+			this->dataGridView3->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView3_CellClick);
 			// 
 			// button15
 			// 
@@ -851,6 +844,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->button16->TabIndex = 64;
 			this->button16->Text = L"Modifier";
 			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &InterfaceManager::button16_Click);
 			// 
 			// button17
 			// 
@@ -861,6 +855,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->button17->TabIndex = 62;
 			this->button17->Text = L"Supprimer";
 			this->button17->UseVisualStyleBackColor = true;
+			this->button17->Click += gcnew System::EventHandler(this, &InterfaceManager::button17_Click);
 			// 
 			// button18
 			// 
@@ -871,24 +866,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->button18->TabIndex = 61;
 			this->button18->Text = L"Ajouter";
 			this->button18->UseVisualStyleBackColor = true;
-			// 
-			// textBox9
-			// 
-			this->textBox9->Location = System::Drawing::Point(237, 247);
-			this->textBox9->Margin = System::Windows::Forms::Padding(4);
-			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(152, 22);
-			this->textBox9->TabIndex = 60;
-			// 
-			// label13
-			// 
-			this->label13->AutoSize = true;
-			this->label13->Location = System::Drawing::Point(233, 213);
-			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(126, 16);
-			this->label13->TabIndex = 59;
-			this->label13->Text = L"Moyen de paiement";
+			this->button18->Click += gcnew System::EventHandler(this, &InterfaceManager::button18_Click);
 			// 
 			// textBox10
 			// 
@@ -976,9 +954,9 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 			this->label21->Location = System::Drawing::Point(27, 139);
 			this->label21->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label21->Name = L"label21";
-			this->label21->Size = System::Drawing::Size(88, 16);
+			this->label21->Size = System::Drawing::Size(70, 16);
 			this->label21->TabIndex = 49;
-			this->label21->Text = L"Prenom client";
+			this->label21->Text = L"Nom client";
 			// 
 			// textBox20
 			// 
@@ -2461,7 +2439,6 @@ private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e
 
 	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
 
-
 	this->processusStock->Remove_Products();
 
 	Load_Stock->PerformClick(); //refresh Grid
@@ -2479,7 +2456,6 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	this->processusStock->Update_Products();
 
 	Load_Stock->PerformClick(); //refresh Grid
-
 }
 private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 
@@ -2488,6 +2464,52 @@ private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Wi
 	this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
 	this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
 	this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+}
+
+private: System::Void dataGridView3_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+	this->textBox21->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
+	this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Client_ID"]->Value->ToString();
+	this->textBox19->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString() + " " + this->dataGridView3->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString();
+	this->textBox18->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Nb_paiements"]->Value->ToString();
+	this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reception"]->Value->ToString();
+	this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_expedition"]->Value->ToString();
+	this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
+	//this->textBox23->Text
+}
+
+private: System::Void button46_Click_1(System::Object^ sender, System::EventArgs^ e) {
+	this->dataGridView3->Refresh();
+
+	this->dataGridView3->DataSource = this->processusOrders->Fetch_Order("Orders");
+	this->dataGridView3->DataMember = "Orders";
+}
+private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {	//Add order
+	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
+	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
+	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
+
+	this->processusOrders->Add_Order();
+
+	Load_Stock->PerformClick(); //refresh Grid
+}
+private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {	//Delete Order
+
+	processusOrders->Set_ID(textBox16->Text);
+
+	this->processusOrders->Remove_Order();
+
+	Load_Stock->PerformClick(); //refresh Grid
+}
+private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {	//Update Order
+
+	processusOrders->Set_ID(textBox16->Text);
+	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
+	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
+	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
+
+	this->processusOrders->Update_Order();
+
+	Load_Stock->PerformClick(); //refresh Grid
 }
 };
 }

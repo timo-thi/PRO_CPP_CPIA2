@@ -30,6 +30,7 @@ namespace NS_Services
         void Remove_Products();
         void Update_Products();
 
+
         int Get_Reference();
         void Set_Reference(int);
 
