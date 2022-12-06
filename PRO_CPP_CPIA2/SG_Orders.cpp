@@ -21,14 +21,11 @@ DataSet^ SG_Orders::Fetch_Order(String^ nom) {
 	return this->DS;
 }
 
-String^ SG_Orders::Add_Order(void){
+void SG_Orders::Add_Order(void){
 
 	this->Map_Orders->Set_Client_ID(this->ID_Client);
 	this->Map_Orders->Set_Date_Liv(this->Date_Reception);
 	this->Map_Orders->Set_Date_Exp(this->Date_Expedition);
-
-	String^ ID = this->Connect->actionRowID_String(this->Map_Orders->Insert_Order());
-	return ID;
 }
 
 void SG_Orders::Remove_Order(void){
@@ -44,6 +41,14 @@ void SG_Orders::Update_Order(void){
 	this->Map_Orders->Set_Date_Exp(this->Date_Expedition);
 
 	this->Connect->actionRows(this->Map_Orders->Update_Order());
+}
+
+String^ SG_Orders::Total_Order(void) {
+	this->Map_Orders->Set_ID(this->ID);
+
+	DataSet^ DSnum = this->Connect->getRows(this->Map_Orders->Total_Order(), "num");
+
+	return DSnum->Tables["num"]->Rows[0]["Num"]->ToString();
 }
 
 
@@ -87,14 +92,6 @@ void SG_Orders::Update_Bill(void) {
 	this->Map_Orders->Set_Date_Bill(this->Date_Bill);
 
 	this->Connect->actionRows(this->Map_Orders->Update_Bill());
-}
-
-String^ SG_Orders::Get_Number_Order(void) {
-	this->Map_Orders->Set_ID(this->ID);
-
-	DataSet^ DSnum = this->Connect->getRows(this->Map_Orders->Get_Number_Order(), "num");
-
-	return DSnum->Tables["num"]->Rows[0]["Num"]->ToString();
 }
 
 

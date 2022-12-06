@@ -3,6 +3,7 @@
 #include "SG_Client.h"
 #include "SG_Stock.h"
 #include "SG_Orders.h"
+#include "InterfaceCommandCreator.h"
 
 using namespace  NS_Services;
 namespace ProjetPOO {
@@ -90,8 +91,8 @@ namespace ProjetPOO {
 
 	private: System::Windows::Forms::TextBox^ textBox23;
 	private: System::Windows::Forms::Label^ label25;
-	private: System::Windows::Forms::Button^ button13;
-	private: System::Windows::Forms::Button^ button14;
+
+
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
 	private: System::Windows::Forms::Button^ button15;
 	private: System::Windows::Forms::Button^ button16;
@@ -105,8 +106,8 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ label18;
 	private: System::Windows::Forms::TextBox^ textBox17;
 	private: System::Windows::Forms::Label^ label19;
-	private: System::Windows::Forms::TextBox^ textBox18;
-	private: System::Windows::Forms::Label^ label20;
+
+
 	private: System::Windows::Forms::TextBox^ textBox19;
 	private: System::Windows::Forms::Label^ label21;
 	private: System::Windows::Forms::TextBox^ textBox20;
@@ -222,7 +223,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 private: SG_Orders^ processusOrders = gcnew SG_Orders();
 private: System::Windows::Forms::Button^ button46;
 
-
+private: InterfaceCommandCreator^ Command_Creator;
 
 
 
@@ -279,8 +280,6 @@ private: System::Windows::Forms::Button^ button46;
 			this->button46 = (gcnew System::Windows::Forms::Button());
 			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
 			this->label25 = (gcnew System::Windows::Forms::Label());
-			this->button13 = (gcnew System::Windows::Forms::Button());
-			this->button14 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
 			this->button15 = (gcnew System::Windows::Forms::Button());
 			this->button16 = (gcnew System::Windows::Forms::Button());
@@ -292,8 +291,6 @@ private: System::Windows::Forms::Button^ button46;
 			this->label18 = (gcnew System::Windows::Forms::Label());
 			this->textBox17 = (gcnew System::Windows::Forms::TextBox());
 			this->label19 = (gcnew System::Windows::Forms::Label());
-			this->textBox18 = (gcnew System::Windows::Forms::TextBox());
-			this->label20 = (gcnew System::Windows::Forms::Label());
 			this->textBox19 = (gcnew System::Windows::Forms::TextBox());
 			this->label21 = (gcnew System::Windows::Forms::Label());
 			this->textBox20 = (gcnew System::Windows::Forms::TextBox());
@@ -735,8 +732,6 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabPage2->Controls->Add(this->button46);
 			this->tabPage2->Controls->Add(this->textBox23);
 			this->tabPage2->Controls->Add(this->label25);
-			this->tabPage2->Controls->Add(this->button13);
-			this->tabPage2->Controls->Add(this->button14);
 			this->tabPage2->Controls->Add(this->dataGridView3);
 			this->tabPage2->Controls->Add(this->button15);
 			this->tabPage2->Controls->Add(this->button16);
@@ -748,8 +743,6 @@ private: System::Windows::Forms::Button^ button46;
 			this->tabPage2->Controls->Add(this->label18);
 			this->tabPage2->Controls->Add(this->textBox17);
 			this->tabPage2->Controls->Add(this->label19);
-			this->tabPage2->Controls->Add(this->textBox18);
-			this->tabPage2->Controls->Add(this->label20);
 			this->tabPage2->Controls->Add(this->textBox19);
 			this->tabPage2->Controls->Add(this->label21);
 			this->tabPage2->Controls->Add(this->textBox20);
@@ -768,7 +761,7 @@ private: System::Windows::Forms::Button^ button46;
 			// button46
 			// 
 			this->button46->AccessibleName = L"";
-			this->button46->Location = System::Drawing::Point(154, 301);
+			this->button46->Location = System::Drawing::Point(263, 302);
 			this->button46->Margin = System::Windows::Forms::Padding(4);
 			this->button46->Name = L"button46";
 			this->button46->Size = System::Drawing::Size(100, 28);
@@ -779,7 +772,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			// textBox23
 			// 
-			this->textBox23->Location = System::Drawing::Point(238, 247);
+			this->textBox23->Location = System::Drawing::Point(31, 244);
 			this->textBox23->Margin = System::Windows::Forms::Padding(4);
 			this->textBox23->Name = L"textBox23";
 			this->textBox23->Size = System::Drawing::Size(152, 22);
@@ -788,32 +781,12 @@ private: System::Windows::Forms::Button^ button46;
 			// label25
 			// 
 			this->label25->AutoSize = true;
-			this->label25->Location = System::Drawing::Point(234, 213);
+			this->label25->Location = System::Drawing::Point(28, 214);
 			this->label25->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label25->Name = L"label25";
 			this->label25->Size = System::Drawing::Size(60, 16);
 			this->label25->TabIndex = 68;
 			this->label25->Text = L"Prix total ";
-			// 
-			// button13
-			// 
-			this->button13->Location = System::Drawing::Point(31, 358);
-			this->button13->Margin = System::Windows::Forms::Padding(4);
-			this->button13->Name = L"button13";
-			this->button13->Size = System::Drawing::Size(151, 28);
-			this->button13->TabIndex = 67;
-			this->button13->Text = L"<";
-			this->button13->UseVisualStyleBackColor = true;
-			// 
-			// button14
-			// 
-			this->button14->Location = System::Drawing::Point(237, 358);
-			this->button14->Margin = System::Windows::Forms::Padding(4);
-			this->button14->Name = L"button14";
-			this->button14->Size = System::Drawing::Size(151, 28);
-			this->button14->TabIndex = 66;
-			this->button14->Text = L">";
-			this->button14->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView3
 			// 
@@ -926,24 +899,6 @@ private: System::Windows::Forms::Button^ button46;
 			this->label19->Size = System::Drawing::Size(108, 16);
 			this->label19->TabIndex = 53;
 			this->label19->Text = L"Date de livraison";
-			// 
-			// textBox18
-			// 
-			this->textBox18->Location = System::Drawing::Point(31, 247);
-			this->textBox18->Margin = System::Windows::Forms::Padding(4);
-			this->textBox18->Name = L"textBox18";
-			this->textBox18->Size = System::Drawing::Size(152, 22);
-			this->textBox18->TabIndex = 52;
-			// 
-			// label20
-			// 
-			this->label20->AutoSize = true;
-			this->label20->Location = System::Drawing::Point(27, 213);
-			this->label20->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
-			this->label20->Name = L"label20";
-			this->label20->Size = System::Drawing::Size(134, 16);
-			this->label20->TabIndex = 51;
-			this->label20->Text = L"Nombre de paiement";
 			// 
 			// textBox19
 			// 
@@ -2487,13 +2442,14 @@ private: System::Void dataGridView3_CellClick(System::Object^ sender, System::Wi
 		this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reception"]->Value->ToString();
 		this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_expedition"]->Value->ToString();
 		this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
-		//this->textBox23->Text
+		this->textBox23->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
 	}
 	else if (e->RowIndex != -1){
 		this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
 		this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Balance"]->Value->ToString();
 		this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Moyen_paiement"]->Value->ToString();
-		this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reglement"]->Value->ToString();
+		this->processusOrders->Set_ID(this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString());
+		this->textBox17->Text = this->processusOrders->Total_Order();
 	}
 }
 
@@ -2521,6 +2477,8 @@ private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ 
 		processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
 		processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
 		this->processusOrders->Add_Order();
+		Command_Creator = gcnew InterfaceCommandCreator();
+		this->Command_Creator->Show();
 	}
 
 	else {

@@ -29,15 +29,15 @@ namespace NS_Services
 
         DataSet^ Fetch_Order(String^);
         SG_Orders(void);
-        String^ Add_Order(void);
+        void Add_Order(void);
         void Remove_Order(void);
         void Update_Order(void);
+        String^ Total_Order(void);
 
         DataSet^ Fetch_Order_Bill(String^);
         void Add_Bill(void);
         void Remove_Bill(void);
         void Update_Bill(void);
-        String^ Get_Number_Order();
         void Remove_All_Bill(void);
 
         DataSet^ Fetch_Means_Of_Payment(String^);

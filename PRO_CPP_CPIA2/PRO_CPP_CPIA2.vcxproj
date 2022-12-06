@@ -130,6 +130,9 @@
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="InterfaceCommandCreator.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="SG_Classic.h" />
     <ClInclude Include="SG_Client.h" />
     <ClInclude Include="SG_Orders.h" />
@@ -150,6 +153,7 @@
     <ClCompile Include="InterfaceEmploye.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="InterfaceCommandCreator.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
     <ClCompile Include="SG_Client.cpp" />
     <ClCompile Include="SG_Orders.cpp" />

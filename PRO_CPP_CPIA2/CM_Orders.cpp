@@ -71,6 +71,22 @@ void CM_Orders::Set_Date_Bill(DateTime^ New_DB) {
 	this->Date_Bill = New_DB;
 }
 
+int CM_Orders::Get_Product(void) { 
+	return this->Product; 
+}
+
+void CM_Orders::Set_Product(int tProduct) { 
+	this->Product = tProduct; 
+}
+
+int CM_Orders::Get_Amount(void) { 
+	return this->Product; 
+}
+
+void CM_Orders::Set_Amount(int tAmount) { 
+	this->Amount = tAmount; 
+}
+
 
 
 SqlCommand^ CM_Orders::Insert_Order(void){
@@ -109,6 +125,13 @@ SqlCommand^ CM_Orders::Select_Order(void){
 	return Procedure;
 }
 
+SqlCommand^ CM_Orders::Total_Order(void) {
+	Start_Procedure("Total_Order");
+
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return Procedure;
+}
 
 SqlCommand^ CM_Orders::Insert_Bill(void){
 	Start_Procedure("Insert_Bill");
@@ -157,14 +180,6 @@ SqlCommand^ CM_Orders::Fetch_Order_Bill(void){
 	return Procedure;
 }
 
-SqlCommand^ CM_Orders::Get_Number_Order(void) {
-	Start_Procedure("Get_Number_Order");
-
-	Procedure->Parameters->AddWithValue("@name", this->Get_ID());
-
-	return Procedure;
-}
-
 SqlCommand^ CM_Orders::Insert_Mean_Of_Payment(){
 	Start_Procedure("Insert_MOP");
 
@@ -191,6 +206,34 @@ SqlCommand^ CM_Orders::Update_Mean_Of_Payment(void){
 
 SqlCommand^ CM_Orders::Select_Mean_Of_Payment(void){
 	Start_Procedure("Select_MOP");
+
+	return Procedure;
+}
+
+
+SqlCommand^ CM_Orders::Insert_Product() {
+	Start_Procedure("Insert_MOP");
+
+	Procedure->Parameters->AddWithValue("@ORD", this->Get_ID());
+	Procedure->Parameters->AddWithValue("@PRO", this->Get_Product());
+	Procedure->Parameters->AddWithValue("@amount", this->Get_Amount());
+
+	return Procedure;
+}
+
+SqlCommand^ CM_Orders::Delete_Product(void) {
+	Start_Procedure("Delete_Contain");
+
+	Procedure->Parameters->AddWithValue("@ORD", this->Get_ID());
+	Procedure->Parameters->AddWithValue("@PRO", this->Get_Product());
+
+	return Procedure;
+}
+
+SqlCommand^ CM_Orders::Select_Product(void) {
+	Start_Procedure("Select_Contain");
+
+	Procedure->Parameters->AddWithValue("@ORD", this->Get_ID());
 
 	return Procedure;
 }

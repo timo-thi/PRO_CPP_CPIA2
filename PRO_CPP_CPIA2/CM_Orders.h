@@ -18,6 +18,9 @@ namespace NS_Composants
         String^ Mean_Of_Payment;
         int Balance;
 
+        int Product;
+        int Amount;
+
     public:
         CM_Orders(void);
         String^ Get_ID(void);
@@ -37,22 +40,30 @@ namespace NS_Composants
         void Set_Balance(int);
         DateTime^ Get_Date_Bill(void);
         void Set_Date_Bill(DateTime^);
+        int Get_Product(void);
+        void Set_Product(int);
+        int Get_Amount(void);
+        void Set_Amount(int);
 
         SqlCommand^ Insert_Order(void);
         SqlCommand^ Delete_Order(void);
         SqlCommand^ Update_Order(void);
         SqlCommand^ Select_Order(void);
+        SqlCommand^ Total_Order(void);
 
         SqlCommand^ Insert_Bill(void);
         SqlCommand^ Delete_Bill(void);
         SqlCommand^ Delete_All_Bill(void);
         SqlCommand^ Update_Bill(void);
         SqlCommand^ Fetch_Order_Bill(void);
-        SqlCommand^ Get_Number_Order(void);
 
         SqlCommand^ Insert_Mean_Of_Payment(void);
         SqlCommand^ Delete_Mean_Of_Payment(void);
         SqlCommand^ Update_Mean_Of_Payment(void);
         SqlCommand^ Select_Mean_Of_Payment(void);
+
+        SqlCommand^ Insert_Product(void);
+        SqlCommand^ Delete_Product(void);
+        SqlCommand^ Select_Product(void);
     };
 };

@@ -18,15 +18,6 @@ int CM_Connexion::actionRowID(SqlCommand^ commande) {
 	return id;
 }
 
-String^ CM_Connexion::actionRowID_String(SqlCommand^ commande) {
-	commande->Connection = connecteur;
-
-	this->connecteur->Open();
-	String^ id = Convert::ToString(commande->ExecuteScalar());
-	this->connecteur->Close();
-	return id;
-}
-
 void  CM_Connexion::actionRows(SqlCommand^ commande)
 {
 	commande->Connection = connecteur;
