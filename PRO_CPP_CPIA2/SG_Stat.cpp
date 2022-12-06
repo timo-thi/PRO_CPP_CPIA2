@@ -34,7 +34,7 @@ array<String^>^ SG_Stat::Produit_Sous_Seuil(void){
 	array<String^>^ list = gcnew array<String^>(dt->Tables[0]->Rows->Count);
 	for (int i = 0; i < dt->Tables[0]->Rows->Count; i++) {
 		list[i] = (String^)dt->Tables[0]->Rows[i]->ItemArray[0] + " - "
-				+ Convert::ToString(dt->Tables[0]->Rows[i]->ItemArray[1]) + "€ - Qtt: "
+				+ Convert::ToString(dt->Tables[0]->Rows[i]->ItemArray[1]) + " - Qtt: "
 				+ Convert::ToString(dt->Tables[0]->Rows[i]->ItemArray[2]) + " - Threshold: "
 				+ Convert::ToString(dt->Tables[0]->Rows[i]->ItemArray[3]);
 	}
