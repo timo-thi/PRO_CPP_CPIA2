@@ -184,22 +184,22 @@ private: System::Windows::Forms::TextBox^ textStaffID;
 private: System::Windows::Forms::Label^ label_Staff_Pers_ID;
 private: System::Windows::Forms::TabPage^ tabPageGestionPersonne;
 private: System::Windows::Forms::TextBox^ textPersonnePrenom;
-private: System::Windows::Forms::Label^ label51;
+private: System::Windows::Forms::Label^ Label_Personne_Prenom;
 private: System::Windows::Forms::TextBox^ textPersonneNom;
-private: System::Windows::Forms::Label^ label52;
+private: System::Windows::Forms::Label^ Label_Personne_Nom;
 private: System::Windows::Forms::TextBox^ textPersonneID;
-private: System::Windows::Forms::Label^ label53;
+private: System::Windows::Forms::Label^ Text_Personne_ID;
 private: System::Windows::Forms::DataGridView^ dataGridView8;
 private: System::Windows::Forms::DataGridView^ dataGridView7;
 private: System::Windows::Forms::DataGridView^ dataGridView6;
 private: System::Windows::Forms::DataGridView^ dataGridView5;
-private: System::Windows::Forms::Button^ button38;
-private: System::Windows::Forms::Button^ button39;
-private: System::Windows::Forms::Button^ button40;
-private: System::Windows::Forms::Button^ button41;
-private: System::Windows::Forms::Button^ button42;
-private: System::Windows::Forms::Button^ button43;
-private: System::Windows::Forms::Button^ button44;
+private: System::Windows::Forms::Button^ Button_Personne_Retour;
+private: System::Windows::Forms::Button^ Button_Personne_Avancer;
+private: System::Windows::Forms::Button^ Button_Personne_Enregistrer;
+private: System::Windows::Forms::Button^ Button_Personne_Modifier;
+private: System::Windows::Forms::Button^ Button_Personne_Supprimer;
+private: System::Windows::Forms::Button^ Button_Personne_Ajouter;
+private: System::Windows::Forms::Button^ Button_Personne_Load;
 private: System::Windows::Forms::Label^ label54;
 private: System::Windows::Forms::Label^ textAffichage;
 private: System::Windows::Forms::Label^ affichageClient;
@@ -397,20 +397,20 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPageGestionPersonne = (gcnew System::Windows::Forms::TabPage());
 			this->textAffichage = (gcnew System::Windows::Forms::Label());
 			this->label54 = (gcnew System::Windows::Forms::Label());
-			this->button44 = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Load = (gcnew System::Windows::Forms::Button());
 			this->dataGridView5 = (gcnew System::Windows::Forms::DataGridView());
-			this->button38 = (gcnew System::Windows::Forms::Button());
-			this->button39 = (gcnew System::Windows::Forms::Button());
-			this->button40 = (gcnew System::Windows::Forms::Button());
-			this->button41 = (gcnew System::Windows::Forms::Button());
-			this->button42 = (gcnew System::Windows::Forms::Button());
-			this->button43 = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Retour = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Avancer = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Enregistrer = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Modifier = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Supprimer = (gcnew System::Windows::Forms::Button());
+			this->Button_Personne_Ajouter = (gcnew System::Windows::Forms::Button());
 			this->textPersonnePrenom = (gcnew System::Windows::Forms::TextBox());
-			this->label51 = (gcnew System::Windows::Forms::Label());
+			this->Label_Personne_Prenom = (gcnew System::Windows::Forms::Label());
 			this->textPersonneNom = (gcnew System::Windows::Forms::TextBox());
-			this->label52 = (gcnew System::Windows::Forms::Label());
+			this->Label_Personne_Nom = (gcnew System::Windows::Forms::Label());
 			this->textPersonneID = (gcnew System::Windows::Forms::TextBox());
-			this->label53 = (gcnew System::Windows::Forms::Label());
+			this->Text_Personne_ID = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPageGestionClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -1906,20 +1906,20 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			// 
 			this->tabPageGestionPersonne->Controls->Add(this->textAffichage);
 			this->tabPageGestionPersonne->Controls->Add(this->label54);
-			this->tabPageGestionPersonne->Controls->Add(this->button44);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Load);
 			this->tabPageGestionPersonne->Controls->Add(this->dataGridView5);
-			this->tabPageGestionPersonne->Controls->Add(this->button38);
-			this->tabPageGestionPersonne->Controls->Add(this->button39);
-			this->tabPageGestionPersonne->Controls->Add(this->button40);
-			this->tabPageGestionPersonne->Controls->Add(this->button41);
-			this->tabPageGestionPersonne->Controls->Add(this->button42);
-			this->tabPageGestionPersonne->Controls->Add(this->button43);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Retour);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Avancer);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Enregistrer);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Modifier);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Supprimer);
+			this->tabPageGestionPersonne->Controls->Add(this->Button_Personne_Ajouter);
 			this->tabPageGestionPersonne->Controls->Add(this->textPersonnePrenom);
-			this->tabPageGestionPersonne->Controls->Add(this->label51);
+			this->tabPageGestionPersonne->Controls->Add(this->Label_Personne_Prenom);
 			this->tabPageGestionPersonne->Controls->Add(this->textPersonneNom);
-			this->tabPageGestionPersonne->Controls->Add(this->label52);
+			this->tabPageGestionPersonne->Controls->Add(this->Label_Personne_Nom);
 			this->tabPageGestionPersonne->Controls->Add(this->textPersonneID);
-			this->tabPageGestionPersonne->Controls->Add(this->label53);
+			this->tabPageGestionPersonne->Controls->Add(this->Text_Personne_ID);
 			this->tabPageGestionPersonne->Location = System::Drawing::Point(4, 22);
 			this->tabPageGestionPersonne->Margin = System::Windows::Forms::Padding(2);
 			this->tabPageGestionPersonne->Name = L"tabPageGestionPersonne";
@@ -1947,15 +1947,15 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label54->Size = System::Drawing::Size(0, 13);
 			this->label54->TabIndex = 76;
 			// 
-			// button44
+			// Button_Personne_Load
 			// 
-			this->button44->Location = System::Drawing::Point(119, 294);
-			this->button44->Name = L"button44";
-			this->button44->Size = System::Drawing::Size(115, 36);
-			this->button44->TabIndex = 75;
-			this->button44->Text = L"Load";
-			this->button44->UseVisualStyleBackColor = true;
-			this->button44->Click += gcnew System::EventHandler(this, &InterfaceManager::button44_Click);
+			this->Button_Personne_Load->Location = System::Drawing::Point(119, 294);
+			this->Button_Personne_Load->Name = L"Button_Personne_Load";
+			this->Button_Personne_Load->Size = System::Drawing::Size(115, 36);
+			this->Button_Personne_Load->TabIndex = 75;
+			this->Button_Personne_Load->Text = L"Load";
+			this->Button_Personne_Load->UseVisualStyleBackColor = true;
+			this->Button_Personne_Load->Click += gcnew System::EventHandler(this, &InterfaceManager::button44_Click);
 			// 
 			// dataGridView5
 			// 
@@ -1968,65 +1968,65 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->dataGridView5->Size = System::Drawing::Size(516, 357);
 			this->dataGridView5->TabIndex = 74;
 			// 
-			// button38
+			// Button_Personne_Retour
 			// 
-			this->button38->Location = System::Drawing::Point(49, 136);
-			this->button38->Name = L"button38";
-			this->button38->Size = System::Drawing::Size(113, 23);
-			this->button38->TabIndex = 73;
-			this->button38->Text = L"<";
-			this->button38->UseVisualStyleBackColor = true;
-			this->button38->Click += gcnew System::EventHandler(this, &InterfaceManager::button38_Click);
+			this->Button_Personne_Retour->Location = System::Drawing::Point(49, 136);
+			this->Button_Personne_Retour->Name = L"Button_Personne_Retour";
+			this->Button_Personne_Retour->Size = System::Drawing::Size(113, 23);
+			this->Button_Personne_Retour->TabIndex = 73;
+			this->Button_Personne_Retour->Text = L"<";
+			this->Button_Personne_Retour->UseVisualStyleBackColor = true;
+			this->Button_Personne_Retour->Click += gcnew System::EventHandler(this, &InterfaceManager::button38_Click);
 			// 
-			// button39
+			// Button_Personne_Avancer
 			// 
-			this->button39->Location = System::Drawing::Point(204, 136);
-			this->button39->Name = L"button39";
-			this->button39->Size = System::Drawing::Size(113, 23);
-			this->button39->TabIndex = 72;
-			this->button39->Text = L">";
-			this->button39->UseVisualStyleBackColor = true;
-			this->button39->Click += gcnew System::EventHandler(this, &InterfaceManager::button39_Click);
+			this->Button_Personne_Avancer->Location = System::Drawing::Point(204, 136);
+			this->Button_Personne_Avancer->Name = L"Button_Personne_Avancer";
+			this->Button_Personne_Avancer->Size = System::Drawing::Size(113, 23);
+			this->Button_Personne_Avancer->TabIndex = 72;
+			this->Button_Personne_Avancer->Text = L">";
+			this->Button_Personne_Avancer->UseVisualStyleBackColor = true;
+			this->Button_Personne_Avancer->Click += gcnew System::EventHandler(this, &InterfaceManager::button39_Click);
 			// 
-			// button40
+			// Button_Personne_Enregistrer
 			// 
-			this->button40->Location = System::Drawing::Point(202, 207);
-			this->button40->Name = L"button40";
-			this->button40->Size = System::Drawing::Size(115, 36);
-			this->button40->TabIndex = 70;
-			this->button40->Text = L"Enregistrer";
-			this->button40->UseVisualStyleBackColor = true;
-			this->button40->Click += gcnew System::EventHandler(this, &InterfaceManager::button40_Click);
+			this->Button_Personne_Enregistrer->Location = System::Drawing::Point(202, 207);
+			this->Button_Personne_Enregistrer->Name = L"Button_Personne_Enregistrer";
+			this->Button_Personne_Enregistrer->Size = System::Drawing::Size(115, 36);
+			this->Button_Personne_Enregistrer->TabIndex = 70;
+			this->Button_Personne_Enregistrer->Text = L"Enregistrer";
+			this->Button_Personne_Enregistrer->UseVisualStyleBackColor = true;
+			this->Button_Personne_Enregistrer->Click += gcnew System::EventHandler(this, &InterfaceManager::button40_Click);
 			// 
-			// button41
+			// Button_Personne_Modifier
 			// 
-			this->button41->Location = System::Drawing::Point(49, 207);
-			this->button41->Name = L"button41";
-			this->button41->Size = System::Drawing::Size(115, 36);
-			this->button41->TabIndex = 71;
-			this->button41->Text = L"Modifier";
-			this->button41->UseVisualStyleBackColor = true;
-			this->button41->Click += gcnew System::EventHandler(this, &InterfaceManager::button41_Click);
+			this->Button_Personne_Modifier->Location = System::Drawing::Point(49, 207);
+			this->Button_Personne_Modifier->Name = L"Button_Personne_Modifier";
+			this->Button_Personne_Modifier->Size = System::Drawing::Size(115, 36);
+			this->Button_Personne_Modifier->TabIndex = 71;
+			this->Button_Personne_Modifier->Text = L"Modifier";
+			this->Button_Personne_Modifier->UseVisualStyleBackColor = true;
+			this->Button_Personne_Modifier->Click += gcnew System::EventHandler(this, &InterfaceManager::button41_Click);
 			// 
-			// button42
+			// Button_Personne_Supprimer
 			// 
-			this->button42->Location = System::Drawing::Point(202, 164);
-			this->button42->Name = L"button42";
-			this->button42->Size = System::Drawing::Size(115, 36);
-			this->button42->TabIndex = 69;
-			this->button42->Text = L"Supprimer";
-			this->button42->UseVisualStyleBackColor = true;
-			this->button42->Click += gcnew System::EventHandler(this, &InterfaceManager::button42_Click);
+			this->Button_Personne_Supprimer->Location = System::Drawing::Point(202, 164);
+			this->Button_Personne_Supprimer->Name = L"Button_Personne_Supprimer";
+			this->Button_Personne_Supprimer->Size = System::Drawing::Size(115, 36);
+			this->Button_Personne_Supprimer->TabIndex = 69;
+			this->Button_Personne_Supprimer->Text = L"Supprimer";
+			this->Button_Personne_Supprimer->UseVisualStyleBackColor = true;
+			this->Button_Personne_Supprimer->Click += gcnew System::EventHandler(this, &InterfaceManager::button42_Click);
 			// 
-			// button43
+			// Button_Personne_Ajouter
 			// 
-			this->button43->Location = System::Drawing::Point(49, 164);
-			this->button43->Name = L"button43";
-			this->button43->Size = System::Drawing::Size(115, 36);
-			this->button43->TabIndex = 68;
-			this->button43->Text = L"Ajouter";
-			this->button43->UseVisualStyleBackColor = true;
-			this->button43->Click += gcnew System::EventHandler(this, &InterfaceManager::button43_Click);
+			this->Button_Personne_Ajouter->Location = System::Drawing::Point(49, 164);
+			this->Button_Personne_Ajouter->Name = L"Button_Personne_Ajouter";
+			this->Button_Personne_Ajouter->Size = System::Drawing::Size(115, 36);
+			this->Button_Personne_Ajouter->TabIndex = 68;
+			this->Button_Personne_Ajouter->Text = L"Ajouter";
+			this->Button_Personne_Ajouter->UseVisualStyleBackColor = true;
+			this->Button_Personne_Ajouter->Click += gcnew System::EventHandler(this, &InterfaceManager::button43_Click);
 			// 
 			// textPersonnePrenom
 			// 
@@ -2035,14 +2035,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textPersonnePrenom->Size = System::Drawing::Size(115, 20);
 			this->textPersonnePrenom->TabIndex = 11;
 			// 
-			// label51
+			// Label_Personne_Prenom
 			// 
-			this->label51->AutoSize = true;
-			this->label51->Location = System::Drawing::Point(247, 68);
-			this->label51->Name = L"label51";
-			this->label51->Size = System::Drawing::Size(71, 13);
-			this->label51->TabIndex = 10;
-			this->label51->Text = L"Prenom client";
+			this->Label_Personne_Prenom->AutoSize = true;
+			this->Label_Personne_Prenom->Location = System::Drawing::Point(247, 68);
+			this->Label_Personne_Prenom->Name = L"Label_Personne_Prenom";
+			this->Label_Personne_Prenom->Size = System::Drawing::Size(43, 13);
+			this->Label_Personne_Prenom->TabIndex = 10;
+			this->Label_Personne_Prenom->Text = L"Prenom";
 			// 
 			// textPersonneNom
 			// 
@@ -2051,14 +2051,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textPersonneNom->Size = System::Drawing::Size(115, 20);
 			this->textPersonneNom->TabIndex = 9;
 			// 
-			// label52
+			// Label_Personne_Nom
 			// 
-			this->label52->AutoSize = true;
-			this->label52->Location = System::Drawing::Point(46, 68);
-			this->label52->Name = L"label52";
-			this->label52->Size = System::Drawing::Size(57, 13);
-			this->label52->TabIndex = 8;
-			this->label52->Text = L"Nom client";
+			this->Label_Personne_Nom->AutoSize = true;
+			this->Label_Personne_Nom->Location = System::Drawing::Point(66, 68);
+			this->Label_Personne_Nom->Name = L"Label_Personne_Nom";
+			this->Label_Personne_Nom->Size = System::Drawing::Size(29, 13);
+			this->Label_Personne_Nom->TabIndex = 8;
+			this->Label_Personne_Nom->Text = L"Nom";
 			// 
 			// textPersonneID
 			// 
@@ -2068,14 +2068,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textPersonneID->TabIndex = 7;
 			this->textPersonneID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox42_TextChanged);
 			// 
-			// label53
+			// Text_Personne_ID
 			// 
-			this->label53->AutoSize = true;
-			this->label53->Location = System::Drawing::Point(142, 16);
-			this->label53->Name = L"label53";
-			this->label53->Size = System::Drawing::Size(66, 13);
-			this->label53->TabIndex = 6;
-			this->label53->Text = L"ID Personne";
+			this->Text_Personne_ID->AutoSize = true;
+			this->Text_Personne_ID->Location = System::Drawing::Point(142, 16);
+			this->Text_Personne_ID->Name = L"Text_Personne_ID";
+			this->Text_Personne_ID->Size = System::Drawing::Size(66, 13);
+			this->Text_Personne_ID->TabIndex = 6;
+			this->Text_Personne_ID->Text = L"ID Personne";
 			// 
 			// InterfaceManager
 			// 
