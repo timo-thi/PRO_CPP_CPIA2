@@ -81,6 +81,9 @@
     <ClInclude Include="SG_Address.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Interface_Employe.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CM_Connexion.cpp">
@@ -147,6 +150,9 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SG_Address.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Interface_Employe.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

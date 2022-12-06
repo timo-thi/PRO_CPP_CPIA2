@@ -129,6 +129,9 @@
     <ClInclude Include="InterfaceManager.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Interface_Employe.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
@@ -155,6 +158,7 @@
     <ClCompile Include="CM_Stock.cpp" />
     <ClCompile Include="InterfaceEmploye.cpp" />
     <ClCompile Include="InterfaceManager.cpp" />
+    <ClCompile Include="Interface_Employe.cpp" />
     <ClCompile Include="MyForm.cpp" />
     <ClCompile Include="SG_Address.cpp" />
     <ClCompile Include="SG_Classic.cpp" />
