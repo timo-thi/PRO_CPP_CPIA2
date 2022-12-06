@@ -45,8 +45,10 @@ namespace NS_Composants
 
         SqlCommand^ Insert_Bill(void);
         SqlCommand^ Delete_Bill(void);
+        SqlCommand^ Delete_All_Bill(void);
         SqlCommand^ Update_Bill(void);
         SqlCommand^ Fetch_Order_Bill(void);
+        SqlCommand^ Get_Number_Order(void);
 
         SqlCommand^ Insert_Mean_Of_Payment(void);
         SqlCommand^ Delete_Mean_Of_Payment(void);

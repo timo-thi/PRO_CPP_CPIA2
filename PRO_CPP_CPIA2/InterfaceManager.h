@@ -232,6 +232,7 @@ private: System::Windows::Forms::Button^ button46;
 
 
 
+
 	protected:
 
 	private:
@@ -817,13 +818,16 @@ private: System::Windows::Forms::Button^ button46;
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataGridView3->Location = System::Drawing::Point(475, 34);
 			this->dataGridView3->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->RowHeadersWidth = 62;
 			this->dataGridView3->Size = System::Drawing::Size(759, 382);
 			this->dataGridView3->TabIndex = 65;
 			this->dataGridView3->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView3_CellClick);
+			this->dataGridView3->CellDoubleClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView3_CellDoubleClick);
 			// 
 			// button15
 			// 
@@ -832,8 +836,9 @@ private: System::Windows::Forms::Button^ button46;
 			this->button15->Name = L"button15";
 			this->button15->Size = System::Drawing::Size(153, 44);
 			this->button15->TabIndex = 63;
-			this->button15->Text = L"Enregistrer";
+			this->button15->Text = L"Acces aux paiements";
 			this->button15->UseVisualStyleBackColor = true;
+			this->button15->Click += gcnew System::EventHandler(this, &InterfaceManager::button15_Click);
 			// 
 			// button16
 			// 
@@ -1072,6 +1077,7 @@ private: System::Windows::Forms::Button^ button46;
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataGridView2->Location = System::Drawing::Point(475, 37);
 			this->dataGridView2->Margin = System::Windows::Forms::Padding(4);
 			this->dataGridView2->Name = L"dataGridView2";
@@ -2174,7 +2180,7 @@ private: System::Windows::Forms::Button^ button46;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1301, 555);
+			this->ClientSize = System::Drawing::Size(1282, 553);
 			this->Controls->Add(this->tabControl1);
 			this->Margin = System::Windows::Forms::Padding(4);
 			this->Name = L"InterfaceManager";
@@ -2458,58 +2464,147 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 	Load_Stock->PerformClick(); //refresh Grid
 }
 private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
-	this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
-	this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
-	this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
-	this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
-	this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+	if (e->RowIndex != -1) {
+		this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
+		this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
+		this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
+		this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
+		this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+	}
 }
+
+
+
+
+
+
 
 private: System::Void dataGridView3_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	this->textBox21->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
-	this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Client_ID"]->Value->ToString();
-	this->textBox19->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString() + " " + this->dataGridView3->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString();
-	this->textBox18->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Nb_paiements"]->Value->ToString();
-	this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reception"]->Value->ToString();
-	this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_expedition"]->Value->ToString();
-	this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
-	//this->textBox23->Text
+	if (processusOrders->Get_Mode() == 0 && e->RowIndex != -1) {
+		this->textBox21->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
+		this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Client_ID"]->Value->ToString();
+		this->textBox19->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString() + " " + this->dataGridView3->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString();
+		this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reception"]->Value->ToString();
+		this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_expedition"]->Value->ToString();
+		this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Adresse_Livraison"]->Value->ToString();
+		//this->textBox23->Text
+	}
+	else if (e->RowIndex != -1){
+		this->textBox20->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["ID"]->Value->ToString();
+		this->textBox10->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Balance"]->Value->ToString();
+		this->textBox14->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Moyen_paiement"]->Value->ToString();
+		this->textBox17->Text = this->dataGridView3->Rows[e->RowIndex]->Cells["Date_reglement"]->Value->ToString();
+	}
 }
 
-private: System::Void button46_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->dataGridView3->Refresh();
+private: System::Void button46_Click_1(System::Object^ sender, System::EventArgs^ e) {		//refresh order
 
-	this->dataGridView3->DataSource = this->processusOrders->Fetch_Order("Orders");
-	this->dataGridView3->DataMember = "Orders";
+
+		this->dataGridView3->Refresh();
+
+	if (processusOrders->Get_Mode() == 0) {
+		this->dataGridView3->DataSource = this->processusOrders->Fetch_Order("Orders");
+		this->dataGridView3->DataMember = "Orders";
+	}
+	else {
+		processusOrders->Set_ID(textBox21->Text);
+
+		this->dataGridView3->DataSource = this->processusOrders->Fetch_Order_Bill("Bill");
+		this->dataGridView3->DataMember = "Bill";
+	}
 }
+
 private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {	//Add order
-	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
-	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
-	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
 
-	this->processusOrders->Add_Order();
+	if (processusOrders->Get_Mode() == 0) {
+		processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
+		processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
+		processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
+		this->processusOrders->Add_Order();
+	}
 
-	Load_Stock->PerformClick(); //refresh Grid
+	else {
+
+		processusOrders->Set_ID(textBox21->Text);
+		processusOrders->Set_Date_Bill(Convert::ToDateTime(textBox17->Text));
+		processusOrders->Set_Mean_Of_Payment(textBox14->Text);
+		processusOrders->Set_Balance(Convert::ToInt32(textBox10->Text));
+
+		this->processusOrders->Add_Bill();
+	}
+
+	button46->PerformClick(); //refresh Grid
 }
+
 private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {	//Delete Order
 
-	processusOrders->Set_ID(textBox21->Text);
+	if (processusOrders->Get_Mode() == 0) {
+		processusOrders->Set_ID(textBox21->Text);
 
-	this->processusOrders->Remove_Order();
 
-	Load_Stock->PerformClick(); //refresh Grid
+		this->processusOrders->Remove_All_Bill();
+		this->processusOrders->Remove_Order();
+	}
+
+	else {
+		processusOrders->Set_Bill_ID(Convert::ToInt32(textBox20->Text));
+
+		this->processusOrders->Remove_Bill();
+	}
+
+	button46->PerformClick(); //refresh Grid
 }
+
 private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {	//Update Order
 
-	processusOrders->Set_ID(textBox21->Text);
-	processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
-	processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text));
-	processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text));
+	if (processusOrders->Get_Mode() == 0) {
+		processusOrders->Set_ID(textBox21->Text);
+		processusOrders->Set_ID_Client(Convert::ToInt32(textBox20->Text));
+		processusOrders->Set_Date_Rec(Convert::ToDateTime(textBox17->Text).Date);
+		processusOrders->Set_Date_Exp(Convert::ToDateTime(textBox14->Text).Date);
+		//adresse
 
-	this->processusOrders->Update_Order();
+		this->processusOrders->Update_Order();
+	}
+	else {
+		processusOrders->Set_Bill_ID(Convert::ToInt32(textBox20->Text));
+		processusOrders->Set_ID(textBox21->Text);
+		processusOrders->Set_Date_Bill(Convert::ToDateTime(textBox17->Text));
+		processusOrders->Set_Mean_Of_Payment(textBox14->Text);
+		processusOrders->Set_Balance(Convert::ToInt32(textBox10->Text));
 
-	Load_Stock->PerformClick(); //refresh Grid
+		this->processusOrders->Update_Bill();
+	}
+
+	button46->PerformClick(); //refresh Grid
+}
+
+private: System::Void dataGridView3_CellDoubleClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {		//switch order Mode between Orders and Bills
+	button15->PerformClick(); //change mode
+}
+
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (processusOrders->Get_Mode() == 0) {
+
+		this->processusOrders->Set_Mode(1);
+		this->label22->Text = "Id paiement";
+		this->label19->Text = "Date de réglement";
+		this->label18->Text = "Moyen de paiement";
+		this->label17->Text = "Reste a regler";
+		this->button15->Text = "Acces aux commandes";
+	}
+
+	else {
+
+		this->processusOrders->Set_Mode(0);	
+		this->label22->Text = "Id client";
+		this->label19->Text = "Date de livraison";
+		this->label18->Text = "Date d'expedition";
+		this->label17->Text = "Adresse de livraison";
+		this->button15->Text = "Acces aux paiements";
+	}
+
+	button46->PerformClick(); //refresh Grid
 }
 };
 }

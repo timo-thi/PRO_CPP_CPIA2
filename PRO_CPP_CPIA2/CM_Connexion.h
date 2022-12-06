@@ -18,6 +18,7 @@ namespace NS_Composants
 	public:
 		CM_Connexion();
 		int actionRowID(SqlCommand^);
+		String^ actionRowID_String(SqlCommand^); //ID as a string
 		void actionRows(SqlCommand^);
 		DataSet^ getRows(SqlCommand^, String^);
 

@@ -15,6 +15,7 @@ namespace NS_Services
         CM_Orders^ Map_Orders;
         CM_Connexion^ Connect;
 
+        int Mode;
         String^ ID;
         int ID_Client; 
         DateTime^ Date_Expedition;
@@ -28,7 +29,7 @@ namespace NS_Services
 
         DataSet^ Fetch_Order(String^);
         SG_Orders(void);
-        void Add_Order(void);
+        String^ Add_Order(void);
         void Remove_Order(void);
         void Update_Order(void);
 
@@ -36,6 +37,8 @@ namespace NS_Services
         void Add_Bill(void);
         void Remove_Bill(void);
         void Update_Bill(void);
+        String^ Get_Number_Order();
+        void Remove_All_Bill(void);
 
         DataSet^ Fetch_Means_Of_Payment(String^);
         void Add_Mean_Of_Payment();
@@ -65,5 +68,8 @@ namespace NS_Services
 
         int Get_Balance();
         void Set_Balance(int);
+
+        int Get_Mode();
+        void Set_Mode(int);
     };
 };

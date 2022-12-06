@@ -9,6 +9,8 @@ SG_Orders::SG_Orders(void){
 	DS = gcnew Data::DataSet; 
 	Map_Orders = gcnew CM_Orders;
 	Connect = gcnew CM_Connexion;
+
+	this->Mode = 0;
 }
 
 DataSet^ SG_Orders::Fetch_Order(String^ nom) {
@@ -19,13 +21,14 @@ DataSet^ SG_Orders::Fetch_Order(String^ nom) {
 	return this->DS;
 }
 
-void SG_Orders::Add_Order(void){
+String^ SG_Orders::Add_Order(void){
 
 	this->Map_Orders->Set_Client_ID(this->ID_Client);
 	this->Map_Orders->Set_Date_Liv(this->Date_Reception);
 	this->Map_Orders->Set_Date_Exp(this->Date_Expedition);
 
-	this->Connect->actionRows(this->Map_Orders->Insert_Order());
+	String^ ID = this->Connect->actionRowID_String(this->Map_Orders->Insert_Order());
+	return ID;
 }
 
 void SG_Orders::Remove_Order(void){
@@ -69,6 +72,12 @@ void SG_Orders::Remove_Bill(void) {
 	this->Connect->actionRows(this->Map_Orders->Delete_Bill());
 }
 
+void SG_Orders::Remove_All_Bill(void) {
+	this->Map_Orders->Set_ID(this->ID);
+
+	this->Connect->actionRows(this->Map_Orders->Delete_All_Bill());
+}
+
 void SG_Orders::Update_Bill(void) {
 	
 	this->Map_Orders->Set_Bill(this->Bill_ID);
@@ -79,6 +88,15 @@ void SG_Orders::Update_Bill(void) {
 
 	this->Connect->actionRows(this->Map_Orders->Update_Bill());
 }
+
+String^ SG_Orders::Get_Number_Order(void) {
+	this->Map_Orders->Set_ID(this->ID);
+
+	DataSet^ DSnum = this->Connect->getRows(this->Map_Orders->Get_Number_Order(), "num");
+
+	return DSnum->Tables["num"]->Rows[0]["Num"]->ToString();
+}
+
 
 DataSet^ SG_Orders::Fetch_Means_Of_Payment(String^ nom) {
 	this->DS->Clear();
@@ -130,3 +148,6 @@ void SG_Orders::Set_Mean_Of_Payment(String^ tMOP) { this->Mean_Of_Payment = tMOP
 
 int SG_Orders::Get_Balance() { return this->Balance; }
 void SG_Orders::Set_Balance(int tBalance) { this->Balance = tBalance; }
+
+int SG_Orders::Get_Mode() { return this->Mode; }
+void SG_Orders::Set_Mode(int tMode) { this->Mode = tMode; }

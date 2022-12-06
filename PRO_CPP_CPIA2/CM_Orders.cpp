@@ -129,6 +129,14 @@ SqlCommand^ CM_Orders::Delete_Bill(void){
 	return Procedure;
 }
 
+SqlCommand^ CM_Orders::Delete_All_Bill(void) {
+	Start_Procedure("Delete_All_Bill");
+
+	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
+
+	return Procedure;
+}
+
 SqlCommand^ CM_Orders::Update_Bill(void) {
 	Start_Procedure("Update_Bill");
 
@@ -149,6 +157,13 @@ SqlCommand^ CM_Orders::Fetch_Order_Bill(void){
 	return Procedure;
 }
 
+SqlCommand^ CM_Orders::Get_Number_Order(void) {
+	Start_Procedure("Get_Number_Order");
+
+	Procedure->Parameters->AddWithValue("@name", this->Get_ID());
+
+	return Procedure;
+}
 
 SqlCommand^ CM_Orders::Insert_Mean_Of_Payment(){
 	Start_Procedure("Insert_MOP");
