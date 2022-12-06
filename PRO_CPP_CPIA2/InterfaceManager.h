@@ -217,15 +217,15 @@ private: System::Windows::Forms::Button^ Load_Stock;
 private: int index = 0;
 
 private: String^ mode = "RIEN";
-private: Data::DataSet^ dsPersonne = gcnew Data::DataSet();
-private: SG_Personne^ processusPersonnes = gcnew SG_Personne();
-private: Data::DataSet^ dsClient = gcnew Data::DataSet();
-private: Data::DataSet^ dsLivraison = gcnew Data::DataSet();
-private: Data::DataSet^ dsFacturation = gcnew Data::DataSet();
-private: SG_Client^ processusClient = gcnew SG_Client();
-private: SG_Stock^ processusStock = gcnew SG_Stock();
-private: Data::DataSet^ dsStaff = gcnew Data::DataSet();
-private: SG_Staff^ processusStaff = gcnew SG_Staff();
+private: Data::DataSet^ dsPersonne;
+private: SG_Personne^ processusPersonnes;
+private: Data::DataSet^ dsClient;
+private: SG_Client^ processusClient;
+private: Data::DataSet^ dsLivraison;
+private: Data::DataSet^ dsFacturation;
+private: SG_Stock^ processusStock;
+private: Data::DataSet^ dsStaff;
+private: SG_Staff^ processusStaff;
 private: System::Windows::Forms::Label^ textStaffAffiche;
 private: System::Windows::Forms::Button^ button46_Staff_Load;
 private: SG_Stat^ Stat_Service;
@@ -561,6 +561,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->tabControl1->Size = System::Drawing::Size(952, 426);
 			this->tabControl1->TabIndex = 8;
 			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControl1_SelectedIndexChanged);
+			this->tabControl1->VisibleChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControl1_VisibleChanged);
 			// 
 			// tabPageGestionClient
 			// 
@@ -3125,8 +3126,24 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 	private: System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (this->tabControl1->SelectedTab->Name == tabPageGestionStat->Name) {
 			this->Stat_Service = gcnew SG_Stat;
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionAdresses->Name) {
+		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionAdresses->Name) { // Gestion adresses
 			this->Adr_Service = gcnew SG_Address;
+		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionClient->Name) { // Gestion Client
+			this->processusClient = gcnew SG_Client;
+			this->dsClient = gcnew Data::DataSet();
+			this->dsLivraison = gcnew Data::DataSet();
+			this->dsFacturation = gcnew Data::DataSet();
+			this->processusPersonnes = gcnew SG_Personne();
+		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionPersonne->Name) { // Gestion Personnes
+			this->processusPersonnes = gcnew SG_Personne();
+			this->dsPersonne = gcnew Data::DataSet();
+		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionStaff->Name) { // Gestion Staff
+			this->dsStaff = gcnew Data::DataSet();
+			this->dsPersonne = gcnew Data::DataSet();
+			this->processusPersonnes = gcnew SG_Personne();
+			this->processusStaff = gcnew SG_Staff();
+		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionStock->Name) { // Gestion Stock
+			this->processusStock = gcnew SG_Stock();
 		}
 	}
 	// Gestion adresses
@@ -3222,6 +3239,15 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 	}
 	private: System::Void InterfaceManager_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 		Application::Exit();
+	}
+	private: System::Void tabControl1_VisibleChanged(System::Object^ sender, System::EventArgs^ e) { // Initialiser les services et data set du premier onglet qui s'ouvre
+		this->processusClient = gcnew SG_Client;
+		this->processusPersonnes = gcnew SG_Personne;
+
+		this->dsClient = gcnew Data::DataSet();
+		this->dsLivraison = gcnew Data::DataSet();
+		this->dsFacturation = gcnew Data::DataSet();
+		this->dsPersonne = gcnew Data::DataSet();
 	}
 };
 }
