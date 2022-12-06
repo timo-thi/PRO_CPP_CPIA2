@@ -7,13 +7,13 @@ namespace NS_Composants
         public CM_Classic
     {
     public:
-        String^ Calcul_Panier(void);
-        String^ Calcul_Chiffre_Affaire(String^ mois);
-        String^ Produit_Sous_Seuil(void);
-        String^ Calcul_Montant_Total_client(int ID);
-        String^ Articles_Plus_Vendus(void);
-        String^ Articles_Moins_Vendus(void);
-        String^ Valeur_Commerciale_Stock(void);
-        String^ Valeur_Achat_Stock(void);
+        SqlCommand^ Calcul_Panier(void);
+        SqlCommand^ Calcul_Chiffre_Affaire(String^ mois);
+        SqlCommand^ Produit_Sous_Seuil(void);
+        SqlCommand^ Calcul_Montant_Total_client(int ID);
+        SqlCommand^ Articles_Plus_Vendus(void);
+        SqlCommand^ Articles_Moins_Vendus(void);
+        SqlCommand^ Valeur_Commerciale_Stock(void);
+        SqlCommand^ Valeur_Achat_Stock(void);
     };
 };

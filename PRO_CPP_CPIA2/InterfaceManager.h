@@ -41,11 +41,11 @@ namespace ProjetPOO {
 		}
 	private: System::Windows::Forms::TabControl^ tabControl1;
 	protected:
-	private: System::Windows::Forms::TabPage^ tabPage1;
-	private: System::Windows::Forms::TabPage^ tabPage2;
+	private: System::Windows::Forms::TabPage^ tabPageGestionClient;
+	private: System::Windows::Forms::TabPage^ tabPageGestionCommande;
 	private: System::Windows::Forms::Label^ label1;
-	private: System::Windows::Forms::TabPage^ tabPage3;
-	private: System::Windows::Forms::TabPage^ tabPage4;
+	private: System::Windows::Forms::TabPage^ tabPageGestionStock;
+	private: System::Windows::Forms::TabPage^ tabPageGestionStat;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
 	private: System::Windows::Forms::Button^ button4;
 	private: System::Windows::Forms::Button^ button3;
@@ -158,7 +158,7 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Button^ button24;
 	private: System::Windows::Forms::Label^ label40;
 	private: System::Windows::Forms::Button^ button25;
-private: System::Windows::Forms::TabPage^ tabPage7;
+private: System::Windows::Forms::TabPage^ tabPageGestionStaff;
 private: System::Windows::Forms::Button^ button32;
 private: System::Windows::Forms::Button^ button33;
 private: System::Windows::Forms::DataGridView^ dataGridView4;
@@ -182,7 +182,7 @@ private: System::Windows::Forms::TextBox^ textStaffNom;
 private: System::Windows::Forms::Label^ label49;
 private: System::Windows::Forms::TextBox^ textStaffID;
 private: System::Windows::Forms::Label^ label50;
-private: System::Windows::Forms::TabPage^ tabPage8;
+private: System::Windows::Forms::TabPage^ tabPageGestionPersonne;
 private: System::Windows::Forms::TextBox^ textPersonnePrenom;
 private: System::Windows::Forms::Label^ label51;
 private: System::Windows::Forms::TextBox^ textPersonneNom;
@@ -248,7 +248,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 		void InitializeComponent(void)
 		{
 			this->tabControl1 = (gcnew System::Windows::Forms::TabControl());
-			this->tabPage1 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionClient = (gcnew System::Windows::Forms::TabPage());
 			this->textNomClient = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->textPrenomClient = (gcnew System::Windows::Forms::TextBox());
@@ -274,7 +274,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label4 = (gcnew System::Windows::Forms::Label());
 			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
-			this->tabPage2 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionCommande = (gcnew System::Windows::Forms::TabPage());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
@@ -302,7 +302,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label22 = (gcnew System::Windows::Forms::Label());
 			this->textBox21 = (gcnew System::Windows::Forms::TextBox());
 			this->label23 = (gcnew System::Windows::Forms::Label());
-			this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionStock = (gcnew System::Windows::Forms::TabPage());
 			this->Load_Stock = (gcnew System::Windows::Forms::Button());
 			this->label10 = (gcnew System::Windows::Forms::Label());
 			this->button10 = (gcnew System::Windows::Forms::Button());
@@ -323,7 +323,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label15 = (gcnew System::Windows::Forms::Label());
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
-			this->tabPage4 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionStat = (gcnew System::Windows::Forms::TabPage());
 			this->dataGridView8 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView7 = (gcnew System::Windows::Forms::DataGridView());
 			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
@@ -368,7 +368,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
-			this->tabPage7 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionStaff = (gcnew System::Windows::Forms::TabPage());
 			this->textStaffAffiche = (gcnew System::Windows::Forms::Label());
 			this->button46 = (gcnew System::Windows::Forms::Button());
 			this->button32 = (gcnew System::Windows::Forms::Button());
@@ -394,7 +394,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->textStaffID = (gcnew System::Windows::Forms::TextBox());
 			this->label50 = (gcnew System::Windows::Forms::Label());
-			this->tabPage8 = (gcnew System::Windows::Forms::TabPage());
+			this->tabPageGestionPersonne = (gcnew System::Windows::Forms::TabPage());
 			this->textAffichage = (gcnew System::Windows::Forms::Label());
 			this->label54 = (gcnew System::Windows::Forms::Label());
 			this->button44 = (gcnew System::Windows::Forms::Button());
@@ -412,74 +412,74 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textPersonneID = (gcnew System::Windows::Forms::TextBox());
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
-			this->tabPage1->SuspendLayout();
+			this->tabPageGestionClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
-			this->tabPage2->SuspendLayout();
+			this->tabPageGestionCommande->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
-			this->tabPage3->SuspendLayout();
+			this->tabPageGestionStock->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
-			this->tabPage4->SuspendLayout();
+			this->tabPageGestionStat->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView8))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView7))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->BeginInit();
 			this->tabControl2->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->tabPage6->SuspendLayout();
-			this->tabPage7->SuspendLayout();
+			this->tabPageGestionStaff->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
-			this->tabPage8->SuspendLayout();
+			this->tabPageGestionPersonne->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// tabControl1
 			// 
-			this->tabControl1->Controls->Add(this->tabPage1);
-			this->tabControl1->Controls->Add(this->tabPage2);
-			this->tabControl1->Controls->Add(this->tabPage3);
-			this->tabControl1->Controls->Add(this->tabPage4);
-			this->tabControl1->Controls->Add(this->tabPage7);
-			this->tabControl1->Controls->Add(this->tabPage8);
+			this->tabControl1->Controls->Add(this->tabPageGestionClient);
+			this->tabControl1->Controls->Add(this->tabPageGestionCommande);
+			this->tabControl1->Controls->Add(this->tabPageGestionStock);
+			this->tabControl1->Controls->Add(this->tabPageGestionStat);
+			this->tabControl1->Controls->Add(this->tabPageGestionStaff);
+			this->tabControl1->Controls->Add(this->tabPageGestionPersonne);
 			this->tabControl1->Location = System::Drawing::Point(12, 13);
 			this->tabControl1->Name = L"tabControl1";
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(952, 426);
 			this->tabControl1->TabIndex = 8;
 			// 
-			// tabPage1
+			// tabPageGestionClient
 			// 
-			this->tabPage1->Controls->Add(this->textNomClient);
-			this->tabPage1->Controls->Add(this->label2);
-			this->tabPage1->Controls->Add(this->textPrenomClient);
-			this->tabPage1->Controls->Add(this->label3);
-			this->tabPage1->Controls->Add(this->affichageClient);
-			this->tabPage1->Controls->Add(this->button45);
-			this->tabPage1->Controls->Add(this->button11);
-			this->tabPage1->Controls->Add(this->button12);
-			this->tabPage1->Controls->Add(this->dataGridView1);
-			this->tabPage1->Controls->Add(this->button4);
-			this->tabPage1->Controls->Add(this->button3);
-			this->tabPage1->Controls->Add(this->button2);
-			this->tabPage1->Controls->Add(this->button1);
-			this->tabPage1->Controls->Add(this->textFacturation);
-			this->tabPage1->Controls->Add(this->label8);
-			this->tabPage1->Controls->Add(this->textLivraison);
-			this->tabPage1->Controls->Add(this->label7);
-			this->tabPage1->Controls->Add(this->textAniiv);
-			this->tabPage1->Controls->Add(this->label6);
-			this->tabPage1->Controls->Add(this->textPremiereCommande);
-			this->tabPage1->Controls->Add(this->label5);
-			this->tabPage1->Controls->Add(this->textMail);
-			this->tabPage1->Controls->Add(this->label4);
-			this->tabPage1->Controls->Add(this->textClientID);
-			this->tabPage1->Controls->Add(this->label1);
-			this->tabPage1->Location = System::Drawing::Point(4, 22);
-			this->tabPage1->Name = L"tabPage1";
-			this->tabPage1->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage1->Size = System::Drawing::Size(944, 400);
-			this->tabPage1->TabIndex = 0;
-			this->tabPage1->Text = L"Gestion client";
-			this->tabPage1->UseVisualStyleBackColor = true;
-			this->tabPage1->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage1_Click);
+			this->tabPageGestionClient->Controls->Add(this->textNomClient);
+			this->tabPageGestionClient->Controls->Add(this->label2);
+			this->tabPageGestionClient->Controls->Add(this->textPrenomClient);
+			this->tabPageGestionClient->Controls->Add(this->label3);
+			this->tabPageGestionClient->Controls->Add(this->affichageClient);
+			this->tabPageGestionClient->Controls->Add(this->button45);
+			this->tabPageGestionClient->Controls->Add(this->button11);
+			this->tabPageGestionClient->Controls->Add(this->button12);
+			this->tabPageGestionClient->Controls->Add(this->dataGridView1);
+			this->tabPageGestionClient->Controls->Add(this->button4);
+			this->tabPageGestionClient->Controls->Add(this->button3);
+			this->tabPageGestionClient->Controls->Add(this->button2);
+			this->tabPageGestionClient->Controls->Add(this->button1);
+			this->tabPageGestionClient->Controls->Add(this->textFacturation);
+			this->tabPageGestionClient->Controls->Add(this->label8);
+			this->tabPageGestionClient->Controls->Add(this->textLivraison);
+			this->tabPageGestionClient->Controls->Add(this->label7);
+			this->tabPageGestionClient->Controls->Add(this->textAniiv);
+			this->tabPageGestionClient->Controls->Add(this->label6);
+			this->tabPageGestionClient->Controls->Add(this->textPremiereCommande);
+			this->tabPageGestionClient->Controls->Add(this->label5);
+			this->tabPageGestionClient->Controls->Add(this->textMail);
+			this->tabPageGestionClient->Controls->Add(this->label4);
+			this->tabPageGestionClient->Controls->Add(this->textClientID);
+			this->tabPageGestionClient->Controls->Add(this->label1);
+			this->tabPageGestionClient->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionClient->Name = L"tabPageGestionClient";
+			this->tabPageGestionClient->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageGestionClient->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionClient->TabIndex = 0;
+			this->tabPageGestionClient->Text = L"Gestion client";
+			this->tabPageGestionClient->UseVisualStyleBackColor = true;
+			this->tabPageGestionClient->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionClient_Click);
 			// 
 			// textNomClient
 			// 
@@ -707,42 +707,42 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label1->Text = L"ID Personne";
 			this->label1->Click += gcnew System::EventHandler(this, &InterfaceManager::label1_Click_1);
 			// 
-			// tabPage2
+			// tabPageGestionCommande
 			// 
-			this->tabPage2->Controls->Add(this->textBox22);
-			this->tabPage2->Controls->Add(this->label24);
-			this->tabPage2->Controls->Add(this->textBox23);
-			this->tabPage2->Controls->Add(this->label25);
-			this->tabPage2->Controls->Add(this->button13);
-			this->tabPage2->Controls->Add(this->button14);
-			this->tabPage2->Controls->Add(this->dataGridView3);
-			this->tabPage2->Controls->Add(this->button15);
-			this->tabPage2->Controls->Add(this->button16);
-			this->tabPage2->Controls->Add(this->button17);
-			this->tabPage2->Controls->Add(this->button18);
-			this->tabPage2->Controls->Add(this->textBox9);
-			this->tabPage2->Controls->Add(this->label13);
-			this->tabPage2->Controls->Add(this->textBox10);
-			this->tabPage2->Controls->Add(this->label17);
-			this->tabPage2->Controls->Add(this->textBox14);
-			this->tabPage2->Controls->Add(this->label18);
-			this->tabPage2->Controls->Add(this->textBox17);
-			this->tabPage2->Controls->Add(this->label19);
-			this->tabPage2->Controls->Add(this->textBox18);
-			this->tabPage2->Controls->Add(this->label20);
-			this->tabPage2->Controls->Add(this->textBox19);
-			this->tabPage2->Controls->Add(this->label21);
-			this->tabPage2->Controls->Add(this->textBox20);
-			this->tabPage2->Controls->Add(this->label22);
-			this->tabPage2->Controls->Add(this->textBox21);
-			this->tabPage2->Controls->Add(this->label23);
-			this->tabPage2->Location = System::Drawing::Point(4, 22);
-			this->tabPage2->Name = L"tabPage2";
-			this->tabPage2->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage2->Size = System::Drawing::Size(944, 400);
-			this->tabPage2->TabIndex = 1;
-			this->tabPage2->Text = L"Gestion commande";
-			this->tabPage2->UseVisualStyleBackColor = true;
+			this->tabPageGestionCommande->Controls->Add(this->textBox22);
+			this->tabPageGestionCommande->Controls->Add(this->label24);
+			this->tabPageGestionCommande->Controls->Add(this->textBox23);
+			this->tabPageGestionCommande->Controls->Add(this->label25);
+			this->tabPageGestionCommande->Controls->Add(this->button13);
+			this->tabPageGestionCommande->Controls->Add(this->button14);
+			this->tabPageGestionCommande->Controls->Add(this->dataGridView3);
+			this->tabPageGestionCommande->Controls->Add(this->button15);
+			this->tabPageGestionCommande->Controls->Add(this->button16);
+			this->tabPageGestionCommande->Controls->Add(this->button17);
+			this->tabPageGestionCommande->Controls->Add(this->button18);
+			this->tabPageGestionCommande->Controls->Add(this->textBox9);
+			this->tabPageGestionCommande->Controls->Add(this->label13);
+			this->tabPageGestionCommande->Controls->Add(this->textBox10);
+			this->tabPageGestionCommande->Controls->Add(this->label17);
+			this->tabPageGestionCommande->Controls->Add(this->textBox14);
+			this->tabPageGestionCommande->Controls->Add(this->label18);
+			this->tabPageGestionCommande->Controls->Add(this->textBox17);
+			this->tabPageGestionCommande->Controls->Add(this->label19);
+			this->tabPageGestionCommande->Controls->Add(this->textBox18);
+			this->tabPageGestionCommande->Controls->Add(this->label20);
+			this->tabPageGestionCommande->Controls->Add(this->textBox19);
+			this->tabPageGestionCommande->Controls->Add(this->label21);
+			this->tabPageGestionCommande->Controls->Add(this->textBox20);
+			this->tabPageGestionCommande->Controls->Add(this->label22);
+			this->tabPageGestionCommande->Controls->Add(this->textBox21);
+			this->tabPageGestionCommande->Controls->Add(this->label23);
+			this->tabPageGestionCommande->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionCommande->Name = L"tabPageGestionCommande";
+			this->tabPageGestionCommande->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageGestionCommande->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionCommande->TabIndex = 1;
+			this->tabPageGestionCommande->Text = L"Gestion commande";
+			this->tabPageGestionCommande->UseVisualStyleBackColor = true;
 			// 
 			// textBox22
 			// 
@@ -968,36 +968,36 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label23->TabIndex = 45;
 			this->label23->Text = L"ID Commande";
 			// 
-			// tabPage3
+			// tabPageGestionStock
 			// 
-			this->tabPage3->Controls->Add(this->Load_Stock);
-			this->tabPage3->Controls->Add(this->label10);
-			this->tabPage3->Controls->Add(this->button10);
-			this->tabPage3->Controls->Add(this->button9);
-			this->tabPage3->Controls->Add(this->dataGridView2);
-			this->tabPage3->Controls->Add(this->button5);
-			this->tabPage3->Controls->Add(this->button6);
-			this->tabPage3->Controls->Add(this->button7);
-			this->tabPage3->Controls->Add(this->button8);
-			this->tabPage3->Controls->Add(this->label9);
-			this->tabPage3->Controls->Add(this->textBox11);
-			this->tabPage3->Controls->Add(this->label11);
-			this->tabPage3->Controls->Add(this->textBox12);
-			this->tabPage3->Controls->Add(this->label12);
-			this->tabPage3->Controls->Add(this->textBox13);
-			this->tabPage3->Controls->Add(this->label14);
-			this->tabPage3->Controls->Add(this->textBox15);
-			this->tabPage3->Controls->Add(this->label15);
-			this->tabPage3->Controls->Add(this->textBox16);
-			this->tabPage3->Controls->Add(this->label16);
-			this->tabPage3->Location = System::Drawing::Point(4, 22);
-			this->tabPage3->Name = L"tabPage3";
-			this->tabPage3->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage3->Size = System::Drawing::Size(944, 400);
-			this->tabPage3->TabIndex = 2;
-			this->tabPage3->Text = L"Gestion stock";
-			this->tabPage3->UseVisualStyleBackColor = true;
-			this->tabPage3->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage3_Click);
+			this->tabPageGestionStock->Controls->Add(this->Load_Stock);
+			this->tabPageGestionStock->Controls->Add(this->label10);
+			this->tabPageGestionStock->Controls->Add(this->button10);
+			this->tabPageGestionStock->Controls->Add(this->button9);
+			this->tabPageGestionStock->Controls->Add(this->dataGridView2);
+			this->tabPageGestionStock->Controls->Add(this->button5);
+			this->tabPageGestionStock->Controls->Add(this->button6);
+			this->tabPageGestionStock->Controls->Add(this->button7);
+			this->tabPageGestionStock->Controls->Add(this->button8);
+			this->tabPageGestionStock->Controls->Add(this->label9);
+			this->tabPageGestionStock->Controls->Add(this->textBox11);
+			this->tabPageGestionStock->Controls->Add(this->label11);
+			this->tabPageGestionStock->Controls->Add(this->textBox12);
+			this->tabPageGestionStock->Controls->Add(this->label12);
+			this->tabPageGestionStock->Controls->Add(this->textBox13);
+			this->tabPageGestionStock->Controls->Add(this->label14);
+			this->tabPageGestionStock->Controls->Add(this->textBox15);
+			this->tabPageGestionStock->Controls->Add(this->label15);
+			this->tabPageGestionStock->Controls->Add(this->textBox16);
+			this->tabPageGestionStock->Controls->Add(this->label16);
+			this->tabPageGestionStock->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionStock->Name = L"tabPageGestionStock";
+			this->tabPageGestionStock->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageGestionStock->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionStock->TabIndex = 2;
+			this->tabPageGestionStock->Text = L"Gestion stock";
+			this->tabPageGestionStock->UseVisualStyleBackColor = true;
+			this->tabPageGestionStock->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionStock_Click);
 			// 
 			// Load_Stock
 			// 
@@ -1173,28 +1173,28 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label16->TabIndex = 20;
 			this->label16->Text = L"ID Produit";
 			// 
-			// tabPage4
+			// tabPageGestionStat
 			// 
-			this->tabPage4->Controls->Add(this->dataGridView8);
-			this->tabPage4->Controls->Add(this->dataGridView7);
-			this->tabPage4->Controls->Add(this->dataGridView6);
-			this->tabPage4->Controls->Add(this->tabControl2);
-			this->tabPage4->Controls->Add(this->label32);
-			this->tabPage4->Controls->Add(this->textBox25);
-			this->tabPage4->Controls->Add(this->label31);
-			this->tabPage4->Controls->Add(this->label30);
-			this->tabPage4->Controls->Add(this->label29);
-			this->tabPage4->Controls->Add(this->label28);
-			this->tabPage4->Controls->Add(this->textBox24);
-			this->tabPage4->Controls->Add(this->label27);
-			this->tabPage4->Controls->Add(this->label26);
-			this->tabPage4->Location = System::Drawing::Point(4, 22);
-			this->tabPage4->Name = L"tabPage4";
-			this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-			this->tabPage4->Size = System::Drawing::Size(944, 400);
-			this->tabPage4->TabIndex = 3;
-			this->tabPage4->Text = L"Gestion stat";
-			this->tabPage4->UseVisualStyleBackColor = true;
+			this->tabPageGestionStat->Controls->Add(this->dataGridView8);
+			this->tabPageGestionStat->Controls->Add(this->dataGridView7);
+			this->tabPageGestionStat->Controls->Add(this->dataGridView6);
+			this->tabPageGestionStat->Controls->Add(this->tabControl2);
+			this->tabPageGestionStat->Controls->Add(this->label32);
+			this->tabPageGestionStat->Controls->Add(this->textBox25);
+			this->tabPageGestionStat->Controls->Add(this->label31);
+			this->tabPageGestionStat->Controls->Add(this->label30);
+			this->tabPageGestionStat->Controls->Add(this->label29);
+			this->tabPageGestionStat->Controls->Add(this->label28);
+			this->tabPageGestionStat->Controls->Add(this->textBox24);
+			this->tabPageGestionStat->Controls->Add(this->label27);
+			this->tabPageGestionStat->Controls->Add(this->label26);
+			this->tabPageGestionStat->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionStat->Name = L"tabPageGestionStat";
+			this->tabPageGestionStat->Padding = System::Windows::Forms::Padding(3);
+			this->tabPageGestionStat->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionStat->TabIndex = 3;
+			this->tabPageGestionStat->Text = L"Gestion stat";
+			this->tabPageGestionStat->UseVisualStyleBackColor = true;
 			// 
 			// dataGridView8
 			// 
@@ -1643,39 +1643,39 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label26->Text = L"Panier moyen : ";
 			this->label26->Click += gcnew System::EventHandler(this, &InterfaceManager::label26_Click);
 			// 
-			// tabPage7
+			// tabPageGestionStaff
 			// 
-			this->tabPage7->Controls->Add(this->textStaffAffiche);
-			this->tabPage7->Controls->Add(this->button46);
-			this->tabPage7->Controls->Add(this->button32);
-			this->tabPage7->Controls->Add(this->button33);
-			this->tabPage7->Controls->Add(this->dataGridView4);
-			this->tabPage7->Controls->Add(this->button34);
-			this->tabPage7->Controls->Add(this->button35);
-			this->tabPage7->Controls->Add(this->button36);
-			this->tabPage7->Controls->Add(this->button37);
-			this->tabPage7->Controls->Add(this->textStaffRole);
-			this->tabPage7->Controls->Add(this->label43);
-			this->tabPage7->Controls->Add(this->textStaffAdresse);
-			this->tabPage7->Controls->Add(this->label44);
-			this->tabPage7->Controls->Add(this->textStaffDate);
-			this->tabPage7->Controls->Add(this->label45);
-			this->tabPage7->Controls->Add(this->textStaffSup);
-			this->tabPage7->Controls->Add(this->label46);
-			this->tabPage7->Controls->Add(this->textStaffMail);
-			this->tabPage7->Controls->Add(this->label47);
-			this->tabPage7->Controls->Add(this->textStaffPrenom);
-			this->tabPage7->Controls->Add(this->label48);
-			this->tabPage7->Controls->Add(this->textStaffNom);
-			this->tabPage7->Controls->Add(this->label49);
-			this->tabPage7->Controls->Add(this->textStaffID);
-			this->tabPage7->Controls->Add(this->label50);
-			this->tabPage7->Location = System::Drawing::Point(4, 22);
-			this->tabPage7->Name = L"tabPage7";
-			this->tabPage7->Size = System::Drawing::Size(944, 400);
-			this->tabPage7->TabIndex = 4;
-			this->tabPage7->Text = L"Gestion personnel";
-			this->tabPage7->UseVisualStyleBackColor = true;
+			this->tabPageGestionStaff->Controls->Add(this->textStaffAffiche);
+			this->tabPageGestionStaff->Controls->Add(this->button46);
+			this->tabPageGestionStaff->Controls->Add(this->button32);
+			this->tabPageGestionStaff->Controls->Add(this->button33);
+			this->tabPageGestionStaff->Controls->Add(this->dataGridView4);
+			this->tabPageGestionStaff->Controls->Add(this->button34);
+			this->tabPageGestionStaff->Controls->Add(this->button35);
+			this->tabPageGestionStaff->Controls->Add(this->button36);
+			this->tabPageGestionStaff->Controls->Add(this->button37);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffRole);
+			this->tabPageGestionStaff->Controls->Add(this->label43);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffAdresse);
+			this->tabPageGestionStaff->Controls->Add(this->label44);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffDate);
+			this->tabPageGestionStaff->Controls->Add(this->label45);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffSup);
+			this->tabPageGestionStaff->Controls->Add(this->label46);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffMail);
+			this->tabPageGestionStaff->Controls->Add(this->label47);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffPrenom);
+			this->tabPageGestionStaff->Controls->Add(this->label48);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffNom);
+			this->tabPageGestionStaff->Controls->Add(this->label49);
+			this->tabPageGestionStaff->Controls->Add(this->textStaffID);
+			this->tabPageGestionStaff->Controls->Add(this->label50);
+			this->tabPageGestionStaff->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionStaff->Name = L"tabPageGestionStaff";
+			this->tabPageGestionStaff->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionStaff->TabIndex = 4;
+			this->tabPageGestionStaff->Text = L"Gestion personnel";
+			this->tabPageGestionStaff->UseVisualStyleBackColor = true;
 			// 
 			// textStaffAffiche
 			// 
@@ -1902,32 +1902,32 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label50->TabIndex = 45;
 			this->label50->Text = L"ID Personne";
 			// 
-			// tabPage8
+			// tabPageGestionPersonne
 			// 
-			this->tabPage8->Controls->Add(this->textAffichage);
-			this->tabPage8->Controls->Add(this->label54);
-			this->tabPage8->Controls->Add(this->button44);
-			this->tabPage8->Controls->Add(this->dataGridView5);
-			this->tabPage8->Controls->Add(this->button38);
-			this->tabPage8->Controls->Add(this->button39);
-			this->tabPage8->Controls->Add(this->button40);
-			this->tabPage8->Controls->Add(this->button41);
-			this->tabPage8->Controls->Add(this->button42);
-			this->tabPage8->Controls->Add(this->button43);
-			this->tabPage8->Controls->Add(this->textPersonnePrenom);
-			this->tabPage8->Controls->Add(this->label51);
-			this->tabPage8->Controls->Add(this->textPersonneNom);
-			this->tabPage8->Controls->Add(this->label52);
-			this->tabPage8->Controls->Add(this->textPersonneID);
-			this->tabPage8->Controls->Add(this->label53);
-			this->tabPage8->Location = System::Drawing::Point(4, 22);
-			this->tabPage8->Margin = System::Windows::Forms::Padding(2);
-			this->tabPage8->Name = L"tabPage8";
-			this->tabPage8->Size = System::Drawing::Size(944, 400);
-			this->tabPage8->TabIndex = 5;
-			this->tabPage8->Text = L"Gestion personne";
-			this->tabPage8->UseVisualStyleBackColor = true;
-			this->tabPage8->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPage8_Click);
+			this->tabPageGestionPersonne->Controls->Add(this->textAffichage);
+			this->tabPageGestionPersonne->Controls->Add(this->label54);
+			this->tabPageGestionPersonne->Controls->Add(this->button44);
+			this->tabPageGestionPersonne->Controls->Add(this->dataGridView5);
+			this->tabPageGestionPersonne->Controls->Add(this->button38);
+			this->tabPageGestionPersonne->Controls->Add(this->button39);
+			this->tabPageGestionPersonne->Controls->Add(this->button40);
+			this->tabPageGestionPersonne->Controls->Add(this->button41);
+			this->tabPageGestionPersonne->Controls->Add(this->button42);
+			this->tabPageGestionPersonne->Controls->Add(this->button43);
+			this->tabPageGestionPersonne->Controls->Add(this->textPersonnePrenom);
+			this->tabPageGestionPersonne->Controls->Add(this->label51);
+			this->tabPageGestionPersonne->Controls->Add(this->textPersonneNom);
+			this->tabPageGestionPersonne->Controls->Add(this->label52);
+			this->tabPageGestionPersonne->Controls->Add(this->textPersonneID);
+			this->tabPageGestionPersonne->Controls->Add(this->label53);
+			this->tabPageGestionPersonne->Location = System::Drawing::Point(4, 22);
+			this->tabPageGestionPersonne->Margin = System::Windows::Forms::Padding(2);
+			this->tabPageGestionPersonne->Name = L"tabPageGestionPersonne";
+			this->tabPageGestionPersonne->Size = System::Drawing::Size(944, 400);
+			this->tabPageGestionPersonne->TabIndex = 5;
+			this->tabPageGestionPersonne->Text = L"Gestion personne";
+			this->tabPageGestionPersonne->UseVisualStyleBackColor = true;
+			this->tabPageGestionPersonne->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionPersonne_Click);
 			// 
 			// textAffichage
 			// 
@@ -2087,17 +2087,17 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->Text = L"Interface Manager";
 			this->Load += gcnew System::EventHandler(this, &InterfaceManager::MyForm1_Load);
 			this->tabControl1->ResumeLayout(false);
-			this->tabPage1->ResumeLayout(false);
-			this->tabPage1->PerformLayout();
+			this->tabPageGestionClient->ResumeLayout(false);
+			this->tabPageGestionClient->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
-			this->tabPage2->ResumeLayout(false);
-			this->tabPage2->PerformLayout();
+			this->tabPageGestionCommande->ResumeLayout(false);
+			this->tabPageGestionCommande->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
-			this->tabPage3->ResumeLayout(false);
-			this->tabPage3->PerformLayout();
+			this->tabPageGestionStock->ResumeLayout(false);
+			this->tabPageGestionStock->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
-			this->tabPage4->ResumeLayout(false);
-			this->tabPage4->PerformLayout();
+			this->tabPageGestionStat->ResumeLayout(false);
+			this->tabPageGestionStat->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView8))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView7))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
@@ -2106,11 +2106,11 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPage5->PerformLayout();
 			this->tabPage6->ResumeLayout(false);
 			this->tabPage6->PerformLayout();
-			this->tabPage7->ResumeLayout(false);
-			this->tabPage7->PerformLayout();
+			this->tabPageGestionStaff->ResumeLayout(false);
+			this->tabPageGestionStaff->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
-			this->tabPage8->ResumeLayout(false);
-			this->tabPage8->PerformLayout();
+			this->tabPageGestionPersonne->ResumeLayout(false);
+			this->tabPageGestionPersonne->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->EndInit();
 			this->ResumeLayout(false);
 
@@ -2196,7 +2196,7 @@ private: void loadDataStaff(int index)
 
 	private: System::Void label1_Click_1(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void tabPage3_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void tabPageGestionStock_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void textBox24_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -2206,9 +2206,9 @@ private: void loadDataStaff(int index)
 	}
 	private: System::Void button19_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void tabPage1_Click(System::Object^ sender, System::EventArgs^ e) {
+	private: System::Void tabPageGestionClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void tabPage8_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void tabPageGestionPersonne_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void label22_Click(System::Object^ sender, System::EventArgs^ e) {
 }

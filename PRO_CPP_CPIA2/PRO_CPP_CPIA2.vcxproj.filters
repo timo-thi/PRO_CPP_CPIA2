@@ -75,6 +75,12 @@
     <ClInclude Include="SG_Identification.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="CM_Adress.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SG_Address.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CM_Connexion.cpp">
@@ -135,6 +141,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SG_Identification.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="CM_Adress.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SG_Address.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
