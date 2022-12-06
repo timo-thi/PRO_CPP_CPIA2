@@ -6,6 +6,7 @@
 #include "SG_Stat.h"
 #include "SG_Identification.h"
 #include "SG_Address.h"
+#include "SG_Stat.h"
 
 using namespace  NS_Services;
 
@@ -293,7 +294,7 @@ private: System::Windows::Forms::Button^ buttonDelAdr;
 private: System::Windows::Forms::Button^ buttonAddAdr;
 private: System::Windows::Forms::TextBox^ textBoxAdrCitZip;
 private: System::Windows::Forms::Label^ label52;
-private: System::Windows::Forms::TextBox^ textBoxAdrCitName;
+
 private: System::Windows::Forms::Label^ label53;
 private: System::Windows::Forms::TextBox^ textBoxAdrCitID;
 private: System::Windows::Forms::Label^ label43;
@@ -304,6 +305,8 @@ private: System::Windows::Forms::TextBox^ textBoxAdrNum;
 private: System::Windows::Forms::Label^ label57;
 private: System::Windows::Forms::TextBox^ textBoxAdrID;
 private: System::Windows::Forms::Label^ label58;
+private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
+
 
 
 
@@ -496,6 +499,7 @@ private: System::Windows::Forms::Label^ label58;
 			this->textPersonneID = (gcnew System::Windows::Forms::TextBox());
 			this->Text_Personne_ID = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionAdresses = (gcnew System::Windows::Forms::TabPage());
+			this->comboBoxAdrCitName = (gcnew System::Windows::Forms::ComboBox());
 			this->labelAdrStatus = (gcnew System::Windows::Forms::Label());
 			this->buttonLoadAdr = (gcnew System::Windows::Forms::Button());
 			this->richTextBoxAdrDetails1 = (gcnew System::Windows::Forms::RichTextBox());
@@ -508,7 +512,6 @@ private: System::Windows::Forms::Label^ label58;
 			this->buttonAddAdr = (gcnew System::Windows::Forms::Button());
 			this->textBoxAdrCitZip = (gcnew System::Windows::Forms::TextBox());
 			this->label52 = (gcnew System::Windows::Forms::Label());
-			this->textBoxAdrCitName = (gcnew System::Windows::Forms::TextBox());
 			this->label53 = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrCitID = (gcnew System::Windows::Forms::TextBox());
 			this->label43 = (gcnew System::Windows::Forms::Label());
@@ -2254,6 +2257,7 @@ private: System::Windows::Forms::Label^ label58;
 			// 
 			// tabPageGestionAdresses
 			// 
+			this->tabPageGestionAdresses->Controls->Add(this->comboBoxAdrCitName);
 			this->tabPageGestionAdresses->Controls->Add(this->labelAdrStatus);
 			this->tabPageGestionAdresses->Controls->Add(this->buttonLoadAdr);
 			this->tabPageGestionAdresses->Controls->Add(this->richTextBoxAdrDetails1);
@@ -2266,7 +2270,6 @@ private: System::Windows::Forms::Label^ label58;
 			this->tabPageGestionAdresses->Controls->Add(this->buttonAddAdr);
 			this->tabPageGestionAdresses->Controls->Add(this->textBoxAdrCitZip);
 			this->tabPageGestionAdresses->Controls->Add(this->label52);
-			this->tabPageGestionAdresses->Controls->Add(this->textBoxAdrCitName);
 			this->tabPageGestionAdresses->Controls->Add(this->label53);
 			this->tabPageGestionAdresses->Controls->Add(this->textBoxAdrCitID);
 			this->tabPageGestionAdresses->Controls->Add(this->label43);
@@ -2284,6 +2287,16 @@ private: System::Windows::Forms::Label^ label58;
 			this->tabPageGestionAdresses->TabIndex = 6;
 			this->tabPageGestionAdresses->Text = L"Gestion adresses";
 			this->tabPageGestionAdresses->UseVisualStyleBackColor = true;
+			// 
+			// comboBoxAdrCitName
+			// 
+			this->comboBoxAdrCitName->AutoCompleteMode = System::Windows::Forms::AutoCompleteMode::SuggestAppend;
+			this->comboBoxAdrCitName->FormattingEnabled = true;
+			this->comboBoxAdrCitName->Location = System::Drawing::Point(176, 103);
+			this->comboBoxAdrCitName->Name = L"comboBoxAdrCitName";
+			this->comboBoxAdrCitName->Size = System::Drawing::Size(117, 21);
+			this->comboBoxAdrCitName->TabIndex = 117;
+			this->comboBoxAdrCitName->TextUpdate += gcnew System::EventHandler(this, &InterfaceManager::comboBoxAdrCitName_TextUpdate);
 			// 
 			// labelAdrStatus
 			// 
@@ -2396,13 +2409,6 @@ private: System::Windows::Forms::Label^ label58;
 			this->label52->Size = System::Drawing::Size(63, 13);
 			this->label52->TabIndex = 105;
 			this->label52->Text = L"Code postal";
-			// 
-			// textBoxAdrCitName
-			// 
-			this->textBoxAdrCitName->Location = System::Drawing::Point(178, 103);
-			this->textBoxAdrCitName->Name = L"textBoxAdrCitName";
-			this->textBoxAdrCitName->Size = System::Drawing::Size(115, 20);
-			this->textBoxAdrCitName->TabIndex = 104;
 			// 
 			// label53
 			// 
@@ -3137,7 +3143,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->labelAdrStatus->Text = "Veuillez entrer les informations";
 		this->textBoxAdrCitID->Text = "";
 		this->textBoxAdrID->Text = "";
-		this->textBoxAdrCitName->Text = "";
+		this->comboBoxAdrCitName->Text = "";
 		this->textBoxAdrCitZip->Text = "";
 		this->textBoxAdrName->Text = "";
 		this->textBoxAdrNum->Text = "";
@@ -3153,13 +3159,27 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->textBoxAdrNum->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_Street_Num"]->Value->ToString();
 		this->richTextBoxAdrDetails1->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_Details"]->Value->ToString();
 		this->textBoxAdrCitID->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_ID"]->Value->ToString();
-		this->textBoxAdrCitName->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_Name"]->Value->ToString();
+		this->comboBoxAdrCitName->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_Name"]->Value->ToString();
 		this->textBoxAdrCitZip->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_ZIP_Code"]->Value->ToString();
 		//this->textBox23->Text
 	}
 	private: System::Void buttonAdrNext_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void buttonAdrPrevious_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void comboBoxAdrCitName_TextUpdate(System::Object^ sender, System::EventArgs^ e) {
+		if (this->comboBoxAdrCitName->Text == "") return;
+		this->Adr_Service->Fetch_City_Drop_Down(this->comboBoxAdrCitName->Text);
+		
+		this->comboBoxAdrCitName->Items->Clear();
+		for (int i = 0; i < this->Adr_Service->DS->Tables[0]->Rows->Count; i++) {
+			this->comboBoxAdrCitName->Items->Add(
+				Convert::ToString(this->Adr_Service->DS->Tables[0]->Rows[i]->ItemArray[0]) + " - " +
+				Convert::ToString(this->Adr_Service->DS->Tables[0]->Rows[i]->ItemArray[1]) + " - " +
+				Convert::ToString(this->Adr_Service->DS->Tables[0]->Rows[i]->ItemArray[2])
+			);
+		}
+		this->comboBoxAdrCitName->SelectionStart = this->comboBoxAdrCitName->Text->Length;
 	}
 };
 }

@@ -19,5 +19,7 @@ namespace NS_Services
         void Remove_Adress(int);
         void Edit_Adress(int, String^, String^, String^, int);
         void Select_Adress();
+
+        void Fetch_City_Drop_Down(String^);
     };
 }

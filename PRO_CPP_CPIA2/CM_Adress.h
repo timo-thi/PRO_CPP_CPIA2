@@ -15,6 +15,8 @@ namespace NS_Composants
         int City_ID;
         String^ City_Name;
         String^ City_Zip_Code;
+
+        String^ Drop_Down_Sequence;
     public:
         CM_Adress();
 
@@ -34,10 +36,14 @@ namespace NS_Composants
         String^ Get_City_Zip_Code();
         void Set_City_Zip_Code(String^);
 
+        String^ Get_Drop_Down_Sequence();
+        void Set_Drop_Down_Sequence(String^);
 
         SqlCommand^ Insert_Adress(void);
         SqlCommand^ Select_Adress(void);
         SqlCommand^ Update_Adress(void);
         SqlCommand^ Delete_Adress(void);
+
+        SqlCommand^ City_Drop_Down_Menu(void);
     };
 }

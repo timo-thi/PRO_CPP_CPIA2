@@ -37,3 +37,10 @@ void SG_Address::Select_Adress() {
 
 	this->DS = this->CConnexion->getRows(this->CMappage->Select_Adress(), "Adr");
 }
+
+void SG_Address::Fetch_City_Drop_Down(String^ Sequence) {
+	this->DS = gcnew DataSet;
+
+	this->CMappage->Set_Drop_Down_Sequence(Sequence);
+	this->DS = this->CConnexion->getRows(this->CMappage->City_Drop_Down_Menu(), "CDD");
+}

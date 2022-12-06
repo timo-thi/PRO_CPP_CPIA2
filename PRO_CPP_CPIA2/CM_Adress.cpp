@@ -62,6 +62,14 @@ void CM_Adress::Set_City_Zip_Code(String^ zip_code) {
 	this->City_Zip_Code = zip_code;
 }
 
+String^ CM_Adress::Get_Drop_Down_Sequence() {
+	return this->Drop_Down_Sequence;
+}
+
+void CM_Adress::Set_Drop_Down_Sequence(String^ Sequence){
+	this->Drop_Down_Sequence = Sequence;
+}
+
 
 SqlCommand^ CM_Adress::Insert_Adress(void) {
 	Start_Procedure("Insert_Adress");
@@ -96,6 +104,14 @@ SqlCommand^ CM_Adress::Delete_Adress(void) {
 	Start_Procedure("Delete_Adress");
 
 	Procedure->Parameters->AddWithValue("@Adress_Id", this->Get_ID());
+
+	return this->Procedure;
+}
+
+SqlCommand^ CM_Adress::City_Drop_Down_Menu(void) {
+	Start_Procedure("City_Drop_Down");
+
+	this->Procedure->Parameters->AddWithValue("@Sequence", this->Get_Drop_Down_Sequence());
 
 	return this->Procedure;
 }
