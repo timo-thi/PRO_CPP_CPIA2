@@ -680,6 +680,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->Size = System::Drawing::Size(569, 310);
 			this->dataGridView1->TabIndex = 19;
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView1_CellClick);
 			// 
 			// button4
 			// 
@@ -1903,6 +1904,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->dataGridView_Staff->RowHeadersWidth = 62;
 			this->dataGridView_Staff->Size = System::Drawing::Size(569, 310);
 			this->dataGridView_Staff->TabIndex = 65;
+			this->dataGridView_Staff->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView_Staff_CellClick);
 			// 
 			// button_Staff_Save
 			// 
@@ -2145,6 +2147,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->dataGridView5->RowTemplate->Height = 28;
 			this->dataGridView5->Size = System::Drawing::Size(516, 357);
 			this->dataGridView5->TabIndex = 74;
+			this->dataGridView5->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView5_CellClick);
 			// 
 			// Button_Personne_Retour
 			// 
@@ -2539,19 +2542,31 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 #pragma endregion
 private: void loadDataPersonne(int index)
 {
-
 	this->dsPersonne->Clear();
 	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 	this->textPersonneID->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[this->index]->ItemArray[0]);
 	this->textPersonneNom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[1]);
 	this->textPersonnePrenom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[2]);
 
+	// Update dataGridView
+	this->dataGridView5->Refresh();
+
+	this->dataGridView5->DataSource = this->dsPersonne;
+	this->dataGridView5->DataMember = "liste";
 }
 
-
+	private: System::Void dataGridView_Staff_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		this->index = e->RowIndex;
+		this->loadDataStaff(this->index);
+	}
+	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		this->index = e->RowIndex;
+		this->loadDataPersonne(this->index);
+	}
 
 private: void loadDataClient(int index)
 {	
+	// Remplir les champs avec la première personne du dataset
 	this->dsPersonne->Clear();
 	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 	this->dsClient->Clear();
@@ -2578,9 +2593,16 @@ private: void loadDataClient(int index)
 	this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
 	this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
 
-	
+	// Mettre à jour le data grid
+	this->dataGridView1->Refresh();
 
+	this->dataGridView1->DataSource = this->dsClient;
+	this->dataGridView1->DataMember = "liste";
 }
+	private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		this->index = e->RowIndex;
+		this->loadDataClient(this->index);
+	}
 
 
 private: void loadDataStaff(int index)
@@ -2603,6 +2625,10 @@ private: void loadDataStaff(int index)
 	this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
 	this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
 
+	// Update dataGridView
+	this->dataGridView_Staff->Refresh();
+	this->dataGridView_Staff->DataSource = this->dsStaff;
+	this->dataGridView_Staff->DataMember = "liste";
 }
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -3155,18 +3181,30 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->labelAdrStatus->Text = "Modifiez et enregistrez.";
 	}
 	private: System::Void dataGridView4_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		this->textBoxAdrID->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_ID"]->Value->ToString();
-		this->textBoxAdrName->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_Street_Name"]->Value->ToString();
-		this->textBoxAdrNum->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_Street_Num"]->Value->ToString();
-		this->richTextBoxAdrDetails1->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["ADR_Details"]->Value->ToString();
-		this->textBoxAdrCitID->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_ID"]->Value->ToString();
-		this->comboBoxAdrCitName->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_Name"]->Value->ToString();
-		this->textBoxAdrCitZip->Text = this->dataGridView4->Rows[e->RowIndex]->Cells["CIT_ZIP_Code"]->Value->ToString();
+		this->index = e->RowIndex;
+		this->loadDataAdresse(this->index);
+	}
+	private: System::Void loadDataAdresse(int index) {
+		this->textBoxAdrID->Text = this->dataGridView4->Rows[index]->Cells["ADR_ID"]->Value->ToString();
+		this->textBoxAdrName->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Name"]->Value->ToString();
+		this->textBoxAdrNum->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Num"]->Value->ToString();
+		this->richTextBoxAdrDetails1->Text = this->dataGridView4->Rows[index]->Cells["ADR_Details"]->Value->ToString();
+		this->textBoxAdrCitID->Text = this->dataGridView4->Rows[index]->Cells["CIT_ID"]->Value->ToString();
+		this->comboBoxAdrCitName->Text = this->dataGridView4->Rows[index]->Cells["CIT_Name"]->Value->ToString();
+		this->textBoxAdrCitZip->Text = this->dataGridView4->Rows[index]->Cells["CIT_ZIP_Code"]->Value->ToString();
 		//this->textBox23->Text
 	}
 	private: System::Void buttonAdrNext_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index < this->Adr_Service->DS->Tables[0]->Rows->Count - 1) {
+			this->index++;
+			this->loadDataAdresse(this->index);
+		}
 	}
 	private: System::Void buttonAdrPrevious_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index > 0) {
+			this->index--;
+			this->loadDataAdresse(this->index);
+		}
 	}
 	private: System::Void comboBoxAdrCitName_TextUpdate(System::Object^ sender, System::EventArgs^ e) {
 		if (this->comboBoxAdrCitName->Text == "") return;
