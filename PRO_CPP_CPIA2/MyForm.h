@@ -127,10 +127,23 @@ namespace ProjetPOO {
 	private: System::Void MyForm_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		InterfaceManager^ f2 = gcnew InterfaceManager(); //DEBUG
+		f2->Show();                                     //DEBUG
+		return;                                        //DEBUG
+		NS_Services::SG_Identification^ SG_Id = gcnew NS_Services::SG_Identification;
+		if (!SG_Id->Check_Identity(this->textBox1->Text, this->textBox2->Text)) {
+			MessageBox::Show("Wrong email or password");
+			return;
+		}
 		this->Hide();
-		InterfaceManager^ f2 = gcnew InterfaceManager();
-		f2->Show();
-
+		if (SG_Id->Fetch_Role() == "Ingenieur") {
+			InterfaceEmploye^ f1 = gcnew InterfaceEmploye(); // InterfaceEmployee
+			f1->Show();
+		}
+		else if (SG_Id->Fetch_Role() == "Manager") { // Not using else alone to prevent unwanted consequences if roles are added to the database
+			InterfaceManager^ f2 = gcnew InterfaceManager();
+			f2->Show();
+		}
 	}
 	private: System::Void label1_Click(System::Object^ sender, System::EventArgs^ e) {
 	}

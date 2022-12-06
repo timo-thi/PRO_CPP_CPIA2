@@ -2500,6 +2500,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->Controls->Add(this->tabControl1);
 			this->Name = L"InterfaceManager";
 			this->Text = L"Interface Manager";
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &InterfaceManager::InterfaceManager_FormClosed);
 			this->Load += gcnew System::EventHandler(this, &InterfaceManager::MyForm1_Load);
 			this->tabControl1->ResumeLayout(false);
 			this->tabPageGestionClient->ResumeLayout(false);
@@ -3180,6 +3181,9 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 			);
 		}
 		this->comboBoxAdrCitName->SelectionStart = this->comboBoxAdrCitName->Text->Length;
+	}
+	private: System::Void InterfaceManager_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+		Application::Exit();
 	}
 };
 }
