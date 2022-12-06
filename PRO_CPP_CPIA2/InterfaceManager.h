@@ -3,8 +3,11 @@
 #include "SG_Client.h"
 #include "SG_Stock.h"
 #include "SG_Staff.h"
+#include "SG_Stat.h"
 #include "SG_Identification.h"
+
 using namespace  NS_Services;
+
 namespace ProjetPOO {
 
 	using namespace System;
@@ -114,50 +117,50 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::TextBox^ textBox21;
 	private: System::Windows::Forms::Label^ label23;
 	private: System::Windows::Forms::Label^ label10;
-	private: System::Windows::Forms::Label^ label26;
-	private: System::Windows::Forms::TextBox^ textBox30;
-	private: System::Windows::Forms::Label^ label37;
-	private: System::Windows::Forms::TextBox^ textBox29;
-	private: System::Windows::Forms::Label^ label36;
-	private: System::Windows::Forms::TextBox^ textBox28;
-	private: System::Windows::Forms::Label^ label35;
-	private: System::Windows::Forms::TextBox^ textBox27;
-	private: System::Windows::Forms::Label^ label34;
-	private: System::Windows::Forms::TextBox^ textBox26;
-	private: System::Windows::Forms::Label^ label33;
-	private: System::Windows::Forms::Label^ label32;
-	private: System::Windows::Forms::TextBox^ textBox25;
-	private: System::Windows::Forms::Label^ label31;
-	private: System::Windows::Forms::Label^ label30;
 
-	private: System::Windows::Forms::Label^ label29;
 
-	private: System::Windows::Forms::Label^ label28;
 
-	private: System::Windows::Forms::TextBox^ textBox24;
-	private: System::Windows::Forms::Label^ label27;
-	private: System::Windows::Forms::TabControl^ tabControl2;
-	private: System::Windows::Forms::TabPage^ tabPage5;
-	private: System::Windows::Forms::TabPage^ tabPage6;
-	private: System::Windows::Forms::Button^ button19;
-	private: System::Windows::Forms::Label^ label39;
-	private: System::Windows::Forms::Button^ button20;
-	private: System::Windows::Forms::Label^ label38;
-	private: System::Windows::Forms::TextBox^ textBox31;
-	private: System::Windows::Forms::Button^ button22;
-	private: System::Windows::Forms::Button^ button21;
-	private: System::Windows::Forms::Button^ button29;
-	private: System::Windows::Forms::Button^ button30;
-	private: System::Windows::Forms::Label^ label42;
-	private: System::Windows::Forms::Button^ button31;
-	private: System::Windows::Forms::Button^ button26;
-	private: System::Windows::Forms::Button^ button27;
-	private: System::Windows::Forms::Label^ label41;
-	private: System::Windows::Forms::Button^ button28;
-	private: System::Windows::Forms::Button^ button23;
-	private: System::Windows::Forms::Button^ button24;
-	private: System::Windows::Forms::Label^ label40;
-	private: System::Windows::Forms::Button^ button25;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::TabPage^ tabPageGestionStaff;
 private: System::Windows::Forms::Button^ button_Staff_Previous;
 private: System::Windows::Forms::Button^ button_Staff_Next;
@@ -189,9 +192,9 @@ private: System::Windows::Forms::TextBox^ textPersonneNom;
 private: System::Windows::Forms::Label^ Label_Personne_Nom;
 private: System::Windows::Forms::TextBox^ textPersonneID;
 private: System::Windows::Forms::Label^ Text_Personne_ID;
-private: System::Windows::Forms::DataGridView^ dataGridView8;
-private: System::Windows::Forms::DataGridView^ dataGridView7;
-private: System::Windows::Forms::DataGridView^ dataGridView6;
+
+
+
 private: System::Windows::Forms::DataGridView^ dataGridView5;
 private: System::Windows::Forms::Button^ Button_Personne_Retour;
 private: System::Windows::Forms::Button^ Button_Personne_Avancer;
@@ -223,8 +226,58 @@ private: Data::DataSet^ dsStaff = gcnew Data::DataSet();
 private: SG_Staff^ processusStaff = gcnew SG_Staff();
 private: System::Windows::Forms::Label^ textStaffAffiche;
 private: System::Windows::Forms::Button^ button46_Staff_Load;
+private: SG_Stat^ Stat_Service;
 
 private: SG_Identification^ processusIdentification = gcnew SG_Identification();
+private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+private: System::Windows::Forms::ComboBox^ comboBox1;
+private: System::Windows::Forms::TextBox^ textBoxValAch;
+private: System::Windows::Forms::TextBox^ textBoxPanierAvg;
+private: System::Windows::Forms::Button^ buttonStaffReload;
+private: System::Windows::Forms::TabControl^ tabControlSimuModeSwitch;
+private: System::Windows::Forms::TabPage^ tabPage5;
+private: System::Windows::Forms::Button^ buttonDemarque2;
+private: System::Windows::Forms::Button^ buttonDemarque3;
+private: System::Windows::Forms::Button^ buttonDemarque5;
+private: System::Windows::Forms::Button^ buttonRemise3;
+private: System::Windows::Forms::Button^ buttonRemise5;
+private: System::Windows::Forms::Button^ buttonRemise6;
+private: System::Windows::Forms::Button^ buttonMarge5;
+private: System::Windows::Forms::Button^ buttonMarge10;
+private: System::Windows::Forms::Button^ buttonMarge15;
+private: System::Windows::Forms::Button^ buttonTVA5;
+private: System::Windows::Forms::Button^ buttonTVA10;
+private: System::Windows::Forms::Button^ buttonTVA20;
+private: System::Windows::Forms::Label^ label42;
+private: System::Windows::Forms::Label^ label41;
+private: System::Windows::Forms::Label^ label40;
+private: System::Windows::Forms::Label^ label39;
+private: System::Windows::Forms::Label^ label38;
+private: System::Windows::Forms::TextBox^ textBoxValComAuto;
+private: System::Windows::Forms::TabPage^ tabPage6;
+private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
+private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
+private: System::Windows::Forms::NumericUpDown^ numericUpDownRemise;
+private: System::Windows::Forms::NumericUpDown^ numericUpDownTVA;
+private: System::Windows::Forms::Button^ button19;
+private: System::Windows::Forms::Label^ label35;
+private: System::Windows::Forms::Label^ label33;
+private: System::Windows::Forms::Label^ label37;
+private: System::Windows::Forms::TextBox^ textBoxValComPers;
+private: System::Windows::Forms::Label^ label34;
+private: System::Windows::Forms::Label^ label36;
+private: System::Windows::Forms::Label^ label32;
+private: System::Windows::Forms::TextBox^ textBoxTotCli;
+private: System::Windows::Forms::Label^ label31;
+private: System::Windows::Forms::Label^ label30;
+private: System::Windows::Forms::ListBox^ listBoxLessPurchased;
+private: System::Windows::Forms::Label^ label29;
+private: System::Windows::Forms::ListBox^ listBoxMorePurchased;
+private: System::Windows::Forms::Label^ label28;
+private: System::Windows::Forms::ListBox^ listUnderThreshold;
+private: System::Windows::Forms::TextBox^ textBoxChfAff;
+private: System::Windows::Forms::Label^ label27;
+private: System::Windows::Forms::Label^ label26;
 
 
 
@@ -324,48 +377,53 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textBox16 = (gcnew System::Windows::Forms::TextBox());
 			this->label16 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionStat = (gcnew System::Windows::Forms::TabPage());
-			this->dataGridView8 = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridView7 = (gcnew System::Windows::Forms::DataGridView());
-			this->dataGridView6 = (gcnew System::Windows::Forms::DataGridView());
-			this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
+			this->numericUpDown1 = (gcnew System::Windows::Forms::NumericUpDown());
+			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
+			this->textBoxValAch = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxPanierAvg = (gcnew System::Windows::Forms::TextBox());
+			this->buttonStaffReload = (gcnew System::Windows::Forms::Button());
+			this->tabControlSimuModeSwitch = (gcnew System::Windows::Forms::TabControl());
 			this->tabPage5 = (gcnew System::Windows::Forms::TabPage());
-			this->button29 = (gcnew System::Windows::Forms::Button());
-			this->button30 = (gcnew System::Windows::Forms::Button());
+			this->buttonDemarque2 = (gcnew System::Windows::Forms::Button());
+			this->buttonDemarque3 = (gcnew System::Windows::Forms::Button());
+			this->buttonDemarque5 = (gcnew System::Windows::Forms::Button());
+			this->buttonRemise3 = (gcnew System::Windows::Forms::Button());
+			this->buttonRemise5 = (gcnew System::Windows::Forms::Button());
+			this->buttonRemise6 = (gcnew System::Windows::Forms::Button());
+			this->buttonMarge5 = (gcnew System::Windows::Forms::Button());
+			this->buttonMarge10 = (gcnew System::Windows::Forms::Button());
+			this->buttonMarge15 = (gcnew System::Windows::Forms::Button());
+			this->buttonTVA5 = (gcnew System::Windows::Forms::Button());
+			this->buttonTVA10 = (gcnew System::Windows::Forms::Button());
+			this->buttonTVA20 = (gcnew System::Windows::Forms::Button());
 			this->label42 = (gcnew System::Windows::Forms::Label());
-			this->button31 = (gcnew System::Windows::Forms::Button());
-			this->button26 = (gcnew System::Windows::Forms::Button());
-			this->button27 = (gcnew System::Windows::Forms::Button());
 			this->label41 = (gcnew System::Windows::Forms::Label());
-			this->button28 = (gcnew System::Windows::Forms::Button());
-			this->button23 = (gcnew System::Windows::Forms::Button());
-			this->button24 = (gcnew System::Windows::Forms::Button());
 			this->label40 = (gcnew System::Windows::Forms::Label());
-			this->button25 = (gcnew System::Windows::Forms::Button());
-			this->button22 = (gcnew System::Windows::Forms::Button());
-			this->button21 = (gcnew System::Windows::Forms::Button());
 			this->label39 = (gcnew System::Windows::Forms::Label());
-			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->label38 = (gcnew System::Windows::Forms::Label());
-			this->textBox31 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxValComAuto = (gcnew System::Windows::Forms::TextBox());
 			this->tabPage6 = (gcnew System::Windows::Forms::TabPage());
+			this->numericUpDownDemarque = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDownMarge = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDownRemise = (gcnew System::Windows::Forms::NumericUpDown());
+			this->numericUpDownTVA = (gcnew System::Windows::Forms::NumericUpDown());
 			this->button19 = (gcnew System::Windows::Forms::Button());
 			this->label35 = (gcnew System::Windows::Forms::Label());
-			this->textBox30 = (gcnew System::Windows::Forms::TextBox());
 			this->label33 = (gcnew System::Windows::Forms::Label());
 			this->label37 = (gcnew System::Windows::Forms::Label());
-			this->textBox26 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox29 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxValComPers = (gcnew System::Windows::Forms::TextBox());
 			this->label34 = (gcnew System::Windows::Forms::Label());
 			this->label36 = (gcnew System::Windows::Forms::Label());
-			this->textBox27 = (gcnew System::Windows::Forms::TextBox());
-			this->textBox28 = (gcnew System::Windows::Forms::TextBox());
 			this->label32 = (gcnew System::Windows::Forms::Label());
-			this->textBox25 = (gcnew System::Windows::Forms::TextBox());
+			this->textBoxTotCli = (gcnew System::Windows::Forms::TextBox());
 			this->label31 = (gcnew System::Windows::Forms::Label());
 			this->label30 = (gcnew System::Windows::Forms::Label());
+			this->listBoxLessPurchased = (gcnew System::Windows::Forms::ListBox());
 			this->label29 = (gcnew System::Windows::Forms::Label());
+			this->listBoxMorePurchased = (gcnew System::Windows::Forms::ListBox());
 			this->label28 = (gcnew System::Windows::Forms::Label());
-			this->textBox24 = (gcnew System::Windows::Forms::TextBox());
+			this->listUnderThreshold = (gcnew System::Windows::Forms::ListBox());
+			this->textBoxChfAff = (gcnew System::Windows::Forms::TextBox());
 			this->label27 = (gcnew System::Windows::Forms::Label());
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionStaff = (gcnew System::Windows::Forms::TabPage());
@@ -419,12 +477,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPageGestionStock->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			this->tabPageGestionStat->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView8))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView7))->BeginInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->BeginInit();
-			this->tabControl2->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->BeginInit();
+			this->tabControlSimuModeSwitch->SuspendLayout();
 			this->tabPage5->SuspendLayout();
 			this->tabPage6->SuspendLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownDemarque))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownMarge))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRemise))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTVA))->BeginInit();
 			this->tabPageGestionStaff->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Staff))->BeginInit();
 			this->tabPageGestionPersonne->SuspendLayout();
@@ -444,6 +504,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(952, 426);
 			this->tabControl1->TabIndex = 8;
+			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControl1_SelectedIndexChanged);
 			// 
 			// tabPageGestionClient
 			// 
@@ -1175,17 +1236,22 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			// 
 			// tabPageGestionStat
 			// 
-			this->tabPageGestionStat->Controls->Add(this->dataGridView8);
-			this->tabPageGestionStat->Controls->Add(this->dataGridView7);
-			this->tabPageGestionStat->Controls->Add(this->dataGridView6);
-			this->tabPageGestionStat->Controls->Add(this->tabControl2);
+			this->tabPageGestionStat->Controls->Add(this->numericUpDown1);
+			this->tabPageGestionStat->Controls->Add(this->comboBox1);
+			this->tabPageGestionStat->Controls->Add(this->textBoxValAch);
+			this->tabPageGestionStat->Controls->Add(this->textBoxPanierAvg);
+			this->tabPageGestionStat->Controls->Add(this->buttonStaffReload);
+			this->tabPageGestionStat->Controls->Add(this->tabControlSimuModeSwitch);
 			this->tabPageGestionStat->Controls->Add(this->label32);
-			this->tabPageGestionStat->Controls->Add(this->textBox25);
+			this->tabPageGestionStat->Controls->Add(this->textBoxTotCli);
 			this->tabPageGestionStat->Controls->Add(this->label31);
 			this->tabPageGestionStat->Controls->Add(this->label30);
+			this->tabPageGestionStat->Controls->Add(this->listBoxLessPurchased);
 			this->tabPageGestionStat->Controls->Add(this->label29);
+			this->tabPageGestionStat->Controls->Add(this->listBoxMorePurchased);
 			this->tabPageGestionStat->Controls->Add(this->label28);
-			this->tabPageGestionStat->Controls->Add(this->textBox24);
+			this->tabPageGestionStat->Controls->Add(this->listUnderThreshold);
+			this->tabPageGestionStat->Controls->Add(this->textBoxChfAff);
 			this->tabPageGestionStat->Controls->Add(this->label27);
 			this->tabPageGestionStat->Controls->Add(this->label26);
 			this->tabPageGestionStat->Location = System::Drawing::Point(4, 22);
@@ -1196,69 +1262,84 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPageGestionStat->Text = L"Gestion stat";
 			this->tabPageGestionStat->UseVisualStyleBackColor = true;
 			// 
-			// dataGridView8
+			// numericUpDown1
 			// 
-			this->dataGridView8->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView8->Location = System::Drawing::Point(177, 285);
-			this->dataGridView8->Margin = System::Windows::Forms::Padding(2);
-			this->dataGridView8->Name = L"dataGridView8";
-			this->dataGridView8->RowHeadersWidth = 62;
-			this->dataGridView8->RowTemplate->Height = 28;
-			this->dataGridView8->Size = System::Drawing::Size(182, 86);
-			this->dataGridView8->TabIndex = 52;
+			this->numericUpDown1->Location = System::Drawing::Point(408, 104);
+			this->numericUpDown1->Maximum = System::Decimal(gcnew cli::array< System::Int32 >(4) { -559939585, 902409669, 54, 0 });
+			this->numericUpDown1->Minimum = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown1->Name = L"numericUpDown1";
+			this->numericUpDown1->Size = System::Drawing::Size(37, 20);
+			this->numericUpDown1->TabIndex = 72;
+			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDown1_ValueChanged);
 			// 
-			// dataGridView7
+			// comboBox1
 			// 
-			this->dataGridView7->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView7->Location = System::Drawing::Point(20, 153);
-			this->dataGridView7->Margin = System::Windows::Forms::Padding(2);
-			this->dataGridView7->Name = L"dataGridView7";
-			this->dataGridView7->RowHeadersWidth = 62;
-			this->dataGridView7->RowTemplate->Height = 28;
-			this->dataGridView7->Size = System::Drawing::Size(159, 70);
-			this->dataGridView7->TabIndex = 51;
+			this->comboBox1->FormattingEnabled = true;
+			this->comboBox1->Items->AddRange(gcnew cli::array< System::Object^  >(12) {
+				L"Jan", L"Feb", L"Mar", L"Apr", L"May", L"Jun",
+					L"Jul", L"Aug", L"Sep", L"Oct", L"Nov", L"Dec"
+			});
+			this->comboBox1->Location = System::Drawing::Point(135, 104);
+			this->comboBox1->Name = L"comboBox1";
+			this->comboBox1->Size = System::Drawing::Size(38, 21);
+			this->comboBox1->TabIndex = 71;
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::comboBox1_SelectedIndexChanged);
 			// 
-			// dataGridView6
+			// textBoxValAch
 			// 
-			this->dataGridView6->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView6->Location = System::Drawing::Point(290, 153);
-			this->dataGridView6->Margin = System::Windows::Forms::Padding(2);
-			this->dataGridView6->Name = L"dataGridView6";
-			this->dataGridView6->RowHeadersWidth = 62;
-			this->dataGridView6->RowTemplate->Height = 28;
-			this->dataGridView6->Size = System::Drawing::Size(159, 70);
-			this->dataGridView6->TabIndex = 50;
+			this->textBoxValAch->Location = System::Drawing::Point(290, 37);
+			this->textBoxValAch->Name = L"textBoxValAch";
+			this->textBoxValAch->Size = System::Drawing::Size(115, 20);
+			this->textBoxValAch->TabIndex = 70;
 			// 
-			// tabControl2
+			// textBoxPanierAvg
 			// 
-			this->tabControl2->Controls->Add(this->tabPage5);
-			this->tabControl2->Controls->Add(this->tabPage6);
-			this->tabControl2->Location = System::Drawing::Point(556, 23);
-			this->tabControl2->Name = L"tabControl2";
-			this->tabControl2->SelectedIndex = 0;
-			this->tabControl2->Size = System::Drawing::Size(372, 349);
-			this->tabControl2->TabIndex = 49;
+			this->textBoxPanierAvg->Location = System::Drawing::Point(19, 37);
+			this->textBoxPanierAvg->Name = L"textBoxPanierAvg";
+			this->textBoxPanierAvg->Size = System::Drawing::Size(115, 20);
+			this->textBoxPanierAvg->TabIndex = 69;
+			// 
+			// buttonStaffReload
+			// 
+			this->buttonStaffReload->Location = System::Drawing::Point(19, 362);
+			this->buttonStaffReload->Name = L"buttonStaffReload";
+			this->buttonStaffReload->Size = System::Drawing::Size(82, 23);
+			this->buttonStaffReload->TabIndex = 68;
+			this->buttonStaffReload->Text = L"Reload Page";
+			this->buttonStaffReload->UseVisualStyleBackColor = true;
+			this->buttonStaffReload->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonStaffReload_Click);
+			// 
+			// tabControlSimuModeSwitch
+			// 
+			this->tabControlSimuModeSwitch->Controls->Add(this->tabPage5);
+			this->tabControlSimuModeSwitch->Controls->Add(this->tabPage6);
+			this->tabControlSimuModeSwitch->Location = System::Drawing::Point(556, 25);
+			this->tabControlSimuModeSwitch->Name = L"tabControlSimuModeSwitch";
+			this->tabControlSimuModeSwitch->SelectedIndex = 0;
+			this->tabControlSimuModeSwitch->Size = System::Drawing::Size(372, 349);
+			this->tabControlSimuModeSwitch->TabIndex = 67;
 			// 
 			// tabPage5
 			// 
-			this->tabPage5->Controls->Add(this->button29);
-			this->tabPage5->Controls->Add(this->button30);
+			this->tabPage5->Controls->Add(this->buttonDemarque2);
+			this->tabPage5->Controls->Add(this->buttonDemarque3);
+			this->tabPage5->Controls->Add(this->buttonDemarque5);
+			this->tabPage5->Controls->Add(this->buttonRemise3);
+			this->tabPage5->Controls->Add(this->buttonRemise5);
+			this->tabPage5->Controls->Add(this->buttonRemise6);
+			this->tabPage5->Controls->Add(this->buttonMarge5);
+			this->tabPage5->Controls->Add(this->buttonMarge10);
+			this->tabPage5->Controls->Add(this->buttonMarge15);
+			this->tabPage5->Controls->Add(this->buttonTVA5);
+			this->tabPage5->Controls->Add(this->buttonTVA10);
+			this->tabPage5->Controls->Add(this->buttonTVA20);
 			this->tabPage5->Controls->Add(this->label42);
-			this->tabPage5->Controls->Add(this->button31);
-			this->tabPage5->Controls->Add(this->button26);
-			this->tabPage5->Controls->Add(this->button27);
 			this->tabPage5->Controls->Add(this->label41);
-			this->tabPage5->Controls->Add(this->button28);
-			this->tabPage5->Controls->Add(this->button23);
-			this->tabPage5->Controls->Add(this->button24);
 			this->tabPage5->Controls->Add(this->label40);
-			this->tabPage5->Controls->Add(this->button25);
-			this->tabPage5->Controls->Add(this->button22);
-			this->tabPage5->Controls->Add(this->button21);
 			this->tabPage5->Controls->Add(this->label39);
-			this->tabPage5->Controls->Add(this->button20);
 			this->tabPage5->Controls->Add(this->label38);
-			this->tabPage5->Controls->Add(this->textBox31);
+			this->tabPage5->Controls->Add(this->textBoxValComAuto);
 			this->tabPage5->Location = System::Drawing::Point(4, 22);
 			this->tabPage5->Name = L"tabPage5";
 			this->tabPage5->Padding = System::Windows::Forms::Padding(3);
@@ -1267,23 +1348,129 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPage5->Text = L"Valeur commerciale defaut";
 			this->tabPage5->UseVisualStyleBackColor = true;
 			// 
-			// button29
+			// buttonDemarque2
 			// 
-			this->button29->Location = System::Drawing::Point(263, 260);
-			this->button29->Name = L"button29";
-			this->button29->Size = System::Drawing::Size(75, 23);
-			this->button29->TabIndex = 65;
-			this->button29->Text = L"2%";
-			this->button29->UseVisualStyleBackColor = true;
+			this->buttonDemarque2->Location = System::Drawing::Point(271, 260);
+			this->buttonDemarque2->Name = L"buttonDemarque2";
+			this->buttonDemarque2->Size = System::Drawing::Size(60, 23);
+			this->buttonDemarque2->TabIndex = 75;
+			this->buttonDemarque2->Text = L"2%";
+			this->buttonDemarque2->UseVisualStyleBackColor = true;
+			this->buttonDemarque2->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque2_Click);
 			// 
-			// button30
+			// buttonDemarque3
 			// 
-			this->button30->Location = System::Drawing::Point(148, 260);
-			this->button30->Name = L"button30";
-			this->button30->Size = System::Drawing::Size(75, 23);
-			this->button30->TabIndex = 64;
-			this->button30->Text = L"3%";
-			this->button30->UseVisualStyleBackColor = true;
+			this->buttonDemarque3->Location = System::Drawing::Point(159, 260);
+			this->buttonDemarque3->Name = L"buttonDemarque3";
+			this->buttonDemarque3->Size = System::Drawing::Size(60, 23);
+			this->buttonDemarque3->TabIndex = 74;
+			this->buttonDemarque3->Text = L"3%";
+			this->buttonDemarque3->UseVisualStyleBackColor = true;
+			this->buttonDemarque3->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque3_Click);
+			// 
+			// buttonDemarque5
+			// 
+			this->buttonDemarque5->Enabled = false;
+			this->buttonDemarque5->Location = System::Drawing::Point(42, 260);
+			this->buttonDemarque5->Name = L"buttonDemarque5";
+			this->buttonDemarque5->Size = System::Drawing::Size(60, 23);
+			this->buttonDemarque5->TabIndex = 73;
+			this->buttonDemarque5->Text = L"5%";
+			this->buttonDemarque5->UseVisualStyleBackColor = true;
+			this->buttonDemarque5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque5_Click);
+			// 
+			// buttonRemise3
+			// 
+			this->buttonRemise3->Location = System::Drawing::Point(271, 214);
+			this->buttonRemise3->Name = L"buttonRemise3";
+			this->buttonRemise3->Size = System::Drawing::Size(60, 23);
+			this->buttonRemise3->TabIndex = 72;
+			this->buttonRemise3->Text = L"3%";
+			this->buttonRemise3->UseVisualStyleBackColor = true;
+			this->buttonRemise3->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise3_Click);
+			// 
+			// buttonRemise5
+			// 
+			this->buttonRemise5->Location = System::Drawing::Point(159, 214);
+			this->buttonRemise5->Name = L"buttonRemise5";
+			this->buttonRemise5->Size = System::Drawing::Size(60, 23);
+			this->buttonRemise5->TabIndex = 71;
+			this->buttonRemise5->Text = L"5%";
+			this->buttonRemise5->UseVisualStyleBackColor = true;
+			this->buttonRemise5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise5_Click);
+			// 
+			// buttonRemise6
+			// 
+			this->buttonRemise6->Enabled = false;
+			this->buttonRemise6->Location = System::Drawing::Point(42, 214);
+			this->buttonRemise6->Name = L"buttonRemise6";
+			this->buttonRemise6->Size = System::Drawing::Size(60, 23);
+			this->buttonRemise6->TabIndex = 70;
+			this->buttonRemise6->Text = L"6%";
+			this->buttonRemise6->UseVisualStyleBackColor = true;
+			this->buttonRemise6->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise6_Click);
+			// 
+			// buttonMarge5
+			// 
+			this->buttonMarge5->Location = System::Drawing::Point(271, 166);
+			this->buttonMarge5->Name = L"buttonMarge5";
+			this->buttonMarge5->Size = System::Drawing::Size(60, 23);
+			this->buttonMarge5->TabIndex = 69;
+			this->buttonMarge5->Text = L"5%";
+			this->buttonMarge5->UseVisualStyleBackColor = true;
+			this->buttonMarge5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge5_Click);
+			// 
+			// buttonMarge10
+			// 
+			this->buttonMarge10->Location = System::Drawing::Point(159, 166);
+			this->buttonMarge10->Name = L"buttonMarge10";
+			this->buttonMarge10->Size = System::Drawing::Size(60, 23);
+			this->buttonMarge10->TabIndex = 68;
+			this->buttonMarge10->Text = L"10%";
+			this->buttonMarge10->UseVisualStyleBackColor = true;
+			this->buttonMarge10->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge10_Click);
+			// 
+			// buttonMarge15
+			// 
+			this->buttonMarge15->Enabled = false;
+			this->buttonMarge15->Location = System::Drawing::Point(42, 166);
+			this->buttonMarge15->Name = L"buttonMarge15";
+			this->buttonMarge15->Size = System::Drawing::Size(60, 23);
+			this->buttonMarge15->TabIndex = 67;
+			this->buttonMarge15->Text = L"15%";
+			this->buttonMarge15->UseVisualStyleBackColor = true;
+			this->buttonMarge15->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge15_Click);
+			// 
+			// buttonTVA5
+			// 
+			this->buttonTVA5->Location = System::Drawing::Point(271, 120);
+			this->buttonTVA5->Name = L"buttonTVA5";
+			this->buttonTVA5->Size = System::Drawing::Size(60, 23);
+			this->buttonTVA5->TabIndex = 66;
+			this->buttonTVA5->Text = L"5.5%";
+			this->buttonTVA5->UseVisualStyleBackColor = true;
+			this->buttonTVA5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA5_Click);
+			// 
+			// buttonTVA10
+			// 
+			this->buttonTVA10->Location = System::Drawing::Point(159, 120);
+			this->buttonTVA10->Name = L"buttonTVA10";
+			this->buttonTVA10->Size = System::Drawing::Size(60, 23);
+			this->buttonTVA10->TabIndex = 65;
+			this->buttonTVA10->Text = L"10%";
+			this->buttonTVA10->UseVisualStyleBackColor = true;
+			this->buttonTVA10->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA10_Click);
+			// 
+			// buttonTVA20
+			// 
+			this->buttonTVA20->Enabled = false;
+			this->buttonTVA20->Location = System::Drawing::Point(42, 120);
+			this->buttonTVA20->Name = L"buttonTVA20";
+			this->buttonTVA20->Size = System::Drawing::Size(60, 23);
+			this->buttonTVA20->TabIndex = 64;
+			this->buttonTVA20->Text = L"20%";
+			this->buttonTVA20->UseVisualStyleBackColor = true;
+			this->buttonTVA20->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA20_Click);
 			// 
 			// label42
 			// 
@@ -1294,33 +1481,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label42->TabIndex = 63;
 			this->label42->Text = L"Demarque";
 			// 
-			// button31
-			// 
-			this->button31->Location = System::Drawing::Point(24, 260);
-			this->button31->Name = L"button31";
-			this->button31->Size = System::Drawing::Size(75, 23);
-			this->button31->TabIndex = 62;
-			this->button31->Text = L"5%";
-			this->button31->UseVisualStyleBackColor = true;
-			// 
-			// button26
-			// 
-			this->button26->Location = System::Drawing::Point(263, 214);
-			this->button26->Name = L"button26";
-			this->button26->Size = System::Drawing::Size(75, 23);
-			this->button26->TabIndex = 61;
-			this->button26->Text = L"2%";
-			this->button26->UseVisualStyleBackColor = true;
-			// 
-			// button27
-			// 
-			this->button27->Location = System::Drawing::Point(148, 214);
-			this->button27->Name = L"button27";
-			this->button27->Size = System::Drawing::Size(75, 23);
-			this->button27->TabIndex = 60;
-			this->button27->Text = L"3%";
-			this->button27->UseVisualStyleBackColor = true;
-			// 
 			// label41
 			// 
 			this->label41->AutoSize = true;
@@ -1329,33 +1489,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label41->Size = System::Drawing::Size(42, 13);
 			this->label41->TabIndex = 59;
 			this->label41->Text = L"Remise";
-			// 
-			// button28
-			// 
-			this->button28->Location = System::Drawing::Point(24, 214);
-			this->button28->Name = L"button28";
-			this->button28->Size = System::Drawing::Size(75, 23);
-			this->button28->TabIndex = 58;
-			this->button28->Text = L"6%";
-			this->button28->UseVisualStyleBackColor = true;
-			// 
-			// button23
-			// 
-			this->button23->Location = System::Drawing::Point(263, 166);
-			this->button23->Name = L"button23";
-			this->button23->Size = System::Drawing::Size(75, 23);
-			this->button23->TabIndex = 57;
-			this->button23->Text = L"5%";
-			this->button23->UseVisualStyleBackColor = true;
-			// 
-			// button24
-			// 
-			this->button24->Location = System::Drawing::Point(148, 166);
-			this->button24->Name = L"button24";
-			this->button24->Size = System::Drawing::Size(75, 23);
-			this->button24->TabIndex = 56;
-			this->button24->Text = L"10%";
-			this->button24->UseVisualStyleBackColor = true;
 			// 
 			// label40
 			// 
@@ -1366,33 +1499,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label40->TabIndex = 55;
 			this->label40->Text = L"Marge";
 			// 
-			// button25
-			// 
-			this->button25->Location = System::Drawing::Point(24, 166);
-			this->button25->Name = L"button25";
-			this->button25->Size = System::Drawing::Size(75, 23);
-			this->button25->TabIndex = 54;
-			this->button25->Text = L"15%";
-			this->button25->UseVisualStyleBackColor = true;
-			// 
-			// button22
-			// 
-			this->button22->Location = System::Drawing::Point(263, 122);
-			this->button22->Name = L"button22";
-			this->button22->Size = System::Drawing::Size(75, 23);
-			this->button22->TabIndex = 53;
-			this->button22->Text = L"5,5%";
-			this->button22->UseVisualStyleBackColor = true;
-			// 
-			// button21
-			// 
-			this->button21->Location = System::Drawing::Point(148, 122);
-			this->button21->Name = L"button21";
-			this->button21->Size = System::Drawing::Size(75, 23);
-			this->button21->TabIndex = 52;
-			this->button21->Text = L"10%";
-			this->button21->UseVisualStyleBackColor = true;
-			// 
 			// label39
 			// 
 			this->label39->AutoSize = true;
@@ -1401,15 +1507,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label39->Size = System::Drawing::Size(28, 13);
 			this->label39->TabIndex = 51;
 			this->label39->Text = L"TVA";
-			// 
-			// button20
-			// 
-			this->button20->Location = System::Drawing::Point(24, 122);
-			this->button20->Name = L"button20";
-			this->button20->Size = System::Drawing::Size(75, 23);
-			this->button20->TabIndex = 50;
-			this->button20->Text = L"20%";
-			this->button20->UseVisualStyleBackColor = true;
 			// 
 			// label38
 			// 
@@ -1422,26 +1519,26 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label38->TabIndex = 41;
 			this->label38->Text = L"Valeur commerciale";
 			// 
-			// textBox31
+			// textBoxValComAuto
 			// 
-			this->textBox31->Location = System::Drawing::Point(134, 57);
-			this->textBox31->Name = L"textBox31";
-			this->textBox31->Size = System::Drawing::Size(115, 20);
-			this->textBox31->TabIndex = 42;
+			this->textBoxValComAuto->Location = System::Drawing::Point(134, 57);
+			this->textBoxValComAuto->Name = L"textBoxValComAuto";
+			this->textBoxValComAuto->Size = System::Drawing::Size(115, 20);
+			this->textBoxValComAuto->TabIndex = 42;
 			// 
 			// tabPage6
 			// 
+			this->tabPage6->Controls->Add(this->numericUpDownDemarque);
+			this->tabPage6->Controls->Add(this->numericUpDownMarge);
+			this->tabPage6->Controls->Add(this->numericUpDownRemise);
+			this->tabPage6->Controls->Add(this->numericUpDownTVA);
 			this->tabPage6->Controls->Add(this->button19);
 			this->tabPage6->Controls->Add(this->label35);
-			this->tabPage6->Controls->Add(this->textBox30);
 			this->tabPage6->Controls->Add(this->label33);
 			this->tabPage6->Controls->Add(this->label37);
-			this->tabPage6->Controls->Add(this->textBox26);
-			this->tabPage6->Controls->Add(this->textBox29);
+			this->tabPage6->Controls->Add(this->textBoxValComPers);
 			this->tabPage6->Controls->Add(this->label34);
 			this->tabPage6->Controls->Add(this->label36);
-			this->tabPage6->Controls->Add(this->textBox27);
-			this->tabPage6->Controls->Add(this->textBox28);
 			this->tabPage6->Location = System::Drawing::Point(4, 22);
 			this->tabPage6->Name = L"tabPage6";
 			this->tabPage6->Padding = System::Windows::Forms::Padding(3);
@@ -1449,6 +1546,38 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPage6->TabIndex = 1;
 			this->tabPage6->Text = L"Valeur commerciale parametrable";
 			this->tabPage6->UseVisualStyleBackColor = true;
+			// 
+			// numericUpDownDemarque
+			// 
+			this->numericUpDownDemarque->Location = System::Drawing::Point(205, 134);
+			this->numericUpDownDemarque->Name = L"numericUpDownDemarque";
+			this->numericUpDownDemarque->Size = System::Drawing::Size(120, 20);
+			this->numericUpDownDemarque->TabIndex = 53;
+			this->numericUpDownDemarque->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownDemarque_ValueChanged);
+			// 
+			// numericUpDownMarge
+			// 
+			this->numericUpDownMarge->Location = System::Drawing::Point(38, 72);
+			this->numericUpDownMarge->Name = L"numericUpDownMarge";
+			this->numericUpDownMarge->Size = System::Drawing::Size(120, 20);
+			this->numericUpDownMarge->TabIndex = 52;
+			this->numericUpDownMarge->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownMarge_ValueChanged);
+			// 
+			// numericUpDownRemise
+			// 
+			this->numericUpDownRemise->Location = System::Drawing::Point(205, 72);
+			this->numericUpDownRemise->Name = L"numericUpDownRemise";
+			this->numericUpDownRemise->Size = System::Drawing::Size(120, 20);
+			this->numericUpDownRemise->TabIndex = 51;
+			this->numericUpDownRemise->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownRemise_ValueChanged);
+			// 
+			// numericUpDownTVA
+			// 
+			this->numericUpDownTVA->Location = System::Drawing::Point(38, 134);
+			this->numericUpDownTVA->Name = L"numericUpDownTVA";
+			this->numericUpDownTVA->Size = System::Drawing::Size(120, 20);
+			this->numericUpDownTVA->TabIndex = 50;
+			this->numericUpDownTVA->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownTVA_ValueChanged);
 			// 
 			// button19
 			// 
@@ -1458,7 +1587,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->button19->TabIndex = 49;
 			this->button19->Text = L"Calculer";
 			this->button19->UseVisualStyleBackColor = true;
-			this->button19->Click += gcnew System::EventHandler(this, &InterfaceManager::button19_Click);
 			// 
 			// label35
 			// 
@@ -1470,13 +1598,6 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label35->Size = System::Drawing::Size(149, 18);
 			this->label35->TabIndex = 43;
 			this->label35->Text = L"Remise commerciale";
-			// 
-			// textBox30
-			// 
-			this->textBox30->Location = System::Drawing::Point(205, 134);
-			this->textBox30->Name = L"textBox30";
-			this->textBox30->Size = System::Drawing::Size(115, 20);
-			this->textBox30->TabIndex = 48;
 			// 
 			// label33
 			// 
@@ -1499,28 +1620,20 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label37->Size = System::Drawing::Size(141, 18);
 			this->label37->TabIndex = 47;
 			this->label37->Text = L"Demarque inconnue";
-			this->label37->Click += gcnew System::EventHandler(this, &InterfaceManager::label37_Click);
 			// 
-			// textBox26
+			// textBoxValComPers
 			// 
-			this->textBox26->Location = System::Drawing::Point(120, 217);
-			this->textBox26->Name = L"textBox26";
-			this->textBox26->Size = System::Drawing::Size(115, 20);
-			this->textBox26->TabIndex = 40;
-			// 
-			// textBox29
-			// 
-			this->textBox29->Location = System::Drawing::Point(30, 134);
-			this->textBox29->Name = L"textBox29";
-			this->textBox29->Size = System::Drawing::Size(115, 20);
-			this->textBox29->TabIndex = 46;
+			this->textBoxValComPers->Location = System::Drawing::Point(120, 217);
+			this->textBoxValComPers->Name = L"textBoxValComPers";
+			this->textBoxValComPers->Size = System::Drawing::Size(115, 20);
+			this->textBoxValComPers->TabIndex = 40;
 			// 
 			// label34
 			// 
 			this->label34->AutoSize = true;
 			this->label34->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label34->Location = System::Drawing::Point(18, 51);
+			this->label34->Location = System::Drawing::Point(27, 51);
 			this->label34->Name = L"label34";
 			this->label34->Size = System::Drawing::Size(140, 18);
 			this->label34->TabIndex = 41;
@@ -1531,53 +1644,39 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label36->AutoSize = true;
 			this->label36->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label36->Location = System::Drawing::Point(72, 113);
+			this->label36->Location = System::Drawing::Point(81, 113);
 			this->label36->Name = L"label36";
 			this->label36->Size = System::Drawing::Size(35, 18);
 			this->label36->TabIndex = 45;
 			this->label36->Text = L"TVA";
-			// 
-			// textBox27
-			// 
-			this->textBox27->Location = System::Drawing::Point(30, 78);
-			this->textBox27->Name = L"textBox27";
-			this->textBox27->Size = System::Drawing::Size(115, 20);
-			this->textBox27->TabIndex = 42;
-			// 
-			// textBox28
-			// 
-			this->textBox28->Location = System::Drawing::Point(205, 78);
-			this->textBox28->Name = L"textBox28";
-			this->textBox28->Size = System::Drawing::Size(115, 20);
-			this->textBox28->TabIndex = 44;
 			// 
 			// label32
 			// 
 			this->label32->AutoSize = true;
 			this->label32->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label32->Location = System::Drawing::Point(281, 14);
+			this->label32->Location = System::Drawing::Point(281, 16);
 			this->label32->Name = L"label32";
 			this->label32->Size = System::Drawing::Size(173, 18);
-			this->label32->TabIndex = 38;
+			this->label32->TabIndex = 66;
 			this->label32->Text = L"Valeur  d\'achat du stock :";
 			// 
-			// textBox25
+			// textBoxTotCli
 			// 
-			this->textBox25->Location = System::Drawing::Point(290, 76);
-			this->textBox25->Name = L"textBox25";
-			this->textBox25->Size = System::Drawing::Size(115, 20);
-			this->textBox25->TabIndex = 37;
+			this->textBoxTotCli->Location = System::Drawing::Point(290, 104);
+			this->textBoxTotCli->Name = L"textBoxTotCli";
+			this->textBoxTotCli->Size = System::Drawing::Size(115, 20);
+			this->textBoxTotCli->TabIndex = 65;
 			// 
 			// label31
 			// 
 			this->label31->AutoSize = true;
 			this->label31->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label31->Location = System::Drawing::Point(287, 49);
+			this->label31->Location = System::Drawing::Point(287, 77);
 			this->label31->Name = L"label31";
 			this->label31->Size = System::Drawing::Size(167, 18);
-			this->label31->TabIndex = 36;
+			this->label31->TabIndex = 64;
 			this->label31->Text = L"Montant total d\'un client:";
 			// 
 			// label30
@@ -1585,50 +1684,74 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label30->AutoSize = true;
 			this->label30->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label30->Location = System::Drawing::Point(287, 123);
+			this->label30->Location = System::Drawing::Point(287, 146);
 			this->label30->Name = L"label30";
 			this->label30->Size = System::Drawing::Size(168, 15);
-			this->label30->TabIndex = 15;
+			this->label30->TabIndex = 58;
 			this->label30->Text = L"10 articles plus moins vendus";
+			// 
+			// listBoxLessPurchased
+			// 
+			this->listBoxLessPurchased->FormattingEnabled = true;
+			this->listBoxLessPurchased->Location = System::Drawing::Point(290, 167);
+			this->listBoxLessPurchased->Name = L"listBoxLessPurchased";
+			this->listBoxLessPurchased->Size = System::Drawing::Size(155, 69);
+			this->listBoxLessPurchased->TabIndex = 63;
 			// 
 			// label29
 			// 
 			this->label29->AutoSize = true;
 			this->label29->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label29->Location = System::Drawing::Point(17, 123);
+			this->label29->Location = System::Drawing::Point(16, 146);
 			this->label29->Name = L"label29";
 			this->label29->Size = System::Drawing::Size(150, 15);
-			this->label29->TabIndex = 34;
+			this->label29->TabIndex = 62;
 			this->label29->Text = L"10 articles les plus vendus";
+			// 
+			// listBoxMorePurchased
+			// 
+			this->listBoxMorePurchased->FormattingEnabled = true;
+			this->listBoxMorePurchased->Location = System::Drawing::Point(19, 167);
+			this->listBoxMorePurchased->Name = L"listBoxMorePurchased";
+			this->listBoxMorePurchased->Size = System::Drawing::Size(154, 69);
+			this->listBoxMorePurchased->TabIndex = 57;
 			// 
 			// label28
 			// 
 			this->label28->AutoSize = true;
 			this->label28->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 9, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label28->Location = System::Drawing::Point(148, 250);
+			this->label28->Location = System::Drawing::Point(16, 253);
 			this->label28->Name = L"label28";
 			this->label28->Size = System::Drawing::Size(246, 15);
-			this->label28->TabIndex = 32;
-			this->label28->Text = L"Produits sous seuil de r�approvisionnement";
+			this->label28->TabIndex = 61;
+			this->label28->Text = L"Produits sous seuil de réapprovisionnement";
 			// 
-			// textBox24
+			// listUnderThreshold
 			// 
-			this->textBox24->Location = System::Drawing::Point(19, 76);
-			this->textBox24->Name = L"textBox24";
-			this->textBox24->Size = System::Drawing::Size(115, 20);
-			this->textBox24->TabIndex = 30;
+			this->listUnderThreshold->FormattingEnabled = true;
+			this->listUnderThreshold->Location = System::Drawing::Point(19, 274);
+			this->listUnderThreshold->Name = L"listUnderThreshold";
+			this->listUnderThreshold->Size = System::Drawing::Size(426, 82);
+			this->listUnderThreshold->TabIndex = 60;
+			// 
+			// textBoxChfAff
+			// 
+			this->textBoxChfAff->Location = System::Drawing::Point(19, 104);
+			this->textBoxChfAff->Name = L"textBoxChfAff";
+			this->textBoxChfAff->Size = System::Drawing::Size(115, 20);
+			this->textBoxChfAff->TabIndex = 59;
 			// 
 			// label27
 			// 
 			this->label27->AutoSize = true;
 			this->label27->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label27->Location = System::Drawing::Point(16, 49);
+			this->label27->Location = System::Drawing::Point(16, 77);
 			this->label27->Name = L"label27";
 			this->label27->Size = System::Drawing::Size(167, 18);
-			this->label27->TabIndex = 1;
+			this->label27->TabIndex = 56;
 			this->label27->Text = L"Chiffre d\'affaire du mois:";
 			// 
 			// label26
@@ -1636,12 +1759,11 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label26->AutoSize = true;
 			this->label26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 11.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(0)));
-			this->label26->Location = System::Drawing::Point(16, 14);
+			this->label26->Location = System::Drawing::Point(16, 16);
 			this->label26->Name = L"label26";
 			this->label26->Size = System::Drawing::Size(111, 18);
-			this->label26->TabIndex = 0;
+			this->label26->TabIndex = 55;
 			this->label26->Text = L"Panier moyen : ";
-			this->label26->Click += gcnew System::EventHandler(this, &InterfaceManager::label26_Click);
 			// 
 			// tabPageGestionStaff
 			// 
@@ -2098,14 +2220,16 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			this->tabPageGestionStat->ResumeLayout(false);
 			this->tabPageGestionStat->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView8))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView7))->EndInit();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView6))->EndInit();
-			this->tabControl2->ResumeLayout(false);
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDown1))->EndInit();
+			this->tabControlSimuModeSwitch->ResumeLayout(false);
 			this->tabPage5->ResumeLayout(false);
 			this->tabPage5->PerformLayout();
 			this->tabPage6->ResumeLayout(false);
 			this->tabPage6->PerformLayout();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownDemarque))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownMarge))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownRemise))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->numericUpDownTVA))->EndInit();
 			this->tabPageGestionStaff->ResumeLayout(false);
 			this->tabPageGestionStaff->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Staff))->EndInit();
@@ -2480,5 +2604,205 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 	this->loadDataStaff(this->index);
 	this->textStaffAffiche->Text += "Traitement terminé.";
 }
+	// Statistics
+	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		// Chiffre d'affaire
+		int iind = this->comboBox1->Items->IndexOf(this->comboBox1->Text) + 1;
+		if (iind >= 10) {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire(Convert::ToString(iind))) + " €";
+		}
+		else {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire("0" + Convert::ToString(iind))) + " €";
+		}
+	}
+	private: System::Void numericUpDown1_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (this->numericUpDown1->Value != 0) {
+			this->textBoxTotCli->Text = Convert::ToString(this->Stat_Service->Calcul_Montant_Total_client((int)this->numericUpDown1->Value)) + " €";
+		}
+		else {
+			MessageBox::Show("Error, client id can't be 0.");
+		}
+	}
+	private: System::Void Refresh_Simulation() {
+		this->textBoxValComAuto->Text = Convert::ToString(this->Stat_Service->Valeur_Commerciale_Stock()) + " €";
+		this->textBoxValComPers->Text = this->textBoxValComAuto->Text;
+	}
+	private: System::Void buttonTVA20_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_TVA(20);
+		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = false;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = true;
+	}
+	private: System::Void buttonTVA10_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_TVA(10);
+		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = false;
+		this->buttonTVA5->Enabled = true;
+	}
+	private: System::Void buttonTVA5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_TVA(5.5);
+		this->Refresh_Simulation();
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = false;
+	}
+	private: System::Void buttonMarge5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Marge(5);
+		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = false;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = true;
+	}
+	private: System::Void buttonMarge10_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Marge(10);
+		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = false;
+		this->buttonMarge15->Enabled = true;
+	}
+	private: System::Void buttonMarge15_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Marge(15);
+		this->Refresh_Simulation();
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = false;
+	}
+	private: System::Void buttonRemise6_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Remise(6);
+		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = false;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = true;
+	}
+	private: System::Void buttonRemise5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Remise(5);
+		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = false;
+		this->buttonRemise3->Enabled = true;
+	}
+	private: System::Void buttonRemise3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Remise(3);
+		this->Refresh_Simulation();
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = false;
+	}
+	private: System::Void buttonDemarque2_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Demarque(2);
+		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = false;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = true;
+	}
+	private: System::Void buttonDemarque3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Demarque(3);
+		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = false;
+		this->buttonDemarque5->Enabled = true;
+	}
+	private: System::Void buttonDemarque5_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Demarque(5);
+		this->Refresh_Simulation();
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = false;
+	}
+	// / Reset simulation buttons to enabled
+	private: System::Void Reset_Simu_Auto_Buttons() {
+		this->buttonDemarque2->Enabled = true;
+		this->buttonDemarque3->Enabled = true;
+		this->buttonDemarque5->Enabled = true;
+		this->buttonRemise6->Enabled = true;
+		this->buttonRemise5->Enabled = true;
+		this->buttonRemise3->Enabled = true;
+		this->buttonMarge5->Enabled = true;
+		this->buttonMarge10->Enabled = true;
+		this->buttonMarge15->Enabled = true;
+		this->buttonTVA20->Enabled = true;
+		this->buttonTVA10->Enabled = true;
+		this->buttonTVA5->Enabled = true;
+	}
+	// / Personalized simulation controllers
+	private: System::Void numericUpDownTVA_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_TVA(Convert::ToDouble(this->numericUpDownTVA->Value));
+		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
+	}
+	private: System::Void numericUpDownRemise_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Remise(Convert::ToDouble(this->numericUpDownRemise->Value));
+		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
+	}
+	private: System::Void numericUpDownDemarque_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Demarque(Convert::ToDouble(this->numericUpDownDemarque->Value));
+		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
+	}
+	private: System::Void numericUpDownMarge_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
+		this->Stat_Service->Set_Simu_Marge(Convert::ToDouble(this->numericUpDownMarge->Value));
+		this->Refresh_Simulation();
+		this->Reset_Simu_Auto_Buttons();
+	}
+	private: System::Void buttonStaffReload_Click(System::Object^ sender, System::EventArgs^ e) {
+		// Panier moyen
+		this->textBoxPanierAvg->Text = Convert::ToString(this->Stat_Service->Calcul_Panier()) + " €";
+
+		// Chiffre d'affaire
+		int iind = this->comboBox1->Items->IndexOf(this->comboBox1->Text) + 1;
+		if (iind >= 10) {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire(Convert::ToString(iind))) + " €";
+		}
+		else {
+			this->textBoxChfAff->Text = Convert::ToString(this->Stat_Service->Calcul_Chiffre_Affaire("0" + Convert::ToString(iind))) + " €";
+		}
+
+		// Montant total client
+		if (this->numericUpDown1->Value != 0) {
+			this->textBoxTotCli->Text = Convert::ToString(this->Stat_Service->Calcul_Montant_Total_client((int)this->numericUpDown1->Value)) + " €";
+		}
+		else {
+			MessageBox::Show("Error, client id can't be 0.");
+		}
+
+		array<String^>^ list;
+
+		// Articles les plus vendus
+		this->listBoxMorePurchased->Items->Clear();
+		list = this->Stat_Service->Articles_Plus_Vendus();
+		for (int i = 0; i < list->Length; i++) {
+			this->listBoxMorePurchased->Items->Add(list[i]);
+		}
+
+		// Articles les moins vendus
+		this->listBoxLessPurchased->Items->Clear();
+		list = this->Stat_Service->Articles_Moins_Vendus();
+		for (int i = 0; i < list->Length; i++) {
+			this->listBoxLessPurchased->Items->Add(list[i]);
+		}
+
+		// Calcul valeur d'achat
+		this->textBoxValAch->Text = Convert::ToString(this->Stat_Service->Valeur_Achat_Stock()) + " €";
+
+		// Produit sous le seuil
+		this->listUnderThreshold->Items->Clear();
+		list = this->Stat_Service->Produit_Sous_Seuil();
+		for (int i = 0; i < list->Length; i++) {
+			this->listUnderThreshold->Items->Add(list[i]);
+		}
+
+		// Valeur commerciale
+		this->Refresh_Simulation();
+	}
+
+	// Tab switch handler
+	private: System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+		if (this->tabControl1->SelectedTab->Name == tabPageGestionStat->Name) {
+			this->Stat_Service = gcnew SG_Stat;
+		}
+	}
 };
 }

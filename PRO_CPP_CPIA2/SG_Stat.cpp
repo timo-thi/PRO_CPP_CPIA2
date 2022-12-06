@@ -17,6 +17,8 @@ double SG_Stat::Calcul_Panier(void) {
 	DataSet^ dt;
 	dt = this->CConnexion->getRows(this->CMappage->Calcul_Panier(), "CP");
 
+	if (dt->Tables[0]->Rows[0]->IsNull(0)) return 0;
+
 	return Convert::ToDouble(dt->Tables[0]->Rows[0]->ItemArray[0]);
 }
 
