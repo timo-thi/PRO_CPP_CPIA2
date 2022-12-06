@@ -159,29 +159,29 @@ namespace ProjetPOO {
 	private: System::Windows::Forms::Label^ label40;
 	private: System::Windows::Forms::Button^ button25;
 private: System::Windows::Forms::TabPage^ tabPageGestionStaff;
-private: System::Windows::Forms::Button^ button32;
-private: System::Windows::Forms::Button^ button33;
-private: System::Windows::Forms::DataGridView^ dataGridView4;
-private: System::Windows::Forms::Button^ button34;
-private: System::Windows::Forms::Button^ button35;
-private: System::Windows::Forms::Button^ button36;
-private: System::Windows::Forms::Button^ button37;
+private: System::Windows::Forms::Button^ button_Staff_Previous;
+private: System::Windows::Forms::Button^ button_Staff_Next;
+private: System::Windows::Forms::DataGridView^ dataGridView_Staff;
+private: System::Windows::Forms::Button^ button_Staff_Save;
+private: System::Windows::Forms::Button^ button_Staff_Edit;
+private: System::Windows::Forms::Button^ button_Staff_Remove;
+private: System::Windows::Forms::Button^ button_Staff_Add;
 private: System::Windows::Forms::TextBox^ textStaffRole;
-private: System::Windows::Forms::Label^ label43;
+private: System::Windows::Forms::Label^ label_Staff_Role;
 private: System::Windows::Forms::TextBox^ textStaffAdresse;
-private: System::Windows::Forms::Label^ label44;
+private: System::Windows::Forms::Label^ label_Staff_Adr_ID;
 private: System::Windows::Forms::TextBox^ textStaffDate;
-private: System::Windows::Forms::Label^ label45;
+private: System::Windows::Forms::Label^ label_Staff_Date_Embauche;
 private: System::Windows::Forms::TextBox^ textStaffSup;
-private: System::Windows::Forms::Label^ label46;
+private: System::Windows::Forms::Label^ label_Staff_Nom_Superieur;
 private: System::Windows::Forms::TextBox^ textStaffMail;
 private: System::Windows::Forms::Label^ label47;
 private: System::Windows::Forms::TextBox^ textStaffPrenom;
-private: System::Windows::Forms::Label^ label48;
+private: System::Windows::Forms::Label^ label_Staff_Pers_Prenom;
 private: System::Windows::Forms::TextBox^ textStaffNom;
-private: System::Windows::Forms::Label^ label49;
+private: System::Windows::Forms::Label^ label_Staff_Pers_Nom;
 private: System::Windows::Forms::TextBox^ textStaffID;
-private: System::Windows::Forms::Label^ label50;
+private: System::Windows::Forms::Label^ label_Staff_Pers_ID;
 private: System::Windows::Forms::TabPage^ tabPageGestionPersonne;
 private: System::Windows::Forms::TextBox^ textPersonnePrenom;
 private: System::Windows::Forms::Label^ label51;
@@ -222,7 +222,7 @@ private: SG_Stock^ processusStock = gcnew SG_Stock();
 private: Data::DataSet^ dsStaff = gcnew Data::DataSet();
 private: SG_Staff^ processusStaff = gcnew SG_Staff();
 private: System::Windows::Forms::Label^ textStaffAffiche;
-private: System::Windows::Forms::Button^ button46;
+private: System::Windows::Forms::Button^ button46_Staff_Load;
 
 private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 
@@ -370,30 +370,30 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->label26 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionStaff = (gcnew System::Windows::Forms::TabPage());
 			this->textStaffAffiche = (gcnew System::Windows::Forms::Label());
-			this->button46 = (gcnew System::Windows::Forms::Button());
-			this->button32 = (gcnew System::Windows::Forms::Button());
-			this->button33 = (gcnew System::Windows::Forms::Button());
-			this->dataGridView4 = (gcnew System::Windows::Forms::DataGridView());
-			this->button34 = (gcnew System::Windows::Forms::Button());
-			this->button35 = (gcnew System::Windows::Forms::Button());
-			this->button36 = (gcnew System::Windows::Forms::Button());
-			this->button37 = (gcnew System::Windows::Forms::Button());
+			this->button46_Staff_Load = (gcnew System::Windows::Forms::Button());
+			this->button_Staff_Previous = (gcnew System::Windows::Forms::Button());
+			this->button_Staff_Next = (gcnew System::Windows::Forms::Button());
+			this->dataGridView_Staff = (gcnew System::Windows::Forms::DataGridView());
+			this->button_Staff_Save = (gcnew System::Windows::Forms::Button());
+			this->button_Staff_Edit = (gcnew System::Windows::Forms::Button());
+			this->button_Staff_Remove = (gcnew System::Windows::Forms::Button());
+			this->button_Staff_Add = (gcnew System::Windows::Forms::Button());
 			this->textStaffRole = (gcnew System::Windows::Forms::TextBox());
-			this->label43 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Role = (gcnew System::Windows::Forms::Label());
 			this->textStaffAdresse = (gcnew System::Windows::Forms::TextBox());
-			this->label44 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Adr_ID = (gcnew System::Windows::Forms::Label());
 			this->textStaffDate = (gcnew System::Windows::Forms::TextBox());
-			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Date_Embauche = (gcnew System::Windows::Forms::Label());
 			this->textStaffSup = (gcnew System::Windows::Forms::TextBox());
-			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Nom_Superieur = (gcnew System::Windows::Forms::Label());
 			this->textStaffMail = (gcnew System::Windows::Forms::TextBox());
 			this->label47 = (gcnew System::Windows::Forms::Label());
 			this->textStaffPrenom = (gcnew System::Windows::Forms::TextBox());
-			this->label48 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Pers_Prenom = (gcnew System::Windows::Forms::Label());
 			this->textStaffNom = (gcnew System::Windows::Forms::TextBox());
-			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Pers_Nom = (gcnew System::Windows::Forms::Label());
 			this->textStaffID = (gcnew System::Windows::Forms::TextBox());
-			this->label50 = (gcnew System::Windows::Forms::Label());
+			this->label_Staff_Pers_ID = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionPersonne = (gcnew System::Windows::Forms::TabPage());
 			this->textAffichage = (gcnew System::Windows::Forms::Label());
 			this->label54 = (gcnew System::Windows::Forms::Label());
@@ -426,7 +426,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPage5->SuspendLayout();
 			this->tabPage6->SuspendLayout();
 			this->tabPageGestionStaff->SuspendLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Staff))->BeginInit();
 			this->tabPageGestionPersonne->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->BeginInit();
 			this->SuspendLayout();
@@ -1008,7 +1008,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->Load_Stock->TabIndex = 46;
 			this->Load_Stock->Text = L"Load";
 			this->Load_Stock->UseVisualStyleBackColor = true;
-			this->Load_Stock->Click += gcnew System::EventHandler(this, &InterfaceManager::button46_Click);
+			this->Load_Stock->Click += gcnew System::EventHandler(this, &InterfaceManager::Load_Stock_Click);
 			// 
 			// label10
 			// 
@@ -1646,30 +1646,30 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			// tabPageGestionStaff
 			// 
 			this->tabPageGestionStaff->Controls->Add(this->textStaffAffiche);
-			this->tabPageGestionStaff->Controls->Add(this->button46);
-			this->tabPageGestionStaff->Controls->Add(this->button32);
-			this->tabPageGestionStaff->Controls->Add(this->button33);
-			this->tabPageGestionStaff->Controls->Add(this->dataGridView4);
-			this->tabPageGestionStaff->Controls->Add(this->button34);
-			this->tabPageGestionStaff->Controls->Add(this->button35);
-			this->tabPageGestionStaff->Controls->Add(this->button36);
-			this->tabPageGestionStaff->Controls->Add(this->button37);
+			this->tabPageGestionStaff->Controls->Add(this->button46_Staff_Load);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Previous);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Next);
+			this->tabPageGestionStaff->Controls->Add(this->dataGridView_Staff);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Save);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Edit);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Remove);
+			this->tabPageGestionStaff->Controls->Add(this->button_Staff_Add);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffRole);
-			this->tabPageGestionStaff->Controls->Add(this->label43);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Role);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffAdresse);
-			this->tabPageGestionStaff->Controls->Add(this->label44);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Adr_ID);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffDate);
-			this->tabPageGestionStaff->Controls->Add(this->label45);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Date_Embauche);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffSup);
-			this->tabPageGestionStaff->Controls->Add(this->label46);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Nom_Superieur);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffMail);
 			this->tabPageGestionStaff->Controls->Add(this->label47);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffPrenom);
-			this->tabPageGestionStaff->Controls->Add(this->label48);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Pers_Prenom);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffNom);
-			this->tabPageGestionStaff->Controls->Add(this->label49);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Pers_Nom);
 			this->tabPageGestionStaff->Controls->Add(this->textStaffID);
-			this->tabPageGestionStaff->Controls->Add(this->label50);
+			this->tabPageGestionStaff->Controls->Add(this->label_Staff_Pers_ID);
 			this->tabPageGestionStaff->Location = System::Drawing::Point(4, 22);
 			this->tabPageGestionStaff->Name = L"tabPageGestionStaff";
 			this->tabPageGestionStaff->Size = System::Drawing::Size(944, 400);
@@ -1687,84 +1687,84 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffAffiche->Text = L"En attente";
 			this->textStaffAffiche->Click += gcnew System::EventHandler(this, &InterfaceManager::label55_Click);
 			// 
-			// button46
+			// button46_Staff_Load
 			// 
-			this->button46->Location = System::Drawing::Point(356, 363);
-			this->button46->Name = L"button46";
-			this->button46->Size = System::Drawing::Size(75, 23);
-			this->button46->TabIndex = 68;
-			this->button46->Text = L"Load";
-			this->button46->UseVisualStyleBackColor = true;
-			this->button46->Click += gcnew System::EventHandler(this, &InterfaceManager::button46_Click_1);
+			this->button46_Staff_Load->Location = System::Drawing::Point(356, 363);
+			this->button46_Staff_Load->Name = L"button46_Staff_Load";
+			this->button46_Staff_Load->Size = System::Drawing::Size(75, 23);
+			this->button46_Staff_Load->TabIndex = 68;
+			this->button46_Staff_Load->Text = L"Load";
+			this->button46_Staff_Load->UseVisualStyleBackColor = true;
+			this->button46_Staff_Load->Click += gcnew System::EventHandler(this, &InterfaceManager::button46_Staff_Load_Click);
 			// 
-			// button32
+			// button_Staff_Previous
 			// 
-			this->button32->Location = System::Drawing::Point(25, 266);
-			this->button32->Name = L"button32";
-			this->button32->Size = System::Drawing::Size(113, 23);
-			this->button32->TabIndex = 67;
-			this->button32->Text = L"<";
-			this->button32->UseVisualStyleBackColor = true;
-			this->button32->Click += gcnew System::EventHandler(this, &InterfaceManager::button32_Click);
+			this->button_Staff_Previous->Location = System::Drawing::Point(25, 266);
+			this->button_Staff_Previous->Name = L"button_Staff_Previous";
+			this->button_Staff_Previous->Size = System::Drawing::Size(113, 23);
+			this->button_Staff_Previous->TabIndex = 67;
+			this->button_Staff_Previous->Text = L"<";
+			this->button_Staff_Previous->UseVisualStyleBackColor = true;
+			this->button_Staff_Previous->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Previous_Click);
 			// 
-			// button33
+			// button_Staff_Next
 			// 
-			this->button33->Location = System::Drawing::Point(178, 266);
-			this->button33->Name = L"button33";
-			this->button33->Size = System::Drawing::Size(113, 23);
-			this->button33->TabIndex = 66;
-			this->button33->Text = L">";
-			this->button33->UseVisualStyleBackColor = true;
-			this->button33->Click += gcnew System::EventHandler(this, &InterfaceManager::button33_Click);
+			this->button_Staff_Next->Location = System::Drawing::Point(178, 266);
+			this->button_Staff_Next->Name = L"button_Staff_Next";
+			this->button_Staff_Next->Size = System::Drawing::Size(113, 23);
+			this->button_Staff_Next->TabIndex = 66;
+			this->button_Staff_Next->Text = L">";
+			this->button_Staff_Next->UseVisualStyleBackColor = true;
+			this->button_Staff_Next->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Next_Click);
 			// 
-			// dataGridView4
+			// dataGridView_Staff
 			// 
-			this->dataGridView4->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView4->Location = System::Drawing::Point(356, 36);
-			this->dataGridView4->Name = L"dataGridView4";
-			this->dataGridView4->RowHeadersWidth = 62;
-			this->dataGridView4->Size = System::Drawing::Size(569, 310);
-			this->dataGridView4->TabIndex = 65;
+			this->dataGridView_Staff->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView_Staff->Location = System::Drawing::Point(356, 36);
+			this->dataGridView_Staff->Name = L"dataGridView_Staff";
+			this->dataGridView_Staff->RowHeadersWidth = 62;
+			this->dataGridView_Staff->Size = System::Drawing::Size(569, 310);
+			this->dataGridView_Staff->TabIndex = 65;
 			// 
-			// button34
+			// button_Staff_Save
 			// 
-			this->button34->Location = System::Drawing::Point(176, 337);
-			this->button34->Name = L"button34";
-			this->button34->Size = System::Drawing::Size(115, 36);
-			this->button34->TabIndex = 63;
-			this->button34->Text = L"Enregistrer";
-			this->button34->UseVisualStyleBackColor = true;
-			this->button34->Click += gcnew System::EventHandler(this, &InterfaceManager::button34_Click);
+			this->button_Staff_Save->Location = System::Drawing::Point(176, 337);
+			this->button_Staff_Save->Name = L"button_Staff_Save";
+			this->button_Staff_Save->Size = System::Drawing::Size(115, 36);
+			this->button_Staff_Save->TabIndex = 63;
+			this->button_Staff_Save->Text = L"Enregistrer";
+			this->button_Staff_Save->UseVisualStyleBackColor = true;
+			this->button_Staff_Save->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Save_Click);
 			// 
-			// button35
+			// button_Staff_Edit
 			// 
-			this->button35->Location = System::Drawing::Point(23, 337);
-			this->button35->Name = L"button35";
-			this->button35->Size = System::Drawing::Size(115, 36);
-			this->button35->TabIndex = 64;
-			this->button35->Text = L"Modifier";
-			this->button35->UseVisualStyleBackColor = true;
-			this->button35->Click += gcnew System::EventHandler(this, &InterfaceManager::button35_Click);
+			this->button_Staff_Edit->Location = System::Drawing::Point(23, 337);
+			this->button_Staff_Edit->Name = L"button_Staff_Edit";
+			this->button_Staff_Edit->Size = System::Drawing::Size(115, 36);
+			this->button_Staff_Edit->TabIndex = 64;
+			this->button_Staff_Edit->Text = L"Modifier";
+			this->button_Staff_Edit->UseVisualStyleBackColor = true;
+			this->button_Staff_Edit->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Edit_Click);
 			// 
-			// button36
+			// button_Staff_Remove
 			// 
-			this->button36->Location = System::Drawing::Point(176, 295);
-			this->button36->Name = L"button36";
-			this->button36->Size = System::Drawing::Size(115, 36);
-			this->button36->TabIndex = 62;
-			this->button36->Text = L"Supprimer";
-			this->button36->UseVisualStyleBackColor = true;
-			this->button36->Click += gcnew System::EventHandler(this, &InterfaceManager::button36_Click);
+			this->button_Staff_Remove->Location = System::Drawing::Point(176, 295);
+			this->button_Staff_Remove->Name = L"button_Staff_Remove";
+			this->button_Staff_Remove->Size = System::Drawing::Size(115, 36);
+			this->button_Staff_Remove->TabIndex = 62;
+			this->button_Staff_Remove->Text = L"Supprimer";
+			this->button_Staff_Remove->UseVisualStyleBackColor = true;
+			this->button_Staff_Remove->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Remove_Click);
 			// 
-			// button37
+			// button_Staff_Add
 			// 
-			this->button37->Location = System::Drawing::Point(23, 295);
-			this->button37->Name = L"button37";
-			this->button37->Size = System::Drawing::Size(115, 36);
-			this->button37->TabIndex = 61;
-			this->button37->Text = L"Ajouter";
-			this->button37->UseVisualStyleBackColor = true;
-			this->button37->Click += gcnew System::EventHandler(this, &InterfaceManager::button37_Click);
+			this->button_Staff_Add->Location = System::Drawing::Point(23, 295);
+			this->button_Staff_Add->Name = L"button_Staff_Add";
+			this->button_Staff_Add->Size = System::Drawing::Size(115, 36);
+			this->button_Staff_Add->TabIndex = 61;
+			this->button_Staff_Add->Text = L"Ajouter";
+			this->button_Staff_Add->UseVisualStyleBackColor = true;
+			this->button_Staff_Add->Click += gcnew System::EventHandler(this, &InterfaceManager::button_Staff_Add_Click);
 			// 
 			// textStaffRole
 			// 
@@ -1774,14 +1774,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffRole->TabIndex = 60;
 			this->textStaffRole->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox32_TextChanged);
 			// 
-			// label43
+			// label_Staff_Role
 			// 
-			this->label43->AutoSize = true;
-			this->label43->Location = System::Drawing::Point(175, 197);
-			this->label43->Name = L"label43";
-			this->label43->Size = System::Drawing::Size(24, 13);
-			this->label43->TabIndex = 59;
-			this->label43->Text = L"role";
+			this->label_Staff_Role->AutoSize = true;
+			this->label_Staff_Role->Location = System::Drawing::Point(175, 197);
+			this->label_Staff_Role->Name = L"label_Staff_Role";
+			this->label_Staff_Role->Size = System::Drawing::Size(24, 13);
+			this->label_Staff_Role->TabIndex = 59;
+			this->label_Staff_Role->Text = L"role";
 			// 
 			// textStaffAdresse
 			// 
@@ -1791,14 +1791,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffAdresse->TabIndex = 58;
 			this->textStaffAdresse->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox33_TextChanged);
 			// 
-			// label44
+			// label_Staff_Adr_ID
 			// 
-			this->label44->AutoSize = true;
-			this->label44->Location = System::Drawing::Point(175, 137);
-			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(48, 13);
-			this->label44->TabIndex = 57;
-			this->label44->Text = L"Adresse ";
+			this->label_Staff_Adr_ID->AutoSize = true;
+			this->label_Staff_Adr_ID->Location = System::Drawing::Point(175, 137);
+			this->label_Staff_Adr_ID->Name = L"label_Staff_Adr_ID";
+			this->label_Staff_Adr_ID->Size = System::Drawing::Size(48, 13);
+			this->label_Staff_Adr_ID->TabIndex = 57;
+			this->label_Staff_Adr_ID->Text = L"Adresse ";
 			// 
 			// textStaffDate
 			// 
@@ -1808,14 +1808,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffDate->TabIndex = 56;
 			this->textStaffDate->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox34_TextChanged);
 			// 
-			// label45
+			// label_Staff_Date_Embauche
 			// 
-			this->label45->AutoSize = true;
-			this->label45->Location = System::Drawing::Point(175, 79);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(106, 13);
-			this->label45->TabIndex = 55;
-			this->label45->Text = L"Date embauchement";
+			this->label_Staff_Date_Embauche->AutoSize = true;
+			this->label_Staff_Date_Embauche->Location = System::Drawing::Point(175, 79);
+			this->label_Staff_Date_Embauche->Name = L"label_Staff_Date_Embauche";
+			this->label_Staff_Date_Embauche->Size = System::Drawing::Size(106, 13);
+			this->label_Staff_Date_Embauche->TabIndex = 55;
+			this->label_Staff_Date_Embauche->Text = L"Date embauchement";
 			// 
 			// textStaffSup
 			// 
@@ -1825,14 +1825,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffSup->TabIndex = 54;
 			this->textStaffSup->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox35_TextChanged);
 			// 
-			// label46
+			// label_Staff_Nom_Superieur
 			// 
-			this->label46->AutoSize = true;
-			this->label46->Location = System::Drawing::Point(175, 27);
-			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(75, 13);
-			this->label46->TabIndex = 53;
-			this->label46->Text = L"Nom superieur";
+			this->label_Staff_Nom_Superieur->AutoSize = true;
+			this->label_Staff_Nom_Superieur->Location = System::Drawing::Point(175, 27);
+			this->label_Staff_Nom_Superieur->Name = L"label_Staff_Nom_Superieur";
+			this->label_Staff_Nom_Superieur->Size = System::Drawing::Size(75, 13);
+			this->label_Staff_Nom_Superieur->TabIndex = 53;
+			this->label_Staff_Nom_Superieur->Text = L"Nom superieur";
 			// 
 			// textStaffMail
 			// 
@@ -1859,14 +1859,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffPrenom->TabIndex = 50;
 			this->textStaffPrenom->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox37_TextChanged);
 			// 
-			// label48
+			// label_Staff_Pers_Prenom
 			// 
-			this->label48->AutoSize = true;
-			this->label48->Location = System::Drawing::Point(20, 137);
-			this->label48->Name = L"label48";
-			this->label48->Size = System::Drawing::Size(92, 13);
-			this->label48->TabIndex = 49;
-			this->label48->Text = L"Prenom personnel";
+			this->label_Staff_Pers_Prenom->AutoSize = true;
+			this->label_Staff_Pers_Prenom->Location = System::Drawing::Point(20, 137);
+			this->label_Staff_Pers_Prenom->Name = L"label_Staff_Pers_Prenom";
+			this->label_Staff_Pers_Prenom->Size = System::Drawing::Size(92, 13);
+			this->label_Staff_Pers_Prenom->TabIndex = 49;
+			this->label_Staff_Pers_Prenom->Text = L"Prenom personnel";
 			// 
 			// textStaffNom
 			// 
@@ -1876,14 +1876,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffNom->TabIndex = 48;
 			this->textStaffNom->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox38_TextChanged);
 			// 
-			// label49
+			// label_Staff_Pers_Nom
 			// 
-			this->label49->AutoSize = true;
-			this->label49->Location = System::Drawing::Point(20, 79);
-			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(78, 13);
-			this->label49->TabIndex = 47;
-			this->label49->Text = L"Nom personnel";
+			this->label_Staff_Pers_Nom->AutoSize = true;
+			this->label_Staff_Pers_Nom->Location = System::Drawing::Point(20, 79);
+			this->label_Staff_Pers_Nom->Name = L"label_Staff_Pers_Nom";
+			this->label_Staff_Pers_Nom->Size = System::Drawing::Size(78, 13);
+			this->label_Staff_Pers_Nom->TabIndex = 47;
+			this->label_Staff_Pers_Nom->Text = L"Nom personnel";
 			// 
 			// textStaffID
 			// 
@@ -1893,14 +1893,14 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->textStaffID->TabIndex = 46;
 			this->textStaffID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox39_TextChanged);
 			// 
-			// label50
+			// label_Staff_Pers_ID
 			// 
-			this->label50->AutoSize = true;
-			this->label50->Location = System::Drawing::Point(20, 27);
-			this->label50->Name = L"label50";
-			this->label50->Size = System::Drawing::Size(66, 13);
-			this->label50->TabIndex = 45;
-			this->label50->Text = L"ID Personne";
+			this->label_Staff_Pers_ID->AutoSize = true;
+			this->label_Staff_Pers_ID->Location = System::Drawing::Point(20, 27);
+			this->label_Staff_Pers_ID->Name = L"label_Staff_Pers_ID";
+			this->label_Staff_Pers_ID->Size = System::Drawing::Size(66, 13);
+			this->label_Staff_Pers_ID->TabIndex = 45;
+			this->label_Staff_Pers_ID->Text = L"ID Personne";
 			// 
 			// tabPageGestionPersonne
 			// 
@@ -2108,7 +2108,7 @@ private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 			this->tabPage6->PerformLayout();
 			this->tabPageGestionStaff->ResumeLayout(false);
 			this->tabPageGestionStaff->PerformLayout();
-			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView_Staff))->EndInit();
 			this->tabPageGestionPersonne->ResumeLayout(false);
 			this->tabPageGestionPersonne->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView5))->EndInit();
@@ -2349,7 +2349,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 	this->loadDataClient(this->index);
 	this->affichageClient ->Text += "Traitement terminé.";
 }
-private: System::Void button46_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
+private: System::Void Load_Stock_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
 	this->dataGridView2->Refresh();
 
 	this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
@@ -2416,12 +2416,12 @@ private: System::Void textBox37_TextChanged(System::Object^ sender, System::Even
 }
 private: System::Void textBox38_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button46_Click_1(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button46_Staff_Load_Click(System::Object^ sender, System::EventArgs^ e) {
 	loadDataStaff(0);
 }
 
 
-private: System::Void button33_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Next_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->index < this->dsStaff->Tables["liste"]->Rows->Count - 1)
 	{
 		this->index++;
@@ -2429,7 +2429,7 @@ private: System::Void button33_Click(System::Object^ sender, System::EventArgs^ 
 	}
 
 }
-private: System::Void button32_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Previous_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->index > 0)
 	{
 		this->index--;
@@ -2438,7 +2438,7 @@ private: System::Void button32_Click(System::Object^ sender, System::EventArgs^ 
 	}
 
 }
-private: System::Void button37_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Add_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->textStaffID->Clear();
 	this->textStaffSup->Clear();
 	this->textStaffDate->Clear();
@@ -2452,15 +2452,15 @@ private: System::Void button37_Click(System::Object^ sender, System::EventArgs^ 
 }
 private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e) {
 }
-private: System::Void button35_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Edit_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->mode = "maj";
 	this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
 }
-private: System::Void button36_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Remove_Click(System::Object^ sender, System::EventArgs^ e) {
 	this->mode = "sup";
 	this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
 }
-private: System::Void button34_Click(System::Object^ sender, System::EventArgs^ e) {
+private: System::Void button_Staff_Save_Click(System::Object^ sender, System::EventArgs^ e) {
 	if (this->mode == "nouv")
 	{
 		int Id;
