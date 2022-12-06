@@ -12,5 +12,6 @@ namespace NS_Services
         void Remove_Order(void);
         void Update_Order(void);
         void Fetch_Order(void);
+        void Cree_Facture(String^,String^);
     };
 };
