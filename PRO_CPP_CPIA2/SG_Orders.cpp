@@ -122,6 +122,34 @@ void SG_Orders::Update_Mean_Of_Payment() {
 	this->Connect->actionRows(this->Map_Orders->Update_Mean_Of_Payment());
 }        
 
+
+DataSet^ SG_Orders::Fetch_Products(String^ nom) {
+	this->DS->Clear();
+
+	this->Map_Orders->Set_ID(this->ID);
+
+	this->DS = this->Connect->getRows(this->Map_Orders->Select_Product(), nom);
+
+	return this->DS;
+
+}
+
+void SG_Orders::Add_Products() {
+	this->Map_Orders->Set_ID(this->ID);
+	this->Map_Orders->Set_Product(this->Product);
+	this->Map_Orders->Set_Amount(this->Amount);
+
+	this->Connect->actionRows(this->Map_Orders->Insert_Product());
+}
+
+void SG_Orders::Remove_Products() {
+	this->Map_Orders->Set_ID(this->ID);
+	this->Map_Orders->Set_Product(this->Product);
+
+	this->Connect->actionRows(this->Map_Orders->Delete_Product());
+}
+
+
 String^ SG_Orders::Get_ID() { return this->ID; }
 void SG_Orders::Set_ID(String^ tID) { this->ID = tID; }
 
@@ -148,3 +176,9 @@ void SG_Orders::Set_Balance(int tBalance) { this->Balance = tBalance; }
 
 int SG_Orders::Get_Mode() { return this->Mode; }
 void SG_Orders::Set_Mode(int tMode) { this->Mode = tMode; }
+
+int SG_Orders::Get_Product(void) { return this->Product; }
+void SG_Orders::Set_Product(int tProduct) { this->Product = tProduct; }
+
+int SG_Orders::Get_Amount(void) { return this->Product; }
+void SG_Orders::Set_Amount(int tAmount) { this->Amount = tAmount; }

@@ -212,7 +212,7 @@ SqlCommand^ CM_Orders::Select_Mean_Of_Payment(void){
 
 
 SqlCommand^ CM_Orders::Insert_Product() {
-	Start_Procedure("Insert_MOP");
+	Start_Procedure("Insert_Contain");
 
 	Procedure->Parameters->AddWithValue("@ORD", this->Get_ID());
 	Procedure->Parameters->AddWithValue("@PRO", this->Get_Product());

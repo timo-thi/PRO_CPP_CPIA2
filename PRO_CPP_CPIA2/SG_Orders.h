@@ -25,6 +25,9 @@ namespace NS_Services
         String^ Mean_Of_Payment;
         int Balance;
 
+        int Product;
+        int Amount;
+
     public:
 
         DataSet^ Fetch_Order(String^);
@@ -44,6 +47,10 @@ namespace NS_Services
         void Add_Mean_Of_Payment();
         void Remove_Mean_Of_Payment();
         void Update_Mean_Of_Payment();
+
+        DataSet^ Fetch_Products(String^);
+        void Add_Products();
+        void Remove_Products();
 
         String^ Get_ID();
         void Set_ID(String^);
@@ -71,5 +78,11 @@ namespace NS_Services
 
         int Get_Mode();
         void Set_Mode(int);
+
+        int Get_Product(void);
+        void Set_Product(int);
+
+        int Get_Amount(void);
+        void Set_Amount(int);
     };
 };
