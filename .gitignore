@@ -362,3 +362,6 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 PRO_CPP_CPIA2/TempMain.cpp
+PRO_CPP_CPIA2/MyForm.*
+PRO_CPP_CPIA2/InterfaceManager.*
+PRO_CPP_CPIA2/InterfaceEmploye.*
