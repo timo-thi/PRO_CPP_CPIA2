@@ -369,6 +369,12 @@ private: System::Windows::Forms::Label^ label46;
 			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionCommande = (gcnew System::Windows::Forms::TabPage());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label49 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label46 = (gcnew System::Windows::Forms::Label());
 			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
@@ -536,12 +542,6 @@ private: System::Windows::Forms::Label^ label46;
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrID = (gcnew System::Windows::Forms::TextBox());
 			this->label58 = (gcnew System::Windows::Forms::Label());
-			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
-			this->label45 = (gcnew System::Windows::Forms::Label());
-			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
-			this->label46 = (gcnew System::Windows::Forms::Label());
-			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
-			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPageGestionClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -696,8 +696,10 @@ private: System::Windows::Forms::Label^ label46;
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView1->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataGridView1->Location = System::Drawing::Point(355, 30);
 			this->dataGridView1->Name = L"dataGridView1";
+			this->dataGridView1->ReadOnly = true;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->Size = System::Drawing::Size(569, 310);
 			this->dataGridView1->TabIndex = 19;
@@ -891,6 +893,54 @@ private: System::Windows::Forms::Label^ label46;
 			this->tabPageGestionCommande->Text = L"Gestion commande";
 			this->tabPageGestionCommande->UseVisualStyleBackColor = true;
 			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(321, 141);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(115, 20);
+			this->textBox4->TabIndex = 79;
+			// 
+			// label49
+			// 
+			this->label49->AutoSize = true;
+			this->label49->Location = System::Drawing::Point(318, 113);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(54, 13);
+			this->label49->TabIndex = 78;
+			this->label49->Text = L"ID Produit";
+			// 
+			// textBox1
+			// 
+			this->textBox1->Location = System::Drawing::Point(321, 83);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(115, 20);
+			this->textBox1->TabIndex = 77;
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Location = System::Drawing::Point(318, 55);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(47, 13);
+			this->label45->TabIndex = 76;
+			this->label45->Text = L"Quantité";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(321, 31);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(115, 20);
+			this->textBox2->TabIndex = 75;
+			// 
+			// label46
+			// 
+			this->label46->AutoSize = true;
+			this->label46->Location = System::Drawing::Point(318, 3);
+			this->label46->Name = L"label46";
+			this->label46->Size = System::Drawing::Size(91, 13);
+			this->label46->TabIndex = 74;
+			this->label46->Text = L"Date de paiement";
+			// 
 			// label44
 			// 
 			this->label44->AutoSize = true;
@@ -965,8 +1015,10 @@ private: System::Windows::Forms::Label^ label46;
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataGridView3->Location = System::Drawing::Point(463, 28);
 			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->ReadOnly = true;
 			this->dataGridView3->RowHeadersWidth = 62;
 			this->dataGridView3->Size = System::Drawing::Size(462, 310);
 			this->dataGridView3->TabIndex = 65;
@@ -1212,8 +1264,10 @@ private: System::Windows::Forms::Label^ label46;
 			// dataGridView2
 			// 
 			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->EditMode = System::Windows::Forms::DataGridViewEditMode::EditProgrammatically;
 			this->dataGridView2->Location = System::Drawing::Point(356, 30);
 			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->ReadOnly = true;
 			this->dataGridView2->RowHeadersWidth = 62;
 			this->dataGridView2->Size = System::Drawing::Size(569, 310);
 			this->dataGridView2->TabIndex = 40;
@@ -2548,54 +2602,6 @@ private: System::Windows::Forms::Label^ label46;
 			this->label58->Size = System::Drawing::Size(74, 13);
 			this->label58->TabIndex = 94;
 			this->label58->Text = L"ID de Adresse";
-			// 
-			// textBox1
-			// 
-			this->textBox1->Location = System::Drawing::Point(321, 83);
-			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(115, 20);
-			this->textBox1->TabIndex = 77;
-			// 
-			// label45
-			// 
-			this->label45->AutoSize = true;
-			this->label45->Location = System::Drawing::Point(318, 55);
-			this->label45->Name = L"label45";
-			this->label45->Size = System::Drawing::Size(47, 13);
-			this->label45->TabIndex = 76;
-			this->label45->Text = L"Quantité";
-			// 
-			// textBox2
-			// 
-			this->textBox2->Location = System::Drawing::Point(321, 31);
-			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(115, 20);
-			this->textBox2->TabIndex = 75;
-			// 
-			// label46
-			// 
-			this->label46->AutoSize = true;
-			this->label46->Location = System::Drawing::Point(318, 3);
-			this->label46->Name = L"label46";
-			this->label46->Size = System::Drawing::Size(91, 13);
-			this->label46->TabIndex = 74;
-			this->label46->Text = L"Date de paiement";
-			// 
-			// textBox4
-			// 
-			this->textBox4->Location = System::Drawing::Point(321, 141);
-			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(115, 20);
-			this->textBox4->TabIndex = 79;
-			// 
-			// label49
-			// 
-			this->label49->AutoSize = true;
-			this->label49->Location = System::Drawing::Point(318, 113);
-			this->label49->Name = L"label49";
-			this->label49->Size = System::Drawing::Size(54, 13);
-			this->label49->TabIndex = 78;
-			this->label49->Text = L"ID Produit";
 			// 
 			// InterfaceManager
 			// 

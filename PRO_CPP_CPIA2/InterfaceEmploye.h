@@ -23,10 +23,10 @@ namespace ProjetPOO {
 	/// <summary>
 	/// Description r�sum�e de MyForm1
 	/// </summary>
-	public ref class InterfaceManager : public System::Windows::Forms::Form
+	public ref class InterfaceEmploye : public System::Windows::Forms::Form
 	{
 	public:
-		InterfaceManager(void)
+		InterfaceEmploye(void)
 		{
 			InitializeComponent();
 			//
@@ -38,7 +38,7 @@ namespace ProjetPOO {
 		/// <summary>
 		/// Nettoyage des ressources utilis�es.
 		/// </summary>
-		~InterfaceManager()
+		~InterfaceEmploye()
 		{
 			if (components)
 			{
@@ -852,7 +852,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonAddAdr->TabIndex = 107;
 			this->buttonAddAdr->Text = L"Ajouter";
 			this->buttonAddAdr->UseVisualStyleBackColor = true;
-			this->buttonAddAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAddAdr_Click);
+			this->buttonAddAdr->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonAddAdr_Click);
 			// 
 			// buttonDelAdr
 			// 
@@ -862,7 +862,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonDelAdr->TabIndex = 108;
 			this->buttonDelAdr->Text = L"Supprimer";
 			this->buttonDelAdr->UseVisualStyleBackColor = true;
-			this->buttonDelAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDelAdr_Click);
+			this->buttonDelAdr->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonDelAdr_Click);
 			// 
 			// buttonEditAdr
 			// 
@@ -872,7 +872,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonEditAdr->TabIndex = 110;
 			this->buttonEditAdr->Text = L"Modifier";
 			this->buttonEditAdr->UseVisualStyleBackColor = true;
-			this->buttonEditAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonEditAdr_Click);
+			this->buttonEditAdr->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonEditAdr_Click);
 			// 
 			// buttonRegisterAdr
 			// 
@@ -882,7 +882,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonRegisterAdr->TabIndex = 109;
 			this->buttonRegisterAdr->Text = L"Enregistrer";
 			this->buttonRegisterAdr->UseVisualStyleBackColor = true;
-			this->buttonRegisterAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRegisterAdr_Click);
+			this->buttonRegisterAdr->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonRegisterAdr_Click);
 			// 
 			// dataGridView4
 			// 
@@ -891,7 +891,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->dataGridView4->Name = L"dataGridView4";
 			this->dataGridView4->Size = System::Drawing::Size(569, 310);
 			this->dataGridView4->TabIndex = 111;
-			this->dataGridView4->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView4_CellClick);
+			this->dataGridView4->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceEmploye::dataGridView4_CellClick);
 			// 
 			// buttonAdrNext
 			// 
@@ -901,7 +901,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonAdrNext->TabIndex = 112;
 			this->buttonAdrNext->Text = L">";
 			this->buttonAdrNext->UseVisualStyleBackColor = true;
-			this->buttonAdrNext->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAdrNext_Click);
+			this->buttonAdrNext->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonAdrNext_Click);
 			// 
 			// buttonAdrPrevious
 			// 
@@ -911,7 +911,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonAdrPrevious->TabIndex = 113;
 			this->buttonAdrPrevious->Text = L"<";
 			this->buttonAdrPrevious->UseVisualStyleBackColor = true;
-			this->buttonAdrPrevious->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonAdrPrevious_Click);
+			this->buttonAdrPrevious->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonAdrPrevious_Click);
 			// 
 			// richTextBoxAdrDetails1
 			// 
@@ -929,7 +929,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonLoadAdr->TabIndex = 115;
 			this->buttonLoadAdr->Text = L"Load";
 			this->buttonLoadAdr->UseVisualStyleBackColor = true;
-			this->buttonLoadAdr->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonLoadAdr_Click);
+			this->buttonLoadAdr->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonLoadAdr_Click);
 			// 
 			// labelAdrStatus
 			// 
@@ -948,7 +948,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->comboBoxAdrCitName->Name = L"comboBoxAdrCitName";
 			this->comboBoxAdrCitName->Size = System::Drawing::Size(117, 21);
 			this->comboBoxAdrCitName->TabIndex = 117;
-			this->comboBoxAdrCitName->TextUpdate += gcnew System::EventHandler(this, &InterfaceManager::comboBoxAdrCitName_TextUpdate);
+			this->comboBoxAdrCitName->TextUpdate += gcnew System::EventHandler(this, &InterfaceEmploye::comboBoxAdrCitName_TextUpdate);
 			// 
 			// tabPageGestionPersonne
 			// 
@@ -975,7 +975,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->tabPageGestionPersonne->TabIndex = 5;
 			this->tabPageGestionPersonne->Text = L"Gestion personne";
 			this->tabPageGestionPersonne->UseVisualStyleBackColor = true;
-			this->tabPageGestionPersonne->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionPersonne_Click);
+			this->tabPageGestionPersonne->Click += gcnew System::EventHandler(this, &InterfaceEmploye::tabPageGestionPersonne_Click);
 			// 
 			// Text_Personne_ID
 			// 
@@ -992,7 +992,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textPersonneID->Name = L"textPersonneID";
 			this->textPersonneID->Size = System::Drawing::Size(115, 20);
 			this->textPersonneID->TabIndex = 7;
-			this->textPersonneID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox42_TextChanged);
+			this->textPersonneID->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textBox42_TextChanged);
 			// 
 			// Label_Personne_Nom
 			// 
@@ -1034,7 +1034,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Ajouter->TabIndex = 68;
 			this->Button_Personne_Ajouter->Text = L"Ajouter";
 			this->Button_Personne_Ajouter->UseVisualStyleBackColor = true;
-			this->Button_Personne_Ajouter->Click += gcnew System::EventHandler(this, &InterfaceManager::button43_Click);
+			this->Button_Personne_Ajouter->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button43_Click);
 			// 
 			// Button_Personne_Supprimer
 			// 
@@ -1044,7 +1044,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Supprimer->TabIndex = 69;
 			this->Button_Personne_Supprimer->Text = L"Supprimer";
 			this->Button_Personne_Supprimer->UseVisualStyleBackColor = true;
-			this->Button_Personne_Supprimer->Click += gcnew System::EventHandler(this, &InterfaceManager::button42_Click);
+			this->Button_Personne_Supprimer->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button42_Click);
 			// 
 			// Button_Personne_Modifier
 			// 
@@ -1054,7 +1054,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Modifier->TabIndex = 71;
 			this->Button_Personne_Modifier->Text = L"Modifier";
 			this->Button_Personne_Modifier->UseVisualStyleBackColor = true;
-			this->Button_Personne_Modifier->Click += gcnew System::EventHandler(this, &InterfaceManager::button41_Click);
+			this->Button_Personne_Modifier->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button41_Click);
 			// 
 			// Button_Personne_Enregistrer
 			// 
@@ -1064,7 +1064,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Enregistrer->TabIndex = 70;
 			this->Button_Personne_Enregistrer->Text = L"Enregistrer";
 			this->Button_Personne_Enregistrer->UseVisualStyleBackColor = true;
-			this->Button_Personne_Enregistrer->Click += gcnew System::EventHandler(this, &InterfaceManager::button40_Click);
+			this->Button_Personne_Enregistrer->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button40_Click);
 			// 
 			// Button_Personne_Avancer
 			// 
@@ -1074,7 +1074,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Avancer->TabIndex = 72;
 			this->Button_Personne_Avancer->Text = L">";
 			this->Button_Personne_Avancer->UseVisualStyleBackColor = true;
-			this->Button_Personne_Avancer->Click += gcnew System::EventHandler(this, &InterfaceManager::button39_Click);
+			this->Button_Personne_Avancer->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button39_Click);
 			// 
 			// Button_Personne_Retour
 			// 
@@ -1084,7 +1084,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Retour->TabIndex = 73;
 			this->Button_Personne_Retour->Text = L"<";
 			this->Button_Personne_Retour->UseVisualStyleBackColor = true;
-			this->Button_Personne_Retour->Click += gcnew System::EventHandler(this, &InterfaceManager::button38_Click);
+			this->Button_Personne_Retour->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button38_Click);
 			// 
 			// dataGridView5
 			// 
@@ -1096,7 +1096,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->dataGridView5->RowTemplate->Height = 28;
 			this->dataGridView5->Size = System::Drawing::Size(516, 357);
 			this->dataGridView5->TabIndex = 74;
-			this->dataGridView5->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView5_CellClick);
+			this->dataGridView5->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceEmploye::dataGridView5_CellClick);
 			// 
 			// Button_Personne_Load
 			// 
@@ -1106,7 +1106,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Button_Personne_Load->TabIndex = 75;
 			this->Button_Personne_Load->Text = L"Load";
 			this->Button_Personne_Load->UseVisualStyleBackColor = true;
-			this->Button_Personne_Load->Click += gcnew System::EventHandler(this, &InterfaceManager::button44_Click);
+			this->Button_Personne_Load->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button44_Click);
 			// 
 			// label54
 			// 
@@ -1124,7 +1124,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textAffichage->Size = System::Drawing::Size(56, 13);
 			this->textAffichage->TabIndex = 77;
 			this->textAffichage->Text = L"En attente";
-			this->textAffichage->Click += gcnew System::EventHandler(this, &InterfaceManager::textAffichage_Click);
+			this->textAffichage->Click += gcnew System::EventHandler(this, &InterfaceEmploye::textAffichage_Click);
 			// 
 			// tabPageGestionStat
 			// 
@@ -1377,7 +1377,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->numericUpDownTVA->Name = L"numericUpDownTVA";
 			this->numericUpDownTVA->Size = System::Drawing::Size(120, 20);
 			this->numericUpDownTVA->TabIndex = 50;
-			this->numericUpDownTVA->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownTVA_ValueChanged);
+			this->numericUpDownTVA->ValueChanged += gcnew System::EventHandler(this, &InterfaceEmploye::numericUpDownTVA_ValueChanged);
 			// 
 			// numericUpDownRemise
 			// 
@@ -1385,7 +1385,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->numericUpDownRemise->Name = L"numericUpDownRemise";
 			this->numericUpDownRemise->Size = System::Drawing::Size(120, 20);
 			this->numericUpDownRemise->TabIndex = 51;
-			this->numericUpDownRemise->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownRemise_ValueChanged);
+			this->numericUpDownRemise->ValueChanged += gcnew System::EventHandler(this, &InterfaceEmploye::numericUpDownRemise_ValueChanged);
 			// 
 			// numericUpDownMarge
 			// 
@@ -1393,7 +1393,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->numericUpDownMarge->Name = L"numericUpDownMarge";
 			this->numericUpDownMarge->Size = System::Drawing::Size(120, 20);
 			this->numericUpDownMarge->TabIndex = 52;
-			this->numericUpDownMarge->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownMarge_ValueChanged);
+			this->numericUpDownMarge->ValueChanged += gcnew System::EventHandler(this, &InterfaceEmploye::numericUpDownMarge_ValueChanged);
 			// 
 			// numericUpDownDemarque
 			// 
@@ -1401,7 +1401,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->numericUpDownDemarque->Name = L"numericUpDownDemarque";
 			this->numericUpDownDemarque->Size = System::Drawing::Size(120, 20);
 			this->numericUpDownDemarque->TabIndex = 53;
-			this->numericUpDownDemarque->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDownDemarque_ValueChanged);
+			this->numericUpDownDemarque->ValueChanged += gcnew System::EventHandler(this, &InterfaceEmploye::numericUpDownDemarque_ValueChanged);
 			// 
 			// tabPage5
 			// 
@@ -1494,7 +1494,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonTVA20->TabIndex = 64;
 			this->buttonTVA20->Text = L"20%";
 			this->buttonTVA20->UseVisualStyleBackColor = true;
-			this->buttonTVA20->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA20_Click);
+			this->buttonTVA20->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonTVA20_Click);
 			// 
 			// buttonTVA10
 			// 
@@ -1504,7 +1504,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonTVA10->TabIndex = 65;
 			this->buttonTVA10->Text = L"10%";
 			this->buttonTVA10->UseVisualStyleBackColor = true;
-			this->buttonTVA10->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA10_Click);
+			this->buttonTVA10->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonTVA10_Click);
 			// 
 			// buttonTVA5
 			// 
@@ -1514,7 +1514,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonTVA5->TabIndex = 66;
 			this->buttonTVA5->Text = L"5.5%";
 			this->buttonTVA5->UseVisualStyleBackColor = true;
-			this->buttonTVA5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonTVA5_Click);
+			this->buttonTVA5->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonTVA5_Click);
 			// 
 			// buttonMarge15
 			// 
@@ -1525,7 +1525,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonMarge15->TabIndex = 67;
 			this->buttonMarge15->Text = L"15%";
 			this->buttonMarge15->UseVisualStyleBackColor = true;
-			this->buttonMarge15->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge15_Click);
+			this->buttonMarge15->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonMarge15_Click);
 			// 
 			// buttonMarge10
 			// 
@@ -1535,7 +1535,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonMarge10->TabIndex = 68;
 			this->buttonMarge10->Text = L"10%";
 			this->buttonMarge10->UseVisualStyleBackColor = true;
-			this->buttonMarge10->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge10_Click);
+			this->buttonMarge10->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonMarge10_Click);
 			// 
 			// buttonMarge5
 			// 
@@ -1545,7 +1545,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonMarge5->TabIndex = 69;
 			this->buttonMarge5->Text = L"5%";
 			this->buttonMarge5->UseVisualStyleBackColor = true;
-			this->buttonMarge5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonMarge5_Click);
+			this->buttonMarge5->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonMarge5_Click);
 			// 
 			// buttonRemise6
 			// 
@@ -1556,7 +1556,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonRemise6->TabIndex = 70;
 			this->buttonRemise6->Text = L"6%";
 			this->buttonRemise6->UseVisualStyleBackColor = true;
-			this->buttonRemise6->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise6_Click);
+			this->buttonRemise6->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonRemise6_Click);
 			// 
 			// buttonRemise5
 			// 
@@ -1566,7 +1566,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonRemise5->TabIndex = 71;
 			this->buttonRemise5->Text = L"5%";
 			this->buttonRemise5->UseVisualStyleBackColor = true;
-			this->buttonRemise5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise5_Click);
+			this->buttonRemise5->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonRemise5_Click);
 			// 
 			// buttonRemise3
 			// 
@@ -1576,7 +1576,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonRemise3->TabIndex = 72;
 			this->buttonRemise3->Text = L"3%";
 			this->buttonRemise3->UseVisualStyleBackColor = true;
-			this->buttonRemise3->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonRemise3_Click);
+			this->buttonRemise3->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonRemise3_Click);
 			// 
 			// buttonDemarque5
 			// 
@@ -1587,7 +1587,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonDemarque5->TabIndex = 73;
 			this->buttonDemarque5->Text = L"5%";
 			this->buttonDemarque5->UseVisualStyleBackColor = true;
-			this->buttonDemarque5->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque5_Click);
+			this->buttonDemarque5->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonDemarque5_Click);
 			// 
 			// buttonDemarque3
 			// 
@@ -1597,7 +1597,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonDemarque3->TabIndex = 74;
 			this->buttonDemarque3->Text = L"3%";
 			this->buttonDemarque3->UseVisualStyleBackColor = true;
-			this->buttonDemarque3->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque3_Click);
+			this->buttonDemarque3->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonDemarque3_Click);
 			// 
 			// buttonDemarque2
 			// 
@@ -1607,7 +1607,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonDemarque2->TabIndex = 75;
 			this->buttonDemarque2->Text = L"2%";
 			this->buttonDemarque2->UseVisualStyleBackColor = true;
-			this->buttonDemarque2->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonDemarque2_Click);
+			this->buttonDemarque2->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonDemarque2_Click);
 			// 
 			// buttonStaffReload
 			// 
@@ -1617,7 +1617,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->buttonStaffReload->TabIndex = 68;
 			this->buttonStaffReload->Text = L"Reload Page";
 			this->buttonStaffReload->UseVisualStyleBackColor = true;
-			this->buttonStaffReload->Click += gcnew System::EventHandler(this, &InterfaceManager::buttonStaffReload_Click);
+			this->buttonStaffReload->Click += gcnew System::EventHandler(this, &InterfaceEmploye::buttonStaffReload_Click);
 			// 
 			// textBoxPanierAvg
 			// 
@@ -1644,7 +1644,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->comboBox1->Name = L"comboBox1";
 			this->comboBox1->Size = System::Drawing::Size(38, 21);
 			this->comboBox1->TabIndex = 71;
-			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::comboBox1_SelectedIndexChanged);
+			this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceEmploye::comboBox1_SelectedIndexChanged);
 			// 
 			// numericUpDown1
 			// 
@@ -1655,7 +1655,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->numericUpDown1->Size = System::Drawing::Size(37, 20);
 			this->numericUpDown1->TabIndex = 72;
 			this->numericUpDown1->Value = System::Decimal(gcnew cli::array< System::Int32 >(4) { 1, 0, 0, 0 });
-			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &InterfaceManager::numericUpDown1_ValueChanged);
+			this->numericUpDown1->ValueChanged += gcnew System::EventHandler(this, &InterfaceEmploye::numericUpDown1_ValueChanged);
 			// 
 			// tabPageGestionStock
 			// 
@@ -1686,7 +1686,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->tabPageGestionStock->TabIndex = 2;
 			this->tabPageGestionStock->Text = L"Gestion stock";
 			this->tabPageGestionStock->UseVisualStyleBackColor = true;
-			this->tabPageGestionStock->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionStock_Click);
+			this->tabPageGestionStock->Click += gcnew System::EventHandler(this, &InterfaceEmploye::tabPageGestionStock_Click);
 			// 
 			// label16
 			// 
@@ -1783,7 +1783,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button8->TabIndex = 36;
 			this->button8->Text = L"Ajouter";
 			this->button8->UseVisualStyleBackColor = true;
-			this->button8->Click += gcnew System::EventHandler(this, &InterfaceManager::button8_Click);
+			this->button8->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button8_Click);
 			// 
 			// button7
 			// 
@@ -1793,7 +1793,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button7->TabIndex = 37;
 			this->button7->Text = L"Supprimer";
 			this->button7->UseVisualStyleBackColor = true;
-			this->button7->Click += gcnew System::EventHandler(this, &InterfaceManager::button7_Click);
+			this->button7->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button7_Click);
 			// 
 			// button6
 			// 
@@ -1803,7 +1803,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button6->TabIndex = 39;
 			this->button6->Text = L"Modifier";
 			this->button6->UseVisualStyleBackColor = true;
-			this->button6->Click += gcnew System::EventHandler(this, &InterfaceManager::button6_Click);
+			this->button6->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button6_Click);
 			// 
 			// button5
 			// 
@@ -1822,7 +1822,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->dataGridView2->RowHeadersWidth = 62;
 			this->dataGridView2->Size = System::Drawing::Size(569, 310);
 			this->dataGridView2->TabIndex = 40;
-			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView2_CellClick);
+			this->dataGridView2->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceEmploye::dataGridView2_CellClick);
 			// 
 			// button9
 			// 
@@ -1860,7 +1860,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->Load_Stock->TabIndex = 46;
 			this->Load_Stock->Text = L"Load";
 			this->Load_Stock->UseVisualStyleBackColor = true;
-			this->Load_Stock->Click += gcnew System::EventHandler(this, &InterfaceManager::Load_Stock_Click);
+			this->Load_Stock->Click += gcnew System::EventHandler(this, &InterfaceEmploye::Load_Stock_Click);
 			// 
 			// tabPageGestionCommande
 			// 
@@ -1931,7 +1931,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->label22->Size = System::Drawing::Size(44, 13);
 			this->label22->TabIndex = 47;
 			this->label22->Text = L"Id client";
-			this->label22->Click += gcnew System::EventHandler(this, &InterfaceManager::label22_Click);
+			this->label22->Click += gcnew System::EventHandler(this, &InterfaceEmploye::label22_Click);
 			// 
 			// textBox20
 			// 
@@ -2044,7 +2044,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button18->TabIndex = 61;
 			this->button18->Text = L"Ajouter";
 			this->button18->UseVisualStyleBackColor = true;
-			this->button18->Click += gcnew System::EventHandler(this, &InterfaceManager::button18_Click);
+			this->button18->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button18_Click);
 			// 
 			// button17
 			// 
@@ -2054,7 +2054,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button17->TabIndex = 62;
 			this->button17->Text = L"Supprimer";
 			this->button17->UseVisualStyleBackColor = true;
-			this->button17->Click += gcnew System::EventHandler(this, &InterfaceManager::button17_Click);
+			this->button17->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button17_Click);
 			// 
 			// button16
 			// 
@@ -2064,7 +2064,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button16->TabIndex = 64;
 			this->button16->Text = L"Modifier";
 			this->button16->UseVisualStyleBackColor = true;
-			this->button16->Click += gcnew System::EventHandler(this, &InterfaceManager::button16_Click);
+			this->button16->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button16_Click);
 			// 
 			// button15
 			// 
@@ -2074,7 +2074,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button15->TabIndex = 63;
 			this->button15->Text = L"Enregistrer";
 			this->button15->UseVisualStyleBackColor = true;
-			this->button15->Click += gcnew System::EventHandler(this, &InterfaceManager::button15_Click);
+			this->button15->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button15_Click);
 			// 
 			// dataGridView3
 			// 
@@ -2093,7 +2093,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button14->TabIndex = 66;
 			this->button14->Text = L">";
 			this->button14->UseVisualStyleBackColor = true;
-			this->button14->Click += gcnew System::EventHandler(this, &InterfaceManager::button14_Click);
+			this->button14->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button14_Click);
 			// 
 			// button13
 			// 
@@ -2103,7 +2103,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button13->TabIndex = 67;
 			this->button13->Text = L"<";
 			this->button13->UseVisualStyleBackColor = true;
-			this->button13->Click += gcnew System::EventHandler(this, &InterfaceManager::button13_Click);
+			this->button13->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button13_Click);
 			// 
 			// label25
 			// 
@@ -2145,7 +2145,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button20->TabIndex = 72;
 			this->button20->Text = L"Load";
 			this->button20->UseVisualStyleBackColor = true;
-			this->button20->Click += gcnew System::EventHandler(this, &InterfaceManager::button20_Click);
+			this->button20->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button20_Click);
 			// 
 			// label44
 			// 
@@ -2238,7 +2238,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->tabPageGestionClient->TabIndex = 0;
 			this->tabPageGestionClient->Text = L"Gestion client";
 			this->tabPageGestionClient->UseVisualStyleBackColor = true;
-			this->tabPageGestionClient->Click += gcnew System::EventHandler(this, &InterfaceManager::tabPageGestionClient_Click);
+			this->tabPageGestionClient->Click += gcnew System::EventHandler(this, &InterfaceEmploye::tabPageGestionClient_Click);
 			// 
 			// label1
 			// 
@@ -2248,7 +2248,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->label1->Size = System::Drawing::Size(66, 13);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"ID Personne";
-			this->label1->Click += gcnew System::EventHandler(this, &InterfaceManager::label1_Click_1);
+			this->label1->Click += gcnew System::EventHandler(this, &InterfaceEmploye::label1_Click_1);
 			// 
 			// textClientID
 			// 
@@ -2256,7 +2256,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textClientID->Name = L"textClientID";
 			this->textClientID->Size = System::Drawing::Size(115, 20);
 			this->textClientID->TabIndex = 1;
-			this->textClientID->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox1_TextChanged_1);
+			this->textClientID->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textBox1_TextChanged_1);
 			// 
 			// label4
 			// 
@@ -2273,7 +2273,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textMail->Name = L"textMail";
 			this->textMail->Size = System::Drawing::Size(115, 20);
 			this->textMail->TabIndex = 7;
-			this->textMail->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textBox4_TextChanged);
+			this->textMail->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textBox4_TextChanged);
 			// 
 			// label5
 			// 
@@ -2290,7 +2290,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textPremiereCommande->Name = L"textPremiereCommande";
 			this->textPremiereCommande->Size = System::Drawing::Size(115, 20);
 			this->textPremiereCommande->TabIndex = 9;
-			this->textPremiereCommande->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPremiereCommande_TextChanged);
+			this->textPremiereCommande->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textPremiereCommande_TextChanged);
 			// 
 			// label6
 			// 
@@ -2307,7 +2307,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textAniiv->Name = L"textAniiv";
 			this->textAniiv->Size = System::Drawing::Size(115, 20);
 			this->textAniiv->TabIndex = 11;
-			this->textAniiv->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textAniiv_TextChanged);
+			this->textAniiv->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textAniiv_TextChanged);
 			// 
 			// label7
 			// 
@@ -2324,7 +2324,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textLivraison->Name = L"textLivraison";
 			this->textLivraison->Size = System::Drawing::Size(115, 20);
 			this->textLivraison->TabIndex = 13;
-			this->textLivraison->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textLivraison_TextChanged);
+			this->textLivraison->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textLivraison_TextChanged);
 			// 
 			// label8
 			// 
@@ -2341,7 +2341,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textFacturation->Name = L"textFacturation";
 			this->textFacturation->Size = System::Drawing::Size(115, 20);
 			this->textFacturation->TabIndex = 15;
-			this->textFacturation->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textFacturation_TextChanged);
+			this->textFacturation->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textFacturation_TextChanged);
 			// 
 			// button1
 			// 
@@ -2351,7 +2351,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button1->TabIndex = 16;
 			this->button1->Text = L"Ajouter";
 			this->button1->UseVisualStyleBackColor = true;
-			this->button1->Click += gcnew System::EventHandler(this, &InterfaceManager::button1_Click_1);
+			this->button1->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button1_Click_1);
 			// 
 			// button2
 			// 
@@ -2361,7 +2361,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button2->TabIndex = 17;
 			this->button2->Text = L"Supprimer";
 			this->button2->UseVisualStyleBackColor = true;
-			this->button2->Click += gcnew System::EventHandler(this, &InterfaceManager::button2_Click_1);
+			this->button2->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button2_Click_1);
 			// 
 			// button3
 			// 
@@ -2371,7 +2371,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button3->TabIndex = 18;
 			this->button3->Text = L"Modifier";
 			this->button3->UseVisualStyleBackColor = true;
-			this->button3->Click += gcnew System::EventHandler(this, &InterfaceManager::button3_Click);
+			this->button3->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button3_Click);
 			// 
 			// button4
 			// 
@@ -2381,7 +2381,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button4->TabIndex = 17;
 			this->button4->Text = L"Enregistrer";
 			this->button4->UseVisualStyleBackColor = true;
-			this->button4->Click += gcnew System::EventHandler(this, &InterfaceManager::button4_Click);
+			this->button4->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button4_Click);
 			// 
 			// dataGridView1
 			// 
@@ -2391,7 +2391,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->dataGridView1->RowHeadersWidth = 62;
 			this->dataGridView1->Size = System::Drawing::Size(569, 310);
 			this->dataGridView1->TabIndex = 19;
-			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceManager::dataGridView1_CellClick);
+			this->dataGridView1->CellClick += gcnew System::Windows::Forms::DataGridViewCellEventHandler(this, &InterfaceEmploye::dataGridView1_CellClick);
 			// 
 			// button12
 			// 
@@ -2401,7 +2401,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button12->TabIndex = 43;
 			this->button12->Text = L">";
 			this->button12->UseVisualStyleBackColor = true;
-			this->button12->Click += gcnew System::EventHandler(this, &InterfaceManager::button12_Click);
+			this->button12->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button12_Click);
 			// 
 			// button11
 			// 
@@ -2411,7 +2411,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button11->TabIndex = 44;
 			this->button11->Text = L"<";
 			this->button11->UseVisualStyleBackColor = true;
-			this->button11->Click += gcnew System::EventHandler(this, &InterfaceManager::button11_Click);
+			this->button11->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button11_Click);
 			// 
 			// button45
 			// 
@@ -2421,7 +2421,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->button45->TabIndex = 45;
 			this->button45->Text = L"Load";
 			this->button45->UseVisualStyleBackColor = true;
-			this->button45->Click += gcnew System::EventHandler(this, &InterfaceManager::button45_Click);
+			this->button45->Click += gcnew System::EventHandler(this, &InterfaceEmploye::button45_Click);
 			// 
 			// affichageClient
 			// 
@@ -2431,7 +2431,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->affichageClient->Size = System::Drawing::Size(56, 13);
 			this->affichageClient->TabIndex = 46;
 			this->affichageClient->Text = L"En attente";
-			this->affichageClient->Click += gcnew System::EventHandler(this, &InterfaceManager::affichageClient_Click);
+			this->affichageClient->Click += gcnew System::EventHandler(this, &InterfaceEmploye::affichageClient_Click);
 			// 
 			// label3
 			// 
@@ -2448,7 +2448,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textPrenomClient->Name = L"textPrenomClient";
 			this->textPrenomClient->Size = System::Drawing::Size(115, 20);
 			this->textPrenomClient->TabIndex = 48;
-			this->textPrenomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textPrenomClient_TextChanged);
+			this->textPrenomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textPrenomClient_TextChanged);
 			// 
 			// label2
 			// 
@@ -2465,7 +2465,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->textNomClient->Name = L"textNomClient";
 			this->textNomClient->Size = System::Drawing::Size(115, 20);
 			this->textNomClient->TabIndex = 50;
-			this->textNomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceManager::textNomClient_TextChanged);
+			this->textNomClient->TextChanged += gcnew System::EventHandler(this, &InterfaceEmploye::textNomClient_TextChanged);
 			// 
 			// tabControl1
 			// 
@@ -2480,19 +2480,19 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->tabControl1->SelectedIndex = 0;
 			this->tabControl1->Size = System::Drawing::Size(952, 426);
 			this->tabControl1->TabIndex = 8;
-			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControl1_SelectedIndexChanged);
-			this->tabControl1->VisibleChanged += gcnew System::EventHandler(this, &InterfaceManager::tabControl1_VisibleChanged);
+			this->tabControl1->SelectedIndexChanged += gcnew System::EventHandler(this, &InterfaceEmploye::tabControl1_SelectedIndexChanged);
+			this->tabControl1->VisibleChanged += gcnew System::EventHandler(this, &InterfaceEmploye::tabControl1_VisibleChanged);
 			// 
-			// InterfaceManager
+			// InterfaceEmploye
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(976, 451);
 			this->Controls->Add(this->tabControl1);
-			this->Name = L"InterfaceManager";
+			this->Name = L"InterfaceEmploye";
 			this->Text = L"Interface Manager";
-			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &InterfaceManager::InterfaceManager_FormClosed);
-			this->Load += gcnew System::EventHandler(this, &InterfaceManager::MyForm1_Load);
+			this->FormClosed += gcnew System::Windows::Forms::FormClosedEventHandler(this, &InterfaceEmploye::InterfaceEmploye_FormClosed);
+			this->Load += gcnew System::EventHandler(this, &InterfaceEmploye::MyForm1_Load);
 			this->tabPageGestionAdresses->ResumeLayout(false);
 			this->tabPageGestionAdresses->PerformLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView4))->EndInit();
@@ -2539,7 +2539,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 
 	private: System::Void dataGridView_Staff_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		this->index = e->RowIndex;
-		this->loadDataStaff(this->index);
+		
 	}
 	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex != -1) {
@@ -2612,31 +2612,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 
 	}
 
-	private: void loadDataStaff(int index)
-	{
-		this->dsPersonne->Clear();
-		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-		this->dsStaff->Clear();
-		this->dsStaff = this->processusStaff->ListeStaff("liste");
-		this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-		this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-		this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-		this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-		this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-		this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
-
-		int compt = 0;
-		while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
-			compt++;
-		};
-		this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
-		this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
-
-		// Update dataGridView
-		this->dataGridView_Staff->Refresh();
-		this->dataGridView_Staff->DataSource = this->dsStaff;
-		this->dataGridView_Staff->DataMember = "liste";
-	}
+	
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2871,70 +2847,12 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 	}
 	private: System::Void textBox38_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	private: System::Void button46_Staff_Load_Click(System::Object^ sender, System::EventArgs^ e) {
-		loadDataStaff(0);
-	}
+	
 
+	
 
-	private: System::Void button_Staff_Next_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->index < this->dsStaff->Tables["liste"]->Rows->Count - 1)
-		{
-			this->index++;
-			this->loadDataStaff(this->index);
-		}
-
-	}
-	private: System::Void button_Staff_Previous_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->index > 0)
-		{
-			this->index--;
-			this->loadDataStaff(this->index);
-
-		}
-
-	}
-	private: System::Void button_Staff_Add_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->textStaffID->Clear();
-		this->textStaffSup->Clear();
-		this->textStaffDate->Clear();
-		this->textStaffRole->Clear();
-		this->textStaffAdresse->Clear();
-		this->textStaffMail->Clear();
-		this->textStaffNom->Text = "Ne rien entrer.";
-		this->textStaffPrenom->Text = "Ne rien entrer.";
-		this->mode = "nouv";
-		this->textStaffAffiche->Text = Convert::ToString("Veillez entrer les informations");
-	}
-	private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e) {
-	}
-	private: System::Void button_Staff_Edit_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->mode = "maj";
-		this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
-	}
-	private: System::Void button_Staff_Remove_Click(System::Object^ sender, System::EventArgs^ e) {
-		this->mode = "sup";
-		this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
-	}
-	private: System::Void button_Staff_Save_Click(System::Object^ sender, System::EventArgs^ e) {
-		if (this->mode == "nouv")
-		{
-			int Id;
-			this->processusIdentification->Add_Identification(this->textStaffMail->Text, "1234");
-			Id = this->processusStaff->Add_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
-		}
-		else if (this->mode == "maj")
-		{
-			this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
-		}
-		else if (this->mode == "sup")
-		{
-			this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
-			this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
-		}
-		this->index = 0;
-		this->loadDataStaff(this->index);
-		this->textStaffAffiche->Text += "Traitement terminé.";
-	}
+	
+	
 		   // Statistics
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		// Chiffre d'affaire
@@ -3148,12 +3066,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 			this->processusPersonnes = gcnew SG_Personne();
 			this->dsPersonne = gcnew Data::DataSet();
 		}
-		else if (this->tabControl1->SelectedTab->Name == tabPageGestionStaff->Name) { // Gestion Staff
-			this->dsStaff = gcnew Data::DataSet();
-			this->dsPersonne = gcnew Data::DataSet();
-			this->processusPersonnes = gcnew SG_Personne();
-			this->processusStaff = gcnew SG_Staff();
-		}
+		
 		else if (this->tabControl1->SelectedTab->Name == tabPageGestionStock->Name) { // Gestion Stock
 			this->processusStock = gcnew SG_Stock();
 		}
@@ -3256,7 +3169,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 		}
 		this->comboBoxAdrCitName->SelectionStart = this->comboBoxAdrCitName->Text->Length;
 	}
-	private: System::Void InterfaceManager_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
+	private: System::Void InterfaceEmploye_FormClosed(System::Object^ sender, System::Windows::Forms::FormClosedEventArgs^ e) {
 		Application::Exit();
 	}
 	private: System::Void tabControl1_VisibleChanged(System::Object^ sender, System::EventArgs^ e) { // Initialiser les services et data set du premier onglet qui s'ouvre
@@ -3324,7 +3237,7 @@ private: System::Windows::Forms::TabControl^ tabControl1;
 		}
 		this->index = 0;
 		this->loadDataOrders(this->index);
-		this->textStaffAffiche->Text += "Traitement terminé.";
+		
 	}
 	};
 }
