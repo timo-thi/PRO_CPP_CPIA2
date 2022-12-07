@@ -2545,9 +2545,6 @@ private: void loadDataPersonne(int index)
 {
 	this->dsPersonne->Clear();
 	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->textPersonneID->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[this->index]->ItemArray[0]);
-	this->textPersonneNom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textPersonnePrenom->Text = Convert::ToString(this->dsPersonne->Tables["liste"]->Rows[this->index]->ItemArray[2]);
 
 	// Update dataGridView
 	this->dataGridView5->Refresh();
@@ -2561,8 +2558,11 @@ private: void loadDataPersonne(int index)
 		this->loadDataStaff(this->index);
 	}
 	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-		this->index = e->RowIndex;
-		this->loadDataPersonne(this->index);
+		if (e->RowIndex != -1) {
+			this->textPersonneID->Text = Convert::ToString(this->dataGridView5->Rows[e->RowIndex]->Cells["ID"]->Value->ToString());
+			this->textPersonnePrenom->Text = Convert::ToString(this->dataGridView5->Rows[e->RowIndex]->Cells["Prenom"]->Value->ToString());
+			this->textPersonneNom->Text = Convert::ToString(this->dataGridView5->Rows[e->RowIndex]->Cells["Nom"]->Value->ToString());
+		}
 	}
 
 private: void loadDataClient(int index)
@@ -2588,6 +2588,7 @@ private: void loadDataClient(int index)
 		compt++;
 	};
 	this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
+	compt = 0;
 	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
 		compt++;
 	};
@@ -2840,12 +2841,13 @@ private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-
-	this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
-	this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
-	this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
-	this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
-	this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+	if (e->RowIndex != -1) {
+		this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
+		this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
+		this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
+		this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
+		this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+	} 
 }
 
 private: System::Void textBox39_TextChanged(System::Object^ sender, System::EventArgs^ e) {
