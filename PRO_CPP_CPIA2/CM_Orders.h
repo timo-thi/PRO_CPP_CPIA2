@@ -58,7 +58,7 @@ namespace NS_Composants
         SqlCommand^ Update_Bill(void);
         SqlCommand^ Select_Bill(void);
 
-        SqlCommand^ Select_GenerationID(void);
+        SqlCommand^ Select_GenerationID(DateTime^ date, int client);
 
         SqlCommand^ Insert_Mean_Of_Payment(void);
         SqlCommand^ Delete_Mean_Of_Payment(void);

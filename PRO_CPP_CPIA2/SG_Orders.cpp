@@ -14,23 +14,20 @@ SG_Orders::SG_Orders(void){
 	this->GenerationID = gcnew Data::DataSet();
 }
 
-void SG_Orders::Add_Order(String^ ID,DateTime^ dateExp,DateTime^ dateRec,int client,int nombrePaiement,String^ MOP,int balance,string* bill,int* produit,int* amount,int nombreProduit){
+void SG_Orders::Add_Order(String^ ID,DateTime^ dateExp,DateTime^ dateRec,int client,int nombrePaiement,String^ MOP,int balance,int produit,int amount,int nombreProduit,DateTime^ datTkt){
 	this->MapOrders->Set_ID(ID);
 	this->MapOrders->Set_Date_Exp(dateExp);
 	this->MapOrders->Set_Date_Liv(dateRec);
 	this->MapOrders->Set_Client_ID(client);
 	this->MapOrders->Set_Mean_Of_Payment(MOP);
 	this->MapOrders->Insert_Order();
-	for (int i = 0; i < nombrePaiement; i++) {
-		this->MapOrders->Set_Balance(round(balance / nombrePaiement));
-		this->MapOrders->Set_Date_Bill(Convert::ToDateTime(bill[i].c_str()));
-		this->MapOrders->Insert_Bill();
-	}
-	for (int i = 0; i < nombreProduit; i++) {
-		this->MapOrders->Set_Amount(amount[i]);
-		this->MapOrders->Set_Product(produit[i]);
-		this->MapOrders->Insert_Product();
-	}
+	this->MapOrders->Set_Balance(balance);
+	this->MapOrders->Set_Date_Bill(datTkt);
+	this->MapOrders->Insert_Bill();
+	this->MapOrders->Set_Amount(amount);
+	this->MapOrders->Set_Product(produit);
+	this->MapOrders->Insert_Product();
+	
 }
 
 void SG_Orders::Remove_Order(String^ ID){
@@ -66,9 +63,9 @@ DataSet^ SG_Orders::ListeBill(String^ table) {
 	return this->dataBill;
 }
 
-DataSet^ SG_Orders::ListeID(String^ table) {
+DataSet^ SG_Orders::ListeID(String^ table,DateTime^ date,int client) {
 	this->GenerationID->Clear();
-	this->GenerationID = this->AccesOrders->getRows(this->MapOrders->Select_GenerationID(), table);
+	this->GenerationID = this->AccesOrders->getRows(this->MapOrders->Select_GenerationID(date ,client), table);
 	return this->GenerationID;
 }
 void SG_Orders::Cree_Facture(String^ Facture, String^ ID) {

@@ -164,154 +164,160 @@ namespace ProjetPOO {
 
 
 
-private: System::Windows::Forms::TabPage^ tabPageGestionStaff;
-private: System::Windows::Forms::Button^ button_Staff_Previous;
-private: System::Windows::Forms::Button^ button_Staff_Next;
-private: System::Windows::Forms::DataGridView^ dataGridView_Staff;
-private: System::Windows::Forms::Button^ button_Staff_Save;
-private: System::Windows::Forms::Button^ button_Staff_Edit;
-private: System::Windows::Forms::Button^ button_Staff_Remove;
-private: System::Windows::Forms::Button^ button_Staff_Add;
-private: System::Windows::Forms::TextBox^ textStaffRole;
-private: System::Windows::Forms::Label^ label_Staff_Role;
-private: System::Windows::Forms::TextBox^ textStaffAdresse;
-private: System::Windows::Forms::Label^ label_Staff_Adr_ID;
-private: System::Windows::Forms::TextBox^ textStaffDate;
-private: System::Windows::Forms::Label^ label_Staff_Date_Embauche;
-private: System::Windows::Forms::TextBox^ textStaffSup;
-private: System::Windows::Forms::Label^ label_Staff_Nom_Superieur;
-private: System::Windows::Forms::TextBox^ textStaffMail;
-private: System::Windows::Forms::Label^ label47;
-private: System::Windows::Forms::TextBox^ textStaffPrenom;
-private: System::Windows::Forms::Label^ label_Staff_Pers_Prenom;
-private: System::Windows::Forms::TextBox^ textStaffNom;
-private: System::Windows::Forms::Label^ label_Staff_Pers_Nom;
-private: System::Windows::Forms::TextBox^ textStaffID;
-private: System::Windows::Forms::Label^ label_Staff_Pers_ID;
-private: System::Windows::Forms::TabPage^ tabPageGestionPersonne;
-private: System::Windows::Forms::TextBox^ textPersonnePrenom;
-private: System::Windows::Forms::Label^ Label_Personne_Prenom;
-private: System::Windows::Forms::TextBox^ textPersonneNom;
-private: System::Windows::Forms::Label^ Label_Personne_Nom;
-private: System::Windows::Forms::TextBox^ textPersonneID;
-private: System::Windows::Forms::Label^ Text_Personne_ID;
+	private: System::Windows::Forms::TabPage^ tabPageGestionStaff;
+	private: System::Windows::Forms::Button^ button_Staff_Previous;
+	private: System::Windows::Forms::Button^ button_Staff_Next;
+	private: System::Windows::Forms::DataGridView^ dataGridView_Staff;
+	private: System::Windows::Forms::Button^ button_Staff_Save;
+	private: System::Windows::Forms::Button^ button_Staff_Edit;
+	private: System::Windows::Forms::Button^ button_Staff_Remove;
+	private: System::Windows::Forms::Button^ button_Staff_Add;
+	private: System::Windows::Forms::TextBox^ textStaffRole;
+	private: System::Windows::Forms::Label^ label_Staff_Role;
+	private: System::Windows::Forms::TextBox^ textStaffAdresse;
+	private: System::Windows::Forms::Label^ label_Staff_Adr_ID;
+	private: System::Windows::Forms::TextBox^ textStaffDate;
+	private: System::Windows::Forms::Label^ label_Staff_Date_Embauche;
+	private: System::Windows::Forms::TextBox^ textStaffSup;
+	private: System::Windows::Forms::Label^ label_Staff_Nom_Superieur;
+	private: System::Windows::Forms::TextBox^ textStaffMail;
+	private: System::Windows::Forms::Label^ label47;
+	private: System::Windows::Forms::TextBox^ textStaffPrenom;
+	private: System::Windows::Forms::Label^ label_Staff_Pers_Prenom;
+	private: System::Windows::Forms::TextBox^ textStaffNom;
+	private: System::Windows::Forms::Label^ label_Staff_Pers_Nom;
+	private: System::Windows::Forms::TextBox^ textStaffID;
+	private: System::Windows::Forms::Label^ label_Staff_Pers_ID;
+	private: System::Windows::Forms::TabPage^ tabPageGestionPersonne;
+	private: System::Windows::Forms::TextBox^ textPersonnePrenom;
+	private: System::Windows::Forms::Label^ Label_Personne_Prenom;
+	private: System::Windows::Forms::TextBox^ textPersonneNom;
+	private: System::Windows::Forms::Label^ Label_Personne_Nom;
+	private: System::Windows::Forms::TextBox^ textPersonneID;
+	private: System::Windows::Forms::Label^ Text_Personne_ID;
 
 
 
-private: System::Windows::Forms::DataGridView^ dataGridView5;
-private: System::Windows::Forms::Button^ Button_Personne_Retour;
-private: System::Windows::Forms::Button^ Button_Personne_Avancer;
-private: System::Windows::Forms::Button^ Button_Personne_Enregistrer;
-private: System::Windows::Forms::Button^ Button_Personne_Modifier;
-private: System::Windows::Forms::Button^ Button_Personne_Supprimer;
-private: System::Windows::Forms::Button^ Button_Personne_Ajouter;
-private: System::Windows::Forms::Button^ Button_Personne_Load;
-private: System::Windows::Forms::Label^ label54;
-private: System::Windows::Forms::Label^ textAffichage;
-private: System::Windows::Forms::Label^ affichageClient;
-private: System::Windows::Forms::Button^ button45;
-private: System::Windows::Forms::TextBox^ textNomClient;
-private: System::Windows::Forms::Label^ label2;
-private: System::Windows::Forms::TextBox^ textPrenomClient;
-private: System::Windows::Forms::Label^ label3;
-private: System::Windows::Forms::Button^ Load_Stock;
-private: int index = 0;
+	private: System::Windows::Forms::DataGridView^ dataGridView5;
+	private: System::Windows::Forms::Button^ Button_Personne_Retour;
+	private: System::Windows::Forms::Button^ Button_Personne_Avancer;
+	private: System::Windows::Forms::Button^ Button_Personne_Enregistrer;
+	private: System::Windows::Forms::Button^ Button_Personne_Modifier;
+	private: System::Windows::Forms::Button^ Button_Personne_Supprimer;
+	private: System::Windows::Forms::Button^ Button_Personne_Ajouter;
+	private: System::Windows::Forms::Button^ Button_Personne_Load;
+	private: System::Windows::Forms::Label^ label54;
+	private: System::Windows::Forms::Label^ textAffichage;
+	private: System::Windows::Forms::Label^ affichageClient;
+	private: System::Windows::Forms::Button^ button45;
+	private: System::Windows::Forms::TextBox^ textNomClient;
+	private: System::Windows::Forms::Label^ label2;
+	private: System::Windows::Forms::TextBox^ textPrenomClient;
+	private: System::Windows::Forms::Label^ label3;
+	private: System::Windows::Forms::Button^ Load_Stock;
+	private: int index = 0;
 
-private: String^ mode = "RIEN";
-private: Data::DataSet^ dsPersonne;
-private: SG_Personne^ processusPersonnes;
-private: Data::DataSet^ dsClient;
-private: SG_Client^ processusClient;
-private: Data::DataSet^ dsLivraison;
-private: Data::DataSet^ dsFacturation;
-private: SG_Stock^ processusStock;
-private: Data::DataSet^ dsStaff;
-private: SG_Staff^ processusStaff;
-private: System::Windows::Forms::Label^ textStaffAffiche;
-private: System::Windows::Forms::Button^ button46_Staff_Load;
-private: SG_Stat^ Stat_Service;
-private: SG_Address^ Adr_Service;
-private: Data::DataSet^ dsOrders;
-private: SG_Orders^ processusOrders;
-private: Data::DataSet^ dsBill;
+	private: String^ mode = "RIEN";
+	private: Data::DataSet^ dsPersonne;
+	private: SG_Personne^ processusPersonnes;
+	private: Data::DataSet^ dsClient;
+	private: SG_Client^ processusClient;
+	private: Data::DataSet^ dsLivraison;
+	private: Data::DataSet^ dsFacturation;
+	private: SG_Stock^ processusStock;
+	private: Data::DataSet^ dsStaff;
+	private: SG_Staff^ processusStaff;
+	private: System::Windows::Forms::Label^ textStaffAffiche;
+	private: System::Windows::Forms::Button^ button46_Staff_Load;
+	private: SG_Stat^ Stat_Service;
+	private: SG_Address^ Adr_Service;
+	private: Data::DataSet^ dsOrders;
+	private: SG_Orders^ processusOrders;
+	private: Data::DataSet^ dsBill;
+	private: Data::DataSet^ dsTempo;
+	private: SG_Identification^ processusIdentification = gcnew SG_Identification();
+	private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
+	private: System::Windows::Forms::ComboBox^ comboBox1;
+	private: System::Windows::Forms::TextBox^ textBoxValAch;
+	private: System::Windows::Forms::TextBox^ textBoxPanierAvg;
+	private: System::Windows::Forms::Button^ buttonStaffReload;
+	private: System::Windows::Forms::TabControl^ tabControlSimuModeSwitch;
+	private: System::Windows::Forms::TabPage^ tabPage5;
+	private: System::Windows::Forms::Button^ buttonDemarque2;
+	private: System::Windows::Forms::Button^ buttonDemarque3;
+	private: System::Windows::Forms::Button^ buttonDemarque5;
+	private: System::Windows::Forms::Button^ buttonRemise3;
+	private: System::Windows::Forms::Button^ buttonRemise5;
+	private: System::Windows::Forms::Button^ buttonRemise6;
+	private: System::Windows::Forms::Button^ buttonMarge5;
+	private: System::Windows::Forms::Button^ buttonMarge10;
+	private: System::Windows::Forms::Button^ buttonMarge15;
+	private: System::Windows::Forms::Button^ buttonTVA5;
+	private: System::Windows::Forms::Button^ buttonTVA10;
+	private: System::Windows::Forms::Button^ buttonTVA20;
+	private: System::Windows::Forms::Label^ label42;
+	private: System::Windows::Forms::Label^ label41;
+	private: System::Windows::Forms::Label^ label40;
+	private: System::Windows::Forms::Label^ label39;
+	private: System::Windows::Forms::Label^ label38;
+	private: System::Windows::Forms::TextBox^ textBoxValComAuto;
+	private: System::Windows::Forms::TabPage^ tabPage6;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownRemise;
+	private: System::Windows::Forms::NumericUpDown^ numericUpDownTVA;
+	private: System::Windows::Forms::Button^ button19;
+	private: System::Windows::Forms::Label^ label35;
+	private: System::Windows::Forms::Label^ label33;
+	private: System::Windows::Forms::Label^ label37;
+	private: System::Windows::Forms::TextBox^ textBoxValComPers;
+	private: System::Windows::Forms::Label^ label34;
+	private: System::Windows::Forms::Label^ label36;
+	private: System::Windows::Forms::Label^ label32;
+	private: System::Windows::Forms::TextBox^ textBoxTotCli;
+	private: System::Windows::Forms::Label^ label31;
+	private: System::Windows::Forms::Label^ label30;
+	private: System::Windows::Forms::ListBox^ listBoxLessPurchased;
+	private: System::Windows::Forms::Label^ label29;
+	private: System::Windows::Forms::ListBox^ listBoxMorePurchased;
+	private: System::Windows::Forms::Label^ label28;
+	private: System::Windows::Forms::ListBox^ listUnderThreshold;
+	private: System::Windows::Forms::TextBox^ textBoxChfAff;
+	private: System::Windows::Forms::Label^ label27;
+	private: System::Windows::Forms::Label^ label26;
+	private: System::Windows::Forms::TabPage^ tabPageGestionAdresses;
+	private: System::Windows::Forms::Label^ labelAdrStatus;
+	private: System::Windows::Forms::Button^ buttonLoadAdr;
+	private: System::Windows::Forms::RichTextBox^ richTextBoxAdrDetails1;
+	private: System::Windows::Forms::Button^ buttonAdrPrevious;
+	private: System::Windows::Forms::Button^ buttonAdrNext;
+	private: System::Windows::Forms::DataGridView^ dataGridView4;
+	private: System::Windows::Forms::Button^ buttonRegisterAdr;
+	private: System::Windows::Forms::Button^ buttonEditAdr;
+	private: System::Windows::Forms::Button^ buttonDelAdr;
+	private: System::Windows::Forms::Button^ buttonAddAdr;
+	private: System::Windows::Forms::TextBox^ textBoxAdrCitZip;
+	private: System::Windows::Forms::Label^ label52;
 
-private: SG_Identification^ processusIdentification = gcnew SG_Identification();
-private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
-private: System::Windows::Forms::ComboBox^ comboBox1;
-private: System::Windows::Forms::TextBox^ textBoxValAch;
-private: System::Windows::Forms::TextBox^ textBoxPanierAvg;
-private: System::Windows::Forms::Button^ buttonStaffReload;
-private: System::Windows::Forms::TabControl^ tabControlSimuModeSwitch;
-private: System::Windows::Forms::TabPage^ tabPage5;
-private: System::Windows::Forms::Button^ buttonDemarque2;
-private: System::Windows::Forms::Button^ buttonDemarque3;
-private: System::Windows::Forms::Button^ buttonDemarque5;
-private: System::Windows::Forms::Button^ buttonRemise3;
-private: System::Windows::Forms::Button^ buttonRemise5;
-private: System::Windows::Forms::Button^ buttonRemise6;
-private: System::Windows::Forms::Button^ buttonMarge5;
-private: System::Windows::Forms::Button^ buttonMarge10;
-private: System::Windows::Forms::Button^ buttonMarge15;
-private: System::Windows::Forms::Button^ buttonTVA5;
-private: System::Windows::Forms::Button^ buttonTVA10;
-private: System::Windows::Forms::Button^ buttonTVA20;
-private: System::Windows::Forms::Label^ label42;
-private: System::Windows::Forms::Label^ label41;
-private: System::Windows::Forms::Label^ label40;
-private: System::Windows::Forms::Label^ label39;
-private: System::Windows::Forms::Label^ label38;
-private: System::Windows::Forms::TextBox^ textBoxValComAuto;
-private: System::Windows::Forms::TabPage^ tabPage6;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownDemarque;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownMarge;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownRemise;
-private: System::Windows::Forms::NumericUpDown^ numericUpDownTVA;
-private: System::Windows::Forms::Button^ button19;
-private: System::Windows::Forms::Label^ label35;
-private: System::Windows::Forms::Label^ label33;
-private: System::Windows::Forms::Label^ label37;
-private: System::Windows::Forms::TextBox^ textBoxValComPers;
-private: System::Windows::Forms::Label^ label34;
-private: System::Windows::Forms::Label^ label36;
-private: System::Windows::Forms::Label^ label32;
-private: System::Windows::Forms::TextBox^ textBoxTotCli;
-private: System::Windows::Forms::Label^ label31;
-private: System::Windows::Forms::Label^ label30;
-private: System::Windows::Forms::ListBox^ listBoxLessPurchased;
-private: System::Windows::Forms::Label^ label29;
-private: System::Windows::Forms::ListBox^ listBoxMorePurchased;
-private: System::Windows::Forms::Label^ label28;
-private: System::Windows::Forms::ListBox^ listUnderThreshold;
-private: System::Windows::Forms::TextBox^ textBoxChfAff;
-private: System::Windows::Forms::Label^ label27;
-private: System::Windows::Forms::Label^ label26;
-private: System::Windows::Forms::TabPage^ tabPageGestionAdresses;
-private: System::Windows::Forms::Label^ labelAdrStatus;
-private: System::Windows::Forms::Button^ buttonLoadAdr;
-private: System::Windows::Forms::RichTextBox^ richTextBoxAdrDetails1;
-private: System::Windows::Forms::Button^ buttonAdrPrevious;
-private: System::Windows::Forms::Button^ buttonAdrNext;
-private: System::Windows::Forms::DataGridView^ dataGridView4;
-private: System::Windows::Forms::Button^ buttonRegisterAdr;
-private: System::Windows::Forms::Button^ buttonEditAdr;
-private: System::Windows::Forms::Button^ buttonDelAdr;
-private: System::Windows::Forms::Button^ buttonAddAdr;
-private: System::Windows::Forms::TextBox^ textBoxAdrCitZip;
-private: System::Windows::Forms::Label^ label52;
-
-private: System::Windows::Forms::Label^ label53;
-private: System::Windows::Forms::TextBox^ textBoxAdrCitID;
-private: System::Windows::Forms::Label^ label43;
-private: System::Windows::Forms::Label^ label55;
-private: System::Windows::Forms::TextBox^ textBoxAdrName;
-private: System::Windows::Forms::Label^ label56;
-private: System::Windows::Forms::TextBox^ textBoxAdrNum;
-private: System::Windows::Forms::Label^ label57;
-private: System::Windows::Forms::Label^ label44;
-private: System::Windows::Forms::TextBox^ textBoxAdrID;
-private: System::Windows::Forms::Label^ label58;
-private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
-private: System::Windows::Forms::Button^ button20;
+	private: System::Windows::Forms::Label^ label53;
+	private: System::Windows::Forms::TextBox^ textBoxAdrCitID;
+	private: System::Windows::Forms::Label^ label43;
+	private: System::Windows::Forms::Label^ label55;
+	private: System::Windows::Forms::TextBox^ textBoxAdrName;
+	private: System::Windows::Forms::Label^ label56;
+	private: System::Windows::Forms::TextBox^ textBoxAdrNum;
+	private: System::Windows::Forms::Label^ label57;
+	private: System::Windows::Forms::Label^ label44;
+	private: System::Windows::Forms::TextBox^ textBoxAdrID;
+	private: System::Windows::Forms::Label^ label58;
+	private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
+	private: System::Windows::Forms::Button^ button20;
+private: System::Windows::Forms::TextBox^ textBox4;
+private: System::Windows::Forms::Label^ label49;
+private: System::Windows::Forms::TextBox^ textBox1;
+private: System::Windows::Forms::Label^ label45;
+private: System::Windows::Forms::TextBox^ textBox2;
+private: System::Windows::Forms::Label^ label46;
 
 
 
@@ -363,6 +369,7 @@ private: System::Windows::Forms::Button^ button20;
 			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionCommande = (gcnew System::Windows::Forms::TabPage());
+			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
@@ -529,7 +536,12 @@ private: System::Windows::Forms::Button^ button20;
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrID = (gcnew System::Windows::Forms::TextBox());
 			this->label58 = (gcnew System::Windows::Forms::Label());
-			this->label44 = (gcnew System::Windows::Forms::Label());
+			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
+			this->label45 = (gcnew System::Windows::Forms::Label());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->label46 = (gcnew System::Windows::Forms::Label());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
+			this->label49 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPageGestionClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -836,6 +848,12 @@ private: System::Windows::Forms::Button^ button20;
 			// 
 			// tabPageGestionCommande
 			// 
+			this->tabPageGestionCommande->Controls->Add(this->textBox4);
+			this->tabPageGestionCommande->Controls->Add(this->label49);
+			this->tabPageGestionCommande->Controls->Add(this->textBox1);
+			this->tabPageGestionCommande->Controls->Add(this->label45);
+			this->tabPageGestionCommande->Controls->Add(this->textBox2);
+			this->tabPageGestionCommande->Controls->Add(this->label46);
 			this->tabPageGestionCommande->Controls->Add(this->label44);
 			this->tabPageGestionCommande->Controls->Add(this->button20);
 			this->tabPageGestionCommande->Controls->Add(this->textBox22);
@@ -873,9 +891,18 @@ private: System::Windows::Forms::Button^ button20;
 			this->tabPageGestionCommande->Text = L"Gestion commande";
 			this->tabPageGestionCommande->UseVisualStyleBackColor = true;
 			// 
+			// label44
+			// 
+			this->label44->AutoSize = true;
+			this->label44->Location = System::Drawing::Point(584, 356);
+			this->label44->Name = L"label44";
+			this->label44->Size = System::Drawing::Size(56, 13);
+			this->label44->TabIndex = 73;
+			this->label44->Text = L"En attente";
+			// 
 			// button20
 			// 
-			this->button20->Location = System::Drawing::Point(356, 344);
+			this->button20->Location = System::Drawing::Point(463, 344);
 			this->button20->Name = L"button20";
 			this->button20->Size = System::Drawing::Size(115, 36);
 			this->button20->TabIndex = 72;
@@ -938,10 +965,10 @@ private: System::Windows::Forms::Button^ button20;
 			// dataGridView3
 			// 
 			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView3->Location = System::Drawing::Point(356, 28);
+			this->dataGridView3->Location = System::Drawing::Point(463, 28);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersWidth = 62;
-			this->dataGridView3->Size = System::Drawing::Size(569, 310);
+			this->dataGridView3->Size = System::Drawing::Size(462, 310);
 			this->dataGridView3->TabIndex = 65;
 			// 
 			// button15
@@ -952,6 +979,7 @@ private: System::Windows::Forms::Button^ button20;
 			this->button15->TabIndex = 63;
 			this->button15->Text = L"Enregistrer";
 			this->button15->UseVisualStyleBackColor = true;
+			this->button15->Click += gcnew System::EventHandler(this, &InterfaceManager::button15_Click);
 			// 
 			// button16
 			// 
@@ -961,6 +989,7 @@ private: System::Windows::Forms::Button^ button20;
 			this->button16->TabIndex = 64;
 			this->button16->Text = L"Modifier";
 			this->button16->UseVisualStyleBackColor = true;
+			this->button16->Click += gcnew System::EventHandler(this, &InterfaceManager::button16_Click);
 			// 
 			// button17
 			// 
@@ -970,6 +999,7 @@ private: System::Windows::Forms::Button^ button20;
 			this->button17->TabIndex = 62;
 			this->button17->Text = L"Supprimer";
 			this->button17->UseVisualStyleBackColor = true;
+			this->button17->Click += gcnew System::EventHandler(this, &InterfaceManager::button17_Click);
 			// 
 			// button18
 			// 
@@ -2519,14 +2549,53 @@ private: System::Windows::Forms::Button^ button20;
 			this->label58->TabIndex = 94;
 			this->label58->Text = L"ID de Adresse";
 			// 
-			// label44
+			// textBox1
 			// 
-			this->label44->AutoSize = true;
-			this->label44->Location = System::Drawing::Point(477, 356);
-			this->label44->Name = L"label44";
-			this->label44->Size = System::Drawing::Size(56, 13);
-			this->label44->TabIndex = 73;
-			this->label44->Text = L"En attente";
+			this->textBox1->Location = System::Drawing::Point(321, 83);
+			this->textBox1->Name = L"textBox1";
+			this->textBox1->Size = System::Drawing::Size(115, 20);
+			this->textBox1->TabIndex = 77;
+			// 
+			// label45
+			// 
+			this->label45->AutoSize = true;
+			this->label45->Location = System::Drawing::Point(318, 55);
+			this->label45->Name = L"label45";
+			this->label45->Size = System::Drawing::Size(47, 13);
+			this->label45->TabIndex = 76;
+			this->label45->Text = L"Quantité";
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(321, 31);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(115, 20);
+			this->textBox2->TabIndex = 75;
+			// 
+			// label46
+			// 
+			this->label46->AutoSize = true;
+			this->label46->Location = System::Drawing::Point(318, 3);
+			this->label46->Name = L"label46";
+			this->label46->Size = System::Drawing::Size(91, 13);
+			this->label46->TabIndex = 74;
+			this->label46->Text = L"Date de paiement";
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(321, 141);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(115, 20);
+			this->textBox4->TabIndex = 79;
+			// 
+			// label49
+			// 
+			this->label49->AutoSize = true;
+			this->label49->Location = System::Drawing::Point(318, 113);
+			this->label49->Name = L"label49";
+			this->label49->Size = System::Drawing::Size(54, 13);
+			this->label49->TabIndex = 78;
+			this->label49->Text = L"ID Produit";
 			// 
 			// InterfaceManager
 			// 
@@ -2573,17 +2642,17 @@ private: System::Windows::Forms::Button^ button20;
 
 		}
 #pragma endregion
-private: void loadDataPersonne(int index)
-{
-	this->dsPersonne->Clear();
-	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+	private: void loadDataPersonne(int index)
+	{
+		this->dsPersonne->Clear();
+		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 
-	// Update dataGridView
-	this->dataGridView5->Refresh();
+		// Update dataGridView
+		this->dataGridView5->Refresh();
 
-	this->dataGridView5->DataSource = this->dsPersonne;
-	this->dataGridView5->DataMember = "liste";
-}
+		this->dataGridView5->DataSource = this->dsPersonne;
+		this->dataGridView5->DataMember = "liste";
+	}
 
 	private: System::Void dataGridView_Staff_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		this->index = e->RowIndex;
@@ -2597,94 +2666,94 @@ private: void loadDataPersonne(int index)
 		}
 	}
 
-private: void loadDataClient(int index)
-{	
-	// Remplir les champs avec la première personne du dataset
-	this->dsPersonne->Clear();
-	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->dsClient->Clear();
-	this->dsClient = this->processusClient->ListeClient("liste");
-	this->textClientID->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-	this->textMail->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textAniiv->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-	this->textPremiereCommande->Text=Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-	this->dsFacturation = this->processusClient->ListeFacturation("liste");
-	int compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textFacturation->Text = Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->dsLivraison = this->processusClient->ListeLivraison("liste");
-	compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
-	compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+	private: void loadDataClient(int index)
+	{
+		// Remplir les champs avec la première personne du dataset
+		this->dsPersonne->Clear();
+		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+		this->dsClient->Clear();
+		this->dsClient = this->processusClient->ListeClient("liste");
+		this->textClientID->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+		this->textMail->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->textAniiv->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+		this->textPremiereCommande->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+		this->dsFacturation = this->processusClient->ListeFacturation("liste");
+		int compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textFacturation->Text = Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->dsLivraison = this->processusClient->ListeLivraison("liste");
+		compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
+		compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
 
-	// Mettre à jour le data grid
-	this->dataGridView1->Refresh();
+		// Mettre à jour le data grid
+		this->dataGridView1->Refresh();
 
-	this->dataGridView1->DataSource = this->dsClient;
-	this->dataGridView1->DataMember = "liste";
-}
+		this->dataGridView1->DataSource = this->dsClient;
+		this->dataGridView1->DataMember = "liste";
+	}
 	private: System::Void dataGridView1_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		this->index = e->RowIndex;
 		this->loadDataClient(this->index);
 	}
 
 
-private: void loadDataOrders(int index)
-{
-	this->dsOrders->Clear();
-	this->dsOrders = this->processusOrders->ListeOrders("liste");
-	this->dsBill->Clear();
-	this->dsBill = this->processusOrders->ListeBill("liste");
-	this->textBox21->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-	this->textBox20->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textBox19->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[2] + " " + this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-	this->textBox14->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-	this->textBox17->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[5]);
-	this->textBox10->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[6]);
-	int compt = 0;
-	while (Convert::ToString(this->dsOrders->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[3])) {
-		compt++;
-	};
-	this->textBox9->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[2]);
-	this->textBox23->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[1]);
+	private: void loadDataOrders(int index)
+	{
+		this->dsOrders->Clear();
+		this->dsOrders = this->processusOrders->ListeOrders("liste");
+		this->dsBill->Clear();
+		this->dsBill = this->processusOrders->ListeBill("liste");
+		this->textBox21->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+		this->textBox20->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->textBox19->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[2] + " " + this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+		this->textBox14->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+		this->textBox17->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+		this->textBox10->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[6]);
+		int compt = 0;
+		while (Convert::ToString(this->dsOrders->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[3])) {
+			compt++;
+		};
+		this->textBox9->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[2]);
+		this->textBox23->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[1]);
 
-}
+	}
 
-private: void loadDataStaff(int index)
-{
-	this->dsPersonne->Clear();
-	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->dsStaff->Clear();
-	this->dsStaff = this->processusStaff->ListeStaff("liste");
-	this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-	this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-	this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-	this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-	this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
-	
-	int compt = 0;
-	while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+	private: void loadDataStaff(int index)
+	{
+		this->dsPersonne->Clear();
+		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+		this->dsStaff->Clear();
+		this->dsStaff = this->processusStaff->ListeStaff("liste");
+		this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+		this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+		this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+		this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+		this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
 
-	// Update dataGridView
-	this->dataGridView_Staff->Refresh();
-	this->dataGridView_Staff->DataSource = this->dsStaff;
-	this->dataGridView_Staff->DataMember = "liste";
-}
+		int compt = 0;
+		while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+
+		// Update dataGridView
+		this->dataGridView_Staff->Refresh();
+		this->dataGridView_Staff->DataSource = this->dsStaff;
+		this->dataGridView_Staff->DataMember = "liste";
+	}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2710,280 +2779,280 @@ private: void loadDataStaff(int index)
 	}
 	private: System::Void tabPageGestionClient_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-private: System::Void tabPageGestionPersonne_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void label22_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox42_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-
-
-private: System::Void button44_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->loadDataPersonne(0);
-}
-private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index < this->dsClient->Tables["liste"]->Rows->Count - 1)
-	{
-		this->index++;
-		this->loadDataClient(this->index);
+	private: System::Void tabPageGestionPersonne_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-}
-private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index > 0)
-	{
-		this->index--;
-		this->loadDataClient(this->index);
-		
+	private: System::Void label22_Click(System::Object^ sender, System::EventArgs^ e) {
 	}
-}
+	private: System::Void textBox42_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
 
-private: System::Void button39_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index < this->dsPersonne->Tables["liste"]->Rows->Count - 1)
-	{
-		this->index++;
+
+	private: System::Void button44_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->loadDataPersonne(0);
+	}
+	private: System::Void button12_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index < this->dsClient->Tables["liste"]->Rows->Count - 1)
+		{
+			this->index++;
+			this->loadDataClient(this->index);
+		}
+	}
+	private: System::Void button11_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index > 0)
+		{
+			this->index--;
+			this->loadDataClient(this->index);
+
+		}
+	}
+
+	private: System::Void button39_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index < this->dsPersonne->Tables["liste"]->Rows->Count - 1)
+		{
+			this->index++;
+			this->loadDataPersonne(this->index);
+		}
+	}
+	private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index > 0)
+		{
+			this->index--;
+			this->loadDataPersonne(this->index);
+
+		}
+	}
+
+
+
+	private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->textPersonneID->Clear();
+		this->textPersonneNom->Clear();
+		this->textPersonnePrenom->Clear();
+		this->mode = "nouv";
+		this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
+	}
+	private: System::Void textAffichage_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button41_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "maj";
+		this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
+	}
+	private: System::Void button42_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "sup";
+		this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+	}
+	private: System::Void button40_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->mode == "nouv")
+		{
+			int Id;
+			Id = this->processusPersonnes->Add_Personne(this->textPersonnePrenom->Text, this->textPersonneNom->Text);
+			this->textAffichage->Text = "L'ID généré est le : " + Id + ". ";
+		}
+		else if (this->mode == "maj")
+		{
+			this->processusPersonnes->Update_Personne(Convert::ToInt32(this->textPersonneID->Text), this->textPersonnePrenom->Text, this->textPersonneNom->Text);
+		}
+		else if (this->mode == "sup")
+		{
+			this->processusPersonnes->Remove_Personne(Convert::ToInt32(this->textPersonneID->Text));
+		}
+		this->index = 0;
 		this->loadDataPersonne(this->index);
+		this->textAffichage->Text += "Traitement terminé.";
 	}
-}
-private: System::Void button38_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index > 0)
-	{
-		this->index--;
-		this->loadDataPersonne(this->index);
+	private: System::Void button45_Click(System::Object^ sender, System::EventArgs^ e) {
+		loadDataClient(0);
+	}
+	private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textPremiereCommande_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textAniiv_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textLivraison_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textFacturation_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+
+	private: System::Void affichageClient_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this->textClientID->Clear();
+		this->textMail->Clear();
+		this->textFacturation->Clear();
+		this->textLivraison->Clear();
+		this->textAniiv->Clear();
+		this->textPremiereCommande->Clear();
+		this->textPrenomClient->Text = "Ne rien entrer.";
+		this->textNomClient->Text = "Ne rien entrer.";
+		this->mode = "nouv";
+		this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
+	}
+	private: System::Void textNomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textPrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "maj";
+		this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
+	}
+	private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "sup";
+		this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+	}
+	private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->mode == "nouv")
+		{
+			int Id;
+			Id = this->processusClient->Add_Client(Convert::ToInt32(this->textClientID->Text), this->textMail->Text, Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+		}
+		else if (this->mode == "maj")
+		{
+			this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text), Convert::ToString(this->textMail->Text), Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+		}
+		else if (this->mode == "sup")
+		{
+			this->processusClient->Remove_Client(Convert::ToInt32(this->textClientID->Text));
+		}
+		this->index = 0;
+		this->loadDataClient(this->index);
+		this->affichageClient->Text += "Traitement terminé.";
+	}
+	private: System::Void Load_Stock_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
+		this->dataGridView2->Refresh();
+
+		this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
+		this->dataGridView2->DataMember = "Stock";
+	}
+
+	private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {			//Insert in Stock
+
+		processusStock->Set_Nom(textBox15->Text);
+		processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
+		processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
+		processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
+
+		this->processusStock->Add_Products();
+
+		Load_Stock->PerformClick(); //refresh Grid
+	}
+	private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {			//Delete from stock
+
+		processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+
+
+		this->processusStock->Remove_Products();
+
+		Load_Stock->PerformClick(); //refresh Grid
+	}
+
+
+	private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {		//Update from stock
+
+		processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+		processusStock->Set_Nom(textBox15->Text);
+		processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
+		processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
+		processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
+
+		this->processusStock->Update_Products();
+
+		Load_Stock->PerformClick(); //refresh Grid
 
 	}
-}
-
-
-
-private: System::Void button43_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->textPersonneID->Clear();
-	this->textPersonneNom->Clear();
-	this->textPersonnePrenom->Clear();
-	this->mode = "nouv";
-	this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
-}
-private: System::Void textAffichage_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button41_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "maj";
-	this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
-}
-private: System::Void button42_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "sup";
-	this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
-}
-private: System::Void button40_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->mode == "nouv")
-	{
-		int Id;
-		Id = this->processusPersonnes->Add_Personne(this->textPersonnePrenom->Text, this->textPersonneNom->Text);
-		this->textAffichage->Text = "L'ID généré est le : " + Id + ". ";
+	private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+		if (e->RowIndex != -1) {
+			this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
+			this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
+			this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
+			this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
+			this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
+		}
 	}
-	else if (this->mode == "maj")
-	{
-		this->processusPersonnes->Update_Personne(Convert::ToInt32(this->textPersonneID->Text), this->textPersonnePrenom->Text, this->textPersonneNom->Text);
+
+	private: System::Void textBox39_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	else if (this->mode == "sup")
-	{
-		this->processusPersonnes->Remove_Personne(Convert::ToInt32(this->textPersonneID->Text));
+	private: System::Void textBox35_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	this->index = 0;
-	this->loadDataPersonne(this->index);
-	this->textAffichage->Text += "Traitement terminé.";
-}
-private: System::Void button45_Click(System::Object^ sender, System::EventArgs^ e) {
-	loadDataClient(0);
-}
-private: System::Void textBox1_TextChanged_1(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox4_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textPremiereCommande_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textAniiv_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textLivraison_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textFacturation_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-
-private: System::Void affichageClient_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button1_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->textClientID->Clear();
-	this->textMail->Clear();
-	this->textFacturation->Clear();
-	this->textLivraison->Clear();
-	this->textAniiv->Clear();
-	this->textPremiereCommande->Clear();
-	this->textPrenomClient->Text = "Ne rien entrer.";
-	this->textNomClient->Text = "Ne rien entrer.";
-	this->mode = "nouv";
-	this->textAffichage->Text = Convert::ToString("Veillez entrer les informations");
-}
-private: System::Void textNomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textPrenomClient_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "maj";
-	this->textAffichage->Text = "Veuillez modifier les information et enregistrer.";
-}
-private: System::Void button2_Click_1(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "sup";
-	this->textAffichage->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
-}
-private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->mode == "nouv")
-	{
-		int Id;
-		Id = this->processusClient->Add_Client(Convert::ToInt32(this->textClientID->Text),this->textMail->Text, Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text),Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+	private: System::Void textBox34_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	else if (this->mode == "maj")
-	{
-		this->processusClient->Update_Client(Convert::ToInt32(this->textClientID->Text),Convert::ToString(this->textMail->Text), Convert::ToDateTime(this->textAniiv->Text), Convert::ToDateTime(this->textPremiereCommande->Text), Convert::ToInt32(this->textFacturation->Text), Convert::ToInt32(this->textLivraison->Text));
+	private: System::Void textBox32_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	else if (this->mode == "sup")
-	{
-		this->processusClient->Remove_Client(Convert::ToInt32(this->textClientID->Text));
+	private: System::Void textBox33_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 	}
-	this->index = 0;
-	this->loadDataClient(this->index);
-	this->affichageClient ->Text += "Traitement terminé.";
-}
-private: System::Void Load_Stock_Click(System::Object^ sender, System::EventArgs^ e) {		//Update the Stock DataGrid
-	this->dataGridView2->Refresh();
-
-	this->dataGridView2->DataSource = this->processusStock->Fetch_Products("Stock");
-	this->dataGridView2->DataMember = "Stock";
-}
-
-private: System::Void button8_Click(System::Object^ sender, System::EventArgs^ e) {			//Insert in Stock
-
-	processusStock->Set_Nom(textBox15->Text);
-	processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
-	processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
-	processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
-
-	this->processusStock->Add_Products();
-
-	Load_Stock->PerformClick(); //refresh Grid
-}
-private: System::Void button7_Click(System::Object^ sender, System::EventArgs^ e) {			//Delete from stock
-
-	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
+	private: System::Void textBox36_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox37_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void textBox38_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button46_Staff_Load_Click(System::Object^ sender, System::EventArgs^ e) {
+		loadDataStaff(0);
+	}
 
 
-	this->processusStock->Remove_Products();
+	private: System::Void button_Staff_Next_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index < this->dsStaff->Tables["liste"]->Rows->Count - 1)
+		{
+			this->index++;
+			this->loadDataStaff(this->index);
+		}
 
-	Load_Stock->PerformClick(); //refresh Grid
-}
+	}
+	private: System::Void button_Staff_Previous_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index > 0)
+		{
+			this->index--;
+			this->loadDataStaff(this->index);
 
+		}
 
-private: System::Void button6_Click(System::Object^ sender, System::EventArgs^ e) {		//Update from stock
-
-	processusStock->Set_Reference(Convert::ToInt32(textBox16->Text));
-	processusStock->Set_Nom(textBox15->Text);
-	processusStock->Set_Stock(Convert::ToInt32(textBox11->Text));
-	processusStock->Set_Seuil_Stock(Convert::ToInt32(textBox12->Text));
-	processusStock->Set_Prix(Convert::ToInt32(textBox13->Text));
-
-	this->processusStock->Update_Products();
-
-	Load_Stock->PerformClick(); //refresh Grid
-
-}
-private: System::Void dataGridView2_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
-	if (e->RowIndex != -1) {
-		this->textBox16->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_ID"]->Value->ToString();
-		this->textBox15->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_NAME"]->Value->ToString();
-		this->textBox11->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_STOCK"]->Value->ToString();
-		this->textBox12->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_Restock_Threshold"]->Value->ToString();
-		this->textBox13->Text = this->dataGridView2->Rows[e->RowIndex]->Cells["PRO_PRICE"]->Value->ToString();
-	} 
-}
-
-private: System::Void textBox39_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox35_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox34_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox32_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox33_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox36_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox37_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void textBox38_TextChanged(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button46_Staff_Load_Click(System::Object^ sender, System::EventArgs^ e) {
-	loadDataStaff(0);
-}
-
-
-private: System::Void button_Staff_Next_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index < this->dsStaff->Tables["liste"]->Rows->Count - 1)
-	{
-		this->index++;
+	}
+	private: System::Void button_Staff_Add_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->textStaffID->Clear();
+		this->textStaffSup->Clear();
+		this->textStaffDate->Clear();
+		this->textStaffRole->Clear();
+		this->textStaffAdresse->Clear();
+		this->textStaffMail->Clear();
+		this->textStaffNom->Text = "Ne rien entrer.";
+		this->textStaffPrenom->Text = "Ne rien entrer.";
+		this->mode = "nouv";
+		this->textStaffAffiche->Text = Convert::ToString("Veillez entrer les informations");
+	}
+	private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e) {
+	}
+	private: System::Void button_Staff_Edit_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "maj";
+		this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
+	}
+	private: System::Void button_Staff_Remove_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "sup";
+		this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
+	}
+	private: System::Void button_Staff_Save_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->mode == "nouv")
+		{
+			int Id;
+			this->processusIdentification->Add_Identification(this->textStaffMail->Text, "1234");
+			Id = this->processusStaff->Add_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+		}
+		else if (this->mode == "maj")
+		{
+			this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+		}
+		else if (this->mode == "sup")
+		{
+			this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
+			this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
+		}
+		this->index = 0;
 		this->loadDataStaff(this->index);
+		this->textStaffAffiche->Text += "Traitement terminé.";
 	}
-
-}
-private: System::Void button_Staff_Previous_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index > 0)
-	{
-		this->index--;
-		this->loadDataStaff(this->index);
-
-	}
-
-}
-private: System::Void button_Staff_Add_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->textStaffID->Clear();
-	this->textStaffSup->Clear();
-	this->textStaffDate->Clear();
-	this->textStaffRole->Clear();
-	this->textStaffAdresse->Clear();
-	this->textStaffMail->Clear();
-	this->textStaffNom->Text = "Ne rien entrer.";
-	this->textStaffPrenom->Text = "Ne rien entrer.";
-	this->mode = "nouv";
-	this->textStaffAffiche->Text = Convert::ToString("Veillez entrer les informations");
-}
-private: System::Void label55_Click(System::Object^ sender, System::EventArgs^ e) {
-}
-private: System::Void button_Staff_Edit_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "maj";
-	this->textStaffAffiche->Text = "Veuillez modifier les information et enregistrer.";
-}
-private: System::Void button_Staff_Remove_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->mode = "sup";
-	this->textStaffAffiche->Text = "Veuillez confirmer la suppression de la personne en cours en enregistrant.";
-}
-private: System::Void button_Staff_Save_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->mode == "nouv")
-	{
-		int Id;
-		this->processusIdentification->Add_Identification(this->textStaffMail->Text, "1234");
-		Id = this->processusStaff->Add_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
-	}
-	else if (this->mode == "maj")
-	{
-		this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text),Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
-	}
-	else if (this->mode == "sup")
-	{
-		this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
-		this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
-	}
-	this->index = 0;
-	this->loadDataStaff(this->index);
-	this->textStaffAffiche->Text += "Traitement terminé.";
-}
-	// Statistics
+		   // Statistics
 	private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		// Chiffre d'affaire
 		int iind = this->comboBox1->Items->IndexOf(this->comboBox1->Text) + 1;
@@ -3090,7 +3159,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->buttonDemarque3->Enabled = true;
 		this->buttonDemarque5->Enabled = false;
 	}
-	// / Reset simulation buttons to enabled
+		   // / Reset simulation buttons to enabled
 	private: System::Void Reset_Simu_Auto_Buttons() {
 		this->buttonDemarque2->Enabled = true;
 		this->buttonDemarque3->Enabled = true;
@@ -3105,7 +3174,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->buttonTVA10->Enabled = true;
 		this->buttonTVA5->Enabled = true;
 	}
-	// / Personalized simulation controllers
+		   // / Personalized simulation controllers
 	private: System::Void numericUpDownTVA_ValueChanged(System::Object^ sender, System::EventArgs^ e) {
 		this->Stat_Service->Set_Simu_TVA(Convert::ToDouble(this->numericUpDownTVA->Value));
 		this->Refresh_Simulation();
@@ -3177,37 +3246,42 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->Refresh_Simulation();
 	}
 
-	// Tab switch handler
+		   // Tab switch handler
 	private: System::Void tabControl1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
 		if (this->tabControl1->SelectedTab->Name == tabPageGestionStat->Name) {
 			this->Stat_Service = gcnew SG_Stat;
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionAdresses->Name) { // Gestion adresses
+		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionAdresses->Name) { // Gestion adresses
 			this->Adr_Service = gcnew SG_Address;
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionClient->Name) { // Gestion Client
+		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionClient->Name) { // Gestion Client
 			this->processusClient = gcnew SG_Client;
 			this->dsClient = gcnew Data::DataSet();
 			this->dsLivraison = gcnew Data::DataSet();
 			this->dsFacturation = gcnew Data::DataSet();
 			this->processusPersonnes = gcnew SG_Personne();
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionPersonne->Name) { // Gestion Personnes
+		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionPersonne->Name) { // Gestion Personnes
 			this->processusPersonnes = gcnew SG_Personne();
 			this->dsPersonne = gcnew Data::DataSet();
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionStaff->Name) { // Gestion Staff
+		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionStaff->Name) { // Gestion Staff
 			this->dsStaff = gcnew Data::DataSet();
 			this->dsPersonne = gcnew Data::DataSet();
 			this->processusPersonnes = gcnew SG_Personne();
 			this->processusStaff = gcnew SG_Staff();
-		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionStock->Name) { // Gestion Stock
+		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionStock->Name) { // Gestion Stock
 			this->processusStock = gcnew SG_Stock();
 		}
 		else if (this->tabControl1->SelectedTab->Name == tabPageGestionCommande->Name) { // Gestion Personnes
 			this->processusOrders = gcnew SG_Orders();
 			this->dsOrders = gcnew Data::DataSet();
 			this->dsBill = gcnew Data::DataSet();
-			
+
+		}
 	}
-	}
-	// Gestion adresses
+		   // Gestion adresses
 	private: System::Void Refresh_Adr() {
 		this->Adr_Service->Select_Adress();
 		this->dataGridView4->Refresh();
@@ -3287,7 +3361,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 	private: System::Void comboBoxAdrCitName_TextUpdate(System::Object^ sender, System::EventArgs^ e) {
 		if (this->comboBoxAdrCitName->Text == "") return;
 		this->Adr_Service->Fetch_City_Drop_Down(this->comboBoxAdrCitName->Text);
-		
+
 		this->comboBoxAdrCitName->Items->Clear();
 		for (int i = 0; i < this->Adr_Service->DS->Tables[0]->Rows->Count; i++) {
 			this->comboBoxAdrCitName->Items->Add(
@@ -3309,35 +3383,65 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->dsLivraison = gcnew Data::DataSet();
 		this->dsFacturation = gcnew Data::DataSet();
 		this->dsPersonne = gcnew Data::DataSet();
+		this->dsTempo = gcnew Data::DataSet();
 	}
-private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
-	loadDataOrders(0);
-}
+	private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
+		loadDataOrders(0);
+	}
 
-private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index > 0) {
-		this->index--;
-		this->loadDataOrders(this->index);
+	private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index > 0) {
+			this->index--;
+			this->loadDataOrders(this->index);
+		}
+
 	}
-	
+	private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (this->index < this->dsOrders->Tables["liste"]->Rows->Count - 1)
+		{
+			this->index++;
+			this->loadDataOrders(this->index);
+		}
+	}
+	private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->textBox21->Clear();
+		this->textBox20->Clear();
+		this->textBox19->Text = "Ne rien mettre ici.";
+		this->textBox14->Clear();
+		this->textBox17->Clear();
+		this->textBox23->Clear();
+		this->textBox9->Clear();
+		this->textBox10->Text = "Ne rien mettre ici.";
+		this->label44->Text = "Veuillez entrer les informations";
+	}
+	private: System::Void button17_Click(System::Object^ sender, System::EventArgs^ e) {
+		this->mode = "sup";
+		this->labelAdrStatus->Text = "Enregistrer pour confirmer la suppression.";
+	}
+private: System::Void button16_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->mode = "maj";
+	this->labelAdrStatus->Text = "Modifiez et enregistrez.";
 }
-private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
-	if (this->index < this->dsOrders->Tables["liste"]->Rows->Count - 1)
+private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->mode == "nouv")
 	{
-		this->index++;
-		this->loadDataOrders(this->index);
+		this->dsTempo->Clear();
+		this->dsTempo = this->processusOrders->ListeID("liste", Convert::ToDateTime(this->textBox2->Text),Convert::ToInt32(this->textBox20->Text));
+		this->processusOrders->Set_ID(Convert::ToString(this->dsTempo -> Tables["liste"]->Rows[this->index]->ItemArray[0]));
+		this->processusOrders->Add_Order(this->processusOrders->Get_ID(), Convert::ToDateTime(this->textBox14->Text), Convert::ToDateTime(this->textBox17->Text), Convert::ToInt32(this->textBox20->Text), 1, Convert::ToString(this->textBox9->Text), Convert::ToInt32(this->textBox23->Text), Convert::ToInt32(this->textBox4->Text),Convert::ToInt32(this->textBox1->Text),1,Convert::ToDateTime(this->textBox2->Text));
 	}
-}
-private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
-	this->textBox21->Clear();
-	this->textBox20->Clear();
-	this->textBox19->Text="Ne rien mettre ici.";
-	this->textBox14->Clear();
-	this->textBox17->Clear();
-	this->textBox23->Clear();
-	this->textBox9->Clear();
-	this->textBox10->Text="Ne rien mettre ici.";
-	this->label44->Text="Veuillez entrer les informations";
+	else if (this->mode == "maj")
+	{
+		this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+	}
+	else if (this->mode == "sup")
+	{
+		this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
+		this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
+	}
+	this->index = 0;
+	this->loadDataStaff(this->index);
+	this->textStaffAffiche->Text += "Traitement terminé.";
 }
 };
 }

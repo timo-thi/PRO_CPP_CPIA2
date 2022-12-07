@@ -16,11 +16,11 @@ namespace NS_Services
 
     public:
         SG_Orders(void);
-        void Add_Order(String^ ID, DateTime^ dateExp, DateTime^ dateRec, int client, int nombrePaiement, String^ MOP, int balance, string* bill, int* produit, int* amount, int nombreProduit);
+        void Add_Order(String^ ID, DateTime^ dateExp, DateTime^ dateRec, int client, int nombrePaiement, String^ MOP, int balance,int produit, int amount, int nombreProduit, DateTime^ datTkt);
         void Remove_Order(String^);
         void Update_Order(String^ ID, DateTime^ dateExp, DateTime^ dateRec, int client);
         DataSet^ ListeOrders(String^);
-        DataSet^ ListeID(String^);
+        DataSet^ ListeID(String^,DateTime^,int);
         DataSet^ ListeMOP(String^);
         DataSet^ ListeBill(String^);
         void Cree_Facture(String^,String^);

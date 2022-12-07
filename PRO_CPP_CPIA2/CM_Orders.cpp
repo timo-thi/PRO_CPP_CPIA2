@@ -166,9 +166,13 @@ SqlCommand^ CM_Orders::Select_Bill(void) {
 	return Procedure;
 }
 
-SqlCommand^ CM_Orders::Select_GenerationID(void) {
+SqlCommand^ CM_Orders::Select_GenerationID(DateTime^ date,int client) {
 
 	Start_Procedure("Generation_ID_Orders");
+	Procedure->Parameters->AddWithValue("@date_expedition", client);
+	Procedure->Parameters->AddWithValue("@client", client);
+
+
 
 	return Procedure;
 }
