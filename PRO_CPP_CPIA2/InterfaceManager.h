@@ -7,6 +7,7 @@
 #include "SG_Identification.h"
 #include "SG_Address.h"
 #include "SG_Stat.h"
+#include "SG_Orders.h"
 
 using namespace  NS_Services;
 
@@ -230,6 +231,9 @@ private: System::Windows::Forms::Label^ textStaffAffiche;
 private: System::Windows::Forms::Button^ button46_Staff_Load;
 private: SG_Stat^ Stat_Service;
 private: SG_Address^ Adr_Service;
+private: Data::DataSet^ dsOrders;
+private: SG_Orders^ processusOrders;
+private: Data::DataSet^ dsBill;
 
 private: SG_Identification^ processusIdentification = gcnew SG_Identification();
 private: System::Windows::Forms::NumericUpDown^ numericUpDown1;
@@ -303,9 +307,11 @@ private: System::Windows::Forms::TextBox^ textBoxAdrName;
 private: System::Windows::Forms::Label^ label56;
 private: System::Windows::Forms::TextBox^ textBoxAdrNum;
 private: System::Windows::Forms::Label^ label57;
+private: System::Windows::Forms::Label^ label44;
 private: System::Windows::Forms::TextBox^ textBoxAdrID;
 private: System::Windows::Forms::Label^ label58;
 private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
+private: System::Windows::Forms::Button^ button20;
 
 
 
@@ -357,6 +363,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->textClientID = (gcnew System::Windows::Forms::TextBox());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->tabPageGestionCommande = (gcnew System::Windows::Forms::TabPage());
+			this->button20 = (gcnew System::Windows::Forms::Button());
 			this->textBox22 = (gcnew System::Windows::Forms::TextBox());
 			this->label24 = (gcnew System::Windows::Forms::Label());
 			this->textBox23 = (gcnew System::Windows::Forms::TextBox());
@@ -522,6 +529,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->label57 = (gcnew System::Windows::Forms::Label());
 			this->textBoxAdrID = (gcnew System::Windows::Forms::TextBox());
 			this->label58 = (gcnew System::Windows::Forms::Label());
+			this->label44 = (gcnew System::Windows::Forms::Label());
 			this->tabControl1->SuspendLayout();
 			this->tabPageGestionClient->SuspendLayout();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
@@ -828,6 +836,8 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			// 
 			// tabPageGestionCommande
 			// 
+			this->tabPageGestionCommande->Controls->Add(this->label44);
+			this->tabPageGestionCommande->Controls->Add(this->button20);
 			this->tabPageGestionCommande->Controls->Add(this->textBox22);
 			this->tabPageGestionCommande->Controls->Add(this->label24);
 			this->tabPageGestionCommande->Controls->Add(this->textBox23);
@@ -863,6 +873,16 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->tabPageGestionCommande->Text = L"Gestion commande";
 			this->tabPageGestionCommande->UseVisualStyleBackColor = true;
 			// 
+			// button20
+			// 
+			this->button20->Location = System::Drawing::Point(356, 344);
+			this->button20->Name = L"button20";
+			this->button20->Size = System::Drawing::Size(115, 36);
+			this->button20->TabIndex = 72;
+			this->button20->Text = L"Load";
+			this->button20->UseVisualStyleBackColor = true;
+			this->button20->Click += gcnew System::EventHandler(this, &InterfaceManager::button20_Click);
+			// 
 			// textBox22
 			// 
 			this->textBox22->Location = System::Drawing::Point(178, 265);
@@ -875,9 +895,9 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->label24->AutoSize = true;
 			this->label24->Location = System::Drawing::Point(175, 237);
 			this->label24->Name = L"label24";
-			this->label24->Size = System::Drawing::Size(88, 13);
+			this->label24->Size = System::Drawing::Size(94, 13);
 			this->label24->TabIndex = 70;
-			this->label24->Text = L"Prix par paiement";
+			this->label24->Text = L"Nombre de produit";
 			// 
 			// textBox23
 			// 
@@ -903,6 +923,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->button13->TabIndex = 67;
 			this->button13->Text = L"<";
 			this->button13->UseVisualStyleBackColor = true;
+			this->button13->Click += gcnew System::EventHandler(this, &InterfaceManager::button13_Click);
 			// 
 			// button14
 			// 
@@ -912,6 +933,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->button14->TabIndex = 66;
 			this->button14->Text = L">";
 			this->button14->UseVisualStyleBackColor = true;
+			this->button14->Click += gcnew System::EventHandler(this, &InterfaceManager::button14_Click);
 			// 
 			// dataGridView3
 			// 
@@ -957,6 +979,7 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->button18->TabIndex = 61;
 			this->button18->Text = L"Ajouter";
 			this->button18->UseVisualStyleBackColor = true;
+			this->button18->Click += gcnew System::EventHandler(this, &InterfaceManager::button18_Click);
 			// 
 			// textBox9
 			// 
@@ -2496,6 +2519,15 @@ private: System::Windows::Forms::ComboBox^ comboBoxAdrCitName;
 			this->label58->TabIndex = 94;
 			this->label58->Text = L"ID de Adresse";
 			// 
+			// label44
+			// 
+			this->label44->AutoSize = true;
+			this->label44->Location = System::Drawing::Point(477, 356);
+			this->label44->Name = L"label44";
+			this->label44->Size = System::Drawing::Size(56, 13);
+			this->label44->TabIndex = 73;
+			this->label44->Text = L"En attente";
+			// 
 			// InterfaceManager
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
@@ -2606,6 +2638,27 @@ private: void loadDataClient(int index)
 		this->loadDataClient(this->index);
 	}
 
+
+private: void loadDataOrders(int index)
+{
+	this->dsOrders->Clear();
+	this->dsOrders = this->processusOrders->ListeOrders("liste");
+	this->dsBill->Clear();
+	this->dsBill = this->processusOrders->ListeBill("liste");
+	this->textBox21->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+	this->textBox20->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+	this->textBox19->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[2] + " " + this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+	this->textBox14->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+	this->textBox17->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[5]);
+	this->textBox10->Text = Convert::ToString(this->dsOrders->Tables["liste"]->Rows[this->index]->ItemArray[6]);
+	int compt = 0;
+	while (Convert::ToString(this->dsOrders->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[3])) {
+		compt++;
+	};
+	this->textBox9->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[2]);
+	this->textBox23->Text = Convert::ToString(this->dsBill->Tables["liste"]->Rows[compt]->ItemArray[1]);
+
+}
 
 private: void loadDataStaff(int index)
 {
@@ -3094,7 +3147,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 			MessageBox::Show("Error, client id can't be 0.");
 		}
 
-		array<String^>^ list;
+		cli::array<System::String^>^ list;
 
 		// Articles les plus vendus
 		this->listBoxMorePurchased->Items->Clear();
@@ -3147,6 +3200,12 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		} else if (this->tabControl1->SelectedTab->Name == tabPageGestionStock->Name) { // Gestion Stock
 			this->processusStock = gcnew SG_Stock();
 		}
+		else if (this->tabControl1->SelectedTab->Name == tabPageGestionCommande->Name) { // Gestion Personnes
+			this->processusOrders = gcnew SG_Orders();
+			this->dsOrders = gcnew Data::DataSet();
+			this->dsBill = gcnew Data::DataSet();
+			
+	}
 	}
 	// Gestion adresses
 	private: System::Void Refresh_Adr() {
@@ -3251,5 +3310,34 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->dsFacturation = gcnew Data::DataSet();
 		this->dsPersonne = gcnew Data::DataSet();
 	}
+private: System::Void button20_Click(System::Object^ sender, System::EventArgs^ e) {
+	loadDataOrders(0);
+}
+
+private: System::Void button13_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index > 0) {
+		this->index--;
+		this->loadDataOrders(this->index);
+	}
+	
+}
+private: System::Void button14_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (this->index < this->dsOrders->Tables["liste"]->Rows->Count - 1)
+	{
+		this->index++;
+		this->loadDataOrders(this->index);
+	}
+}
+private: System::Void button18_Click(System::Object^ sender, System::EventArgs^ e) {
+	this->textBox21->Clear();
+	this->textBox20->Clear();
+	this->textBox19->Text="Ne rien mettre ici.";
+	this->textBox14->Clear();
+	this->textBox17->Clear();
+	this->textBox23->Clear();
+	this->textBox9->Clear();
+	this->textBox10->Text="Ne rien mettre ici.";
+	this->label44->Text="Veuillez entrer les informations";
+}
 };
 }

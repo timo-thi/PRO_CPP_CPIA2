@@ -225,7 +225,6 @@ SqlCommand^ CM_Orders::Delete_Product(void) {
 SqlCommand^ CM_Orders::Select_Product(void) {
 	Start_Procedure("Select_Contain");
 
-	Procedure->Parameters->AddWithValue("@ORD", this->Get_ID());
 
 	return Procedure;
 }
