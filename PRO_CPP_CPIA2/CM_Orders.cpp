@@ -92,7 +92,7 @@ void CM_Orders::Set_Amount(int tAmount) {
 
 SqlCommand^ CM_Orders::Insert_Order(void) {
 	Start_Procedure("Insert_Order");
-	Procedure->Parameters->AddWithValue("@ID", this->Get_ID());
+	Procedure->Parameters->AddWithValue("@ID","test");
 	Procedure->Parameters->AddWithValue("@date_expedition", this->Get_Date_Exp());
 	Procedure->Parameters->AddWithValue("@date_reception", this->Get_Date_Liv());
 	Procedure->Parameters->AddWithValue("@client", this->Get_Client_ID());

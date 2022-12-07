@@ -2658,7 +2658,6 @@ private: System::Windows::Forms::Label^ label46;
 		this->index = e->RowIndex;
 		this->loadDataStaff(this->index);
 	}
-
 	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex != -1) {
 			this->textPersonneID->Text = Convert::ToString(this->dataGridView5->Rows[e->RowIndex]->Cells["ID"]->Value->ToString());
@@ -2667,11 +2666,9 @@ private: System::Windows::Forms::Label^ label46;
 		}
 	}
 
-private: void loadDataClient(int index)
-{	
-	// Remplir les champs avec la première personne du dataset
-
-	if (index != -1) {
+	private: void loadDataClient(int index)
+	{
+		// Remplir les champs avec la première personne du dataset
 		this->dsPersonne->Clear();
 		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 		this->dsClient->Clear();
@@ -2698,7 +2695,6 @@ private: void loadDataClient(int index)
 		};
 		this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
 		this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
-	}
 
 		// Mettre à jour le data grid
 		this->dataGridView1->Refresh();
@@ -2733,22 +2729,21 @@ private: void loadDataClient(int index)
 
 	}
 
-private: void loadDataStaff(int index)
-{
-	if (index != -1) {
+	private: void loadDataStaff(int index)
+	{
 		this->dsPersonne->Clear();
 		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
 		this->dsStaff->Clear();
 		this->dsStaff = this->processusStaff->ListeStaff("liste");
-		this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[0]);
-		this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[1]);
-		this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[2]);
-		this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[3]);
-		this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[4]);
-		this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[5]);
+		this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+		this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+		this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+		this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
+		this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
 
 		int compt = 0;
-		while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0]) && compt < dsPersonne->Tables[0]->Rows->Count) {
+		while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
 			compt++;
 		};
 		this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
@@ -2759,8 +2754,6 @@ private: void loadDataStaff(int index)
 		this->dataGridView_Staff->DataSource = this->dsStaff;
 		this->dataGridView_Staff->DataMember = "liste";
 	}
-
-}
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -3285,6 +3278,7 @@ private: void loadDataStaff(int index)
 			this->processusOrders = gcnew SG_Orders();
 			this->dsOrders = gcnew Data::DataSet();
 			this->dsBill = gcnew Data::DataSet();
+			this->dsStaff = gcnew Data::DataSet();
 
 		}
 	}
@@ -3344,7 +3338,6 @@ private: void loadDataStaff(int index)
 		this->loadDataAdresse(this->index);
 	}
 	private: System::Void loadDataAdresse(int index) {
-		if (index != -1) {
 		this->textBoxAdrID->Text = this->dataGridView4->Rows[index]->Cells["ADR_ID"]->Value->ToString();
 		this->textBoxAdrName->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Name"]->Value->ToString();
 		this->textBoxAdrNum->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Num"]->Value->ToString();
@@ -3352,7 +3345,7 @@ private: void loadDataStaff(int index)
 		this->textBoxAdrCitID->Text = this->dataGridView4->Rows[index]->Cells["CIT_ID"]->Value->ToString();
 		this->comboBoxAdrCitName->Text = this->dataGridView4->Rows[index]->Cells["CIT_Name"]->Value->ToString();
 		this->textBoxAdrCitZip->Text = this->dataGridView4->Rows[index]->Cells["CIT_ZIP_Code"]->Value->ToString();
-		}
+		//this->textBox23->Text
 	}
 	private: System::Void buttonAdrNext_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->index < this->Adr_Service->DS->Tables[0]->Rows->Count - 1) {
@@ -3440,15 +3433,14 @@ private: System::Void button15_Click(System::Object^ sender, System::EventArgs^ 
 	}
 	else if (this->mode == "maj")
 	{
-		this->processusStaff->Update_Staff(Convert::ToInt32(this->textStaffID->Text), Convert::ToInt32(this->textStaffSup->Text), Convert::ToString(this->textStaffRole->Text), Convert::ToInt32(this->textStaffAdresse->Text), Convert::ToDateTime(this->textStaffDate->Text), this->textStaffMail->Text);
+		this->processusOrders->Update_Order(this->processusOrders->Get_ID(), Convert::ToDateTime(this->textBox14->Text), Convert::ToDateTime(this->textBox17->Text), Convert::ToInt32(this->textBox20->Text));
 	}
 	else if (this->mode == "sup")
 	{
-		this->processusStaff->Remove_Staff(Convert::ToInt32(this->textStaffID->Text));
-		this->processusIdentification->Remove_Identification(this->textStaffMail->Text);
+		this->processusOrders->Remove_Order(this->processusOrders->Get_ID());
 	}
 	this->index = 0;
-	this->loadDataStaff(this->index);
+	this->loadDataOrders(this->index);
 	this->textStaffAffiche->Text += "Traitement terminé.";
 }
 };
