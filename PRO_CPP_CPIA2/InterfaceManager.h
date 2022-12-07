@@ -2589,6 +2589,7 @@ private: void loadDataPersonne(int index)
 		this->index = e->RowIndex;
 		this->loadDataStaff(this->index);
 	}
+
 	private: System::Void dataGridView5_CellClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 		if (e->RowIndex != -1) {
 			this->textPersonneID->Text = Convert::ToString(this->dataGridView5->Rows[e->RowIndex]->Cells["ID"]->Value->ToString());
@@ -2600,32 +2601,35 @@ private: void loadDataPersonne(int index)
 private: void loadDataClient(int index)
 {	
 	// Remplir les champs avec la première personne du dataset
-	this->dsPersonne->Clear();
-	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->dsClient->Clear();
-	this->dsClient = this->processusClient->ListeClient("liste");
-	this->textClientID->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-	this->textMail->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textAniiv->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-	this->textPremiereCommande->Text=Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-	this->dsFacturation = this->processusClient->ListeFacturation("liste");
-	int compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textFacturation->Text = Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->dsLivraison = this->processusClient->ListeLivraison("liste");
-	compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
-	compt = 0;
-	while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+
+	if (index != -1) {
+		this->dsPersonne->Clear();
+		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+		this->dsClient->Clear();
+		this->dsClient = this->processusClient->ListeClient("liste");
+		this->textClientID->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[0]);
+		this->textMail->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[1]);
+		this->textAniiv->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[2]);
+		this->textPremiereCommande->Text = Convert::ToString(this->dsClient->Tables["liste"]->Rows[this->index]->ItemArray[3]);
+		this->dsFacturation = this->processusClient->ListeFacturation("liste");
+		int compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textFacturation->Text = Convert::ToString(this->dsFacturation->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->dsLivraison = this->processusClient->ListeLivraison("liste");
+		compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textLivraison->Text = Convert::ToString(this->dsLivraison->Tables[0]->Rows[compt]->ItemArray[1]);
+		compt = 0;
+		while (Convert::ToString(this->dsClient->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
+			compt++;
+		};
+		this->textNomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->textPrenomClient->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+	}
 
 	// Mettre à jour le data grid
 	this->dataGridView1->Refresh();
@@ -2662,28 +2666,31 @@ private: void loadDataOrders(int index)
 
 private: void loadDataStaff(int index)
 {
-	this->dsPersonne->Clear();
-	this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
-	this->dsStaff->Clear();
-	this->dsStaff = this->processusStaff->ListeStaff("liste");
-	this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[0]);
-	this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[1]);
-	this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[2]);
-	this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[3]);
-	this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[4]);
-	this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[this->index]->ItemArray[5]);
-	
-	int compt = 0;
-	while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0])) {
-		compt++;
-	};
-	this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
-	this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+	if (index != -1) {
+		this->dsPersonne->Clear();
+		this->dsPersonne = this->processusPersonnes->ListePersonne("liste");
+		this->dsStaff->Clear();
+		this->dsStaff = this->processusStaff->ListeStaff("liste");
+		this->textStaffID->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[0]);
+		this->textStaffSup->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[1]);
+		this->textStaffDate->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[2]);
+		this->textStaffRole->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[3]);
+		this->textStaffAdresse->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[4]);
+		this->textStaffMail->Text = Convert::ToString(this->dsStaff->Tables["liste"]->Rows[index]->ItemArray[5]);
 
-	// Update dataGridView
-	this->dataGridView_Staff->Refresh();
-	this->dataGridView_Staff->DataSource = this->dsStaff;
-	this->dataGridView_Staff->DataMember = "liste";
+		int compt = 0;
+		while (Convert::ToString(this->dsStaff->Tables[0]->Rows[this->index]->ItemArray[0]) != Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[0]) && compt < dsPersonne->Tables[0]->Rows->Count) {
+			compt++;
+		};
+		this->textStaffNom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[1]);
+		this->textStaffPrenom->Text = Convert::ToString(this->dsPersonne->Tables[0]->Rows[compt]->ItemArray[2]);
+
+		// Update dataGridView
+		this->dataGridView_Staff->Refresh();
+		this->dataGridView_Staff->DataSource = this->dsStaff;
+		this->dataGridView_Staff->DataMember = "liste";
+	}
+
 }
 	private: System::Void MyForm1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
@@ -3263,6 +3270,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->loadDataAdresse(this->index);
 	}
 	private: System::Void loadDataAdresse(int index) {
+		if (index != -1) {
 		this->textBoxAdrID->Text = this->dataGridView4->Rows[index]->Cells["ADR_ID"]->Value->ToString();
 		this->textBoxAdrName->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Name"]->Value->ToString();
 		this->textBoxAdrNum->Text = this->dataGridView4->Rows[index]->Cells["ADR_Street_Num"]->Value->ToString();
@@ -3270,7 +3278,7 @@ private: System::Void button_Staff_Save_Click(System::Object^ sender, System::Ev
 		this->textBoxAdrCitID->Text = this->dataGridView4->Rows[index]->Cells["CIT_ID"]->Value->ToString();
 		this->comboBoxAdrCitName->Text = this->dataGridView4->Rows[index]->Cells["CIT_Name"]->Value->ToString();
 		this->textBoxAdrCitZip->Text = this->dataGridView4->Rows[index]->Cells["CIT_ZIP_Code"]->Value->ToString();
-		//this->textBox23->Text
+		}
 	}
 	private: System::Void buttonAdrNext_Click(System::Object^ sender, System::EventArgs^ e) {
 		if (this->index < this->Adr_Service->DS->Tables[0]->Rows->Count - 1) {
